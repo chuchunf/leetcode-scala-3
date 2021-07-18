@@ -15,8 +15,7 @@ object HappyNumber {
       isHappyInernal(getSum(num), cache)
 
   private def getSum(n: Int): Int =
-    var sum = 0
-    var num = n
+    var (sum, num) = (0, n)
     while (num != 0) {
       val remain = num % 10
       sum = sum + remain * remain
