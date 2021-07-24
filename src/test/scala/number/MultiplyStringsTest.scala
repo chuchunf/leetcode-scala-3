@@ -4,7 +4,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers._
 
 class MultiplyStringsTest extends AnyFunSuite {
-  ignore("can calculate 1 digit mutiple 4 digits") {
+  test("can calculate 1 digit mutiple 4 digits") {
     val num1 = "2468"
     val num2 = "3"
     val result = MultiplyStrings.multiply(num1, num2)
