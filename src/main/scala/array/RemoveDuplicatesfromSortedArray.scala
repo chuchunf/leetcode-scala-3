@@ -2,11 +2,10 @@ package array
 
 object RemoveDuplicatesfromSortedArray {
   def removeDuplicates(nums: Array[Int]): Int =
-    var (fast, slow) = (0, 0)
-    while fast < nums.length do
-      nums(slow) = nums(fast)
-      while (fast + 1) < nums.length && nums(fast) == nums(fast + 1) do
-        fast = fast + 1
-      slow = slow + 1
-    slow
+    nums.foldLeft(1) { case (num, index) =>
+      if num > nums(index - 1) then {
+        nums(index) = num
+        index + 1
+      } else index
+    }
 }
