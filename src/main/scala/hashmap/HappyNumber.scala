@@ -3,10 +3,7 @@ package hashmap
 import scala.collection.mutable
 
 object HappyNumber {
-  def isHappy(n: Int): Boolean =
-    import scala.collection.mutable
-    val cache = mutable.Set[Int]()
-    isHappyInernal(n, cache)
+  def isHappy(n: Int): Boolean = isHappyInernal(n, mutable.Set[Int]())
 
   private def isHappyInernal(n: Int, cache: mutable.Set[Int]): Boolean = n match
     case num if num == 1 => true

@@ -7,7 +7,7 @@ object AddTwoNumbers {
     var (node1, node2) = (Option(l1), Option(l2))
     var carry = 0
 
-    while (node1.isDefined && node2.isDefined) {
+    while node1.isDefined && node2.isDefined do
       val sum = node1.get.value + node2.get.value + carry
       current = current.append(
         if sum < 10 then {
@@ -19,7 +19,6 @@ object AddTwoNumbers {
         })
       node1 = node1.get.next
       node2 = node2.get.next
-    }
     if carry == 1 then current.append(1)
 
     dummyHeader.next.get
