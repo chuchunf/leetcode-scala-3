@@ -1,5 +1,7 @@
 package linkedlist
 
+import scala.collection.mutable
+
 case class LinkedList[T](head: LinkedListNode[T]):
   var tail = head
 
@@ -13,13 +15,12 @@ sealed class LinkedListNode[T](var value: T, var next: Option[LinkedListNode[T]]
     this.next = Some(next)
     next
 
-  override def toString: String =
-    import scala.collection.mutable
-    val list = mutable.ArrayBuffer[T]()
+  def toList: List[T] =
+    val array = mutable.ArrayBuffer[T]()
     var current = Option(this)
-
-    while (current.isDefined) {
-      list.append(current.get.value)
+    while current.isDefined do
+      array.append(current.get.value)
       current = current.get.next
-    }
-    list.mkString("->")
+    array.toList
+
+  override def toString: String = this.toList.mkString("->")
