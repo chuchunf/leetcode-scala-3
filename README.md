@@ -1,6 +1,6 @@
 # LeetCode-Scala-3
 
-![main](https://github.com/chuchunf/leetcode-scala-3/actions/workflows/scala.yml/badge.svg)
+![main status](https://github.com/chuchunf/leetcode-scala-3/actions/workflows/scala.yml/badge.svg)
 
 Solutions of selected LeetCode problems in Scala 3.
 
@@ -30,3 +30,5 @@ Solutions of selected LeetCode problems in Scala 3.
 | [Back Tracking](src/main/scala/backtracking/backtracking.md) | <ul><li>22. Generate Parentheses</li><li>40. Combination Sum II</li><li>46. Permutations</li><li>10. Regular Expression Matching</li></ul> |
 | [Dynamic Programming](src/main/scala/dp/dp.md) | <ul><li>70. Climbing Stairs</li><li>64. Minimum Path Sum</li><li>53. Maximum Subarray</li><li>5. Longest Palindromic Substring</li></ul> |
 
+### TODO
+- test out github workflow action "Markdown Embed Code From File"

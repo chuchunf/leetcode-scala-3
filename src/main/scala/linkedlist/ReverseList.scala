@@ -9,6 +9,6 @@ object ReverseList {
         curr.next = Option(pre)
         pre = curr
         curr = next
-      curr.next = Option(pre) // TODO: this could be optimized ???
+      curr.next = Option(pre)
       curr
 }
