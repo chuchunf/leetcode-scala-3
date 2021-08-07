@@ -1,4 +1,4 @@
-#Tree
+# Tree
 A tree is an abstract data type representing a hierarchical structure, with a root node and subtrees of linked children nodes.
 - Given its hierarchical structure, it works naturally with recursion 
 - It is like a 2d linked listed so share some similarities

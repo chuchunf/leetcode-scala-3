@@ -1,4 +1,4 @@
-#Linked List
+# Linked List
 
 A linked list is a linear collection of data elements, each element points to the next.
 Standard operation, a node has a next pointing to next element, check null for end of the linked list.

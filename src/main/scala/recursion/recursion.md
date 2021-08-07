@@ -1,4 +1,4 @@
-#Recursion
+# Recursion
 Recursion solves problems where the solution depends on solutions to smaller instances of the same problem by using functions that call themselves from within their own code.
 - Works with tree/linked list etc. recursive data structures 
 - Recursion normally could be converted to Iteration via a Stack
