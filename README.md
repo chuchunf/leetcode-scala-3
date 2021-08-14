@@ -8,7 +8,7 @@ Solutions of selected LeetCode problems in Scala 3.
 
 ### Code
 - try to be compact and readable at the same time
-- try Scala 3 syntax and features but not Scala specific libraries  
+- try Scala 3 syntax and features but less Scala specific libraries  
 
 ### Solutions 
 | Topic | Problem List |
@@ -27,6 +27,3 @@ Solutions of selected LeetCode problems in Scala 3.
 | [Recursion](src/main/scala/recursion/recursion.md) | <ul><li>21. Merge Two Sorted Lists</li></ul> |
 | [Back Tracking](src/main/scala/backtracking/backtracking.md) | <ul><li>22. Generate Parentheses</li><li>40. Combination Sum II</li><li>46. Permutations</li><li>10. Regular Expression Matching</li></ul> |
 | [Dynamic Programming](src/main/scala/dp/dp.md) | <ul><li>70. Climbing Stairs</li><li>64. Minimum Path Sum</li><li>53. Maximum Subarray</li><li>5. Longest Palindromic Substring</li></ul> |
-
-### TODO
-- test out GitHub workflow action "Markdown Embed Code From File"
