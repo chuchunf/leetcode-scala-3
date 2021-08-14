@@ -1,7 +1,5 @@
 # LeetCode-Scala-3 ![main status](https://github.com/chuchunf/leetcode-scala-3/actions/workflows/scala.yml/badge.svg)
 
-----
-
 Solutions of selected LeetCode problems in Scala 3.
 
 ### Goal
