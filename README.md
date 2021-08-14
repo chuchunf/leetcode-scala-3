@@ -1,4 +1,4 @@
-# LeetCode-Scala-3 ![main status](https://github.com/chuchunf/leetcode-scala-3/actions/workflows/scala.yml/badge.svg)
+# LeetCode-Scala-3 ![main status](https://github.com/chuchunf/leetcode-scala-3/actions/workflows/scala.yml/badge.svg) [![codecov](https://codecov.io/gh/chuchunf/leetcode-scala-3/branch/main/graph/badge.svg?token=XlzJA6ixJx)](https://codecov.io/gh/chuchunf/leetcode-scala-3)
 
 Solutions of selected LeetCode problems in Scala 3.
 
