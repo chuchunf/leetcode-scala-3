@@ -17,4 +17,6 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Run tests
-      run: sbt test
+      run: sbt jacoco
+    - name: upload to codecov
+      run: bash <(curl -s https://codecov.io/bash)
