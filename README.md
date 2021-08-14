@@ -13,9 +13,9 @@ Solutions of selected LeetCode problems in Scala 3.
 - try Scala 3 syntax and features but not Scala specific libraries  
 
 ### Solutions 
-| Topics | Problem List |
+| Topic | Problem List |
 | ------ | ------------ |
-| [Hashmap](src/main/scala/hashmap/hashmap.md) | <ul><li>1. Two Sum</li><li>387. First unique character in a string</li><li>202. Happy Number</li></ul> |
+| [Hashmap](src/main/scala/hashmap/hashmap.md) | <ul><li>1. Two Sum</li><li>387. First unique character in a string</li><li>202. Happy Number</li><li>380. Insert Delete GetRandom O(1)</li><li>205. Isomorphic Strings</li><li>299. Bulls and Cows</li><li>554. Brick Wall</li></ul> |
 | [LinkedList](src/main/scala/linkedlist/linkedlist.md) | <ul><li>2. Add Two Numbers</li><li>61. Rotate List</li><li>19. Remove Nth Node From End of List</li><li>206. Reverse Linked List</li></ul> |
 | [Two Pointers](src/main/scala/twopointers/twopointers.md) | <ul><li>3. Longest Substring Without Repeating Characters</li><li>11. Container With Most Water</li><li>16. 3Sum Closest</li><li>209. Minimum Size Sub array Sum</li><li>42. Trapping Rain Water</li></ul> |
 | [Fast Slow Pointers](src/main/scala/fastslowpointers/pointers.md) | <ul><li>141. Linked List Cycle</li><li>876. Middle of the Linked List</li></ul> |
@@ -31,4 +31,4 @@ Solutions of selected LeetCode problems in Scala 3.
 | [Dynamic Programming](src/main/scala/dp/dp.md) | <ul><li>70. Climbing Stairs</li><li>64. Minimum Path Sum</li><li>53. Maximum Subarray</li><li>5. Longest Palindromic Substring</li></ul> |
 
 ### TODO
-- test out github workflow action "Markdown Embed Code From File"
+- test out GitHub workflow action "Markdown Embed Code From File"
