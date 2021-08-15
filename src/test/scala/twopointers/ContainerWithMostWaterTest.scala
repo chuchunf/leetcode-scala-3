@@ -15,4 +15,10 @@ class ContainerWithMostWaterTest extends AnyFunSuite {
     val result = ContainerWithMostWater.maxArea(a)
     result shouldEqual (16)
   }
+
+  test("can handle normal case from right") {
+    val a = Array(4,1,2,3,4)
+    val result = ContainerWithMostWater.maxArea(a)
+    result shouldEqual (16)
+  }
 }
