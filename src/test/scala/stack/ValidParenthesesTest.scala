@@ -9,4 +9,16 @@ class ValidParenthesesTest extends AnyFunSuite {
     val result = ValidParentheses.isValid(str)
     result shouldEqual (true)
   }
+
+  test("can not match parentheses ()(") {
+    val str="()("
+    val result = ValidParentheses.isValid(str)
+    result shouldEqual (false)
+  }
+
+  test("can fail with invalid char") {
+    val str="(a)"
+    val result = ValidParentheses.isValid(str)
+    result shouldEqual (false)
+  }
 }
