@@ -9,7 +9,7 @@ case class LinkedList[T](head: LinkedListNode[T]):
     tail.next = Some(node)
     tail = node
 
-sealed class LinkedListNode[T](var value: T, var next: Option[LinkedListNode[T]]):
+class LinkedListNode[T](var value: T, var next: Option[LinkedListNode[T]]):
   def append(value: T): LinkedListNode[T] =
     val next = new LinkedListNode(value, None)
     this.next = Some(next)
@@ -24,3 +24,9 @@ sealed class LinkedListNode[T](var value: T, var next: Option[LinkedListNode[T]]
     array.toList
 
   override def toString: String = this.toList.mkString("->")
+
+class LinkedListWithPointer[T](var value: T, var next: Option[LinkedListWithPointer[T]], var random: Option[LinkedListWithPointer[T]]):
+  def append(value: T): LinkedListWithPointer[T] =
+    val next = new LinkedListWithPointer(value, None, None)
+    this.next = Some(next)
+    next
