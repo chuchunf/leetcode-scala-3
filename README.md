@@ -15,7 +15,7 @@ Solutions of selected LeetCode problems in Scala 3.
 | ------ | ------------ |
 | [Hashmap](src/main/scala/hashmap/hashmap.md) | <ul><li>1. Two Sum</li><li>387. First unique character in a string</li><li>202. Happy Number</li><li>380. Insert Delete GetRandom O(1)</li><li>205. Isomorphic Strings</li><li>299. Bulls and Cows</li><li>554. Brick Wall</li></ul> |
 | [LinkedList](src/main/scala/linkedlist/linkedlist.md) | <ul><li>2. Add Two Numbers</li><li>61. Rotate List</li><li>19. Remove Nth Node From End of List</li><li>206. Reverse Linked List</li><li>83. Remove Duplicates from Sorted List</li></ul> |
-| [Two Pointers](src/main/scala/twopointers/twopointers.md) | <ul><li>3. Longest Substring Without Repeating Characters</li><li>11. Container With Most Water</li><li>16. 3Sum Closest</li><li>209. Minimum Size Sub array Sum</li><li>42. Trapping Rain Water</li></ul> |
+| [Two Pointers](src/main/scala/twopointers/twopointers.md) | <ul><li>3. Longest Substring Without Repeating Characters</li><li>11. Container With Most Water</li><li>16. 3Sum Closest</li><li>209. Minimum Size Sub array Sum</li><li>42. Trapping Rain Water</li><li>15. 3Sum</li></ul> |
 | [Fast Slow Pointers](src/main/scala/fastslowpointers/pointers.md) | <ul><li>141. Linked List Cycle</li><li>876. Middle of the Linked List</li></ul> |
 | [String](src/main/scala/string/string.md) | <ul><li>6. ZigZag Conversion</li><li>14. Longest Common Prefix</li><li>763. Partition Labels</li></ul> |
 | [Number](src/main/scala/number/number.md) | <ul><li>7. Reverse Integer</li><li>9. Palindrome Number</li><li>43. Multiply Strings</li></ul> |
