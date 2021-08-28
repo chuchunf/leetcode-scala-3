@@ -114,3 +114,13 @@ Common scenarios are **find a pair/min/max/equals/closest in a range defined by 
     }
     result.toList
 ```
+
+### 28. Implement strStr()
+```scala
+  def strStr(haystack: String, needle: String): Int =
+    haystack.toCharArray.zipWithIndex.find { case (char, index) => {
+      needle.toCharArray.zipWithIndex.find { case (char2, index2) => {
+        haystack(index + index2) != char2
+      }}.isEmpty
+    }}.map(_._2).getOrElse(-1)
+```
