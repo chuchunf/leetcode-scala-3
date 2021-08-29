@@ -6,6 +6,7 @@ Common operations
 - dummy.next = head => save and keep the head
 - ll.next.next => skip 1 item
 - Use two pointers to cover a range 
+- Instead of update view, just re-direct the next pointer 
 
 ### 2. Add Two Numbers
 ```scala
@@ -110,4 +111,18 @@ Common operations
       node = node.get.next
 
     cache.get(head).get
+```
+
+### 82. Remove Duplicates from Sorted List II
+```scala
+  def deleteDuplicates(head: LinkedListNode[Int]): LinkedListNode[Int] =
+    val temphead = new LinkedListNode[Int](-1, Option(head))
+    var (pre, curr) = (temphead, Option(head))
+    while curr.isDefined do {
+      while curr.get.next.isDefined && curr.get.value == curr.get.next.get.value do curr = curr.get.next
+      if pre.next.get.value == curr.get.value then pre = pre.next.get
+      else pre.next = curr.get.next
+      curr = curr.get.next
+    }
+    temphead.next.get
 ```
