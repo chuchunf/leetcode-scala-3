@@ -12,6 +12,8 @@ This technique also has two pointers (same as two pointer technique), but
 - Slow/Fast pointers move dependently 
 - Hence the condition is not to detect when to move which pointer, rather the end condition
 
+Multiple pass could be used to collect more information
+
 ### 141. Linked List Cycle
 ```scala
   def hasCycle(head: LinkedListNode[Int]): Boolean =
@@ -35,4 +37,28 @@ This technique also has two pointers (same as two pointer technique), but
       slow = slow.next.get
     }
     slow
+```
+
+### 142. Linked List Cycle II
+```scala
+  def detectCycle(head: LinkedListNode[Int]): Option[LinkedListNode[Int]] =
+    var (fast, slow) = (head, head)
+    var (isCyle, index) = (false, 0)
+    while fast.next.isDefined && slow.next.isDefined && isCyle == false do
+      fast = fast.next.get
+      if (fast.next.isDefined) {
+        fast = fast.next.get
+        slow = slow.next.get
+        if (fast == slow) isCyle = true
+      }
+
+    if !isCyle then None
+    else {
+      fast = head
+      while fast != slow do {
+        fast = fast.next.get
+        slow = slow.next.get
+      }
+      Option(fast)
+    }
 ```

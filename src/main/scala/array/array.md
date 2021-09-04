@@ -10,25 +10,6 @@
       } else index
     }
 ```
-
-### 54. Spiral Matrix
-```scala
-  def spiralOrder(matrix: Array[Array[Int]]): List[Int] =
-    val result = mutable.ListBuffer[Int]()
-    val size = matrix.length * matrix(0).length
-    var (left, right, top, bottom) = (0, matrix(0).length - 1, 0, matrix.length - 1)
-    while (result.length < size)
-      for (i <- left to right) if (result.length < size) result.append(matrix(top)(i)) // left to right, same top
-      top = top + 1
-      for (j <- top to bottom) if (result.length < size) result.append(matrix(j)(right)) // top to bottom, same right
-      right = right - 1
-      for (i <- right to left by -1) if (result.length < size) result.append(matrix(bottom)(i)) // right to left, same bottom
-      bottom = bottom - 1
-      for (j <- bottom to top by -1) if (result.length < size) result.append(matrix(j)(left)) // bottom to top, same left
-      left = left + 1
-    result.toList
-```
-
 ### 78. Subsets
 ```scala
   def subsets(nums: Array[Int]): List[List[Int]] =
@@ -70,4 +51,32 @@
         minprice = minprice.min(price)
       })
       maxprofit
+```
+### 88. Merge Sorted Array
+```scala
+  def merge(nums1: Array[Int], m: Int, nums2: Array[Int], n: Int): Unit =
+    var (p1, p2) = (0, 0)
+    while p1 < m do
+      if n > 0 && nums1(p1) > nums2(p2) then {
+        var tmp = nums2(p2)
+        nums2(p2) = nums1(p1)
+        nums1(p1) = tmp
+      }
+      p1 = p1 + 1
+    for (i <- 0 until n) nums1(m + i) = nums2(i)
+```
+
+### 125. Valid Palindrome
+```scala
+  def isPalindrome(s: String): Boolean =
+    var (lp, rp) = (0, s.length - 1)
+    while lp < rp do
+      (s.charAt(lp), s.charAt(rp)) match
+    case (lc, _) if !lc.isLetterOrDigit => lp = lp + 1
+    case (_, rc) if !rc.isLetterOrDigit => rp = rp - 1
+    case (lc, rc) if lc.toLower != rc.toLower => return false
+    case (_, _) =>
+      lp = lp + 1
+    rp = rp - 1
+    true
 ```

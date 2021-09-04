@@ -8,6 +8,5 @@ class GenerateParenthesesTest extends AnyFunSuite {
     val n = 3
     val result = GenerateParentheses.generateParenthesis(3)
     result shouldEqual (List("((()))", "(()())", "(())()", "()(())", "()()()"))
-    println(s"$result")
   }
 }

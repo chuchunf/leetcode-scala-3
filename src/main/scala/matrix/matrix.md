@@ -1,8 +1,8 @@
-package array
+# Matrix
 
-import scala.collection.mutable
 
-object SpiralMatrix {
+### 54. Spiral Matrix
+```scala
   def spiralOrder(matrix: Array[Array[Int]]): List[Int] =
     val result = mutable.ListBuffer[Int]()
     val size = matrix.length * matrix(0).length
@@ -17,4 +17,4 @@ object SpiralMatrix {
       for (j <- bottom to top by -1) if (result.length < size) result.append(matrix(j)(left)) // bottom to top, same left
       left = left + 1
     result.toList
-}
+```
