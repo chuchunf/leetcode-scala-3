@@ -172,3 +172,18 @@ Common scenarios are **find a pair/min/max/equals/closest in a range defined by 
       case _ => rp = rp - 1
     Array(lp + 1, rp + 1)
 ```
+
+### 159. Longest Substring with At Most Two Distinct Characters
+```scala
+  def lengthOfLongestSubstringTwoDistinct(s: String): Int =
+    val cache = mutable.HashSet[Char]()
+    var (max, left, right) = (0, 0, 0)
+    while left < s.length do
+      while cache.size < 2 && right < s.length do
+        cache.add(s.charAt(right))
+        right = right + 1
+      max = max.max(right - left + 1)
+      cache.remove(s.charAt(left))
+      left = left + 1
+    max
+```
