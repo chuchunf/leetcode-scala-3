@@ -62,3 +62,13 @@ Multiple pass could be used to collect more information
       Option(fast)
     }
 ```
+
+### 219. Contains Duplicate II
+```scala
+  def containsNearbyDuplicate(nums: Array[Int], k: Int): Boolean =
+    val cache = mutable.HashSet[Int]()
+    nums.zipWithIndex.find { case (num, index) => {
+      if index > k then cache.remove(nums(index - k - 1))
+      if !cache.add(num) then true else false
+    }}.isDefined
+```
