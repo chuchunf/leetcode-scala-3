@@ -8,8 +8,7 @@ class InsertDeleteGetRandomO1() {
   private val random = new scala.util.Random
 
   def insert(value: Int): Boolean =
-    if map.contains(value) then
-      false
+    if map.contains(value) then false
     else {
       map.put(value, array.length)
       array.addOne(value)
@@ -17,8 +16,7 @@ class InsertDeleteGetRandomO1() {
     }
 
   def remove(value: Int): Boolean =
-    if !map.contains(value) then
-      false
+    if !map.contains(value) then false
     else {
       array(map.get(value).get) = array(array.length - 1)
       array.dropRight(1)

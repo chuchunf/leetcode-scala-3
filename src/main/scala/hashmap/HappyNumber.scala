@@ -9,14 +9,5 @@ object HappyNumber {
     case num if num == 1 => true
     case num if cache.contains(num) => false
     case num => cache.add(num)
-      isHappyInernal(getSum(num), cache)
-
-  private def getSum(n: Int): Int =
-    var (sum, num) = (0, n)
-    while (num != 0) {
-      val remain = num % 10
-      sum = sum + remain * remain
-      num = num / 10
-    }
-    sum
+      isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache)
 }

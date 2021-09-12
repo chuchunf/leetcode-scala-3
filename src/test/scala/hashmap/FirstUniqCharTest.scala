@@ -18,8 +18,7 @@ class FirstUniqCharTest extends AnyFunSuite {
 
   test("can throw exception if there is no unique chacter") {
     val data = "aabb"
-    assertThrows[IllegalArgumentException] {
-      FirstUniqChar.firstUniqChar(data)
-    }
+    val result = FirstUniqChar.firstUniqChar(data)
+    result shouldEqual (-1)
   }
 }
