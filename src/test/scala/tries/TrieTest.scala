@@ -21,8 +21,8 @@ class TrieTest extends AnyFunSuite {
         |    |    |    +    [e](40)
         |""".stripMargin)
 
-    var result = trie.search("i")
-    result shouldEqual (Some(10))
+    var result = trie.search("trie")
+    result shouldEqual (Some(40))
 
     trie.delete("am")
     trie.toString shouldEqual (

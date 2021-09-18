@@ -9,9 +9,10 @@ class Trie[T](var value: Option[T], var children: List[Option[Trie[T]]]) {
 
   private def search(node: Trie[T], key: String, step: Int): Option[T] =
     if key.length == step then node.value
-    else this.children(key.charAt(step) - 97) match
-      case Some(next) => search(next, key, step + 1)
-      case _ => None
+    else
+      node.children(key.charAt(step) - 97) match
+        case Some(next) => search(next, key, step + 1)
+        case _ => None
 
   private def insert(node: Trie[T], key: String, value: T, step: Int): Unit =
     if key.length == step then node.value = Option(value)
