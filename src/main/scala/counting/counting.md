@@ -26,3 +26,19 @@ Counting is a simple and effective technical when dealing with numeric arrays.
     } match
       case (m1, _, m2, _) => List(m1, m2).filter(m => nums.count(_ == m) > nums.length / 3)
 ```
+
+### 347. Top K Frequent Elements
+```scala
+  def topKFrequent(nums: Array[Int], k: Int): Array[Int] =
+    nums.foldLeft(mutable.HashMap[Int, Int]()) { case (frequencyMap, num) => {
+      frequencyMap.update(num, frequencyMap.get(num).getOrElse(0) + 1)
+      frequencyMap
+    }}.foldLeft(Array.fill(nums.length + 1)(mutable.ListBuffer[Int]())) { case (bucket, (num, counts)) => {
+      bucket(counts).addOne(num)
+      bucket
+    }}.foldRight(mutable.ListBuffer[Int]()) { case (result, nums) => {
+      result.addAll(nums)
+      result
+    }}.takeRight(k)
+      .toArray
+```
