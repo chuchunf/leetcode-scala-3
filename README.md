@@ -20,7 +20,7 @@ Solutions of selected LeetCode problems in Scala 3.
 | [String](src/main/scala/string/string.md) | <ul><li>6. ZigZag Conversion</li><li>14. Longest Common Prefix</li><li>763. Partition Labels</li><li>161. One Edit Distance</li><li>165. Compare Version Numbers</li><li>30. Substring with Concatenation of All Words</li><li>76. Minimum Window Substring</li><li>415. Add Strings</li></ul> |
 | [Tries](src/main/scala/tries/tries.md) | <ul><li>208. Implement Tries</li><li>139. Word Break</li><li>140. Word Break 2</li><li>212. Word Search 2</li><li>1065. Index Pairs of a String</li></ul> |
 | [Number](src/main/scala/number/number.md) | <ul><li>7. Reverse Integer</li><li>9. Palindrome Number</li><li>43. Multiply Strings</li></ul> |
-| [Counting](src/main/scala/counting/counting.md) | <ul><li>169. Majority Element</li><li>229. Majority Element 2</li><li>347. Top K Frequent Elements</li></ul> |
+| [Counting](src/main/scala/counting/counting.md) | <ul><li>169. Majority Element</li><li>229. Majority Element 2</li><li>347. Top K Frequent Elements</li><li>358. Rearrange String k Distance Apart</li></ul> |
 | [Array](src/main/scala/array/array.md) | <ul><li>26. Remove Duplicates from Sorted Array</li><li>88. Merge Sorted Array</li><li>78. Subsets</li><li>945. Minimum Increment to Make Array Unique</li><li>121. Best Time to Buy and Sell Stock</li><li>125. Valid Palindrome</li><li>151. Reverse Words in a String</li><li>189. Rotate Array</li><li>680. Valid Palindrome II</li></ul> |
 | [Matrix](src/main/scala/matrix/matrix.md) | <ul><li>54. Spiral Matrix</li></ul> |
 | [Stack](src/main/scala/stack/stack.md) | <ul><li>155. Min Stack</li><li>20. Valid Parentheses</li><li>901. Online Stock Span</li><li>581. Shortest Unsorted Continuous Subarray</li></ul> |
