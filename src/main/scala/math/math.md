@@ -38,3 +38,13 @@
     case (in, pow) if pow % 2 == 0 => myPow(in * in, pow / 2)
     case (in, pow) => in * myPow(in * in, (pow - 1) / 2)
 ```
+
+### 96. Unique Binary Search Trees
+The recursive formula for G(n)<br>
+G(n) = G(0) * G(n-1) + G(1) * G(n-2) + … + G(n-1) * G(0)
+```scala
+  def numTrees(n: Int): Int = n match
+    case 0 => 1
+    case n if n <= 2 => n
+    case n => (0 until n).foldRight(0) { case (num, acc) => acc + numTrees(num) * numTrees(n - 1 - num) }
+```
