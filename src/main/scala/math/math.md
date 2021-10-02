@@ -48,3 +48,21 @@ G(n) = G(0) * G(n-1) + G(1) * G(n-2) + … + G(n-1) * G(0)
     case n if n <= 2 => n
     case n => (0 until n).foldRight(0) { case (num, acc) => acc + numTrees(num) * numTrees(n - 1 - num) }
 ```
+
+### 149. Max Points on a Line
+```scala
+  def maxPoints(points: Array[Array[Int]]): Int =
+    points.foldLeft(0) { case (max, point) =>
+      val cache = mutable.HashMap[((Int, Int), (Int, Int)), Int]()
+      points.foldLeft(max) {
+        case (max2, point2) if point == point2 => max2
+        case (max2, point2) =>
+          val a = if point2(0) == point(0) then (0, 0) else
+            ((point2(1) - point(1)) / (point2(0) - point(0)), (point2(1) - point(1)) % (point2(0) - point(0)))
+          val b = if point2(0) == point(0) then (0, 0) else
+            ((point2(0) * point(1) - point(0) * point2(1)) / (point2(0) - point(0)), (point2(0) * point(1) + point(0) * point2(1)) % (point2(0) - point(0)))
+          cache.update((a, b), cache.get((a, b)).getOrElse(0) + 1)
+          max2.max(cache.get((a, b)).get + 1)
+      }
+    }
+```
