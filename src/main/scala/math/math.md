@@ -108,3 +108,9 @@ function need to be called recursively, for 25 (5*5), 125 (5*5*5)
     case 0 => ""
     case num => convertToTitle(columnNumber / 26) + ((columnNumber % 26) + 64).toChar
 ```
+
+### 171. Excel Sheet Column Number
+```scala
+  def titleToNumber(columnTitle: String): Int =
+    columnTitle.foldLeft(0) { case (sum, char) => sum * 26 + (char - 'A'.toInt + 1) }
+```
