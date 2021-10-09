@@ -1,6 +1,5 @@
 package math
 
-// 172. Factorial Trailing Zeroes
 object FactorialTrailingZeroes {
   def trailingZeroes(n: Int): Int = n match
     case 0 => 0

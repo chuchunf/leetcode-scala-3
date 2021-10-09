@@ -101,3 +101,10 @@ function need to be called recursively, for 25 (5*5), 125 (5*5*5)
     case 0=> 0
     case num => num / 5 + trailingZeroes(num / 5)
 ```
+
+### 168. Excel Sheet Column Title
+```scala
+  def convertToTitle(columnNumber: Int): String = columnNumber match
+    case 0 => ""
+    case num => convertToTitle(columnNumber / 26) + ((columnNumber % 26) + 64).toChar
+```
