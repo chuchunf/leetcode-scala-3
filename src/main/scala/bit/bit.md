@@ -32,3 +32,23 @@
       count = 0
     result * sign
 ```
+
+### 78. Subsets
+Bit manipulation for array less than 32, back tracking could also be used.
+Explanation, assume for array of (1, 2), there will be 4 combinations, expressed as bit:
+
+|Index| Bit | Element selected by index|
+|---|---|---|
+|0 | 0000 0000 | () |
+|1 | 0000 0001 | (1) |
+|2 | 0000 0010 | (2) |
+|3 | 0000 0011 | (1,2) |
+```scala
+  def subsets(nums: Array[Int]): List[List[Int]] =
+    (0 until 1 << nums.length).collect[List[Int]] { case i1 =>
+      nums.zipWithIndex
+        .filter { case (num, i2) => (i1 & (1 << i2)) != 0 }
+        .map(_._1)
+        .toList
+    }.toList
+```
