@@ -66,3 +66,8 @@ Recursive pattern, array of n consist array of (n-1) and reverse of array (n-1) 
     case 1 => List(0, 1)
     case num => grayCode(num - 1) ::: grayCode(num - 1).reverse.map(_ | (1 << (num - 1)))
 ```
+
+### 136. Single Number
+```scala
+  def singleNumber(nums: Array[Int]): Int = nums.reduceLeft { case (acc, num) => acc ^ num }
+```
