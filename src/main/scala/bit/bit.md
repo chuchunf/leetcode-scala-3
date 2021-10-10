@@ -71,3 +71,16 @@ Recursive pattern, array of n consist array of (n-1) and reverse of array (n-1) 
 ```scala
   def singleNumber(nums: Array[Int]): Int = nums.reduceLeft { case (acc, num) => acc ^ num }
 ```
+
+### 137. Single Number 2
+A Hashmap could be used to count the number of occurrence of any number in the array.
+Since additional data structure is not allow, a single Int is used as the result holder, check all 32 bits for all the number in the array.
+Then set the bit back to the holder for all the 32 bits to get the final result.
+```scala
+  def singleNumber(nums: Array[Int]): Int =
+    (0 to 31).foldLeft(0) { case (result, shift) =>
+      nums.foldLeft(0) { case (count, num) =>
+        if ((num >> shift) & 1) == 1 then (count + 1) % 3 else count
+      } << shift | result
+    }
+```
