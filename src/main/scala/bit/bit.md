@@ -102,3 +102,8 @@ Then set the bit back to the holder for all the 32 bits to get the final result.
 ```scala
   def reverseBits(x: Int): Int = (0 to 31).foldLeft(0) { case (result, index) => (result << 1) | (x >> index & 1) }
 ```
+
+### 191. Number of 1 Bits
+```scala
+  def hammingWeight(n: Int): Int = (0 to 31).count(i => ((n >>> i) & 1) == 1)
+```
