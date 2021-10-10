@@ -47,8 +47,22 @@ Explanation, assume for array of (1, 2), there will be 4 combinations, expressed
   def subsets(nums: Array[Int]): List[List[Int]] =
     (0 until 1 << nums.length).collect[List[Int]] { case i1 =>
       nums.zipWithIndex
-        .filter { case (num, i2) => (i1 & (1 << i2)) != 0 }
+        .filter { case (_, i2) => (i1 & (1 << i2)) != 0 }
         .map(_._1)
         .toList
     }.toList
+```
+
+### 89. Gray Code
+Recursive pattern, array of n consist array of (n-1) and reverse of array (n-1) with nth bit toggle to 1 
+
+|Number| n-1 part | reverse of n-1 part with nth bit toggled | result |
+|---|---|---|---|
+|1 |  |  | 0 1 |
+|2 | 00 01 | 11 10 | 0 1 3 2 |
+|2 | 000 001 011 010 | 110 111 101 100 | 0 1 3 2 6 7 5 4 |
+```scala
+  def grayCode(n: Int): List[Int] = n match
+    case 1 => List(0, 1)
+    case num => grayCode(num - 1) ::: grayCode(num - 1).reverse.map(_ | (1 << (num - 1)))
 ```
