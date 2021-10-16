@@ -18,3 +18,14 @@
       left = left + 1
     result.toList
 ```
+
+### 36. Valid Sudoku
+```scala
+    val (rows, cols, sqrs) = (List.fill(9)(mutable.HashSet[Char]()), List.fill(9)(mutable.HashSet[Char]()), List.fill(9)(mutable.HashSet[Char]()))
+    board.zipWithIndex.find { case (line, row) =>
+      line.zipWithIndex.find {
+        case ('.', _) => false
+        case (char, col) => !rows(row).add(char) || !cols(col).add(char) || !sqrs((row / 3) * 3 + col / 3).add(char)
+      }.isDefined
+    }.isEmpty
+```
