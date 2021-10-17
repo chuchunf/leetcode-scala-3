@@ -1,37 +1,8 @@
-# Matrix
+package matrix
 
+import scala.collection.mutable
 
-### 54. Spiral Matrix
-```scala
-  def spiralOrder(matrix: Array[Array[Int]]): List[Int] =
-    val result = mutable.ListBuffer[Int]()
-    val size = matrix.length * matrix(0).length
-    var (left, right, top, bottom) = (0, matrix(0).length - 1, 0, matrix.length - 1)
-    while (result.length < size)
-      for (i <- left to right) if (result.length < size) result.append(matrix(top)(i)) // left to right, same top
-      top = top + 1
-      for (j <- top to bottom) if (result.length < size) result.append(matrix(j)(right)) // top to bottom, same right
-      right = right - 1
-      for (i <- right to left by -1) if (result.length < size) result.append(matrix(bottom)(i)) // right to left, same bottom
-      bottom = bottom - 1
-      for (j <- bottom to top by -1) if (result.length < size) result.append(matrix(j)(left)) // bottom to top, same left
-      left = left + 1
-    result.toList
-```
-
-### 36. Valid Sudoku
-```scala
-    val (rows, cols, sqrs) = (List.fill(9)(mutable.HashSet[Char]()), List.fill(9)(mutable.HashSet[Char]()), List.fill(9)(mutable.HashSet[Char]()))
-    board.zipWithIndex.find { case (line, row) =>
-      line.zipWithIndex.find {
-        case ('.', _) => false
-        case (char, col) => !rows(row).add(char) || !cols(col).add(char) || !sqrs((row / 3) * 3 + col / 3).add(char)
-      }.isDefined
-    }.isEmpty
-```
-
-### 37. Sudoku Solver
-```scala
+object SudokuSolver {
   def solveSudoku(board: Array[Array[Char]]): Unit =
     val (rows, cols, sqrs) = (List.fill(9)(mutable.HashSet[Char]()), List.fill(9)(mutable.HashSet[Char]()), List.fill(9)(mutable.HashSet[Char]()))
     for (r <- 0 until 9; c <- 0 until 9) addChar(r, c, board, board(r)(c), rows, cols, sqrs)
@@ -65,4 +36,4 @@
     sqrs((r / 3) * 3 + c / 3).remove(board(r)(c))
     board(r)(c) = '.'
     false
-```
+}
