@@ -115,3 +115,16 @@ and first column and first row need to be handled specially
     if row0 then for (r <- 0 until matrix.length) matrix(r)(0) = 0
     if col0 then for (c <- 0 until matrix(0).length) matrix(0)(c) = 0
 ```
+
+### 74. Search a 2D Matrix
+```scala
+  def searchMatrix(matrix: Array[Array[Int]], target: Int): Boolean =
+    val (rows, cols) = (matrix.length, matrix(0).length)
+    var (mini, maxi) = (0, rows * cols - 1)
+    while mini <= maxi do
+      val midi = mini + (maxi - mini) / 2
+      if target > matrix(midi / cols)(midi % cols) then mini = midi + 1
+      else if target < matrix(midi / cols)(midi % cols) then maxi = midi - 1
+      else return true
+    false
+```
