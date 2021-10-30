@@ -35,3 +35,14 @@ class RangeSumQueryImmutable(nums: Array[Int]) {
       case Some(_, i) => i
       case _ => -1
 ```
+
+### 536. Continuous Subarray Sum
+```scala
+  def checkSubarraySum(nums: Array[Int], k: Int): Boolean =
+    val cache = mutable.HashSet[Int]()
+    var sum = 0
+    nums.find { num =>
+      sum = sum + num
+      !cache.add(sum % k)
+    }.isDefined
+```
