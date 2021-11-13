@@ -3,14 +3,17 @@
 Solutions of selected LeetCode problems in Scala 3.
 
 ### Goal
+
 - Learn Scala 3 :)
 - Practise Algorithm :)
 
 ### Code
-- try to be compact and readable at the same time
-- try Scala 3 syntax and features but less Scala specific libraries  
 
-### Solutions 
+- try to be compact and readable at the same time
+- try Scala 3 syntax and features but less Scala specific libraries
+
+### Solutions
+
 | Topic | Problem List |
 | ------ | ------------ |
 | [Hashmap](src/main/scala/hashmap/hashmap.md) | <ul><li>1. Two Sum</li><li>387. First unique character in a string</li><li>202. Happy Number</li><li>380. Insert Delete GetRandom O(1)</li><li>205. Isomorphic Strings</li><li>299. Bulls and Cows</li><li>554. Brick Wall</li></ul> |
@@ -27,6 +30,7 @@ Solutions of selected LeetCode problems in Scala 3.
 | [Matrix](src/main/scala/matrix/matrix.md) | <ul><li>54. Spiral Matrix</li><li>36. Valid Sudoku</li><li>37. Sudoku Solver</li><li>48. Rotate Image</li><li>59. Spiral Matrix II</li><li>73. Set Matrix Zero</li><li>74. Search a 2D Matrix</li></ul> |
 | [Prefix Sum](src/main/scala/prefixsum/prefixsum.md) | <ul><li>238. Product of Array Except Self</li><li>303. Range Sum Query - Immutable</li><li>724. Find Pivot Index</li><li>536. Continuous Subarray Sum</li></ul> |
 | [Stack](src/main/scala/stack/stack.md) | <ul><li>155. Min Stack</li><li>20. Valid Parentheses</li><li>901. Online Stock Span</li><li>581. Shortest Unsorted Continuous Sub array</li><li>150. Evaluate Reverse Polish Notation</li><li>32. Longest Valid Parentheses</li><li>71. Simplify Path</li></ul> |
+| [Queue](src/main/scala/queue/queue.md) | <ul><li>225. Implement Stack using Queues</li></ul> |
 | [Sort](src/main/scala/sort/sort.md) | <ul><li>148. Sort List</li></ul> |
 | [Tree](src/main/scala/tree/tree.md) | <ul><li>144. Binary Tree Preorder Traversal</li><li>94. Binary Tree Inorder Traversal</li><li>145. Binary Tree Postorder Traversal</li><li>102. Binary Tree Level Order Traversal</li><li>110. Balanced Binary Tree</li><li>101. Symmetric Tree</li><li>104. Maximum Depth of Binary Tree</li><li>226. Invert Binary Tree</li><li>236. Lowest Common Ancestor of a Binary Tree</li></ul> |
 | [Binary Search Tree](src/main/scala/bst/bst.md) | <ul><li>98. Validate Binary Search Tree</li><li>450. Delete Node in a BST</li><li>701. Insert into a Binary Search Tree</li></ul> |
