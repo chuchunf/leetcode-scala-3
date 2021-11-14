@@ -24,3 +24,27 @@ class MyStack[T <: Comparable[T]] {
   def empty(): Boolean = q1.isEmpty && q2.isEmpty
 }
 ```
+
+### 232. Implement Queue Using Stacks
+```scala
+class MyQueue[T] {
+  private val input = mutable.Stack[T]()
+  private val output = mutable.Stack[T]()
+
+  def push(x: T): Unit = input.push(x)
+
+  def pop(): T =
+    this.peek()
+
+  output.pop()
+
+  def peek(): T =
+    if output.isEmpty then
+
+  while !input.isEmpty
+  do output.push(input.pop())
+  output.head
+
+  def empty(): Boolean = input.isEmpty && output.isEmpty
+}
+```
