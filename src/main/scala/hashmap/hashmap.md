@@ -8,9 +8,9 @@ HashMap could effectively change the complexity **from loop O(n) to lookup O(1)*
 - First non-repeating character: the character is known;
 - Happy number: The list of unhappy number built along the way is known.
 
-The key idea of Hash Table is to use a hash function to map keys to buckets.
+The key idea of HashMap is to use a hash function to map keys to buckets.
 
-Hashmap is also an effective way to hold discrete key or non-number key for easy processing
+Hashmap is also an effective way to hold/group discrete keys or non-number keys for easy processing
 
 - Isomorphic Strings: char from source string and char from target string as key
 - Bulls and Cows: char from source string and char from target string as key
@@ -24,10 +24,10 @@ If the keys are continuous number values (e.g. char value could be converted int
     val cache = mutable.Map[Int, Int]()
     nums.zipWithIndex.find { case (value, index) => cache.get(target - value) match
       case Some(_) => true
-      case _ => cache.put(value, index); false
+      case _ => cache.put(value, index).isDefined
     } match
-    case Some((num, index)) => Array(cache.get(target - num).get, index)
-    case _ => throw new IllegalArgumentException("invalid parameter, no valid result!")
+      case Some((num, index)) => Array(cache.get(target - num).get, index)
+      case _ => throw new IllegalArgumentException("invalid parameter, no valid result!")
 ```
 
 ### 387. First Unique Character in a String
@@ -47,8 +47,7 @@ If the keys are continuous number values (e.g. char value could be converted int
   private def isHappyInernal(n: Int, cache: mutable.Set[Int]): Boolean = n match
     case num if num == 1 => true
     case num if cache.contains(num) => false
-    case num => cache.add(num)
-      isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache)
+    case num => isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache += num)
 ```
 
 ### 380. Insert Delete GetRandom O(1)
@@ -113,9 +112,8 @@ class InsertDeleteGetRandomO1() {
 ```scala
   def leastBricks(wall: List[List[Int]]): Int =
     val cache = mutable.Map[Int, Int]()
-    wall.foreach(_.dropRight(1).foldLeft(0) { case (sum, w) => {
-      cache.update(sum + w, cache.get(sum + w).getOrElse(0) + 1)
-      sum + w
-    }})
-    wall.length - cache.foldLeft(0) { case (max, (_, v)) => { max.max(v) }}
+    wall.foreach(_.dropRight(1).foldLeft(0) { case (sum, w) =>
+      cache.updateWith(sum + w) { _ => Option(cache.get(sum + w).getOrElse(0) + 1) }.get
+    })
+    wall.length - cache.values.max
 ```

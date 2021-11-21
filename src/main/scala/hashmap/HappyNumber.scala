@@ -8,6 +8,5 @@ object HappyNumber {
   private def isHappyInernal(n: Int, cache: mutable.Set[Int]): Boolean = n match
     case num if num == 1 => true
     case num if cache.contains(num) => false
-    case num => cache.add(num)
-      isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache)
+    case num => isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache += num)
 }
