@@ -59,3 +59,17 @@ class MyQueue[T] {
       if i >= (k - 1) then (q, solution :+ nums(q.head)) else (q, solution)
     }._2.toArray
 ```
+
+### 649. Dota2 Senate
+```scala
+  def predictPartyVictory(senate: String): String =
+    val (qr, qd) = (mutable.ArrayDeque[Int](), mutable.ArrayDeque[Int]())
+    senate.zipWithIndex.foreach {
+      case ('R', index) => qr.addOne(index)
+      case (_, index) => qd.addOne(index)
+    }
+    while !qr.isEmpty && !qd.isEmpty do
+      val (ri, di) = (qr.removeHead(), qd.removeHead())
+      if ri < di then qr.addOne(senate.length + ri) else qd.addOne(senate.length + di)
+    if qr.size > qd.size then "Radiant" else "Dire"
+```
