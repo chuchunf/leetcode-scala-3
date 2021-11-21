@@ -1,4 +1,10 @@
 # Queue
+A queue is a data structure maintaining a collection of entities in First-In-First-Out order.
+* The end of the sequence at which elements are added is called the tail, 
+* The end at which elements are removed is called the head.
+
+Theoretically, one characteristic of a queue is that it does not have a specific capacity, 
+A bounded queue is a queue limited to a fixed number of items.
 
 ### 225. Implement Stack using Queues
 ```scala

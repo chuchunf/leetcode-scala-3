@@ -36,5 +36,6 @@ Solutions of selected LeetCode problems in Scala 3.
 | [Binary Search Tree](src/main/scala/bst/bst.md) | <ul><li>98. Validate Binary Search Tree</li><li>450. Delete Node in a BST</li><li>701. Insert into a Binary Search Tree</li></ul> |
 | [Binary Search](src/main/scala/binarysearch/binarysearch.md) | <ul><li>69. Sqrt(x)</li><li>34. Find First and Last Position of Element in Sorted Array</li><li>33. Search in Rotated Sorted Array</li></ul> |
 | [Recursion](src/main/scala/recursion/recursion.md) | <ul><li>21. Merge Two Sorted Lists</li></ul> |
+| [Heap](src/main/scala/heap/heap.md) | <ul></ul> |
 | [Back Tracking](src/main/scala/backtracking/backtracking.md) | <ul><li>22. Generate Parentheses</li><li>40. Combination Sum II</li><li>46. Permutations</li><li>10. Regular Expression Matching</li></ul> |
 | [Dynamic Programming](src/main/scala/dp/dp.md) | <ul><li>70. Climbing Stairs</li><li>64. Minimum Path Sum</li><li>53. Maximum Subarray</li><li>5. Longest Palindromic Substring</li><li>174. Dungeon Game</li></ul> |
