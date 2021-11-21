@@ -109,6 +109,11 @@ class InsertDeleteGetRandomO1() {
 ```
 
 ### 554. Brick Wall
+First consider the simplest case, 1 row of bricks, the answer is 0 for each edge.
+Consider add another row, it depends on if the edges of 2nd row matching with 1st row.
+We could loop through each row and count the edges (previous wall length + current brick length), 
+and the edge with large count is where the draw could be Drawn.
+Hashmap could be used to keep track of each edge with correcponding count.
 ```scala
   def leastBricks(wall: List[List[Int]]): Int =
     val cache = mutable.Map[Int, Int]()
