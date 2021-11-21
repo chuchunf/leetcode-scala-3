@@ -1,4 +1,5 @@
 # Sort
+a collection of common sort algorithms and sort related problems
 
 ### 148. Sort List
 merge sort, divide and merge (sort)
@@ -32,4 +33,12 @@ merge sort, divide and merge (sort)
     if l1p.isDefined then p.next = l1p
     if l2p.isDefined then p.next = l2p
     tmp.next.get
+```
+
+### 49. Group Anagrams
+```scala
+  def groupAnagrams(strs: Array[String]): List[List[String]] =
+    val cache = mutable.HashMap[String, List[String]]()
+    strs.foreach { str => cache.update(str.sorted, cache.getOrElse(str.sorted, List.empty[String]) :+ str) }
+    cache.values.toList
 ```
