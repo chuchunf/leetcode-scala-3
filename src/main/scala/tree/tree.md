@@ -111,6 +111,13 @@ A tree is an abstract data type representing a hierarchical structure, with a ro
   })
 ```
 
+### 111. Minimum Depth of Binary Tree
+```scala
+  def minDepth(root: TreeNode[Int]): Int = (root.left, root.right) match
+    case (Some(lnode), Some(rnode)) => 1 + minDepth(lnode).min(minDepth(rnode))
+    case _ => 1
+```
+
 ### 226. Invert Binary Tree
 ```scala
   def invertTree(root: TreeNode[Int]): TreeNode[Int] =
