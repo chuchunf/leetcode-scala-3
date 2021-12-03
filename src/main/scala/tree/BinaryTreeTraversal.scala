@@ -47,4 +47,21 @@ object BinaryTreeTraversal {
       cache = nextcache
       result.append(line.toList)
     result.toList
+
+  def zigzagLevelOrder(root: TreeNode[Int]): List[List[Int]] =
+    val result = mutable.ListBuffer[List[Int]]()
+    var (cache, zigzag) = (mutable.ListBuffer[TreeNode[Int]](root), true)
+    while !cache.isEmpty do
+      val line = mutable.ListBuffer[Int]()
+      val nextcache = mutable.ListBuffer[TreeNode[Int]]()
+      if zigzag then cache = cache.reverse
+      zigzag = !zigzag
+      cache.foreach(node => {
+        line.append(node.value)
+        if node.left.isDefined then nextcache.append(node.left.get)
+        if node.right.isDefined then nextcache.append(node.right.get)
+      })
+      cache = nextcache
+      result.append(line.toList)
+    result.toList
 }

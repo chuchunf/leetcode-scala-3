@@ -1,7 +1,7 @@
 package tree
 
 import org.scalatest.funsuite.AnyFunSuite
-import org.scalatest.matchers.should.Matchers._
+import org.scalatest.matchers.should.Matchers.*
 
 class BinaryTreeTraversalTest extends AnyFunSuite {
   def getTestData: TreeNode[Int] =
@@ -35,5 +35,11 @@ class BinaryTreeTraversalTest extends AnyFunSuite {
     val root = getTestData
     val result = BinaryTreeTraversal.levelOrder(root)
     result shouldEqual (List(List(1), List(2, 3), List(4, 5)))
+  }
+
+  test("can do zigzag traversal") {
+    val root = getTestData
+    val result = BinaryTreeTraversal.zigzagLevelOrder(root)
+    result shouldEqual (List(List(1), List(2, 3), List(5, 4)))
   }
 }
