@@ -3,11 +3,11 @@ package tree
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers.*
 
-class ConstructBinaryTreefromPreorderandInorderTest extends AnyFunSuite {
+class ConstructBinaryTreefromInorderandPostorderTest extends AnyFunSuite {
   test("can construct tree") {
-    val pre = Array(3, 9, 20, 15, 7)
     val in = Array(9, 3, 15, 20, 7)
-    var root = ConstructBinaryTreefromPreorderandInorder.buildTree(pre, in)
+    val post = Array(9, 15, 7, 20, 3)
+    var root = ConstructBinaryTreefromInorderandPostorder.buildTree(in, post)
     root.value shouldEqual (3)
     root.left.get.value shouldEqual (9)
     root = root.right.get
