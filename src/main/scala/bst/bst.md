@@ -49,8 +49,7 @@ Binary Search Tree is a node-based binary tree data structure which has the foll
     root
 ```
 
-100. Same Tree
-###
+### 100. Same Tree
 ```scala
   def isSameTree(p: TreeNode[Int], q: TreeNode[Int]): Boolean = _isSameTree(Option(p), Option(q))
 
@@ -58,4 +57,13 @@ Binary Search Tree is a node-based binary tree data structure which has the foll
     case (None, None) => true
     case (None, Some(_)) | (Some(_), None) => false
     case (Some(rp), Some(rq)) => rp.value == rq.value && _isSameTree(rp.right, rq.right) && _isSameTree(rp.left, rq.left)
+```
+
+### 108. Convert Sorted Array to Binary Search Tree
+```scala
+  def sortedArrayToBST(nums: Array[Int]): TreeNode[Int] = nums.length match
+    case 1 => TreeNode[Int](nums(0))
+    case 2 => new TreeNode[Int](nums(0), None, Option(TreeNode[Int](nums(1))))
+    case len => val mid = len / 2
+      new TreeNode[Int](nums(mid), Option(sortedArrayToBST(nums.slice(0, mid))), Option(sortedArrayToBST(nums.slice(mid + 1, nums.length))))
 ```
