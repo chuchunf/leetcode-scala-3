@@ -67,3 +67,22 @@ Binary Search Tree is a node-based binary tree data structure which has the foll
     case len => val mid = len / 2
       new TreeNode[Int](nums(mid), Option(sortedArrayToBST(nums.slice(0, mid))), Option(sortedArrayToBST(nums.slice(mid + 1, nums.length))))
 ```
+### 99. Recover Binary Search Tree
+For a valid BST, the in order search will be sorted
+```scala
+  private var (first, second, prev): (Option[TreeNode[Int]], Option[TreeNode[Int]], Option[TreeNode[Int]]) = (None, None, None)
+
+  def recoverTree(root: TreeNode[Int]): Unit =
+    _traverse(root)
+    val (firstElm, secondElm) = (first.get, second.get)
+    val tmp = firstElm.value
+    firstElm.value = secondElm.value
+    secondElm.value = tmp
+
+  private def _traverse(root: TreeNode[Int]): Unit =
+    if root.left.isDefined then _traverse(root.left.get)
+    if first.isEmpty && (prev.isDefined && prev.get.value > root.value) then first = Option(prev.get)
+    if first.isDefined && (prev.isDefined && prev.get.value > root.value) then second = Option(root)
+    prev = Option(root)
+    if root.right.isDefined then _traverse(root.right.get)
+```
