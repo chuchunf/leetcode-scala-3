@@ -58,3 +58,15 @@ It compares the target value to the middle element of the array. If they are not
     }
     low
 ```
+
+### 278. First Bad Version
+```scala
+  def firstBadVersion(n: Int): Int =
+    var (low, high) = (1, n)
+    while low < high do {
+      val mid = low + (high - low) / 2
+      if !isBadVersion(mid) then low = mid + 1
+      else high = mid
+    }
+    low
+```
