@@ -109,3 +109,11 @@ class BinarySearchTreeIterator(_root: TreeNode[Int]) {
   def hasNext(): Boolean = _list.nonEmpty
 }
 ```
+
+### 235. Lowest Common Ancestor of a Binary Search Tree
+```scala
+  def lowestCommonAncestor(root: TreeNode[Int], p: TreeNode[Int], q: TreeNode[Int]): TreeNode[Int] =
+    if root.value > p.value && root.value > q.value then lowestCommonAncestor(root.left.get, p, q)
+    else if root.value < p.value && root.value < q.value then lowestCommonAncestor(root.right.get, q, q)
+    else root
+```
