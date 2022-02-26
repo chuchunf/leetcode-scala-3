@@ -46,6 +46,21 @@ It compares the target value to the middle element of the array. If they are not
     -1
 ```
 
+### 81. Search in Rotated Sorted Array II
+```scala
+  def search(nums: Array[Int], target: Int): Boolean =
+    var (low, high) = (0, nums.length)
+    while low <= high do {
+      val mid = low + (high - low) / 2
+      if target == nums(mid) then return true
+      else if target < nums(mid) then
+        if nums(high) < target then high = mid - 1 else low = mid + 1
+      else
+        if nums(low) > target then low = mid + 1 else high = mid - 1
+    }
+    false
+```
+
 ### 35. Search Insert Position
 ```scala
   def searchInsert(nums: Array[Int], target: Int): Int =
