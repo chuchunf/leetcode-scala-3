@@ -61,6 +61,18 @@ It compares the target value to the middle element of the array. If they are not
     false
 ```
 
+### 153. Find Minimum in Rotated Sorted Array
+```scala
+  def findMin(nums: Array[Int]): Int =
+    var (low, high) = (0, nums.length - 1)
+    while low < high do {
+      val mid = low + (high - low) / 2
+      if nums(mid) > nums(high) then low = mid + 1
+      else high = mid
+    }
+    nums(high)
+```
+
 ### 35. Search Insert Position
 ```scala
   def searchInsert(nums: Array[Int], target: Int): Int =
