@@ -1,4 +1,4 @@
-Depth first search
+# Depth first search
 
 ### 112. Path Sum
 ```scala
