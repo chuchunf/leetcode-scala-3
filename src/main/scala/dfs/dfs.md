@@ -33,3 +33,16 @@ Depth first search
     val right = if node.right.isDefined then _sumNumbers(node.right.get, sum) else 0
     if left == 0 && right == 0 then sum else left + right
 ```
+
+### 156. Binary Tree upside Down
+```scala
+  def upsideDownBinaryTree(root: TreeNode[Int]): TreeNode[Int] = (root.left, root.right) match
+    case (Some(left), Some(right)) =>
+      val result = if left.left.isDefined then upsideDownBinaryTree(left) else left
+      left.left = Option(right)
+      left.right = Option(root)
+      root.left = None
+      root.right = None
+      result
+    case (_, _) => root
+```
