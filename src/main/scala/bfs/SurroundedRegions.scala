@@ -1,26 +1,8 @@
-# Breadth First Search
+package bfs
 
-### 127. Word Ladder
-```scala
-  def ladderLength(beginWord: String, endWord: String, wordList: List[String]): Int =
-    _ladderLength(beginWord, endWord, mutable.HashSet().addAll(wordList), 0)
+import scala.collection.mutable
 
-  private def _ladderLength(begin: String, end: String, words: mutable.HashSet[String], len: Int): Int =
-    if begin.equals(end) then return len + 1
-    words.filter(word => {1 == begin.toCharArray.zip(word.toCharArray).filter { (c1, c2) => {c1 != c2}}.length})
-      .map(word => {
-        words.remove(word)
-        val result = _ladderLength(word, end, words, 1 + len)
-        words.add(word)
-        result
-      })
-      .filter(_!=0)
-      .minOption
-      .getOrElse(0)
-```
-
-### 130. Surrounded Regions
-```scala
+object SurroundedRegions {
   def solve(board: Array[Array[Char]]): Unit =
     val q = mutable.Queue[(Int, Int)]()
     board.zipWithIndex.foreach { case (line, x) =>
@@ -42,4 +24,4 @@
         if char == '.' then board(x)(y) = 'O'
       }
     }
-```
+}
