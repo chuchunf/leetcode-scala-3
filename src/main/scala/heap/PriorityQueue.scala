@@ -1,19 +1,26 @@
 package heap
 
+import scala.collection.mutable
+
 class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boolean = (a, b) => a > b) {
   private val queue = new Array[Element[T]](capacity)
+  private val visited = new mutable.HashSet[T]()
   private var size = 0
 
-  def offer(e: T, priority: Int): Unit =
-    val element = Element(e, priority)
-    var pos = size
-    queue(pos) = element
-    while pos != 0 && compare(element.priority, queue(parent(pos)).priority) do {
-      swap(pos, parent(pos))
-      pos = parent(pos)
+  def offer(e: T, priority: Int): Boolean =
+    if visited.contains(e) then false else {
+      visited.addOne(e)
+      val element = Element(e, priority)
+      var pos = size
+      queue(pos) = element
+      while pos != 0 && compare(element.priority, queue(parent(pos)).priority) do {
+        swap(pos, parent(pos))
+        pos = parent(pos)
+      }
+      queue(pos) = element
+      size = size + 1
+      true
     }
-    queue(pos) = element
-    size = size + 1
 
   def poll(): T =
     val root = queue(0)
