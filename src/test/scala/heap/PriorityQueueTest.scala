@@ -11,9 +11,27 @@ class PriorityQueueTest extends AnyFunSuite {
     pq.offer(4, 4)
     pq.offer(3, 3)
     pq.offer(2, 2)
+
+    pq.length() shouldEqual 4
+
     pq.poll() shouldEqual 4
     pq.poll() shouldEqual 3
     pq.poll() shouldEqual 2
     pq.poll() shouldEqual 1
+  }
+
+  test("can function as min priority queue") {
+    val pq = new PriorityQueue[Int](128, (a, b) => a < b)
+    pq.offer(1, 1)
+    pq.offer(4, 4)
+    pq.offer(3, 3)
+    pq.offer(2, 2)
+
+    pq.length() shouldEqual 4
+
+    pq.poll() shouldEqual 1
+    pq.poll() shouldEqual 2
+    pq.poll() shouldEqual 3
+    pq.poll() shouldEqual 4
   }
 }

@@ -1,6 +1,6 @@
 package heap
 
-class PriorityQueue[T](var capacity: Int = 128) {
+class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boolean = (a, b) => a > b) {
   private val queue = new Array[Element[T]](capacity)
   private var size = 0
 
@@ -8,7 +8,7 @@ class PriorityQueue[T](var capacity: Int = 128) {
     val element = Element(e, priority)
     var pos = size
     queue(pos) = element
-    while pos != 0 && element.priority > queue(parent(pos)).priority do {
+    while pos != 0 && compare(element.priority, queue(parent(pos)).priority) do {
       swap(pos, parent(pos))
       pos = parent(pos)
     }
@@ -23,11 +23,13 @@ class PriorityQueue[T](var capacity: Int = 128) {
     heapify(0)
     root.e
 
+  def length(): Int = size
+
   private def heapify(i: Int): Unit =
     val (l, r) = (left(i), right(i))
     var smallest = i
-    if l < size && queue(l).priority > queue(i).priority then smallest = l
-    if r < size && queue(r).priority > queue(smallest).priority then smallest = r
+    if l < size && compare(queue(l).priority, queue(i).priority) then smallest = l
+    if r < size && compare(queue(r).priority, queue(smallest).priority) then smallest = r
     if smallest != i then {
       swap(smallest, i)
       heapify(smallest)
