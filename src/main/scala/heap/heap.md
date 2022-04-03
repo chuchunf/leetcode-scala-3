@@ -34,3 +34,11 @@ or when insertions need to be interspersed with removals of the root node.
       }
       last
 ```
+
+### 215. Kth Largest Element in an Array
+```scala
+  def findKthLargest(nums: Array[Int], k: Int): Int =
+    val pq = new PriorityQueue[Int](unique = false)
+    nums.foreach(num => pq.offer(num, num))
+    (0 until k).map(_ => pq.poll()).last
+```
