@@ -81,3 +81,19 @@ Implement the recursion function
       nums.remove(i)
       _getPermutation(n - 1, k % factorial(n - 2), factorial, nums, buffer + num.toString)
 ```
+
+### 23. Merge K Sorted List
+```scala
+  def mergeKLists(lists: Array[LinkedListNode[Int]]): LinkedListNode[Int] = _mergeKLists(lists.map(Option(_))).get
+
+  private def _mergeKLists(lists: Array[Option[LinkedListNode[Int]]]): Option[LinkedListNode[Int]] =
+    if lists.isEmpty then None else {
+      val min = lists.zipWithIndex.foldLeft(0) { case (curr, (node, index)) =>
+        if node.get.value < lists(curr).get.value then index else curr
+      }
+      val curr = lists(min)
+      lists(min) = lists(min).get.next
+      curr.get.next = _mergeKLists(lists.filter(_.isDefined))
+      curr
+    }
+```
