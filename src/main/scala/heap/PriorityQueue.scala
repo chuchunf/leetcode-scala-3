@@ -32,6 +32,8 @@ class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boole
 
   def length(): Int = size
 
+  def isEmpty(): Boolean = size == 0
+
   private def heapify(i: Int): Unit =
     val (l, r) = (left(i), right(i))
     var smallest = i
