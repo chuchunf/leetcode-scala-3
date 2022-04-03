@@ -2,13 +2,13 @@ package heap
 
 import scala.collection.mutable
 
-class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boolean = (a, b) => a > b) {
+class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boolean = (a, b) => a > b, unique: Boolean = true) {
   private val queue = new Array[Element[T]](capacity)
   private val visited = new mutable.HashSet[T]()
   private var size = 0
 
   def offer(e: T, priority: Int): Boolean =
-    if visited.contains(e) then false else {
+    if unique && visited.contains(e) then false else {
       visited.addOne(e)
       val element = Element(e, priority)
       var pos = size

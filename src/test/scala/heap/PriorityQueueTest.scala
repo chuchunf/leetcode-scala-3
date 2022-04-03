@@ -42,4 +42,19 @@ class PriorityQueueTest extends AnyFunSuite {
     pq.length() shouldEqual 1
     pq.poll() shouldEqual 1
   }
+
+  test("can handle non-unique element") {
+    val pq = new PriorityQueue[Int](unique = false)
+    pq.offer(1, 1)
+    pq.offer(4, 4)
+    pq.offer(3, 3)
+    pq.offer(1, 1)
+
+    pq.length() shouldEqual 4
+
+    pq.poll() shouldEqual 4
+    pq.poll() shouldEqual 3
+    pq.poll() shouldEqual 1
+    pq.poll() shouldEqual 1
+  }
 }
