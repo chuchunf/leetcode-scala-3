@@ -42,3 +42,23 @@ or when insertions need to be interspersed with removals of the root node.
     nums.foreach(num => pq.offer(num, num))
     (0 until k).map(_ => pq.poll()).last
 ```
+
+### 23. Merge K sorted list
+```scala
+  def mergeKLists2(lists: Array[LinkedListNode[Int]]): LinkedListNode[Int] =
+    val pg = new PriorityQueue[LinkedListNode[Int]](128, (a: Int, b: Int) => a < b)
+    for (i <- 0 until lists.length) {
+      var node = Option(lists(i))
+      while node.isDefined do
+        pg.offer(node.get, node.get.value)
+        node = node.get.next
+    }
+    val tmp = new LinkedListNode[Int](0, None)
+    var curr = tmp
+    while !pg.isEmpty() do {
+      curr.next = Option(pg.poll())
+      curr = curr.next.get
+    }
+    curr.next = None
+    tmp.next.get
+```
