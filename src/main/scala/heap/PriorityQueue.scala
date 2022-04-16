@@ -22,6 +22,8 @@ class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boole
       true
     }
 
+  def peek(): T = queue(0).e
+
   def poll(): T =
     val root = queue(0)
     size = size - 1
