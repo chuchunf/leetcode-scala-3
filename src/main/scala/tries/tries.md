@@ -1,8 +1,12 @@
 # Tries
 Tries (aka digital tree, prefix tree) is a tree data-structure that are based on the prefix of a string. 
 They are used to represent the “Retrieval” of data and thus the name Trie. 
-A Trie is a special data structure used to store strings that can be visualized like a graph. 
-It consists of nodes and edges
+* A Trie is a special data structure used to store strings that can be visualized like a graph.
+* It consists of nodes and edges 
+* It maintains a list of children node indexed by the ASCII value directly, search, lookup and delete 1 level/step a time
+
+Tries could replace Hashtable for String as it has no hash function hence no collisions.
+Tries commonly used in predictive text or autocomplete dictionaries with large number of short strings.
 
 ### 208. Implement Tries
 ```scala

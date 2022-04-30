@@ -1,4 +1,9 @@
 # Array
+Array is a container which can hold a fix number of items and these items should be of the same type.
+* convert from/to other 1d data structures such as linked list, queue or stack
+* foundation of 2d and high dimensional data structure such as matrix
+* implementation of hashmap, hashset, queue, stack and string
+* implementation of heap (priority queue) 
 
 ### 26. Remove Duplicates from Sorted Array
 ```scala
