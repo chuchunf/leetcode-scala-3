@@ -6,6 +6,7 @@ Recursion solves problems where the solution depends on solutions to smaller ins
 Implement the recursion function 
 - Identify recursion case => a problem could be resolved by re-apply same function
 - Assume we already find the function then identify exit condition
+- Add helper function and with additional variables to keep information
 
 ### 21. Merge Two Sorted Lists
 ```scala

@@ -1,5 +1,5 @@
 # Matrix
-
+Matrix are 2 or more dimensional arrays, similar to a one-dimensional array, but it can be visualised as a grid (or table) with rows and columns.
 
 ### 54. Spiral Matrix
 ```scala

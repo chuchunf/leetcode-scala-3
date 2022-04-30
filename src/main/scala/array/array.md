@@ -1,9 +1,14 @@
 # Array
 Array is a container which can hold a fix number of items and these items should be of the same type.
 * convert from/to other 1d data structures such as linked list, queue or stack
-* foundation of 2d and high dimensional data structure such as matrix
+* implementation of 2d and high dimensional data structure such as matrix
 * implementation of hashmap, hashset, queue, stack and string
 * implementation of heap (priority queue) 
+* implementation of dynamic memory allocation, memory pool and control table (jumper)
+
+Common approach
+* sort could simplify the 1d data structure  
+* if 1 pass could not solve a problem, try multiple pass and collect more information during each pass
 
 ### 26. Remove Duplicates from Sorted Array
 ```scala
