@@ -3,6 +3,12 @@ A queue is a data structure maintaining a collection of entities in First-In-Fir
 * The end of the sequence at which elements are added is called the tail, 
 * The end at which elements are removed is called the head.
 
+Application and tips
+* when the order of element enter/exit is significant => Dota2 Senate
+* store index not actual value
+* if one queue is not enough, use multiple queues
+* reverse the order of queue if there are reverse dependencies 
+
 Theoretically, one characteristic of a queue is that it does not have a specific capacity, 
 A bounded queue is a queue limited to a fixed number of items.
 

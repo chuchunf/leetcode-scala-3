@@ -1,4 +1,9 @@
 # Prefix Sum
+Prefix sums are the consecutive totals of the first 0, 1, 2, . . . , n elements of an array, 
+which can easily calculate the prefix sums in O(n) time complexity. 
+Notice that the total pk equals pk−1 + ak−1, so each consecutive value can be calculated in a constant time.
+Prefix Sum allows for the **O(1) calculation of sums of elements in given range**.
+The same idea could apply to prefix product.
 
 ### 238. Product of Array Except Self
 ```scala

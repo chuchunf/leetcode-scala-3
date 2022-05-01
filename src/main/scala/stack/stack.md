@@ -12,6 +12,9 @@ Additionally, a peek operation may give access to the top without modifying the 
   - Hashmap works when we just need to know existence instead of actual operation of each item
   - Stack works when we only need to know the local optimal value related to the problem
 
+Tips
+- Store the index instead of actual value 
+
 ### 155. Min Stack
 ```scala
   private var head: Option[Node[T]] = None
