@@ -14,6 +14,13 @@ The key is to find the problem and its sub-problem
   - Unique path => sub (row 0 and column 0 case) => overlapping f(m,n)=f(m-1,n)+f(m,n-1)
   - Min sum => sub(row 0 and column 0 case) => overlapping f(m,n) = `f(m,n) + min(f(m-1,n), f(m, n-1))
 
+Process
+1. 1d or 2d array to store stage => **try to find the sub-problem/solution, derive from start or end**
+2. with additional header (or row/column) to store initial stage
+3. populate initial stage
+4. bottom up, populate from start based on the sub-problem (**how to get current value from previous stages**)
+5. get the last result
+
 ### 70. Climbing Stairs
 ```scala
   def climbStairs(n: Int): Int = n match

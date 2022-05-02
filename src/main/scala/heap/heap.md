@@ -1,10 +1,23 @@
 # Heap
-The heap is one maximally efficient implementation of an abstract data type called a priority queue, 
-and in fact, priority queues are often referred to as "heaps", regardless of how they may be implemented. 
+The heap is one maximally efficient implementation of an abstract data type called a priority queue, and in fact, priority queues are often referred to as "heaps", regardless of how they may be implemented. 
 In a heap, the highest (or lowest) priority element is always stored at the root. 
 However, a heap is not a sorted structure; it can be regarded as being partially ordered. 
 A heap is a useful data structure when it is necessary to repeatedly remove the object with the highest (or lowest) priority, 
 or when insertions need to be interspersed with removals of the root node.
+
+Heap can be implemented as an array with following properties
+- parent = Arr[(i-1) / 2]
+- left = Arr[(2*i) + 1]
+- right = Arr[(2*i) + 2]
+
+Parent is the smallest/biggest value, when insert or remove, heapitify function called to maintain the property of the heap
+1. reduce size and move the last element as root
+2. start heapifiy process at 0 (root)
+3. compare left, right and parent (root)
+4. swap with value at largest 
+5. recursive heapifty at from largest
+
+Heap can be considered as an alternative data structure of queue/stack that instead of maintain in/out order, it maintains an user controlled order (for example, min and max)
 
 ### 506. Relative Ranks
 ```scala

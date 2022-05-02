@@ -1,4 +1,9 @@
 # Breadth First Search
+BFS is a traversing algorithm which starts from a selected node and traverse the graph layer-wise thus exploring the neighbour nodes (nodes which are directly connected to source node). 
+Then move towards the next-level neighbour nodes. 
+
+A queue is used to enable the layer-wise traverse iteratively. 
+A recursive implementation could simply continue with the queue built at parent level
 
 ### 127. Word Ladder
 ```scala

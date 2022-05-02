@@ -6,7 +6,7 @@ Backtracking is a general algorithm for finding all (or some) solutions to some 
 
 Tips
 - Add a helper recursive function with additional parameter to keep track intermedia states and finally result
-- Change a cell value to indicate visited state and revert it after resursive call
+- Change a cell value to indicate visited state and revert it after recursive call
 
 ### 22. Generate Parentheses
 ```scala

@@ -4,6 +4,8 @@ Binary Search Tree is a node-based binary tree data structure which has the foll
 - The right subtree of a node contains only nodes with keys greater than the node’s key.
 - The left and right subtree each must also be a binary search tree.
 
+TreeMap and TreeSet data structures are internally implemented using self-balancing BSTs.
+
 ### 98. Validate Binary Search Tree
 ```scala
   def isValidBST(root: TreeNode[Int]): Boolean = (root.left, root.right) match

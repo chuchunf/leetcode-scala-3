@@ -6,6 +6,12 @@ A tree is an abstract data type representing a hierarchical structure, with a ro
 - Instead of change the value of the node, pointing to another node works naturally with recursion 
 - A helper function to take two nodes and/or a container to store results
 
+common operation
+- pre order => root, left then right
+- in order => left, root then right
+- post order => left, right then root
+- line order => line by line horizontally (with a list cache of next level of nodes)
+
 ### 144. Binary Tree Preorder Traversal
 ```scala
   def preorderTraversal(root: TreeNode[Int]): List[Int] =

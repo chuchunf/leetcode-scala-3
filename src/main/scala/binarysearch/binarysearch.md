@@ -2,6 +2,11 @@
 Binary search / half-interval search / logarithmic search finds the position of a target value within a sorted data structure.
 It compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, and repeats the process.
 
+Tips
+- calculate mid by low + (high-low)/2 to prevent overflow
+- low = mid + 1 or high = mid - 1
+- consider all possible cases for partially sorted arrays
+
 ### 69. Sqrt(x)
 ```scala
   def mySqrt(x: Int): Int = x match
