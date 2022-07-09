@@ -1,11 +1,39 @@
 # Back Tracking
-Backtracking is a general algorithm for finding all (or some) solutions to some computational problems, that incrementally builds candidates to the solutions, and abandons each partial candidate as soon as it determines that the candidate cannot possibly be completed to a valid solution, and resume from last good point (“backtracks”)
-- Back tracking is a recursion with memorizing of past result (with a collection and indexes passing in recursive calls) 
-- most of the problems that are discussed, can be solved using other known algorithms like Dynamic Programming or Greedy Algorithms in logarithmic
-- Back tracking is essentially recursive
+Backtracking is a general algorithm for finding **all (or some) solutions** of problems, 
+that incrementally builds candidates to the solutions, 
+and abandons each partial candidate as soon as it determines that the candidate is not a valid solution, 
+and resume from last good point (hence **“backtracks”**)
+- Backtracking is essentially **recursive with memorizing of past result** (with a collection and indexes passing in recursive calls) 
+- Backtracking normally requires a **helper recursive function** with additional parameters to keep track intermedia states and finally result
+
+Using N Queens as an exmaple
+```scala
+private def _solveNQueens(current: Int, n: Int, buffer: mutable.ListBuffer[Int], result: mutable.ListBuffer[List[String]]): Unit
+```
+- **current** is the recursive value
+- **n** is the target value to stop the recursion 
+- **buffer** keep track of current partial result as of **current**
+- **result** to store all solutions identified
+
+As all recursive functions, the helper function contains two parts, first part breaks the recursion when we identify a successful solution
+```scala
+case num if num == n => result.addOne(buffer.foldLeft(mutable.ListBuffer[String]()) { case (b, i) => b.addOne(".".repeat(n).updated(i, 'Q')) }.toList)
+```
+Otherwise, identify all possible next candidates and call the helper function recursively
+```scala
+    case _ => for (i <- 0 until n if !buffer.contains(i) && !buffer.zipWithIndex.foldLeft(false) { case (r, (v, idx)) => r || (i - (current - idx)) == v || (i + (current - idx)) == v }) {
+      buffer.addOne(i)
+      _solveNQueens(current + 1, n, buffer, result)
+      buffer.remove(buffer.length - 1)
+    }
+```
+**NOTE important** the partial result need to be rolled back after the resursive call
+```scala
+      buffer.remove(buffer.length - 1)
+```
 
 Tips
-- Add a helper recursive function with additional parameter to keep track intermedia states and finally result
+- Use any/some intermedia state variables as long as they keep the partial states 
 - Change a cell value to indicate visited state and revert it after recursive call
 
 ### 22. Generate Parentheses
