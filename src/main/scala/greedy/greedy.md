@@ -38,3 +38,12 @@ Then take the item with the highest ratio and add them until we can’t add the 
       }
     }.getOrElse(((0, 0), -1))._2
 ```
+
+### 179. Largest Number
+```scala
+object LargestNumber {
+  def largestNumber(nums: Array[Int]): String =
+    nums.sortWith { case (n1, n2) => s"$n1$n2" > s"$n2$n1" }
+      .foldLeft("") { case (r, n) => s"$r$n" }
+}
+```
