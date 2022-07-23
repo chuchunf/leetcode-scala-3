@@ -41,9 +41,20 @@ Then take the item with the highest ratio and add them until we can’t add the 
 
 ### 179. Largest Number
 ```scala
-object LargestNumber {
   def largestNumber(nums: Array[Int]): String =
     nums.sortWith { case (n1, n2) => s"$n1$n2" > s"$n2$n1" }
       .foldLeft("") { case (r, n) => s"$r$n" }
-}
+```
+
+### 44. Wildcard Matching
+```scala
+  def isMatch(s: String, p: String): Boolean =
+    if s.isEmpty && p.isEmpty then true
+    else if s.isEmpty || p.isEmpty then false
+    else p(0) match
+      case '?' => isMatch(s.substring(1), p.substring(1))
+      case '*' => var curr = 0
+        while curr < s.length && s(0) == s(curr) do curr = curr + 1
+        isMatch(s.substring(curr), p.substring(1))
+      case _ => if p(0) == s(0) then isMatch(s.substring(1), p.substring(1)) else false
 ```
