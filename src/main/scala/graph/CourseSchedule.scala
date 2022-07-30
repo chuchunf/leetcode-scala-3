@@ -1,14 +1,8 @@
-# Graph
-Graph algorithms are a set of instructions that traverse (visits nodes of a) graph.
+package graph
 
-Some of the most common graph algorithms are:
-- Breadth First Search (BFS)
-- Depth First Search (DFS)
-- Dijkstra 
-- Floyd-Warshall Algorithm
+import scala.collection.mutable
 
-### 207. Course Schedule
-```scala
+object CourseSchedule {
   def canFinish(numCourses: Int, prerequisites: Array[Array[Int]]): Boolean =
     val nodes = new Array[Node[Int]](numCourses)
     for (i <- 0 until numCourses) nodes(i) = Node(i)
@@ -20,4 +14,4 @@ Some of the most common graph algorithms are:
       visited.addOne(node.value)
       node.neighbors.find(_canFinish(_, visited)).nonEmpty
     }
-```
+}
