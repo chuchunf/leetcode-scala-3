@@ -11,10 +11,51 @@ because a directed graph cannot be represented using the disjoint-set(the data s
 
 ### Implementation of union find
 1. use an array with the same size of the number of node
-2. initially, the node identified the index of the array and the value equals to the index 
+2. initially the array that the value (parent id) equals to index (id) => each node is self-owned 
 3. if two elements are connected/belongs to same set, update the value to the parent index
-4. find operation => check if the values of two nodes (by index) are the same
-5. union operation => update the value by index to the value of of index of selected parent
+4. find operation => find the parent id of given node
+```scala
+    if parent(nid) == nid then nid else find(parent(nid), parent)
+```
+5. union operation => update values of found nodes to the value of parent
+```scala
+    val (pid1, pid2) = (find(nid1, parent), find(nid2, parent))
+    if pid1 != pid2 && then parent(pid1) = pid2
+```
 
 ### Application of union find
 * Check whether an undirected graph contains cycle or not (assume no self-loop)
+* Check the regions of an undirected graph
+
+### 200. Number of Islands
+```scala
+  def numIslands(grid: Array[Array[Char]]): Int =
+    val parent = Array.fill[Int](grid.length * grid(0).length)(-1)
+    var count = 0
+    for (i <- 0 until grid.length; j <- 0 until grid(0).length) {
+      if grid(i)(j) == '1' then {
+        parent(i * grid(0).length + j) = i * grid(0).length + j
+        count = count + 1
+      }
+    }
+    for (i <- 0 until grid.length; j <- 0 until grid(0).length) {
+      if grid(i)(j) == '1' then {
+        if j + 1 < grid(0).length && grid(i)(j + 1) == '1' && union(i * grid(0).length + j, i * grid(0).length + j + 1, parent) then count = count - 1
+        if i + 1 < grid.length && grid(i + 1)(j) == '1' && union(i * grid(0).length + j, (i + 1) * grid(0).length + j, parent) then count = count - 1
+      }
+    }
+    count
+
+  private def union(nid1: Int, nid2: Int, parent: Array[Int]): Boolean =
+    val (pid1, pid2) = (find(nid1, parent), find(nid2, parent))
+    pid1 != pid2 && {
+      parent(pid1) = pid2
+      true
+    }
+
+  private def find(nid: Int, parent: Array[Int]): Int =
+    if parent(nid) == nid then nid else {
+      parent(nid) = find(parent(nid), parent)
+      parent(nid)
+    }
+```
