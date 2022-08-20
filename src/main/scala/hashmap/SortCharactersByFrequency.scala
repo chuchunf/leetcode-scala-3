@@ -9,6 +9,6 @@ object SortCharactersByFrequency {
     map.foreach((char, count) => bucket(count).addOne(char))
     bucket.zipWithIndex
       .foldRight("") { case ((list, count), str) =>
-        str + list.foldLeft("") { case (result, char) => result + char.toString.repeat(count) }
+        str + list.foldLeft("") { case (result, char) => result + char.toString * count }
       }
 }
