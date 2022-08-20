@@ -1,22 +1,27 @@
 # HashMap
 
-Hashmap is an associative array abstract data type, which maps keys to values. 
-For scenarios that we don't need to loop through every item, rather just to check the existence, 
+Hashmap is an associative array abstract data type, which maps keys to values.
+For scenarios that we don't need to loop through every item to process, rather just to **check the existence**,
 HashMap could effectively change the complexity **from loop O(n) to lookup O(1)**.
 
-- Two sum: the expected value is known; 
-- First non-repeating character: the character is known;
-- Happy number: The list of unhappy number built along the way is known.
-
 The key idea of HashMap is to use a hash function to map keys to buckets.
+* **Hash function**, given a key return the index
+* **Hash collision**, when the hash function returns the same index for two different key
+* **buckets**, keys with the same hash value go to the same bucket (linked list or red-black tree)
+  A hash function is not perfect and it is a tradeoff between the number of buckets and the capacity of a bucket (space for time).
+
+### Typical problems
+- Two sum: the expected value is known;
+- First non-repeating character: the character is known;
+- Happy number: The list of unhappy numbers built along the way is known.
 
 Hashmap is also an effective way to hold/group discrete keys or non-number keys for easy processing
 
 - Isomorphic Strings: char from source string and char from target string as key
 - Bulls and Cows: char from source string and char from target string as key
-- Wall Brick: the width of the bricks are discrete as key
+- **Wall Brick**: the width of the bricks are discrete as key
 
-If the keys are continuous number values (e.g. char value could be converted integers), array will be a better data structure.
+If the keys are continuous number values (e.g. char value could be converted integers), the array will be a better data structure.
 
 ### 1. Two Sum
 ```scala
@@ -34,7 +39,7 @@ If the keys are continuous number values (e.g. char value could be converted int
 ```scala
   def firstUniqChar(s: String): Int =
     val cache = mutable.Map[Char, Int]()
-    s.toArray.foreach(c => cache.update(c, cache.get(c).getOrElse(0) + 1))
+    s.toArray.foreach(c => cache.update(c, cache.getOrElse(c, 0) + 1))
     s.toArray.find(cache.get(_).get == 1) match
       case Some(result) => s.indexOf(result)
       case _ => -1
@@ -42,12 +47,12 @@ If the keys are continuous number values (e.g. char value could be converted int
 
 ### 202. Happy Number
 ```scala
-  def isHappy(n: Int): Boolean = isHappyInernal(n, mutable.Set[Int]())
+  def isHappy(n: Int): Boolean = isHappyInernal(n, Set.empty[Int])
 
-  private def isHappyInernal(n: Int, cache: mutable.Set[Int]): Boolean = n match
+  private def isHappyInernal(n: Int, cache: Set[Int]): Boolean = n match
     case num if num == 1 => true
     case num if cache.contains(num) => false
-    case num => isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache += num)
+    case num => isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache + num)
 ```
 
 ### 380. Insert Delete GetRandom O(1)
@@ -97,14 +102,14 @@ class InsertDeleteGetRandomO1() {
 ```scala
   def getHint(secret: String, guess: String): String =
     val (scache, gcache) = (mutable.HashMap[Char, Int](), mutable.HashMap[Char, Int]())
-    val bull = secret.toCharArray.zip(guess.toCharArray).foldLeft(0) {
-      case (bull, (s, g)) if s == g => bull + 1
-      case (bull, (s, g)) =>
-        scache.update(s, scache.get(s).getOrElse(1))
-        gcache.update(g, gcache.get(g).getOrElse(1))
-        bull
+    val bull = secret.toCharArray.zip(guess.toCharArray).count {
+      case (s, g) if s == g => true
+      case (s, g) =>
+        scache.update(s, scache.getOrElse(s, 1))
+        gcache.update(g, gcache.getOrElse(g, 1))
+        false
     }
-    val cow = scache.foldLeft(0) { case (cow, (k, v)) => cow + v.min(gcache.get(k).getOrElse(0)) }
+    val cow = scache.map { case (k, v) => v.min(gcache.getOrElse(k, 0)) }.sum
     s"${bull}A${cow}B"
 ```
 
@@ -113,12 +118,14 @@ First consider the simplest case, 1 row of bricks, the answer is 0 for each edge
 Consider add another row, it depends on if the edges of 2nd row matching with 1st row.
 We could loop through each row and count the edges (previous wall length + current brick length), 
 and the edge with large count is where the draw could be Drawn.
-Hashmap could be used to keep track of each edge with correcponding count.
+Hashmap could be used to keep track of each edge with corresponding count.
 ```scala
   def leastBricks(wall: List[List[Int]]): Int =
     val cache = mutable.Map[Int, Int]()
-    wall.foreach(_.dropRight(1).foldLeft(0) { case (sum, w) =>
-      cache.updateWith(sum + w) { _ => Option(cache.get(sum + w).getOrElse(0) + 1) }.get
-    })
-    wall.length - cache.values.max
+    wall.foreach(_.dropRight(1)
+      .foldLeft(0) { case (sum, w) =>
+        cache.update(sum + w, cache.getOrElse(sum + w, 0) + 1)
+        sum + w
+      })
+    wall.length - (if cache.isEmpty then 0 else cache.values.max)
 ```
