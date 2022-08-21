@@ -10,6 +10,8 @@ The key idea of HashMap is to use a hash function to map keys to buckets.
 * **Buckets**, keys with the same hash value go to the same bucket (linked list or red-black tree)
   A hash function is not perfect and it is a tradeoff between the number of buckets and the capacity of a bucket (space for time).
 
+If the keys are continuous number values (e.g. char value could be converted integers), the array will be a better data structure.
+
 ## Typical problems
 
 ### Check **existence** of an element 
@@ -22,13 +24,15 @@ The key idea of HashMap is to use a hash function to map keys to buckets.
 - Bulls and Cows: char from source string and char from target string as key
 - **Wall Brick**: the width of the bricks are discrete as key
 
+### Implementation and other usages
+- Design Hashmap
+- Insert Delete GetRandom O(1)
+
 ## Related Algorithms
 - **Count sort**: Counts the occurrence of each number / elements in a Hashmap
 - **Bucket sort**: Divides the unsorted array elements into several groups called buckets
 elements fall into the same buckets stored in a linked list. The data structure is the same as Hashmap, 
 but the usage is different that **bucket (array) is sorted by index**.
-
-If the keys are continuous number values (e.g. char value could be converted integers), the array will be a better data structure.
 
 ### 1. Two Sum
 ```scala
