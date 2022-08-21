@@ -10,16 +10,23 @@ The key idea of HashMap is to use a hash function to map keys to buckets.
 * **buckets**, keys with the same hash value go to the same bucket (linked list or red-black tree)
   A hash function is not perfect and it is a tradeoff between the number of buckets and the capacity of a bucket (space for time).
 
-### Typical problems
+## Typical problems
+
+### Check **existence** of an element 
 - Two sum: the expected value is known;
 - First non-repeating character: the character is known;
 - Happy number: The list of unhappy numbers built along the way is known.
 
-Hashmap is also an effective way to hold/group discrete keys or non-number keys for easy processing
-
+### Convenient data structure to store discrete keys / non-number keys for further processing
 - Isomorphic Strings: char from source string and char from target string as key
 - Bulls and Cows: char from source string and char from target string as key
 - **Wall Brick**: the width of the bricks are discrete as key
+
+## Related Algorithms
+- **Count sort**: Counts the occurrence of each number / elements in a Hashmap
+- **Bucket sort**: Divides the unsorted array elements into several groups called buckets
+elements fall into the same buckets stored in a linked list. The data structure is the same as Hashmap, 
+but the usage is different that **bucket (array) is sorted by index**.
 
 If the keys are continuous number values (e.g. char value could be converted integers), the array will be a better data structure.
 
