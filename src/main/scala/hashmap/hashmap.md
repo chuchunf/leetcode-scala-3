@@ -7,7 +7,7 @@ HashMap could effectively change the complexity **from loop O(n) to lookup O(1)*
 The key idea of HashMap is to use a hash function to map keys to buckets.
 * **Hash function**, given a key return the index
 * **Hash collision**, when the hash function returns the same index for two different key
-* **buckets**, keys with the same hash value go to the same bucket (linked list or red-black tree)
+* **Buckets**, keys with the same hash value go to the same bucket (linked list or red-black tree)
   A hash function is not perfect and it is a tradeoff between the number of buckets and the capacity of a bucket (space for time).
 
 ## Typical problems
