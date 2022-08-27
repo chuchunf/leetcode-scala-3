@@ -1,14 +1,16 @@
 package linkedlist
 
 object AddTwoNumbers {
+  // recursive solution
   def addTwoNumbers(l1: LinkedListNode[Int], l2: LinkedListNode[Int]): LinkedListNode[Int] =
     _addTwoNumbers(Option(l1), Option(l2), 0).get
 
   private def _addTwoNumbers(l1: Option[LinkedListNode[Int]], l2: Option[LinkedListNode[Int]], carry: Int): Option[LinkedListNode[Int]] = (l1, l2) match
     case (None, None) => if carry == 0 then None else Option(new LinkedListNode(1, None))
-    case (Some(node1), Some(node2)) => val value = node1.value + node2.value + carry
-      Option(new LinkedListNode(value % 10, _addTwoNumbers(node1.next, node2.next, value / 10)))
+    case (_, _) => val value = l1.get.value + l2.get.value + carry
+      Option(new LinkedListNode(value % 10, _addTwoNumbers(l1.get.next, l2.get.next, value / 10)))
 
+  // Iterative solution
   def addTwoNumbers2(l1: LinkedListNode[Int], l2: LinkedListNode[Int]): LinkedListNode[Int] =
     val dummyHeader = new LinkedListNode(0, None)
     var current = dummyHeader
