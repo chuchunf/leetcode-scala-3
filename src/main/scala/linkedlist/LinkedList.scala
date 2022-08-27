@@ -3,9 +3,9 @@ package linkedlist
 import scala.collection.mutable
 
 case class LinkedList[T](head: LinkedListNode[T]):
-  var tail = head
+  var tail: LinkedListNode[T] = head
 
-  def append(node: LinkedListNode[T]) =
+  def append(node: LinkedListNode[T]): Unit =
     tail.next = Some(node)
     tail = node
 
@@ -22,6 +22,9 @@ class LinkedListNode[T](var value: T, var next: Option[LinkedListNode[T]]):
       array.append(current.get.value)
       current = current.get.next
     array.toList
+
+  def getLen(acc: Int =0): Int =
+    if this.next.isEmpty then acc+1 else this.next.get.getLen(acc+1)
 
   override def toString: String = this.toList.mkString("->")
 

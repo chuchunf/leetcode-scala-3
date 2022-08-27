@@ -53,7 +53,7 @@ Linked list can be used to implement other common abstract data types
 ### 61. Rotate List
 ```scala
   def rotateRight(head: LinkedListNode[Int], k: Int): LinkedListNode[Int] =
-    var offset = k % getLen(head, 0)
+    var offset = head.getLen()
     var (kpoint, tail) = (head, Option(head))
 
     while tail.get.next.isDefined do

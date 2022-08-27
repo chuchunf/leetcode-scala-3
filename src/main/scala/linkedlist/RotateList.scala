@@ -4,7 +4,7 @@ import scala.annotation.tailrec
 
 object RotateList {
   def rotateRight(head: LinkedListNode[Int], k: Int): LinkedListNode[Int] =
-    var offset = k % getLen(head, 0)
+    var offset = k % head.getLen()
     var (kpoint, tail) = (head, Option(head))
 
     while tail.get.next.isDefined do
@@ -16,7 +16,4 @@ object RotateList {
     kpoint.next = None
     tail.get.next = Some(head)
     newhead
-
-  @tailrec
-  private def getLen(node: LinkedListNode[Int], acc: Int): Int = if node.next.isEmpty then acc + 1 else getLen(node.next.get, acc + 1)
 }
