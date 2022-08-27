@@ -2,28 +2,28 @@
 
 A linked list is a linear collection of data elements, each element has a pointer to the next element.
 Linked list allows for efficient **insertion or removal of elements from any position** in the sequence during iteration.
-Linked list does not allow random access, index based operation, requires an iteration.
+Linked list does not allow random access, index based operation requires an iteration.
 
 - Standard operation
-    - a node has a next pointing to next element, check null for end of the linked list. 
+  - a node has a next pointing to the next element, check null for the end of the linked list.
 - Common operations
-    - dummy.next = head => use a dummy a head to save and keep the original head
-    - ll.next.next => skip 1 item
-    - Use two pointers to cover a range 
-    - Instead of update value, just re-point the next pointer 
+  - dummy.next = head => use a dummy head to save and keep the original head
+  - ll.next.next => skip 1 item
+  - Use two pointers to cover a range
+  - Instead of updating value, just re-point the next pointer
 
 ### Data structures built from Linked List
-Linked list can be used to implement other common abstract data types
+Linked lists can be used to implement other common abstract data types
 - Lists
 - Stacks
 - Queues
 - Hashmaps
 
 ### Algorithms with Listed list
-- Listed list is a **recursive data structure** and works well with recursion.
+- Linked list is a **recursive data structure** and works well with recursion.
 - Two pointers / fast slow pointers / sliding windows
 
-## Typical Questions 
+## Typical Questions
 ### Basic Linked list operation
 - Rotate a list
 - **Reverse a list**
@@ -31,13 +31,13 @@ Linked list can be used to implement other common abstract data types
 - Partition a list
 
 ### Additional list operations
-- Remove Nth from end
-- Remove duplicates from sorted list
+- Remove Nth from the end
+- Remove duplicates from the sorted list
 - Remove duplicates from sorted list 2
 - Copy List with Random Pointers
 
 ### Application of linked list
-- Add Two numbers
+- Add two numbers
 
 ### Circular, Intersection of Linked lists
 - Intersection of two Linked list
