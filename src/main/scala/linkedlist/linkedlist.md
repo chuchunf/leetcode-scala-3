@@ -1,36 +1,53 @@
 # Linked List
 
-A linked list is a linear collection of data elements, each element points to the next.
-Standard operation, a node has a next pointing to next element, check null for end of the linked list.
-Common operations
-- dummy.next = head => save and keep the head
-- ll.next.next => skip 1 item
-- Use two pointers to cover a range 
-- Instead of update view, just re-direct the next pointer 
+A linked list is a linear collection of data elements, each element has a pointer to the next element.
+Linked list allows for efficient **insertion or removal of elements from any position** in the sequence during iteration.
+Linked list does not allow random access, index based operation, requires an iteration.
+
+- Standard operation
+    - a node has a next pointing to next element, check null for end of the linked list. 
+- Common operations
+    - dummy.next = head => use a dummy a head to save and keep the original head
+    - ll.next.next => skip 1 item
+    - Use two pointers to cover a range 
+    - Instead of update value, just re-point the next pointer 
+
+### Data structures built from Linked List
+Linked list can be used to implement other common abstract data types
+- Lists
+- Stacks
+- Queues
+- Hashmaps
+
+### Algorithms with Listed list
+- Listed list is a **recursive data structure** and works well with recursion.
+- Two pointers / fast slow pointers / sliding windows
+
+## Typical Questions 
+### Basic Linked list operation
+- Rotate a list
+- Reverse a list
+- Reorder a list
+- Partition a list
+
+### Additional list operations
+- Remove duplicates from sorted list
+- Remove duplicates from sorted list 2
+- Remove Nth from end
+- Copy List with Random Pointers
+
+### Application of linked list
+- Add Two numbers
 
 ### 2. Add Two Numbers
 ```scala
   def addTwoNumbers(l1: LinkedListNode[Int], l2: LinkedListNode[Int]): LinkedListNode[Int] =
-    val dummyHeader = new LinkedListNode(0, None)
-    var current = dummyHeader
-    var (node1, node2) = (Option(l1), Option(l2))
-    var carry = 0
+  _addTwoNumbers(Option(l1), Option(l2), 0).get
 
-    while node1.isDefined && node2.isDefined do
-      val sum = node1.get.value + node2.get.value + carry
-      current = current.append(
-        if sum < 10 then {
-          carry = 0
-          sum
-        } else {
-          carry = 1
-          sum % 10
-        })
-      node1 = node1.get.next
-      node2 = node2.get.next
-    if carry == 1 then current.append(1)
-
-    dummyHeader.next.get
+  private def _addTwoNumbers(l1: Option[LinkedListNode[Int]], l2: Option[LinkedListNode[Int]], carry: Int): Option[LinkedListNode[Int]] = (l1, l2) match
+    case (None, None) => if carry == 0 then None else Option(new LinkedListNode(1, None))
+    case (Some(node1), Some(node2)) => val value = node1.value + node2.value + carry
+    Option(new LinkedListNode(value % 10, _addTwoNumbers(node1.next, node2.next, value / 10)))
 ```
 
 ### 61. Rotate List
