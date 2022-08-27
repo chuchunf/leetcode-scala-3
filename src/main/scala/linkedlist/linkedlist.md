@@ -31,9 +31,9 @@ Linked list can be used to implement other common abstract data types
 - Partition a list
 
 ### Additional list operations
+- Remove Nth from end
 - Remove duplicates from sorted list
 - Remove duplicates from sorted list 2
-- Remove Nth from end
 - Copy List with Random Pointers
 
 ### Application of linked list
@@ -65,27 +65,23 @@ Linked list can be used to implement other common abstract data types
     kpoint.next = None
     tail.get.next = Some(head)
     newhead
-
-  private def getLen(node: LinkedListNode[Int], acc: Int): Int = if node.next.isEmpty then acc + 1 else getLen(node.next.get, acc + 1)
 ```
 
 ### 19. Remove Nth Node From End of List
 ```scala
   def removeNthFromEnd(head: LinkedListNode[Int], n: Int): LinkedListNode[Int] =
-    val len = getLen(head, 0)
+    val len = head.getLen()
     n match
-      case num if (num > len) => throw IllegalArgumentException("n is larger than the length of head")
-      case num if (num == len) => head.next.get
+      case num if num > len => throw IllegalArgumentException("n is larger than the length of head")
+      case num if num == len => head.next.get
       case _ =>
         var (dummy, fast, slow) = (head, Option(head), Option(head))
-        (0 to n).foreach(ingored => fast = fast.get.next)
-        while (fast.isDefined) do
+        (0 to n).foreach(_ => fast = fast.get.next)
+        while fast.isDefined do
           fast = fast.get.next
           slow = slow.get.next
         slow.get.next = slow.get.next.get.next
         dummy
-
-  private def getLen(node: LinkedListNode[Int], acc: Int): Int = if node.next.isEmpty then acc + 1 else getLen(node.next.get, acc + 1)
 ```
 
 ### 206. Reverse Linked List
