@@ -26,7 +26,7 @@ Linked list can be used to implement other common abstract data types
 ## Typical Questions 
 ### Basic Linked list operation
 - Rotate a list
-- Reverse a list
+- **Reverse a list**
 - Reorder a list
 - Partition a list
 
@@ -38,6 +38,9 @@ Linked list can be used to implement other common abstract data types
 
 ### Application of linked list
 - Add Two numbers
+
+### Circular, Intersection of Linked lists
+- Intersection of two Linked list
 
 ### 2. Add Two Numbers
 ```scala
@@ -85,6 +88,7 @@ Linked list can be used to implement other common abstract data types
 ```
 
 ### 206. Reverse Linked List
+Iterative approach, carefully maneuver of pre, curr and next
 ```scala
   def reverseList(head: LinkedListNode[Int]): LinkedListNode[Int] = head.next match
     case None => head
@@ -107,6 +111,7 @@ Linked list can be used to implement other common abstract data types
       else first = first.next.get
     head
 ```
+
 ### 138. Copy List with Random Pointer
 ```scala
   def copyRandomList(head: LinkedListWithPointer[Int]): LinkedListWithPointer[Int] =
@@ -119,11 +124,11 @@ Linked list can be used to implement other common abstract data types
 
     node = Option(head)
     while node.isDefined do
-      cache.get(node.get).get.next = node.get.next.map { key => cache.get(key).get }
-      cache.get(node.get).get.random = node.get.random.map { key => cache.get(key).get }
+      cache(node.get).next = node.get.next.map { key => cache(key) }
+      cache(node.get).random = node.get.random.map { key => cache(key) }
       node = node.get.next
 
-    cache.get(head).get
+    cache(head)
 ```
 
 ### 82. Remove Duplicates from Sorted List II
@@ -168,7 +173,7 @@ Linked list can be used to implement other common abstract data types
       p1 = p1.next.get
       p2 = p2.next.get.next.get
 
-    var (premid, precurr) = (p1, p1.next.get)
+    val (premid, precurr) = (p1, p1.next.get)
     while precurr.next.isDefined do
       val curr = precurr.next.get
       precurr.next = curr.next
@@ -188,13 +193,11 @@ Linked list can be used to implement other common abstract data types
 ### 160. Intersection of Two Linked Lists
 ```scala
   def getIntersectionNode(headA: LinkedListNode[Int], headB: LinkedListNode[Int]): Option[LinkedListNode[Int]] =
-    val diff = getLen(new LinkedListNode[Int](0, Option(headA)), 0) - getLen(new LinkedListNode[Int](0, Option(headB)), 0)
+    val diff = headA.getLen() - headB.getLen()
     var (pl, ps) = if diff > 0 then (Option(headA), Option(headB)) else (Option(headB), Option(headA))
     for (n <- 0 until diff.abs) pl = pl.get.next
     while pl != ps && pl != None do
       pl = pl.get.next
       ps = ps.get.next
     pl
-
-  private def getLen(node: LinkedListNode[Int], acc: Int): Int = if node.next.isEmpty then acc + 1 else getLen(node.next.get, acc + 1)
 ```

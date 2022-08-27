@@ -7,7 +7,7 @@ object ReorderList {
       p1 = p1.next.get
       p2 = p2.next.get.next.get
 
-    var (premid, precurr) = (p1, p1.next.get)
+    val (premid, precurr) = (p1, p1.next.get)
     while precurr.next.isDefined do
       val curr = precurr.next.get
       precurr.next = curr.next
