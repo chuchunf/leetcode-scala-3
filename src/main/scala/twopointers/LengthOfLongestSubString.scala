@@ -5,11 +5,9 @@ import scala.collection.mutable
 object LengthOfLongestSubString {
   def lengthOfLongestSubstring(s: String): Int =
     val cache = mutable.Map[Char, Int]()
-    var (max, leftp) = (0, 0)
-    s.toCharArray.zipWithIndex.foreach { case (char, rightp) =>
-      if cache.contains(char) then leftp = leftp.max(cache(char) + 1)
-      cache.update(char, rightp)
-      max = max.max(rightp - leftp + 1)
-    }
-    max
+    s.zipWithIndex.foldLeft((0, 0)) { case ((max, lp), (char, rp)) =>
+      if cache.contains(char) then (max, cache(char) + 1) else {
+        cache.update(char, rp)
+        (max.max(rp - lp + 1), lp)
+      }}._1
 }
