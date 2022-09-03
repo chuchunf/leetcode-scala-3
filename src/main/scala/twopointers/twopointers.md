@@ -204,3 +204,19 @@ Identify the condition of moving the pointer is the key to use this technique
       left = right
     result.toList
 ```
+
+### 443. String Compression
+```scala
+  def compress(chars: Array[Char]): Int =
+    val compressed = chars.zipWithIndex.foldLeft(("", 0)) {
+      case ((result, lp), (char, rp)) =>
+        if chars(lp) == char && rp != (chars.length - 1) then (result, lp)
+        else {
+          val len = if rp != (chars.length - 1) then rp - lp else rp - lp + 1
+          val str = if len == 1 then "" else len.toString
+          (s"$result${chars(lp).toString}$str", rp)
+        }
+    }._1
+    compressed.zipWithIndex.foreach { case (char, index) => chars(index) = char }
+    compressed.length
+```
