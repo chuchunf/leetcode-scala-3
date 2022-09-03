@@ -6,7 +6,7 @@ object ThreeSum {
   def threeSum(nums: Array[Int]): List[List[Int]] =
     val result = mutable.ListBuffer[List[Int]]()
     val sorted = nums.sorted
-    for (index<-0 until sorted.length) {
+    for (index<-sorted.indices) {
       if index==0 || sorted(index-1)!=sorted(index) then
         var (leftp, rightp) = (index + 1, sorted.length - 1)
         while leftp < rightp do {

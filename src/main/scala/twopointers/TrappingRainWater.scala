@@ -6,7 +6,7 @@ object TrappingRainWater {
     while left < right && height(left) <= height(left + 1) do left = left + 1
     while left < right && height(right - 1) >= height(right) do right = right - 1
     while right > (left + 1) do
-      var (lefth, righth) = (height(left), height(right))
+      val (lefth, righth) = (height(left), height(right))
       if lefth > righth then {
         while height(right - 1) < righth do
           water = water + righth - height(right - 1)

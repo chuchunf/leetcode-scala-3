@@ -8,7 +8,7 @@ The key is to control the speed or distance (fast/slow)
 - Move with given range => delete nth node in 1 pass
 - Move 2 times speed => detect middle
 
-This technique also has two pointers (same as two pointer technique), but 
+This technique also has two pointers (same as two pointers technique), but 
 - Slow/Fast pointers move dependently 
 - Hence the condition is not to detect when to move which pointer, rather the end condition
 
