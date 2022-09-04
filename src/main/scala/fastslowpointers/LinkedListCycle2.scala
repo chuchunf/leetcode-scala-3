@@ -4,17 +4,16 @@ import linkedlist.LinkedListNode
 
 object LinkedListCycle2 {
   def detectCycle(head: LinkedListNode[Int]): Option[LinkedListNode[Int]] =
-    var (fast, slow) = (head, head)
-    var (isCyle, index) = (false, 0)
-    while fast.next.isDefined && slow.next.isDefined && isCyle == false do
+    var (fast, slow, isCycle) = (head, head, false)
+    while fast.next.isDefined && slow.next.isDefined && !isCycle do
       fast = fast.next.get
       if (fast.next.isDefined) {
         fast = fast.next.get
         slow = slow.next.get
-        if (fast == slow) isCyle = true
+        if (fast == slow) isCycle = true
       }
 
-    if !isCyle then None
+    if !isCycle then None
     else {
       fast = head
       while fast != slow do {

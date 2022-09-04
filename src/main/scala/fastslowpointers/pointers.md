@@ -3,14 +3,14 @@
 Fast and Slow pointers is an algorithm that works by setting two pointers that move at different speeds, one faster than the other.
 The technique works linked data structures such as array, linked list.
 
-The key is to control the speed or distance (fast/slow)
+The key is to control the speed or starting position (fast/slow) from same direction
 - Move at different speed => detect cycle
-- Move with given range => delete nth node in 1 pass
 - Move 2 times speed => detect middle
+- Start from different start position => delete nth node in 1 pass
 
 This technique also has two pointers (same as two pointers technique), but 
 - Slow/Fast pointers move dependently 
-- Hence the condition is not to detect when to move which pointer, rather the end condition
+- Hence the key is not to detect when to move which pointer, rather the end condition
 
 Multiple pass could be used to collect more information
 
@@ -61,31 +61,4 @@ Multiple pass could be used to collect more information
       }
       Option(fast)
     }
-```
-
-### 219. Contains Duplicate II
-```scala
-  def containsNearbyDuplicate(nums: Array[Int], k: Int): Boolean =
-    val cache = mutable.HashSet[Int]()
-    nums.zipWithIndex.find { case (num, index) => {
-      if index > k then cache.remove(nums(index - k - 1))
-      if !cache.add(num) then true else false
-    }}.isDefined
-```
-
-### 220. Contains Duplicate III
-```scala
-  def containsNearbyAlmostDuplicate(nums: Array[Int], k: Int, t: Int): Boolean =
-    val cache = mutable.HashMap[Long, Long]()
-    nums.zipWithIndex.find { case (num, index) => {
-      if index > k then cache.remove((nums(index - k - 1).toLong - Int.MinValue) / (t.toLong + 1))
-      val mapped = num.toLong - Int.MinValue
-      val bucket = mapped / (t.toLong + 1)
-      if cache.contains(bucket)
-        || (cache.contains(bucket - 1) && mapped - cache.get(bucket - 1).get <= t)
-        || (cache.contains(bucket + 1) && cache.get(bucket + 1).get - mapped <= t) then true else {
-        cache.put(bucket, mapped)
-        false
-      }
-    }}.isDefined
 ```

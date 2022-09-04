@@ -9,6 +9,6 @@ class MiddleoftheLinkedListTest extends org.scalatest.funsuite.AnyFunSuite {
     val node = new LinkedListNode(1, None)
     node.append(2).append(3).append(4).append(5)
     val result = MiddleoftheLinkedList.middleNode(node)
-    result.value shouldEqual (3)
+    result.value shouldEqual 3
   }
 }

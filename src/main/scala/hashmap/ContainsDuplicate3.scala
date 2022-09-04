@@ -1,11 +1,11 @@
-package fastslowpointers
+package hashmap
 
 import scala.collection.mutable
 
 object ContainsDuplicate3 {
   def containsNearbyAlmostDuplicate(nums: Array[Int], k: Int, t: Int): Boolean =
     val cache = mutable.HashMap[Long, Long]()
-    nums.zipWithIndex.find { case (num, index) => {
+    nums.zipWithIndex.exists { case (num, index) =>
       if index > k then cache.remove((nums(index - k - 1).toLong - Int.MinValue) / (t.toLong + 1))
       val mapped = num.toLong - Int.MinValue
       val bucket = mapped / (t.toLong + 1)
@@ -15,5 +15,5 @@ object ContainsDuplicate3 {
         cache.put(bucket, mapped)
         false
       }
-    }}.isDefined
+    }
 }

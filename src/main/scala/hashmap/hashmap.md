@@ -27,6 +27,7 @@ If the keys are continuous number values (e.g. char value could be converted int
 ### Implementation and other usages
 - Design Hashmap
 - Insert Delete GetRandom O(1)
+- **Contains Duplicate III** => control the bucket size
 
 ## Related Algorithms
 - **Count sort**: Counts the occurrence of each number / elements in a Hashmap
@@ -151,4 +152,21 @@ Hashmap could be used to keep track of each edge with corresponding count.
       .foldRight("") { case ((list, count), str) =>
         str + list.foldLeft("") { case (result, char) => result + char.toString.repeat(count) }
       }
+```
+
+### 220. Contains Duplicate III
+```scala
+  def containsNearbyAlmostDuplicate(nums: Array[Int], k: Int, t: Int): Boolean =
+    val cache = mutable.HashMap[Long, Long]()
+    nums.zipWithIndex.find { case (num, index) => {
+      if index > k then cache.remove((nums(index - k - 1).toLong - Int.MinValue) / (t.toLong + 1))
+      val mapped = num.toLong - Int.MinValue
+      val bucket = mapped / (t.toLong + 1)
+      if cache.contains(bucket)
+        || (cache.contains(bucket - 1) && mapped - cache.get(bucket - 1).get <= t)
+        || (cache.contains(bucket + 1) && cache.get(bucket + 1).get - mapped <= t) then true else {
+        cache.put(bucket, mapped)
+        false
+      }
+    }}.isDefined
 ```

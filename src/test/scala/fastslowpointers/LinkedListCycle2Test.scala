@@ -15,7 +15,7 @@ class LinkedListCycle2Test extends AnyFunSuite {
     node3.next = Option(node4)
     node4.next = Option(node2)
     val result = LinkedListCycle2.detectCycle(node1)
-    result.get shouldEqual (node2)
+    result.get shouldEqual node2
   }
 
   test("can detect if there is no cycle") {
@@ -27,6 +27,6 @@ class LinkedListCycle2Test extends AnyFunSuite {
     node2.next = Option(node3)
     node3.next = Option(node4)
     val result = LinkedListCycle2.detectCycle(node1)
-    result shouldEqual (None)
+    result shouldEqual None
   }
 }
