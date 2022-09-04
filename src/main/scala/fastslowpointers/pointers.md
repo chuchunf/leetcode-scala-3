@@ -1,16 +1,16 @@
 # Fast Slow Pointers
 
 Fast and Slow pointers is an algorithm that works by setting two pointers that move at different speeds, one faster than the other.
-The technique works linked data structures such as array, linked list.
+The technique works with linked data structures such as an array or linked list.
 
-The key is to control the speed or starting position (fast/slow) from same direction
+The key is to control the speed or starting position (fast/slow) from the same direction
 - Move at different speed => detect cycle
 - Move 2 times speed => detect middle
 - Start from different start position => delete nth node in 1 pass
 
-This technique also has two pointers (same as two pointers technique), but 
-- Slow/Fast pointers move dependently 
-- Hence the key is not to detect when to move which pointer, rather the end condition
+This technique also has two pointers (same as two pointers technique), but
+- Slow/Fast pointers move dependently
+- Hence the key is not to detect when to move which pointer, but rather the end condition
 
 Multiple pass could be used to collect more information
 
