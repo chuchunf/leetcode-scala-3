@@ -4,12 +4,8 @@ import scala.collection.mutable
 
 object RansomNote {
   def canConstruct(ransomNote: String, magazine: String): Boolean =
-    val (rmap, mmap) = (countChar(ransomNote), countChar(magazine))
-    rmap.find { case (char, count) => count > mmap.get(char).getOrElse(0) }.isEmpty
-
-  private def countChar(s: String): Map[Char, Int] =
-    s.foldLeft(mutable.HashMap[Char, Int]()) { case (cache, char) => {
-      cache.update(char, cache.get(char).getOrElse(0) + 1)
-      cache
-    }}.toMap
+    val (rmap, mmap) = (mutable.HashMap[Char, Int](), mutable.HashMap[Char, Int]())
+    ransomNote.foreach(char => rmap.update(char, rmap.getOrElse(char, 0) + 1))
+    magazine.foreach(char => mmap.update(char, mmap.getOrElse(char, 0) + 1))
+    !rmap.exists { case (char, count) => count > mmap.getOrElse(char, 0) }
 }
