@@ -6,8 +6,8 @@ object ContinuousSubarraySum {
   def checkSubarraySum(nums: Array[Int], k: Int): Boolean =
     val cache = mutable.HashSet[Int]()
     var sum = 0
-    nums.find { num =>
+    nums.exists { num =>
       sum = sum + num
       !cache.add(sum % k)
-    }.isDefined
+    }
 }
