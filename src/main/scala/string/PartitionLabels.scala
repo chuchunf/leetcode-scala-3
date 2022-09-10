@@ -8,12 +8,12 @@ object PartitionLabels {
     var (i, start, end) = (0, 0, 0)
     s.zipWithIndex.foreach { case (char, index) => cache.update(char, index) }
     while i < s.length do
-      end = cache.get(s.charAt(i)).get
+      end = cache(s.charAt(i))
       while end > i do
         i = i + 1
-        end = end.max(cache.get(s.charAt(i)).get)
+        end = end.max(cache(s.charAt(i)))
       result.append(end + 1 - start)
-      i = (i + 1)
+      i = i + 1
       start = i
       end = i
     result.toList

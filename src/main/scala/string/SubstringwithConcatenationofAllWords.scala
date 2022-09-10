@@ -12,6 +12,6 @@ object SubstringwithConcatenationofAllWords {
       val wordmap = mutable.HashMap[String, Int]().addAll(map)
       for (n <- words.indices if n + index < ss.length) wordmap.update(ss(index + n), map.getOrElse(ss(index + n), 0) - 1)
       wordmap.values.count(_ != 0) == 0
-    }.map { case (_, index) => { index * len }}
+    }.map { case (_, index) =>  index * len }
       .toList
 }

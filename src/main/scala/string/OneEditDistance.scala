@@ -2,7 +2,7 @@ package string
 
 object OneEditDistance {
   def isOneEditDistance(s: String, t: String): Boolean =
-    if s.length == t.length then s.toCharArray.zip(t.toCharArray).count { case (sc, tc) => { !sc.equals(tc) }} == 1
+    if s.length == t.length then s.zip(t).count { case (sc, tc) => !sc.equals(tc) } == 1
     else {
       val (ss, ls) = if s.length > t.length then (t, s) else (s, t)
       var (count, sp, lp) = (0, 0, 0)

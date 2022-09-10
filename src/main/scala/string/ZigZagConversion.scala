@@ -5,7 +5,7 @@ import scala.collection.mutable
 object ZigZagConversion {
   def convert(s: String, numRows: Int): String = numRows match
     case 1 => s
-    case _ => val cache = (0 to numRows - 1).map(_ => new mutable.ArrayBuffer[Char]()).toArray
+    case _ => val cache = (0 until numRows).map(_ => new mutable.ArrayBuffer[Char]()).toArray
       var (pos, num, down) = (0, 0, true)
       while pos < s.length do
         cache(num).append(s.charAt(pos))
