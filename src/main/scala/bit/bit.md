@@ -1,16 +1,16 @@
 # Bit operations and tricks
-| Operation | Example |
-| ------ | ------------ |
-| Get nth bit of i | (i >> n) & 1 |
-| Get last 4 bit of i | i & 15 |
-| Set nth bit to 1 | i &#124; (1 << n) |
-| Set nth bit to 0 | i & ~(1 << n) |
-| Toggle th bit | i ^ (1 << n) |
-| Get least significant bit | i & -i |
-| Multiply by 2^n | i << n |
-| Divide by 2^n | i >> n |
-| Mod by 2^n | i & (1<<n-1) |
-| Is even | (i & 1) == 0 |
+| Operation | Example                        |
+| ------ |--------------------------------|
+| Get nth bit of i | (i >> n) & **1**               |
+| Get last 4 bit of i | i & **15**                     |
+| Set nth bit to 1 | i &#124; (1 << n)              |
+| Set nth bit to 0 | i & ~(1 << n)                  |
+| Toggle th bit | i ^ (1 << n)                   |
+| Get least significant bit | i & -i                         |
+| Multiply by 2^n | i << n                         |
+| Divide by 2^n | i >> n                         |
+| Mod by 2^n | i & (1<<n-1)                   |
+| Is even | (i & 1) == 0                   |
 | Is power of 2 | (i != 0) && (i & (i - 1)) == 0 |
 
 ### 405. Convert a Number to Hexadecimal
@@ -91,7 +91,7 @@ Then set the bit back to the holder for all the 32 bits to get the final result.
     val map = Map('A' -> 0, 'C' -> 1, 'G' -> 2, 'T' -> 3)
     val cache = mutable.HashSet[Int]()
     var seq = 0
-    (0 until s.length).filter { case index =>
+    (0 until s.length).filter { index =>
       seq = (seq << 2 | map(s.charAt(index))) & 0x000fffff
       index >= 9 && !cache.add(seq)
     }.map(i => s.substring(i - 9, i + 1))
