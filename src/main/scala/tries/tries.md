@@ -1,12 +1,12 @@
 # Tries
-Tries (aka digital tree, prefix tree) is a tree data-structure that are based on the prefix of a string. 
-They are used to represent the “Retrieval” of data and thus the name Trie. 
+Tries (aka digital tree, prefix tree) is a tree data structures that are based on the prefix of a string.
+They are used to represent the “Retrieval” of data and thus the name Trie.
 * A Trie is a special data structure used to store strings that can be visualized like a graph.
-* It consists of nodes and edges 
-* It maintains a list of children node indexed by the ASCII value directly, search, lookup and delete 1 level/step a time
+* It consists of nodes and edges
+* It maintains a list of children node indexed by the ASCII value directly, search, lookup, and delete 1 level/step at a time
 
 Tries could replace Hashtable for String as it has no hash function hence no collisions.
-Tries commonly used in predictive text or autocomplete dictionaries with large number of short strings.
+Tries are commonly used in predictive text or autocomplete dictionaries with a large number of short strings.
 
 ### 208. Implement Tries
 ```scala
@@ -80,7 +80,7 @@ Use trie so we could use the same pointer for both Array and Word Dictionary
     val result = mutable.ListBuffer[String]()
     val trie = Trie.empty[String]
     words.foreach(word => trie.insert(word, word))
-    for (i <- 0 until board.length; j <- 0 until board(0).length) findWordsInternal(board, i, j, trie, result)
+    for (i <- 0 until board.indices; j <- 0 until board(0).length) findWordsInternal(board, i, j, trie, result)
     result.toList
 
     private def findWordsInternal(board: Array[Array[Char]], i: Int, j: Int, words: Trie[String], result: mutable.ListBuffer[String]): Unit =

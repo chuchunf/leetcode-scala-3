@@ -1,5 +1,8 @@
 package tries
 
+import scala.annotation.tailrec
+import scala.collection.mutable
+
 class Trie[T](var value: Option[T], var children: List[Option[Trie[T]]]) {
   def search(key: String): Option[T] = search(this, key, 0)
 
@@ -7,6 +10,7 @@ class Trie[T](var value: Option[T], var children: List[Option[Trie[T]]]) {
 
   def delete(key: String): Unit = delete(this, key, 0)
 
+  @tailrec
   private def search(node: Trie[T], key: String, step: Int): Option[T] =
     if key.length == step then node.value
     else
@@ -14,6 +18,7 @@ class Trie[T](var value: Option[T], var children: List[Option[Trie[T]]]) {
         case Some(next) => search(next, key, step + 1)
         case _ => None
 
+  @tailrec
   private def insert(node: Trie[T], key: String, value: T, step: Int): Unit =
     if key.length == step then node.value = Option(value)
     else {
@@ -28,17 +33,17 @@ class Trie[T](var value: Option[T], var children: List[Option[Trie[T]]]) {
     else node.children(key.charAt(step) - 97).map(delete(_, key, step + 1))
 
   override def toString: String =
-    val buffer = new StringBuilder(128)
+    val buffer = new mutable.StringBuilder(128)
     print(buffer, "", "", ' ')
     buffer.toString
 
-  private def print(buffer: StringBuilder, prefix: String, childPrefix: String, index: Char): Unit =
+  private def print(buffer: mutable.StringBuilder, prefix: String, childPrefix: String, index: Char): Unit =
     buffer.append(prefix)
     buffer.append("[" + index + "]")
     if (this.value.isDefined) buffer.append("(" + this.value.get.toString + ")")
     buffer.append(System.lineSeparator())
     var first = true
-    this.children.zipWithIndex.foreach { case (child, index) => {
+    this.children.zipWithIndex.foreach { case (child, index) =>
       child match
         case Some(trie) =>
           if !first then trie.print(buffer, childPrefix + "\\   ", childPrefix + "    ", (97 + index).toChar)
@@ -47,11 +52,11 @@ class Trie[T](var value: Option[T], var children: List[Option[Trie[T]]]) {
             first = false
           }
         case None =>
-    }}
+    }
 }
 
 object Trie {
   def empty[T] = new Trie[T](None, List.fill(26)(None))
 
-  def apply[T] = empty[T]
+  def apply[T]: Trie[T] = empty[T]
 }

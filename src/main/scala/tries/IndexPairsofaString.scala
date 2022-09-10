@@ -1,5 +1,6 @@
 package tries
 
+import scala.annotation.tailrec
 import scala.collection.mutable
 
 object IndexPairsofaString {
@@ -9,6 +10,7 @@ object IndexPairsofaString {
     for (i <- 0 until s.length) indexPairsInternal(s, i, 0, trie, result)
     result.toList
 
+  @tailrec
   private def indexPairsInternal(s: String, start: Int, step: Int, trie: Trie[Int], result: mutable.ListBuffer[List[Int]]): Unit =
     trie.children(s.charAt(start + step) - 97) match
       case Some(node) => if node.value.isDefined then result.addOne(List(start, start + step))
