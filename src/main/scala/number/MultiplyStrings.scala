@@ -4,8 +4,8 @@ import scala.collection.mutable
 
 object MultiplyStrings {
   def multiply(num1: String, num2: String): String =
-    val cache = (0 to num2.length - 1).map(_ => new mutable.ArrayBuffer[Char]()).toArray
-    num2.reverse.toArray.zipWithIndex.foreach { case (n2, index) => {
+    val cache = (0 until num2.length).map(_ => new mutable.ArrayBuffer[Char]()).toArray
+    num2.reverse.toArray.zipWithIndex.foreach { case (n2, index) =>
       var (line, carry) = (cache(index), 0)
       (0 until index).foreach(_ => line.append('0'))
       num1.reverse.toArray.foreach(n1 => {
@@ -13,7 +13,7 @@ object MultiplyStrings {
         line.append((mul % 10 + '0').toChar)
         carry = mul / 10
       })
-    }}
+    }
 
     cache.reduce((l1, l2) => {
       val len = l1.length.max(l2.length)
