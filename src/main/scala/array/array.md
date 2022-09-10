@@ -1,23 +1,33 @@
 # Array
-Array is a container which can hold a fix number of items and these items should be of the same type.
-* convert from/to other 1d data structures such as linked list, queue or stack
-* implementation of 2d and high dimensional data structure such as matrix
-* implementation of hashmap, hashset, queue, stack and string
-* implementation of heap (priority queue) 
-* implementation of dynamic memory allocation, memory pool and control table (jumper)
+**Array** is a container that can hold a fixed number of items sequentially and these items should be of the same type.
+The elements of the array could be accessed by index.
+The simplest type of data structure is a linear array, also called a one-dimensional array.
+A **matrix** can be represented as a two-dimensional
 
-Common approach
-* sort could simplify the 1d data structure  
-* if 1 pass could not solve a problem, try multiple pass and collect more information during each pass
+## Related Data Structures
+* Convert from/to other 1d data structures such as **linked list, queue, or stack**
+* implementation of 2d and high dimensional data structure such as **matrix**
+* implementation of **hashmap, hashset, queue, stack, and string**
+* implementation of **heap (priority queue)**
+* implementation of dynamic memory allocation, memory pool, and control table (jumper)
+
+## Related Algorithms
+* Binary search
+* Two pointers / Sliding windows
+* Prefix sum
+
+## Common approaches
+* sort could simplify the 1d data structure
+* if 1 pass could not solve a problem, try multiple passes and collect more information during each pass
 
 ### 26. Remove Duplicates from Sorted Array
 ```scala
   def removeDuplicates(nums: Array[Int]): Int =
     nums.foldLeft(1) { case (num, index) =>
-      if num > nums(index - 1) then {
+      if num <= nums(index - 1) then index else {
         nums(index) = num
         index + 1
-      } else index
+      }
     }
 ```
 ### 78. Subsets
@@ -40,7 +50,7 @@ Common approach
     case _ => val sorted = nums.sorted
       var (result, currentexpect) = (0, sorted(0) + 1)
       sorted.drop(1).foreach(num => {
-        if (num < currentexpect) then
+        if num < currentexpect then
           result = result + (currentexpect - num)
           currentexpect = currentexpect + 1
         else
@@ -68,7 +78,7 @@ Common approach
     var (p1, p2) = (0, 0)
     while p1 < m do
       if n > 0 && nums1(p1) > nums2(p2) then {
-        var tmp = nums2(p2)
+        val tmp = nums2(p2)
         nums2(p2) = nums1(p1)
         nums1(p1) = tmp
       }

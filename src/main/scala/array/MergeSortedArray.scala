@@ -5,7 +5,7 @@ object MergeSortedArray {
     var (p1, p2) = (0, 0)
     while p1 < m do
       if n > 0 && nums1(p1) > nums2(p2) then {
-        var tmp = nums2(p2)
+        val tmp = nums2(p2)
         nums2(p2) = nums1(p1)
         nums1(p1) = tmp
       }
