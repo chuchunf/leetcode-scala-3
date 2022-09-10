@@ -1,6 +1,5 @@
 package string
 
-//TODO:  ADD this
 object AddStrings {
   def addStrings(num1: String, num2: String): String =
     num1.reverse.zipAll(num2.reverse, '0', '0').reverse
