@@ -13,8 +13,8 @@ object MaxPointsonaLine {
             ((point2(1) - point(1)) / (point2(0) - point(0)), (point2(1) - point(1)) % (point2(0) - point(0)))
           val b = if point2(0) == point(0) then (0, 0) else
             ((point2(0) * point(1) - point(0) * point2(1)) / (point2(0) - point(0)), (point2(0) * point(1) + point(0) * point2(1)) % (point2(0) - point(0)))
-          cache.update((a, b), cache.get((a, b)).getOrElse(0) + 1)
-          max2.max(cache.get((a, b)).get + 1)
+          cache.update((a, b), cache.getOrElse((a, b), 0) + 1)
+          max2.max(cache((a, b)) + 1)
       }
     }
 }

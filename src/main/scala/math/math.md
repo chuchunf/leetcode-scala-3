@@ -1,4 +1,23 @@
 # Math
+Consider recursion
+
+## Conversion
+- Roman to Integer
+- Integer to Roman
+- Fraction to Recurring Decimal
+- Excel Sheet Column Title
+- Excel Sheet Column Number
+
+## Calculation
+- Plus One
+- Pow(x, n)
+
+## Mathematical formulas 
+- Unique Binary Search Trees
+- Factorial Trailing Zeroes
+
+## Geometry
+- Max Points on a Line
 
 ### 12. Integer to Roman
 ```scala
@@ -52,19 +71,19 @@ G(n) = G(0) * G(n-1) + G(1) * G(n-2) + … + G(n-1) * G(0)
 ### 149. Max Points on a Line
 ```scala
   def maxPoints(points: Array[Array[Int]]): Int =
-  points.foldLeft(0) { case (max, point) =>
-    val cache = mutable.HashMap[((Int, Int), (Int, Int)), Int]()
-    points.foldLeft(max) {
-      case (max2, point2) if point == point2 => max2
-      case (max2, point2) =>
-        val a = if point2(0) == point(0) then(0, 0) else
-          ((point2(1) - point(1)) / (point2(0) - point(0)), (point2(1) - point(1)) % (point2(0) - point(0)))
-        val b = if point2(0) == point(0) then(0, 0) else
-          ((point2(0) * point(1) - point(0) * point2(1)) / (point2(0) - point(0)), (point2(0) * point(1) + point(0) * point2(1)) % (point2(0) - point(0)))
-        cache.update((a, b), cache.get((a, b)).getOrElse(0) + 1)
-        max2.max(cache.get((a, b)).get + 1)
+    points.foldLeft(0) { case (max, point) =>
+      val cache = mutable.HashMap[((Int, Int), (Int, Int)), Int]()
+      points.foldLeft(max) {
+        case (max2, point2) if point == point2 => max2
+        case (max2, point2) =>
+          val a = if point2(0) == point(0) then (0, 0) else
+            ((point2(1) - point(1)) / (point2(0) - point(0)), (point2(1) - point(1)) % (point2(0) - point(0)))
+          val b = if point2(0) == point(0) then (0, 0) else
+            ((point2(0) * point(1) - point(0) * point2(1)) / (point2(0) - point(0)), (point2(0) * point(1) + point(0) * point2(1)) % (point2(0) - point(0)))
+          cache.update((a, b), cache.getOrElse((a, b), 0) + 1)
+          max2.max(cache((a, b)) + 1)
+      }
     }
-  }
 ```
 
 ### 166. Fraction to Recurring Decimal
@@ -85,7 +104,7 @@ G(n) = G(0) * G(n-1) + G(1) * G(n-2) + … + G(n-1) * G(0)
       result.append(num / dev)
       num = num % dev
       if !cache.contains(num) then cache.put(num, result.length()) else {
-        result.insert(cache.get(num).get, '(')
+        result.insert(cache(num).get, '(')
         result.append(")")
         num = 0
       }
@@ -98,7 +117,7 @@ number of zero is the same as number 5, divided by 5 returns number of 5. E.g. 1
 function need to be called recursively, for 25 (5*5), 125 (5*5*5)
 ```scala
   def trailingZeroes(n: Int): Int = n match
-    case 0=> 0
+    case 0 => 0
     case num => num / 5 + trailingZeroes(num / 5)
 ```
 
@@ -106,7 +125,7 @@ function need to be called recursively, for 25 (5*5), 125 (5*5*5)
 ```scala
   def convertToTitle(columnNumber: Int): String = columnNumber match
     case 0 => ""
-    case num => convertToTitle(columnNumber / 26) + ((columnNumber % 26) + 64).toChar
+    case num => convertToTitle(num / 26) + ((num % 26) + 64).toChar
 ```
 
 ### 171. Excel Sheet Column Number

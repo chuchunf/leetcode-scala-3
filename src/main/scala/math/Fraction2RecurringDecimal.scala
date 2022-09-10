@@ -18,7 +18,7 @@ object Fraction2RecurringDecimal {
         result.append(num / dev)
         num = num % dev
         if !cache.contains(num) then cache.put(num, result.length()) else {
-          result.insert(cache.get(num).get, '(')
+          result.insert(cache(num), '(')
           result.append(")")
           num = 0
         }
