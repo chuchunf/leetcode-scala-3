@@ -11,10 +11,10 @@ object SudokuSolver {
   private def solve(r: Int, c: Int, board: Array[Array[Char]], rows: List[mutable.HashSet[Char]], cols: List[mutable.HashSet[Char]], sqrs: List[mutable.HashSet[Char]]): Boolean =
     board(r)(c) match
       case '.' => val valid = mutable.HashSet.from('1' to '9').subtractAll(rows(r)).subtractAll(cols(c)).subtractAll(sqrs((r / 3) * 3 + c / 3))
-        valid.find { v =>
+        valid.exists { v =>
           if addChar(r, c, board, v, rows, cols, sqrs) && solveNext(r, c, board, rows, cols, sqrs) then true
           else removeChar(r, c, board, rows, cols, sqrs)
-        }.isDefined
+        }
       case _ => solveNext(r, c, board, rows, cols, sqrs)
 
   private def addChar(r: Int, c: Int, board: Array[Array[Char]], v: Char, rows: List[mutable.HashSet[Char]], cols: List[mutable.HashSet[Char]], sqrs: List[mutable.HashSet[Char]]): Boolean =
@@ -27,7 +27,7 @@ object SudokuSolver {
   private def solveNext(r: Int, c: Int, board: Array[Array[Char]], rows: List[mutable.HashSet[Char]], cols: List[mutable.HashSet[Char]], sqrs: List[mutable.HashSet[Char]]): Boolean =
     (r, c) match
       case (row, col) if col < 8 => solve(row, col + 1, board, rows, cols, sqrs)
-      case (row, col) if row < 8 => solve(row + 1, 0, board, rows, cols, sqrs)
+      case (row, _) if row < 8 => solve(row + 1, 0, board, rows, cols, sqrs)
       case _ => true
 
   private def removeChar(r: Int, c: Int, board: Array[Array[Char]], rows: List[mutable.HashSet[Char]], cols: List[mutable.HashSet[Char]], sqrs: List[mutable.HashSet[Char]]): Boolean =

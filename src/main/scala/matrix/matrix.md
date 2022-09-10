@@ -21,13 +21,14 @@ Matrix are 2 or more dimensional arrays, similar to a one-dimensional array, but
 
 ### 36. Valid Sudoku
 ```scala
+  def isValidSudoku(board: Array[Array[Char]]): Boolean =
     val (rows, cols, sqrs) = (List.fill(9)(mutable.HashSet[Char]()), List.fill(9)(mutable.HashSet[Char]()), List.fill(9)(mutable.HashSet[Char]()))
-    board.zipWithIndex.find { case (line, row) =>
-      line.zipWithIndex.find {
+    !board.zipWithIndex.exists { case (line, row) =>
+      line.zipWithIndex.exists {
         case ('.', _) => false
         case (char, col) => !rows(row).add(char) || !cols(col).add(char) || !sqrs((row / 3) * 3 + col / 3).add(char)
-      }.isDefined
-    }.isEmpty
+      }
+    }
 ```
 
 ### 37. Sudoku Solver
@@ -40,10 +41,10 @@ Matrix are 2 or more dimensional arrays, similar to a one-dimensional array, but
   private def solve(r: Int, c: Int, board: Array[Array[Char]], rows: List[mutable.HashSet[Char]], cols: List[mutable.HashSet[Char]], sqrs: List[mutable.HashSet[Char]]): Boolean =
     board(r)(c) match
       case '.' => val valid = mutable.HashSet.from('1' to '9').subtractAll(rows(r)).subtractAll(cols(c)).subtractAll(sqrs((r / 3) * 3 + c / 3))
-        valid.find { v =>
+        valid.exists { v =>
           if addChar(r, c, board, v, rows, cols, sqrs) && solveNext(r, c, board, rows, cols, sqrs) then true
           else removeChar(r, c, board, rows, cols, sqrs)
-        }.isDefined
+        }
       case _ => solveNext(r, c, board, rows, cols, sqrs)
 
   private def addChar(r: Int, c: Int, board: Array[Array[Char]], v: Char, rows: List[mutable.HashSet[Char]], cols: List[mutable.HashSet[Char]], sqrs: List[mutable.HashSet[Char]]): Boolean =
@@ -56,7 +57,7 @@ Matrix are 2 or more dimensional arrays, similar to a one-dimensional array, but
   private def solveNext(r: Int, c: Int, board: Array[Array[Char]], rows: List[mutable.HashSet[Char]], cols: List[mutable.HashSet[Char]], sqrs: List[mutable.HashSet[Char]]): Boolean =
     (r, c) match
       case (row, col) if col < 8 => solve(row, col + 1, board, rows, cols, sqrs)
-      case (row, col) if row < 8 => solve(row + 1, 0, board, rows, cols, sqrs)
+      case (row, _) if row < 8 => solve(row + 1, 0, board, rows, cols, sqrs)
       case _ => true
 
   private def removeChar(r: Int, c: Int, board: Array[Array[Char]], rows: List[mutable.HashSet[Char]], cols: List[mutable.HashSet[Char]], sqrs: List[mutable.HashSet[Char]]): Boolean =
@@ -70,7 +71,7 @@ Matrix are 2 or more dimensional arrays, similar to a one-dimensional array, but
 ### 48. Rotate Image
 ```scala
   def rotate(matrix: Array[Array[Int]]): Unit =
-    for (r <- 0 until matrix.length / 2; c <- 0 until matrix(0).length) swap(matrix, r, c, matrix.length - 1 - r, c)
+    for (r <- 0 until matrix.length / 2; c <- matrix(0).indices) swap(matrix, r, c, matrix.length - 1 - r, c)
     for (r <- 0 until (matrix.length - 1); c <- (r + 1) until matrix(0).length) swap(matrix, r, c, c, r)
 
   private def swap(matrix: Array[Array[Int]], r1: Int, c1: Int, r2: Int, c2: Int): Unit =
@@ -103,7 +104,7 @@ and first column and first row need to be handled specially
 ```scala
   def setZeroes(matrix: Array[Array[Int]]): Unit =
     var (row0, col0) = (false, false)
-    for (r <- 0 until matrix.length; c <- 0 until matrix(0).length)
+    for (r <- matrix.indices; c <- matrix(0).indices)
       if matrix(r)(c) == 0 then {
         matrix(0)(c) = 0
         matrix(r)(0) = 0
@@ -112,8 +113,8 @@ and first column and first row need to be handled specially
       }
     for (r <- 1 until matrix.length; c <- 1 until matrix(0).length)
       if matrix(0)(c) == 0 || matrix(r)(0) == 0 then matrix(r)(c) = 0
-    if row0 then for (r <- 0 until matrix.length) matrix(r)(0) = 0
-    if col0 then for (c <- 0 until matrix(0).length) matrix(0)(c) = 0
+    if row0 then for (r <- matrix.indices) matrix(r)(0) = 0
+    if col0 then for (c <- matrix(0).indices) matrix(0)(c) = 0
 ```
 
 ### 74. Search a 2D Matrix
