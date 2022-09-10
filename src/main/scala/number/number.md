@@ -1,6 +1,7 @@
 # Number
-* Make use of %10 and /10 => reverse integer 
-* Math tricks
+* Make use of %10 and /10 
+
+### Math tricks
   * Factorial Trailing Zeroes => count number of 5
   * Add digits => if dividable by 9 then 9 other reminder of divided by 9
   * Multiply Strings => virtual multiplication
