@@ -11,14 +11,14 @@ class MinStackTest extends AnyFunSuite {
     minStack.push(0)
     minStack.push(-3)
 
-    var min = minStack.getMin()
-    min shouldEqual (-3)
+    var min = minStack.getMin
+    min shouldEqual -3
     var top = minStack.pop()
-    top shouldEqual (-3)
+    top shouldEqual -3
     top = minStack.top()
-    top shouldEqual (0)
-    min = minStack.getMin()
-    min shouldEqual (-2)
+    top shouldEqual 0
+    min = minStack.getMin
+    min shouldEqual -2
   }
 
   test("can pop elements") {
@@ -28,25 +28,25 @@ class MinStackTest extends AnyFunSuite {
     }
     minStack.push(1)
     val result = minStack.pop()
-    result shouldEqual (1)
+    result shouldEqual 1
   }
 
   test("can clear all elements") {
     val minStack = new MinStack[Integer]()
     minStack.push(1)
     val top = minStack.top()
-    top shouldEqual (1)
-    val min = minStack.getMin()
-    min shouldEqual (1)
+    top shouldEqual 1
+    val min = minStack.getMin
+    min shouldEqual 1
     minStack.clear()
     assertThrows[IllegalArgumentException] {
       minStack.top()
     }
     assertThrows[IllegalArgumentException] {
-      minStack.getMin()
+      minStack.getMin
     }
-    val empty = minStack.isEmpty()
-    empty shouldEqual (true)
+    val empty = minStack.isEmpty
+    empty shouldEqual true
   }
 
   test("can print itself as string") {
@@ -54,6 +54,6 @@ class MinStackTest extends AnyFunSuite {
     minStack.push(1)
     minStack.push(2)
     val result = minStack.toString()
-    result shouldEqual ("2->1")
+    result shouldEqual "2->1"
   }
 }
