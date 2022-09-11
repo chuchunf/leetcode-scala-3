@@ -4,9 +4,9 @@ object ValidParentheses {
   def isValid(s: String): Boolean =
     val stack = new MinStack[Character]()
     val map = Map(')' -> '(', ']' -> '[', '}' -> '{')
-    s.toArray.find(char => char match {
-      case '(' | '[' | '{' => stack.push(char); false
-      case ')' | ']' | '}' => if (stack.pop() == map(char)) then false else true
+    !s.toArray.exists {
+      case char@('(' | '[' | '{') => stack.push(char); false
+      case char@(')' | ']' | '}') => if stack.pop() == map(char) then false else true
       case _ => true
-    }).isEmpty && stack.isEmpty()
+    } && stack.isEmpty
 }

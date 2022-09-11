@@ -1,19 +1,29 @@
 # Stack
-A stack is an abstract data type that serves as a collection of elements, supporting two basic operations, 
-Push to add an element and Pop to remove the most recently pushed element out. 
-Additionally, a peek operation may give access to the top without modifying the stack
-- Stack could be implemented use a linked list or an array
-- Stack data structures are used in backtracking problems, elements could be pushed in for later processing
-  - Unlike back tracking technique, stack normally holds conditions not actual result
-  - Matching parentheses => back track of unmatched pair
-  - Stock span => back track to the previous height
-  - The shortest unsorted array => back track to the previous unsorted
-- Stack has similar usage as hashmap to reduce the O(n) to O(1)
-  - Hashmap works when we just need to know existence instead of actual operation of each item
-  - Stack works when we only need to know the local optimal value related to the problem
+A stack is an abstract data type that serves as a collection of elements, supporting two basic operations,
+1. **Push** to add an element to the top
+2. **Pop** to remove the most recently pushed element out.
 
-Tips
-- Store the index instead of actual value 
+Additionally, a peek operation may give access to the top without modifying the stack
+
+## Implementation
+- Stack could be implemented using a **linked list** or an array
+
+## Applications
+1. Stack data structures are used in **backtracking problems**, elements could be pushed in for later processing.
+   Unlike the backtracking technique, the stack normally holds conditions not the actual result
+   - Matching parentheses => backtrack of unmatched pair
+   - Stock span => backtrack to the previous height
+   - The shortest unsorted array => backtrack to the previous unsorted
+2. Stack has similar usage as hashmap to **reduce the O(n) to O(1)**.
+   Hashmap works when we just need to know the existence instead of the actual operation of each item,
+   Stack works when the **natural order of processing is FILO**
+   - Evaluate Reverse Polish Notation => next element need to be processed is last in
+   - Valid Parentheses => next element that needs to be matched is last in
+3. Reverse of element order
+4. Processing Function Calls => convert recursion to iteration
+
+## Tips
+1. Store the index instead of the actual value
 
 ### 155. Min Stack
 ```scala
@@ -45,11 +55,11 @@ Tips
   def isValid(s: String): Boolean =
     val stack = new MinStack[Character]()
     val map = Map(')' -> '(', ']' -> '[', '}' -> '{')
-    s.toArray.find(char => char match {
-      case '(' | '[' | '{' => stack.push(char); false
-      case ')' | ']' | '}' => if (stack.pop() == map(char)) then false else true
-      case _ => false
-    }).isEmpty
+    !s.toArray.exists {
+      case char@('(' | '[' | '{') => stack.push(char); false
+      case char@(')' | ']' | '}') => if stack.pop() == map(char) then false else true
+      case _ => true
+    } && stack.isEmpty
 ```
 
 ### 901. Online Stock Span
@@ -59,14 +69,14 @@ Tips
     case Array(_) => Array(0)
     case _ => val (stack, array) = (new MinStack[Integer](), mutable.ArrayBuffer[Int](0))
       stack.push(0)
-      prices.drop(1).zipWithIndex.foreach { case (price, index) => {
+      prices.drop(1).zipWithIndex.foreach { case (price, index) =>
         var (span, i) = (1, index + 1)
         while prices(stack.top()) < price do
           span = span + 1
           stack.pop()
         stack.push(i)
         array.append(span)
-      }}
+      }
       array.toArray
 ```
 
@@ -75,10 +85,10 @@ Tips
   def findUnsortedSubarray(nums: Array[Int]): Int =
     def getEnd(nums: Array[Int]): Int =
       var (end, stack) = (nums.length, new MinStack[Integer]())
-      nums.zipWithIndex.foreach { case (num, index) => {
-        while (!stack.isEmpty() && nums(stack.top()) > num) do end = end.min(stack.pop())
+      nums.zipWithIndex.foreach { case (num, index) =>
+        while !stack.isEmpty && nums(stack.top()) > num do end = end.min(stack.pop())
         stack.push(index)
-      }}
+      }
       end + 1
 
     val (left, right) = (getEnd(nums), nums.length - getEnd(nums.reverse))
@@ -120,15 +130,14 @@ Tips
 
 ### 71. Simplify Path
 ```scala
-  def simplifyPath(path: String): String =
     val stack = new MinStack[String]()
     path.split("/")
       .foreach { _ match
-          case ".." => if !stack.isEmpty() then stack.pop()
-          case str => if !str.isEmpty && !".".equals(str) then stack.push(str)
+          case ".." => if !stack.isEmpty then stack.pop()
+          case str => if str.nonEmpty && !".".equals(str) then stack.push(str)
       }
     var result = ""
-    while !stack.isEmpty() do result = "/" + stack.pop() + result
+    while !stack.isEmpty do result = "/" + stack.pop() + result
     if result.isEmpty then "/" else result
 ```
 

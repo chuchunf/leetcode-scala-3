@@ -30,18 +30,18 @@ class MinStack[T <: Comparable[T]]() {
     case None => throw new IllegalArgumentException("empty stack!")
     case Some(node) => node.value
 
-  def getMin(): T = min match
+  def getMin: T = min match
     case None => throw new IllegalArgumentException("empty stack!")
     case Some(value) => value
 
-  override def toString(): String =
+  override def toString: String =
     var (temp, buffer) = (head, new ArrayBuffer[T]())
-    while (temp.isDefined) do
+    while temp.isDefined do
       buffer.append(temp.get.value)
       temp = temp.get.next
     buffer.mkString("->")
 
-  def isEmpty(): Boolean = head.isEmpty
+  def isEmpty: Boolean = head.isEmpty
 
   def clear(): Unit =
     head = None
