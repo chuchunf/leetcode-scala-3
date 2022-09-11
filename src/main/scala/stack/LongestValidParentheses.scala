@@ -6,7 +6,7 @@ object LongestValidParentheses {
     var (max, count) = (0, 0)
     s.foreach { _ match
         case '(' => stack.push('(')
-        case _ => if stack.isEmpty() then {
+        case _ => if stack.isEmpty then {
           max = max.max(count * 2)
           count = 0
         } else {

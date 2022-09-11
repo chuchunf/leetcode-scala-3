@@ -6,9 +6,9 @@ object LargestRectangleinHistogram {
     var result = 0
     for (i <- 0 to heights.length) {
       val h = if i == heights.length then 0 else heights(i)
-      while !stack.isEmpty() && h < heights(stack.top()) do
+      while !stack.isEmpty && h < heights(stack.top()) do
         val ch = heights(stack.pop())
-        val pi: Integer = if stack.isEmpty() then -1 else stack.top()
+        val pi: Integer = if stack.isEmpty then -1 else stack.top()
         result = result.max(ch * (i - pi - 1))
       stack.push(i)
     }
