@@ -9,7 +9,7 @@ object Dota2Senate {
       case ('R', index) => qr.addOne(index)
       case (_, index) => qd.addOne(index)
     }
-    while !qr.isEmpty && !qd.isEmpty do
+    while qr.nonEmpty && qd.nonEmpty do
       val (ri, di) = (qr.removeHead(), qd.removeHead())
       if ri < di then qr.addOne(senate.length + ri) else qd.addOne(senate.length + di)
     if qr.size > qd.size then "Radiant" else "Dire"

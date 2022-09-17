@@ -11,10 +11,10 @@ class MyStackTest extends AnyFunSuite {
     mystack.push(1)
     mystack.push(2)
     val top = mystack.top()
-    top shouldEqual (2)
+    top shouldEqual 2
     val result = mystack.pop()
-    result shouldEqual (2)
+    result shouldEqual 2
     val isempty = mystack.empty()
-    isempty shouldEqual (false)
+    isempty shouldEqual false
   }
 }

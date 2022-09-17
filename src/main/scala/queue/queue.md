@@ -1,16 +1,29 @@
 # Queue
-A queue is a data structure maintaining a collection of entities in First-In-First-Out order.
-* The end of the sequence at which elements are added is called the tail, 
-* The end at which elements are removed is called the head.
+A queue is a data structure maintaining a collection of entities in **First-In-First-Out** order.
+* The end of the sequence at which elements are added is called the tail => **Enqueue**
+* The end at which elements are removed is called the head => **Dequeue**
 
-Application and tips
-* when the order of element enter/exit is significant => Dota2 Senate
-* store index not actual value
-* if one queue is not enough, use multiple queues
-* reverse the order of queue if there are reverse dependencies 
-
-Theoretically, one characteristic of a queue is that it does not have a specific capacity, 
+Theoretically, one characteristic of a queue is that it does not have a specific capacity,
 A bounded queue is a queue limited to a fixed number of items.
+
+## Implementation
+1. Use a fixed-size **array** and two pointers to indicate the starting position and the ending position.
+2. Use a **Linked List**,
+    * a doubly linked list has O(1) insertion and deletion at both ends, so it is a natural choice for queues.
+    * a singly linked list could provide the same with a pointer at tis end
+
+## Application and tips
+* Breath first search
+* When the order of element enter/exit is significant 
+
+## Tips
+* Store index not actual value
+* If one queue is not enough, use multiple queues
+* Reverse the order of queue if there are reverse dependencies 
+
+## Related data structure
+* **Priority queue**: a queue with each element additionally has a priority associated with it
+* **Circular buffer**: a single, fixed-size buffer as if it were connected end-to-end
 
 ### 225. Implement Stack using Queues
 ```scala
@@ -19,19 +32,19 @@ class MyStack[T <: Comparable[T]] {
   private val q2 = mutable.Queue[T]()
 
   def push(x: T): Unit =
-    val (qe, qf) = if q1.isEmpty then (q1, q2) else (q2, q1)
-    qe.enqueue(x)
-    while !qf.isEmpty do qe.enqueue(qf.dequeue())
+  val (qe, qf) = if q1.isEmpty then (q1, q2) else (q2, q1)
+  qe.enqueue(x)
+  while qf.nonEmpty do qe.enqueue(qf.dequeue())
 
   def pop(): T =
-    val q = if q1.isEmpty then q2 else q1
-    if q.isEmpty then throw new IllegalArgumentException("empty stack")
-    else q.dequeue()
+  val q = if q1.isEmpty then q2 else q1
+  if q.isEmpty then throw new IllegalArgumentException("empty stack")
+  else q.dequeue()
 
   def top(): T =
-    val q = if q1.isEmpty then q2 else q1
-    if q.isEmpty then throw new IllegalArgumentException("empty stack")
-    else q.head
+  val q = if q1.isEmpty then q2 else q1
+  if q.isEmpty then throw new IllegalArgumentException("empty stack")
+  else q.head
 
   def empty(): Boolean = q1.isEmpty && q2.isEmpty
 }
@@ -47,15 +60,11 @@ class MyQueue[T] {
 
   def pop(): T =
     this.peek()
-
-  output.pop()
+    output.pop()
 
   def peek(): T =
-    if output.isEmpty then
-
-  while !input.isEmpty
-  do output.push(input.pop())
-  output.head
+    if output.isEmpty then while input.nonEmpty do output.push(input.pop())
+    output.head
 
   def empty(): Boolean = input.isEmpty && output.isEmpty
 }

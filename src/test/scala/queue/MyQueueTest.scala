@@ -10,10 +10,10 @@ class MyQueueTest extends AnyFunSuite {
     queue.push(1)
     queue.push(2)
     val peek = queue.peek()
-    peek shouldEqual (1)
+    peek shouldEqual 1
     val pop = queue.pop()
-    pop shouldEqual (1)
+    pop shouldEqual 1
     val empty = queue.empty()
-    empty shouldEqual (false)
+    empty shouldEqual false
   }
 }

@@ -13,7 +13,7 @@ class MyQueue[T] {
     output.pop()
 
   def peek(): T =
-    if output.isEmpty then while !input.isEmpty do output.push(input.pop())
+    if output.isEmpty then while input.nonEmpty do output.push(input.pop())
     output.head
 
   def empty(): Boolean = input.isEmpty && output.isEmpty

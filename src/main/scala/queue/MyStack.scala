@@ -9,7 +9,7 @@ class MyStack[T <: Comparable[T]] {
   def push(x: T): Unit =
     val (qe, qf) = if q1.isEmpty then (q1, q2) else (q2, q1)
     qe.enqueue(x)
-    while !qf.isEmpty do qe.enqueue(qf.dequeue())
+    while qf.nonEmpty do qe.enqueue(qf.dequeue())
 
   def pop(): T =
     val q = if q1.isEmpty then q2 else q1
