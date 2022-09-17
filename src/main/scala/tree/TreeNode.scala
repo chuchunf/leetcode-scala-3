@@ -1,12 +1,14 @@
 package tree
 
+import scala.collection.mutable
+
 sealed class TreeNode[T](var value: T, var left: Option[TreeNode[T]], var right: Option[TreeNode[T]]) {
   override def toString: String =
-    val buffer = new StringBuilder(128)
+    val buffer = new mutable.StringBuilder(128)
     print(buffer, "", "")
     buffer.toString
 
-  private def print(buffer: StringBuilder, prefix: String, childPrefix: String): Unit =
+  private def print(buffer: mutable.StringBuilder, prefix: String, childPrefix: String): Unit =
     buffer.append(prefix)
     buffer.append(this.value)
     buffer.append(System.lineSeparator())

@@ -36,7 +36,7 @@ object BinaryTreeTraversal {
   def levelOrder(root: TreeNode[Int]): List[List[Int]] =
     val result = mutable.ListBuffer[List[Int]]()
     var cache = mutable.ListBuffer[TreeNode[Int]](root)
-    while !cache.isEmpty do
+    while cache.nonEmpty do
       val line = mutable.ListBuffer[Int]()
       val nextcache = mutable.ListBuffer[TreeNode[Int]]()
       cache.foreach(node => {
@@ -51,7 +51,7 @@ object BinaryTreeTraversal {
   def zigzagLevelOrder(root: TreeNode[Int]): List[List[Int]] =
     val result = mutable.ListBuffer[List[Int]]()
     var (cache, zigzag) = (mutable.ListBuffer[TreeNode[Int]](root), true)
-    while !cache.isEmpty do
+    while cache.nonEmpty do
       val line = mutable.ListBuffer[Int]()
       val nextcache = mutable.ListBuffer[TreeNode[Int]]()
       if zigzag then cache = cache.reverse

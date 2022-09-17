@@ -1,16 +1,48 @@
 # Tree
 A tree is an abstract data type representing a hierarchical structure, with a root node and subtrees of linked children nodes.
-- Given its hierarchical structure, it works naturally with recursion 
-- It is like a 2d linked listed so share some similarities
-- A temp node could be used to hold a particular node while transformation
-- Instead of change the value of the node, pointing to another node works naturally with recursion 
-- A helper function to take two nodes and/or a container to store results
+- Children nodes must be connected to exactly one parent, except for the root node, which has no parent.
+- These constraints mean there are no cycles or loops.
+- Each child can be treated like the root node of its own subtree => **recursion**
 
-common operation
-- pre order => root, left then right
+Tree and linked list
+- It is like a 2d linked list so share some similarities
+- Given its hierarchical structure, it works naturally with **recursion**
+
+## Tips
+- A **temp helper node** could be used to hold a particular node while transformation
+- A **helper function** to take two nodes and/or a container to store results
+- Instead of changing the value of the node, pointing to another node works naturally with recursion
+
+## Common travels operations
+- pre-order => root, left then right
 - in order => left, root then right
 - post order => left, right then root
-- line order => line by line horizontally (with a list cache of next level of nodes)
+- line order => line by line horizontally (with a list cache of the next level of nodes)
+- zig zag order
+
+## Other operations
+- invert binary tree
+
+## Common properties
+- is a balanced tree
+- is a symmetric tree
+- max depth
+- min depth
+
+## Construction of tree
+- Construct binary tree from in order and post order
+- Construct binary tree from pre order and in order
+
+## Type of trees
+1. Binary trees, which constrain the number of children for each parent to exactly two.
+2. Balanced trees, a binary tree in which the height of the left and right subtree of any node differ by not more than 1.
+3. Binary search trees, a binary tree in which the left subtree contains key values less than the root, while the right subtree contains key values greater than the root
+4. AVL trees, a self-balancing binary search tree
+
+## Related Algorithms
+1. Recursion
+2. Depth-first search
+3. Width-first search
 
 ### 144. Binary Tree Preorder Traversal
 ```scala
@@ -56,7 +88,7 @@ common operation
   def levelOrder(root: TreeNode[Int]): List[List[Int]] =
     val result = mutable.ListBuffer[List[Int]]()
     var cache = mutable.ListBuffer[TreeNode[Int]](root)
-    while !cache.isEmpty do
+    while cache.nonEmpty do
       val line = mutable.ListBuffer[Int]()
       val nextcache = mutable.ListBuffer[TreeNode[Int]]()
       cache.foreach(node => {
@@ -74,7 +106,7 @@ common operation
   def zigzagLevelOrder(root: TreeNode[Int]): List[List[Int]] =
     val result = mutable.ListBuffer[List[Int]]()
     var (cache, zigzag) = (mutable.ListBuffer[TreeNode[Int]](root), true)
-    while !cache.isEmpty do
+    while cache.nonEmpty do
       val line = mutable.ListBuffer[Int]()
       val nextcache = mutable.ListBuffer[TreeNode[Int]]()
       if zigzag then cache = cache.reverse
