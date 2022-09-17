@@ -1,11 +1,24 @@
 # Binary Search
-Binary search / half-interval search / logarithmic search finds the position of a target value within a sorted data structure.
-It compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, and repeats the process.
+**Binary search** / half-interval search / logarithmic search finds the position of a target value within a **sorted** data structure.
+1. It compares the target value to the middle element of the array. 
+2. If they are not equal, the half in which the target cannot lie is eliminated 
+3. And the search continues on the remaining half, 
+4. And repeats the process.
 
-Tips
+**Binary Search should be considered for searching** for an index or element. 
+If the collection is unordered, sort it first before applying Binary Search.
+
+Binary search could be implemented iteratively or recursively.
+
+## Tips
 - calculate mid by low + (high-low)/2 to prevent overflow
-- low = mid + 1 or high = mid - 1
+- starting with low=1, high=length-1, repeat while low <= high 
+- depending on comparison with target, low = mid + 1 or high = mid - 1
 - consider all possible cases for partially sorted arrays
+
+## Related data structures
+1. Binary search tree (BST)
+2. Array
 
 ### 69. Sqrt(x)
 ```scala

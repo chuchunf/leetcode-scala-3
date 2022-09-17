@@ -1,6 +1,9 @@
 package binarysearch
 
+import scala.annotation.tailrec
+
 object MedianofTwoSortedArrays {
+  @tailrec
   def findMedianSortedArrays(nums1: Array[Int], nums2: Array[Int]): Double =
     val (len1, len2) = (nums1.length, nums2.length)
     if len1 < len2 then findMedianSortedArrays(nums2, nums1)
