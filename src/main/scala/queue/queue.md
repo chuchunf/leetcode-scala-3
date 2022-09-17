@@ -111,3 +111,13 @@ class ZigzagIterator(val l1: List[Int], val l2: List[Int]) {
   def hasNext: Boolean = iterators.nonEmpty
 }
 ```
+
+### 950. Reveal Cards In Increasing Order
+```scala
+  def deckRevealedIncreasing(deck: Array[Int]): Array[Int] =
+    deck.sorted.reverse
+      .foldLeft(mutable.ArrayDeque[Int]()) { case (q, num) =>
+        if q.nonEmpty then q.prepend(q.removeLast())
+        q.prepend(num)
+      }.toArray
+```
