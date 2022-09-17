@@ -1,6 +1,10 @@
 # Sort
 a collection of common sort algorithms and sort related problems
 
+## Merge Sort
+1. Splits the array in half until it cannot be further divided (empty or 1 element)
+2. Merge the two sorted arrays into a large sorted array  
+
 ### 148. Sort List
 merge sort, divide and merge (sort)
 ```scala
@@ -47,7 +51,7 @@ merge sort, divide and merge (sort)
 ```scala
   def merge(intervals: Array[Array[Int]]): Array[Array[Int]] =
     val sorted = intervals.sortBy(_ (0))
-    sorted.tail.foldLeft((new ArrayBuffer[Array[Int]]().addOne(sorted.head))) {
+    sorted.tail.foldLeft(new ArrayBuffer[Array[Int]]().addOne(sorted.head)) {
       case (result, curr) if result.last(1) >= curr(0) => result.last(1) = result.last(1).max(curr(1))
         result
       case (result, curr) => result.addOne(curr)
@@ -67,7 +71,7 @@ merge sort, divide and merge (sort)
         maxs(index) = maxs(index).max(num)
     }
     var (result, pre) = (Integer.MIN_VALUE, min)
-    for (i <- 0 until mins.length) {
+    for (i <- 0 until mins.indices) {
       if mins(i) != Integer.MAX_VALUE && maxs(i) != Integer.MIN_VALUE then {
         result = result.max(mins(i) - pre)
         pre = maxs(i)

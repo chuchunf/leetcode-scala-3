@@ -12,7 +12,7 @@ object MaximumGap {
         maxs(index) = maxs(index).max(num)
     }
     var (result, pre) = (Integer.MIN_VALUE, min)
-    for (i <- 0 until mins.length) {
+    for (i <- mins.indices) {
       if mins(i) != Integer.MAX_VALUE && maxs(i) != Integer.MIN_VALUE then {
         result = result.max(mins(i) - pre)
         pre = maxs(i)
