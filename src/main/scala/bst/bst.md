@@ -4,7 +4,18 @@ Binary Search Tree is a node-based binary tree data structure which has the foll
 - The right subtree of a node contains only nodes with keys greater than the node’s key.
 - The left and right subtree each must also be a binary search tree.
 
+Binary search trees allow binary search for **fast lookup, addition, and removal of data items**.
+- A balanced binary tree is a binary tree structure in which the left and right subtrees of every node differ in height by no more than 1. 
+- A perfect binary tree is a tree with all leaves are at the same level, and every parent has two children.
+
+## Related data structures
 TreeMap and TreeSet data structures are internally implemented using self-balancing BSTs.
+
+## Common operation
+1. Validate Binary Search tree
+2. Delete a node in a tree
+3. Insert a node into a tree
+4. Is Same tree
 
 ### 98. Validate Binary Search Tree
 ```scala
