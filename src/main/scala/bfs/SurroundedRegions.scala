@@ -10,7 +10,7 @@ object SurroundedRegions {
         if char == 'O' && (x == 0 || y == 0 || x == board.length - 1 || y == board(0).length - 1) then q.addOne((x, y))
       }
     }
-    while !q.isEmpty do {
+    while q.nonEmpty do {
       val (x, y) = q.remove(0)
       board(x)(y) = '.'
       if (x - 1) >= 0 && board(x - 1)(y) == 'O' then q.addOne((x - 1, y))

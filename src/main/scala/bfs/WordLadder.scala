@@ -8,7 +8,7 @@ object WordLadder {
 
   private def _ladderLength(begin: String, end: String, words: mutable.HashSet[String], len: Int): Int =
     if begin.equals(end) then return len + 1
-    words.filter(word => {1 == begin.toCharArray.zip(word.toCharArray).filter { (c1, c2) => {c1 != c2}}.length})
+    words.filter(word => {1 == begin.toCharArray.zip(word.toCharArray).count { (c1, c2) => { c1 != c2 }}})
       .map(word => {
         words.remove(word)
         val result = _ladderLength(word, end, words, 1 + len)

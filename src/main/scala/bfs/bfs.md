@@ -1,9 +1,16 @@
 # Breadth First Search
 BFS is a traversing algorithm which starts from a selected node and traverse the graph layer-wise thus exploring the neighbour nodes (nodes which are directly connected to source node). 
 Then move towards the next-level neighbour nodes. 
+- A **queue** is used to enable the layer-wise traverse iteratively by keeping track of the child nodes that were encountered but not yet explored
+- A recursive implementation could simply continue with the queue built at parent level
 
-A queue is used to enable the layer-wise traverse iteratively. 
-A recursive implementation could simply continue with the queue built at parent level
+(Plain) Depth-first search, which explores the node branch as far as possible,
+may get lost in an infinite branch and never make it to the solution node.
+
+## Applications
+1. Find shortest path in tree or graph
+2. Cycle detection in undirected graph
+3. Path finding
 
 ### 127. Word Ladder
 ```scala
@@ -12,7 +19,7 @@ A recursive implementation could simply continue with the queue built at parent 
 
   private def _ladderLength(begin: String, end: String, words: mutable.HashSet[String], len: Int): Int =
     if begin.equals(end) then return len + 1
-    words.filter(word => {1 == begin.toCharArray.zip(word.toCharArray).filter { (c1, c2) => {c1 != c2}}.length})
+    words.filter(word => {1 == begin.toCharArray.zip(word.toCharArray).count { (c1, c2) => { c1 != c2 }}})
       .map(word => {
         words.remove(word)
         val result = _ladderLength(word, end, words, 1 + len)
@@ -33,7 +40,7 @@ A recursive implementation could simply continue with the queue built at parent 
         if char == 'O' && (x == 0 || y == 0 || x == board.length - 1 || y == board(0).length - 1) then q.addOne((x, y))
       }
     }
-    while !q.isEmpty do {
+    while q.nonEmpty do {
       val (x, y) = q.remove(0)
       board(x)(y) = '.'
       if (x - 1) >= 0 && board(x - 1)(y) == 'O' then q.addOne((x - 1, y))
@@ -54,10 +61,10 @@ A recursive implementation could simply continue with the queue built at parent 
   def rightSideView(root: TreeNode[Int]): List[Int] =
     val result = mutable.ListBuffer[Int]()
     var queue = mutable.ListBuffer[TreeNode[Int]]().addOne(root)
-    while !queue.isEmpty do {
+    while queue.nonEmpty do {
       result.addOne(queue.last.value)
       val tmpqueue = mutable.ListBuffer[TreeNode[Int]]()
-      while !queue.isEmpty do {
+      while queue.nonEmpty do {
         val node = queue.remove(0)
         if node.left.isDefined then tmpqueue.addOne(node.left.get)
         if node.right.isDefined then tmpqueue.addOne(node.right.get)
