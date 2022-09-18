@@ -5,8 +5,9 @@ and abandons each partial candidate as soon as it determines that the candidate 
 and resume from last good point (hence **“backtracks”**)
 - Backtracking is essentially **recursive with memorizing of past result** (with a collection and indexes passing in recursive calls) 
 - Backtracking normally requires a **helper recursive function** with additional parameters to keep track intermedia states and finally result
+- Backtracking helper function process all the intermedia states as parameters, so it normally returns none
 
-Using N Queens as an exmaple
+Using N Queens as an example
 ```scala
 private def _solveNQueens(current: Int, n: Int, buffer: mutable.ListBuffer[Int], result: mutable.ListBuffer[List[String]]): Unit
 ```

@@ -6,7 +6,7 @@ then backtracks until it finds an unexplored path, and then explores it.
 **Iterative Implementation of DFS is with a Stack**, to keep track of the nodes discovered along branches which helps in backtracking of the graph.
 FIFO Stack is used as the most recently discovered nodes should be processed first.
 
-## Related Algorithms
+## Applications
 1. Topological sort
 2. Cycle detection
 3. Scheduling problems
@@ -57,4 +57,22 @@ FIFO Stack is used as the most recently discovered nodes should be processed fir
       root.right = None
       result
     case (_, _) => root
+```
+
+### 113. Path Sum II
+```scala
+  def pathSum(root: TreeNode[Int], targetSum: Int): List[List[Int]] =
+    val result = mutable.ListBuffer[List[Int]]()
+    _pathSum(root, targetSum, mutable.ListBuffer[Int](), result)
+    result.toList
+
+  private def _pathSum(root: TreeNode[Int], target: Int, buffer: mutable.ListBuffer[Int], result: mutable.ListBuffer[List[Int]]): Unit =
+    buffer.addOne(root.value)
+    if root.value == target then {
+      result.addOne(buffer.clone().toList)
+    } else if root.value < target then {
+      if root.left.isDefined then _pathSum(root.left.get, target - root.value, buffer, result)
+      if root.right.isDefined then _pathSum(root.right.get, target - root.value, buffer, result)
+    }
+    buffer.remove(buffer.length - 1)
 ```
