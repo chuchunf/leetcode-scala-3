@@ -1,8 +1,16 @@
 # Depth first search
-Depth-first search (DFS) is a **recursive** algorithm for searching a graph or tree data structure. 
-The algorithm starts at the root (top) node of a tree and goes as far as it can down a given branch (path), then backtracks until it finds an unexplored path, and then explores it.
+**Depth-first search (DFS)** is a **recursive** algorithm for searching a graph or tree data structure. 
+The algorithm starts at the root (top) node of a tree and goes as far as it can down a given branch (path), 
+then backtracks until it finds an unexplored path, and then explores it.
 
-Iterative Implementation of DFS is with a Stack instead of a Queue (for BFS)
+**Iterative Implementation of DFS is with a Stack**, to keep track of the nodes discovered along branches which helps in backtracking of the graph.
+FIFO Stack is used as the most recently discovered nodes should be processed first.
+
+## Related Algorithms
+1. Topological sort
+2. Cycle detection
+3. Scheduling problems
+4. Path finding 
 
 ### 112. Path Sum
 ```scala
