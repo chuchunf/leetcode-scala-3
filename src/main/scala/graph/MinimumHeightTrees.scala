@@ -6,7 +6,7 @@ object MinimumHeightTrees {
   def findMinHeightTrees(n: Int, edges: Array[Array[Int]]): List[Int] =
     val nodes = new Array[Node[Int]](n)
     for (i <- 0 until n) nodes(i) = Node(i)
-    edges.foreach { case p =>
+    edges.foreach { p =>
       nodes(p(0)).neighbors.addOne(nodes(p(1)))
       nodes(p(1)).neighbors.addOne(nodes(p(0)))
     }
