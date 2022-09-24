@@ -1,30 +1,44 @@
-# Heap
-The heap is one maximally efficient implementation of an abstract data type called a priority queue, and in fact, priority queues are often referred to as "heaps", regardless of how they may be implemented. 
-In a heap, the highest (or lowest) priority element is always stored at the root. 
-However, a heap is not a sorted structure; it can be regarded as being partially ordered. 
+# Heap (priority queue)
+The **(binary) heap** is one maximally efficient implementation of an abstract data type **priority queue**.
+In fact priority queues are often referred to as "heaps", regardless of how they may be implemented.
+- In a heap, the highest (or lowest) priority element is always stored at the root. 
+- However, a heap is not a sorted structure; it can be regarded as being **partially ordered**. 
+
 A heap is a useful data structure when it is necessary to repeatedly remove the object with the highest (or lowest) priority, 
 or when insertions need to be interspersed with removals of the root node.
 
+Heap can be considered as an alternative data structure of queue/stack that instead of maintain in/out order,
+it maintains **an user controlled order** (for example, min and max)
+
+## Implementation
 Heap can be implemented as an array with following properties
 - parent = Arr[(i-1) / 2]
 - left = Arr[(2*i) + 1]
 - right = Arr[(2*i) + 2]
 
-Parent is the smallest/biggest value, when insert or remove, heapitify function called to maintain the property of the heap
+### Operation
+1. insert: insert an new element
+2. delete: remove the root element
+3. **heapifiy**: reorder the heap after insertion/deletion to maintain the partial order
+
+### Heapitify
+Parent is the smallest/biggest value, when insert or remove, heapitify function called to maintain the partial order of the heap
 1. reduce size and move the last element as root
 2. start heapifiy process at 0 (root)
 3. compare left, right and parent (root)
 4. swap with value at largest 
 5. recursive heapifty at from largest
 
-Heap can be considered as an alternative data structure of queue/stack that instead of maintain in/out order, it maintains an user controlled order (for example, min and max)
+## Applications
+1. Heap Sort uses Binary Heap to sort an array in O(nLogn) time.
+2. Priority queue to get min/max (user defined order) element in O(nLogn) time. 
 
 ### 506. Relative Ranks
 ```scala
   def findRelativeRanks(score: Array[Int]): Array[String] =
     val (pq, buffer) = (new PriorityQueue[Int](score.length), Array.ofDim[String](score.length))
     score.zipWithIndex.foreach { case (num, index) => pq.offer(index, num) }
-    for (n <- 0 until buffer.length) {
+    for (n <- buffer.indices) {
       buffer(pq.poll()) = n match
         case 0 => "Gold Medal"
         case 1 => "Silver Medal"
@@ -38,7 +52,7 @@ Heap can be considered as an alternative data structure of queue/stack that inst
 ```scala
   def nthUglyNumber(n: Int): Int = n match
     case s if s < 7 => s
-    case b => val (pq, factors) = (new PriorityQueue[Int](n * 2, (a, b) => a < b), Array(2, 3, 5))
+    case _ => val (pq, factors) = (new PriorityQueue[Int](n * 2, (a, b) => a < b), Array(2, 3, 5))
       var (last, count) = (1, 1)
       while count < n do {
         count = count + 1

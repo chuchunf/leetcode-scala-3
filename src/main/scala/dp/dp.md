@@ -73,7 +73,7 @@ In both cases, we will only compute each fib(n) once.
 ### 64. Minimum Path Sum
 ```scala
   def minPathSum(grid: Array[Array[Int]]): Int =
-    for (i <- 0 until grid.length; j <- 0 until grid(0).length) {
+   for (i <- grid.indices; j <- grid(0).indices) {
       (i, j) match
         case (0, 0) => grid(i)(j) = grid(i)(j)
         case (0, _) => grid(i)(j) = grid(i)(j) + grid(i)(j - 1)

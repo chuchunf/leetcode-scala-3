@@ -1,13 +1,14 @@
 # Back Tracking
-Backtracking is a general algorithm for finding **all (or some) solutions** of problems, 
-that incrementally builds candidates to the solutions, 
-and abandons each partial candidate as soon as it determines that the candidate is not a valid solution, 
+Backtracking is a general algorithm for finding **all (or some) solutions** of problems, by exploring all potential candidates.
+
+Backtracking incrementally builds candidates to the solutions, 
+abandons each partial candidate as soon as it determines that the candidate is not a valid solution, 
 and resume from last good point (hence **“backtracks”**)
 - Backtracking is essentially **recursive with memorizing of past result** (with a collection and indexes passing in recursive calls) 
 - Backtracking normally requires a **helper recursive function** with additional parameters to keep track intermedia states and finally result
 - Backtracking helper function process all the intermedia states as parameters, so it normally returns none
 
-Using N Queens as an example
+### Using N Queens as an example
 ```scala
 private def _solveNQueens(current: Int, n: Int, buffer: mutable.ListBuffer[Int], result: mutable.ListBuffer[List[String]]): Unit
 ```
@@ -15,12 +16,13 @@ private def _solveNQueens(current: Int, n: Int, buffer: mutable.ListBuffer[Int],
 - **n** is the target value to stop the recursion 
 - **buffer** keep track of current partial result as of **current**
 - **result** to store all solutions identified
+- **no returns** as all states are managed via parameters during recursive calls
 
 As all recursive functions, the helper function contains two parts, first part breaks the recursion when we identify a successful solution
 ```scala
 case num if num == n => result.addOne(buffer.foldLeft(mutable.ListBuffer[String]()) { case (b, i) => b.addOne(".".repeat(n).updated(i, 'Q')) }.toList)
 ```
-Otherwise, identify all possible next candidates and call the helper function recursively
+Otherwise, **identify all possible next candidates and call the helper function recursively**
 ```scala
     case _ => for (i <- 0 until n if !buffer.contains(i) && !buffer.zipWithIndex.foldLeft(false) { case (r, (v, idx)) => r || (i - (current - idx)) == v || (i + (current - idx)) == v }) {
       buffer.addOne(i)
@@ -33,7 +35,7 @@ Otherwise, identify all possible next candidates and call the helper function re
       buffer.remove(buffer.length - 1)
 ```
 
-Tips
+## Tips
 - Use any/some intermedia state variables as long as they keep the partial states 
 - Change a cell value to indicate visited state and revert it after recursive call
 
@@ -77,7 +79,7 @@ Tips
   private def permuteInternal(nums: mutable.ArrayBuffer[Int], tmp: mutable.ListBuffer[Int], result: mutable.ListBuffer[List[Int]]): Unit =
     nums match
       case mutable.ArrayBuffer() => result.append(tmp.toList)
-      case _ => for (n <- 0 until nums.length)
+      case _ => for (n <- nums.indices)
         val remove = nums.remove(n)
         permuteInternal(nums, mutable.ListBuffer[Int]().addAll(tmp).append(remove), result)
         nums.insert(n, remove)
@@ -88,7 +90,7 @@ Tips
   def isMatch(s: String, p: String): Boolean = p.toSeq match
     case Seq() => s.isEmpty
     case Seq(head, tail@_*) =>
-      val firstMatch = s.headOption.filter(_ == head || head == '.').nonEmpty
+      val firstMatch = s.headOption.exists(_ == head || head == '.')
       tail.headOption.filter(_ == '*') match
         case Some(_) => isMatch(s, p.drop(2)) || (firstMatch && isMatch(s.drop(1), p))
         case None => firstMatch && isMatch(s.drop(1), p.drop(1))
@@ -103,7 +105,7 @@ Tips
 
   private def _letterCombinations(digits: List[Char], buffer: List[String]): List[String] = digits match
     case List() => buffer
-    case head :: tail => _letterCombinations(tail, map(head).map { case d => if buffer.isEmpty then List(d) else buffer.map(b => b + d) }.flatten)
+    case head :: tail => _letterCombinations(tail, map(head).flatMap { d => if buffer.isEmpty then List(d) else buffer.map(b => b + d) })
 ```
 
 ### 47. Permutations II
@@ -112,11 +114,10 @@ Tips
 
   private def _permuteUnique(nums: Array[Int], buffer: mutable.HashSet[List[Int]]): List[List[Int]] = nums match
     case Array() => buffer.toList
-    case _ => nums.zipWithIndex.map { case (num, i) =>
+    case _ => nums.zipWithIndex.flatMap { case (_, i) =>
       _permuteUnique(nums.take(i) ++ nums.drop(i + 1)
         , if buffer.isEmpty then mutable.HashSet(List(nums(i))) else buffer.map(l => nums(i) :: l))
-    }.flatten
-      .toList
+    }.toList
 ```
 
 ### 51. N-Queens

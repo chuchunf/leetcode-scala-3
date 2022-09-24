@@ -23,6 +23,14 @@ because a directed graph cannot be represented using the disjoint-set(the data s
     if pid1 != pid2 then parent(pid1) = pid2
 ```
 
+### Optimization
+As the find is a recursive call until it finds the root (self-owned) node, the worst case scenario is O(Logn).
+1. union by rank: always attach smaller depth tree under the root of the deeper tree
+2. path compression: to flatten the tree when find() is called
+
+The two techniques complement each other. The time complexity of each operation becomes even smaller than O(Logn). 
+In fact, amortized time complexity effectively becomes small constant. 
+
 ### Application of union find
 * Check whether an undirected graph contains cycle or not (assume no self-loop)
 * Check the regions of an undirected graph
@@ -32,13 +40,13 @@ because a directed graph cannot be represented using the disjoint-set(the data s
   def numIslands(grid: Array[Array[Char]]): Int =
     val parent = Array.fill[Int](grid.length * grid(0).length)(-1)
     var count = 0
-    for (i <- 0 until grid.length; j <- 0 until grid(0).length) {
+    for (i <- grid.indices; j <- grid(0).indices) {
       if grid(i)(j) == '1' then {
         parent(i * grid(0).length + j) = i * grid(0).length + j
         count = count + 1
       }
     }
-    for (i <- 0 until grid.length; j <- 0 until grid(0).length) {
+    for (i <- grid.indices; j <- grid(0).indices) {
       if grid(i)(j) == '1' then {
         if j + 1 < grid(0).length && grid(i)(j + 1) == '1' && UF.union(i * grid(0).length + j, i * grid(0).length + j + 1, parent) then count = count - 1
         if i + 1 < grid.length && grid(i + 1)(j) == '1' && UF.union(i * grid(0).length + j, (i + 1) * grid(0).length + j, parent) then count = count - 1
@@ -68,8 +76,8 @@ because a directed graph cannot be represented using the disjoint-set(the data s
 ```scala
   def findCircleNum(isConnected: Array[Array[Int]]): Int =
     var result = isConnected.length
-    val parent = (0 until isConnected.length).toArray
-    for (i <- 0 until isConnected.length; j <- 0 until isConnected.length) {
+    val parent = isConnected.indices.toArray
+    for (i <- isConnected.indices; j <- isConnected.indices) {
       if i != j && isConnected(i)(j) == 1 && UF.union(i, j, parent) then result = result - 1
     }
     result

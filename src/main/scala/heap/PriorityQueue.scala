@@ -1,5 +1,6 @@
 package heap
 
+import scala.annotation.tailrec
 import scala.collection.mutable
 
 class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boolean = (a, b) => a > b, unique: Boolean = true) {
@@ -36,6 +37,7 @@ class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boole
 
   def isEmpty(): Boolean = size == 0
 
+  @tailrec
   private def heapify(i: Int): Unit =
     val (l, r) = (left(i), right(i))
     var smallest = i
@@ -57,7 +59,7 @@ class PriorityQueue[T](var capacity: Int = 128, val compare: (Int, Int) => Boole
     queue(l) = queue(r)
     queue(r) = temp
 
-  override def toString = queue.to(LazyList).filter(_ != null).mkString(",")
+  override def toString: String = queue.to(LazyList).filter(_ != null).mkString(",")
 }
 
 case class Element[T](e: T, priority: Int)

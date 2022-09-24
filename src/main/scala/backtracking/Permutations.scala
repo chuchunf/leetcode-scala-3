@@ -11,7 +11,7 @@ object Permutations {
   private def permuteInternal(nums: mutable.ArrayBuffer[Int], tmp: mutable.ListBuffer[Int], result: mutable.ListBuffer[List[Int]]): Unit =
     nums match
       case mutable.ArrayBuffer() => result.append(tmp.toList)
-      case _ => for (n <- 0 until nums.length)
+      case _ => for (n <- nums.indices)
         val remove = nums.remove(n)
         permuteInternal(nums, mutable.ListBuffer[Int]().addAll(tmp).append(remove), result)
         nums.insert(n, remove)

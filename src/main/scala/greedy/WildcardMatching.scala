@@ -1,7 +1,10 @@
 package greedy
 
+import scala.annotation.tailrec
+
 // 44. Wildcard Matching
 object WildcardMatching {
+  @tailrec
   def isMatch(s: String, p: String): Boolean =
     if s.isEmpty && p.isEmpty then true
     else if s.isEmpty || p.isEmpty then false
