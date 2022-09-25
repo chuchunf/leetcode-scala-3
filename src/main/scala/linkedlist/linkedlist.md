@@ -7,7 +7,7 @@ Linked list does not allow random access, index based operation requires an iter
 - Standard operation
   - a node has a next pointing to the next element, check null for the end of the linked list.
 - Common operations
-  - dummy.next = head => use a dummy head to save and keep the original head
+  - dummy.next = head => use a **dummy head** to save and keep the original head
   - ll.next.next => skip 1 item
   - Use two pointers to cover a range
   - Instead of updating value, just re-point the next pointer

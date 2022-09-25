@@ -1,6 +1,14 @@
 # Sort
 a collection of common sort algorithms and sort related problems
 
+## Quick Sort
+1. Use right most as pivot; 
+2. Find a number bigger than the pivot from left;
+3. Find a number smaller than the pivot from right;
+4. Swap them; 
+5. Once done, join the left, pivot and right; 
+6. Continue with left and right portion until the sub array contains 0 or 1 element
+
 ## Merge Sort
 1. Splits the array in half until it cannot be further divided (empty or 1 element)
 2. Merge the two sorted arrays into a large sorted array  

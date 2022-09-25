@@ -6,7 +6,7 @@ Recursion solves problems where the solution depends on solutions to smaller ins
 ## Implement the recursion function 
 1. Identify recursion case => a problem could be resolved by re-apply same function
 2. Identify exit condition with assumption the recursive function is already available
-3. Call the same function with different but smaller input recursively.
+3. Call the same function with different but smaller problem recursively.
 
 Add **helper function** and with additional variables to keep information
 
