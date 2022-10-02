@@ -109,3 +109,17 @@ Add **helper function** and with additional variables to keep information
     case 2 => Array("11", "69", "88", "96")
     case _ => generate(n - 2).flatMap(num => Array("1" + num + "1", "6" + num + "9", "9" + num + "6", "8" + num + "8"))
 ```
+
+### 87. Scramble String
+```scala
+  def isScramble(s1: String, s2: String): Boolean =
+    if s1.length != s2.length then false
+    else if s1.equals(s2) then true
+    else if s1.length <= 2 then s1.equals(s2.reverse)
+    else {
+      (1 until s1.length).exists { i =>
+        (isScramble(s1.substring(0, i), s2.substring(0, i)) && isScramble(s1.substring(i), s2.substring(i)))
+          || (isScramble(s1.substring(0, i), s2.substring(i)) && isScramble(s1.substring(i), s2.substring(0, i)))
+      }
+    }
+```
