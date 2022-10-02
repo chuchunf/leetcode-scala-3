@@ -8,7 +8,7 @@ object ScrambleString {
     else {
       (1 until s1.length).exists { i =>
         (isScramble(s1.substring(0, i), s2.substring(0, i)) && isScramble(s1.substring(i), s2.substring(i)))
-          || (isScramble(s1.substring(0, i), s2.substring(i)) && isScramble(s1.substring(i), s2.substring(0, i)))
+          || (isScramble(s1.substring(0, i), s2.substring(s1.length - i)) && isScramble(s1.substring(i), s2.substring(0, s1.length - i)))
       }
     }
 }
