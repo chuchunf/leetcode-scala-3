@@ -5,7 +5,7 @@ object DistinctSubsequences {
 
   private def _numDistinct(s: String, i: Int, t: String, j: Int, cache: Array[Array[Int]]): Int =
     if j >= t.length then 1
-    else if i >= s.length then 0 else {
+    else if i >= s.length || (s.length - i) < (t.length - j) then 0 else {
       if cache(i)(j) == -1 then
         cache(i)(j) = s.drop(i).zipWithIndex.map { case (char, k) =>
           if char == t(j) then _numDistinct(s, i + k + 1, t, j + 1, cache) else 0
