@@ -191,11 +191,26 @@ In both cases, we will only compute each fib(n) once.
 
   private def _numDistinct(s: String, i: Int, t: String, j: Int, cache: Array[Array[Int]]): Int =
     if j >= t.length then 1
-    else if i >= s.length then 0 else {
+    else if i >= s.length || (s.length - i) < (t.length - j) then 0 else {
       if cache(i)(j) == -1 then
         cache(i)(j) = s.drop(i).zipWithIndex.map { case (char, k) =>
           if char == t(j) then _numDistinct(s, i + k + 1, t, j + 1, cache) else 0
         }.sum
       cache(i)(j)
+    }
+```
+
+### 120. Triangle
+```scala
+  def minimumTotal(triangle: List[List[Int]]): Int =
+    _minimumTotal(0, 0, triangle, Array.fill(triangle.length, triangle.last.length)(-1))
+
+  private def _minimumTotal(level: Int, i: Int, triangle: List[List[Int]], cache: Array[Array[Int]]): Int =
+    if level == triangle.size then 0
+    else {
+      if cache(level)(i) == -1 then
+        cache(level)(i) = triangle(level)(i)
+          + _minimumTotal(level + 1, i, triangle, cache).min(_minimumTotal(level + 1, i + 1, triangle, cache))
+      cache(level)(i)
     }
 ```
