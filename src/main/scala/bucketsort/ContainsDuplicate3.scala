@@ -11,7 +11,8 @@ object ContainsDuplicate3 {
       val bucket = mapped / (t.toLong + 1)
       if cache.contains(bucket)
         || (cache.contains(bucket - 1) && mapped - cache.get(bucket - 1).get <= t)
-        || (cache.contains(bucket + 1) && cache.get(bucket + 1).get - mapped <= t) then true else {
+        || (cache.contains(bucket + 1) && cache.get(bucket + 1).get - mapped <= t) then true
+      else {
         cache.put(bucket, mapped)
         false
       }

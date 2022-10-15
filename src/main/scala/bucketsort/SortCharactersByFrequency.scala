@@ -1,4 +1,4 @@
-package hashmap
+package bucketsort
 
 import scala.collection.mutable
 

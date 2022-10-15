@@ -5,7 +5,7 @@ then **buckets is sorted individually**, either as a sorted array or using same/
 
 Bucket sort is useful when elements are **uniformly distributed over a range** => **Duplicates/Frequency** could be distributed into **Buckets** 
 
-## Process
+## Steps
 The process of bucket sort can be understood as a **scatter-gather** approach
 1. Set up an array of initially empty "buckets".
 2. Go over the original array, putting each object in its bucket => scatter
@@ -36,6 +36,18 @@ Bucket sort can be seen as a generalization of counting sort; if each bucket has
       result
     }.takeRight(k)
       .toArray
+```
+
+### 451. Sort Characters By Frequency
+```scala
+  def frequencySort(s: String): String =
+    val (map, bucket) = (mutable.Map[Char, Int](), Array.fill(s.length + 1)(mutable.ListBuffer[Char]()))
+    s.foreach { c => map.update(c, map.getOrElse(c, 0) + 1) }
+    map.foreach((char, count) => bucket(count).addOne(char))
+    bucket.zipWithIndex
+      .foldRight("") { case ((list, count), str) =>
+        str + list.foldLeft("") { case (result, char) => result + char.toString.repeat(count) }
+      }
 ```
 
 ### 220. Contains Duplicate III

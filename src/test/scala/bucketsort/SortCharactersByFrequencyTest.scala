@@ -1,7 +1,8 @@
-package hashmap
+package bucketsort
 
+import bucketsort.SortCharactersByFrequency
 import org.scalatest.funsuite.AnyFunSuite
-import org.scalatest.matchers.should.Matchers._
+import org.scalatest.matchers.should.Matchers.*
 
 class SortCharactersByFrequencyTest extends AnyFunSuite {
   test("can sort string") {
