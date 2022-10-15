@@ -2,7 +2,7 @@
 **Counting** is a simple and effective technique when dealing with numeric arrays,
 by counting the number of occurrences of each unique element in the array.
 
-The count is stored in an auxiliary array, and the **counting sort** is done by mapping the count as an index of the auxiliary array
+The count is stored in an auxiliary array, and the **counting sort** is done by mapping the count to an index of the auxiliary array
 
 - It is not a comparison-based sorting.
 - Its running time complexity is O(n) with space complexity O(k).
@@ -44,22 +44,6 @@ The count is stored in an auxiliary array, and the **counting sort** is done by 
       case ((m1, c1, m2, c2), _) => (m1, c1 - 1, m2, c2 - 1)
     } match
       case (m1, _, m2, _) => List(m1, m2).filter(m => nums.count(_ == m) > nums.length / 3)
-```
-
-### 347. Top K Frequent Elements
-```scala
-  def topKFrequent(nums: Array[Int], k: Int): Array[Int] =
-    nums.foldLeft(mutable.HashMap[Int, Int]()) { case (frequencyMap, num) =>
-      frequencyMap.update(num, frequencyMap.getOrElse(num, 0) + 1)
-      frequencyMap
-    }.foldLeft(Array.fill(nums.length + 1)(mutable.ListBuffer[Int]())) { case (bucket, (num, counts)) =>
-      bucket(counts).addOne(num)
-      bucket
-    }.foldRight(mutable.ListBuffer[Int]()) { case (result, nums) =>
-      result.addAll(nums)
-      result
-    }.takeRight(k)
-      .toArray
 ```
 
 ### 358. Rearrange String k Distance Apart

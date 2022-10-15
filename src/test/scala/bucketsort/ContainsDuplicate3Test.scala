@@ -1,6 +1,6 @@
-package hashmap
+package bucketsort
 
-import hashmap.ContainsDuplicate3
+import bucketsort.ContainsDuplicate3
 import linkedlist.LinkedListNode
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers.*

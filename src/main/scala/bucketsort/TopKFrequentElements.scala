@@ -1,4 +1,4 @@
-package counting
+package bucketsort
 
 import scala.collection.mutable
 

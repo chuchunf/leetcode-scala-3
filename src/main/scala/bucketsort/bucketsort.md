@@ -1,0 +1,56 @@
+# Bucket Sort
+
+Bucket sort (bin sort) **distributes the elements into buckets**, 
+then **buckets is sorted individually**, either as a sorted array or using same/different sorting algorithms. 
+
+Bucket sort is useful when elements are **uniformly distributed over a range** => **Duplicates/Frequency** could be distributed into **Buckets** 
+
+## Process
+The process of bucket sort can be understood as a **scatter-gather** approach
+1. Set up an array of initially empty "buckets".
+2. Go over the original array, putting each object in its bucket => scatter
+3. Sort each non-empty bucket individually
+4. Visit the buckets in order and put all elements back into the original array => gather
+
+## Related Algorithms & Data structures 
+* **Array**: the buckets could be initiated as a sorted array 
+* **Counting sort** counts the number of objects with distinct key values (kind of hashing), 
+then do some arithmetic to calculate the position of each object (array of counts/frequency).  
+Counting sort handles same elements appears multiples times, 
+while Bucket sort handles multiple elements have same hash value (e.g. floating number which could not be the index of array).   
+Bucket sort can be seen as a generalization of counting sort; if each bucket has size 1 then bucket sort degenerates to counting sort
+* **Quick sort**, Bucket sort with two buckets is a quicksort where the pivot value is the middle value of the value range
+* **Hashmap**, Bucket Sort is kind of using the same underneath data structure as Hashmap, but for sorting.
+
+### 347. Top K Frequent Elements
+```scala
+  def topKFrequent(nums: Array[Int], k: Int): Array[Int] =
+    nums.foldLeft(mutable.HashMap[Int, Int]()) { case (frequencyMap, num) =>
+      frequencyMap.update(num, frequencyMap.getOrElse(num, 0) + 1)
+      frequencyMap
+    }.foldLeft(Array.fill(nums.length + 1)(mutable.ListBuffer[Int]())) { case (bucket, (num, counts)) =>
+      bucket(counts).addOne(num)
+      bucket
+    }.foldRight(mutable.ListBuffer[Int]()) { case (result, nums) =>
+      result.addAll(nums)
+      result
+    }.takeRight(k)
+      .toArray
+```
+
+### 220. Contains Duplicate III
+```scala
+  def containsNearbyAlmostDuplicate(nums: Array[Int], k: Int, t: Int): Boolean =
+    val cache = mutable.HashMap[Long, Long]()
+    nums.zipWithIndex.find { case (num, index) => {
+      if index > k then cache.remove((nums(index - k - 1).toLong - Int.MinValue) / (t.toLong + 1))
+      val mapped = num.toLong - Int.MinValue
+      val bucket = mapped / (t.toLong + 1)
+      if cache.contains(bucket)
+        || (cache.contains(bucket - 1) && mapped - cache.get(bucket - 1).get <= t)
+        || (cache.contains(bucket + 1) && cache.get(bucket + 1).get - mapped <= t) then true else {
+        cache.put(bucket, mapped)
+        false
+      }
+    }}.isDefined
+```
