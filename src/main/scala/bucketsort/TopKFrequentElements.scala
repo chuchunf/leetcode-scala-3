@@ -4,7 +4,7 @@ import scala.collection.mutable
 
 object TopKFrequentElements {
   def topKFrequent(nums: Array[Int], k: Int): Array[Int] =
-    nums.foldLeft(mutable.HashMap[Int, Int]()) { case (frequencyMap, num) =>
+    nums. foldLeft (mutable.HashMap[Int, Int]()) { case (frequencyMap, num) =>
       frequencyMap.update(num, frequencyMap.getOrElse(num, 0) + 1)
       frequencyMap
     }.foldLeft(Array.fill(nums.length + 1)(mutable.ListBuffer[Int]())) { case (bucket, (num, counts)) =>
