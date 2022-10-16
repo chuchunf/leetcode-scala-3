@@ -1,4 +1,4 @@
-package sort
+package bucketsort
 
 object MaximumGap {
   def maximumGap(nums: Array[Int]): Int =
