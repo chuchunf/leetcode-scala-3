@@ -1,9 +1,9 @@
 # Bucket Sort
 
 Bucket sort (bin sort) **distributes the elements into buckets**, 
-then **buckets is sorted individually**, either as a sorted array or using same/different sorting algorithms. 
+then **buckets is sorted individually**, either as a already sorted array or using same/different sorting algorithms. 
 
-Bucket sort is useful when elements are **uniformly distributed over a range** => **Duplicates/Frequency** could be distributed into **Buckets** 
+Bucket sort is useful when elements are **uniformly distributed over a range** => **Duplicates (based on frequency)** could be distributed into **Buckets** 
 
 ## Steps
 The process of bucket sort can be understood as a **scatter-gather** approach
@@ -21,6 +21,16 @@ while Bucket sort handles multiple elements have same hash value (e.g. floating 
 Bucket sort can be seen as a generalization of counting sort; if each bucket has size 1 then bucket sort degenerates to counting sort
 * **Quick sort**, Bucket sort with two buckets is a quicksort where the pivot value is the middle value of the value range
 * **Hashmap**, Bucket Sort is kind of using the same underneath data structure as Hashmap, but for sorting.
+
+## Applications
+1. Bucket sort (based on frequency)
+   * Top K frequent elements: the buckets are in sorted array hence no additional sorting required
+   * Top K frequent words
+   * Sort characters by frequency
+2. Usage of the bucket
+   * Contains duplicate III: distribute the numbers into **value distance number of bucket**  
+   => found duplicate if the bucket contains an index or nearby bucket contains index with value less than value distance 
+   * Maximum Gap: distribute the numbers into **n-1 bucket**, find the max difference for each bucket
 
 ### 347. Top K Frequent Elements
 ```scala
@@ -70,17 +80,19 @@ Bucket sort can be seen as a generalization of counting sort; if each bucket has
 ```scala
   def containsNearbyAlmostDuplicate(nums: Array[Int], k: Int, t: Int): Boolean =
     val cache = mutable.HashMap[Long, Long]()
-    nums.zipWithIndex.find { case (num, index) => {
+    nums.zipWithIndex.exists { case (num, index) =>
       if index > k then cache.remove((nums(index - k - 1).toLong - Int.MinValue) / (t.toLong + 1))
       val mapped = num.toLong - Int.MinValue
       val bucket = mapped / (t.toLong + 1)
       if cache.contains(bucket)
-        || (cache.contains(bucket - 1) && mapped - cache.get(bucket - 1).get <= t)
-        || (cache.contains(bucket + 1) && cache.get(bucket + 1).get - mapped <= t) then true else {
-        cache.put(bucket, mapped)
-        false
+         || (cache.contains(bucket - 1) && mapped - cache.get(bucket - 1).get <= t)
+         || (cache.contains(bucket + 1) && cache.get(bucket + 1).get - mapped <= t) then true
+      else {
+         cache.put(bucket, mapped)
+         false
       }
-    }}.isDefined
+    }
+
 ```
 
 ### 164. Maximum Gap
