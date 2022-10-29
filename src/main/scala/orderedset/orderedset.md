@@ -15,3 +15,15 @@ An **ordered set** keeps the unique elements in sorted order. The time and space
 | Implementation | buckets             | red-black tree      | double linked buckets |
 | Applications   | general purpose     | where order matters | LRU cache, etc. where insertion/access order matters |
 
+### 729. My Calendar I
+```scala
+  private[this] val cache = mutable.TreeMap[Int, Int]()
+
+  def book(start: Int, end: Int): Boolean =
+    if cache.minAfter(start).getOrElse((Int.MaxValue, Int.MaxValue))._1 > end
+      && cache.maxBefore(start).getOrElse((Int.MinValue, Int.MinValue))._2 < start
+    then {
+      cache(start) = end
+      true
+    } else false
+```
