@@ -15,6 +15,10 @@ An **ordered set** keeps the unique elements in sorted order. The time and space
 | Implementation | buckets             | red-black tree      | double linked buckets |
 | Applications   | general purpose     | where order matters | LRU cache, etc. where insertion/access order matters |
 
+Common application is to **get a particular key (value pair) with given condition (head/tail/floor/ceil) of predefined order**.
+
+Sortset enables **search for a key with Log(n) time**.
+
 ### 729. My Calendar I
 ```scala
   private[this] val cache = mutable.TreeMap[Int, Int]()
@@ -80,4 +84,16 @@ class ExamRoom(n: Int) {
     def compare(key1: (Int, Int), key2: (Int, Int)): Int = ((key2._2 - key2._1) / 2).compareTo((key1._2 - key1._1) / 2)
   }
 }
+```
+
+### 1818. Minimum Absolute Sum Difference
+```scala
+    val cache = mutable.TreeSet[Int]().addAll(nums1)
+    nums1.zip(nums2).foldLeft((0L, 0)) { case ((sum, maxdiff), (n1, n2)) =>
+      val diff1 = Math.abs(cache.minAfter(n2).getOrElse(Int.MinValue) - n2)
+      val diff2 = Math.abs(cache.maxBefore(n2).getOrElse(Int.MaxValue) - n2)
+      val diff = Math.abs(n1 - n2)
+      (sum + diff, maxdiff.max(diff - diff1.min(diff2)))
+    } match
+      case (sum, maxdiff) => ((sum - maxdiff.toLong) % (Math.pow(10, 9).toInt + 7)).toInt
 ```
