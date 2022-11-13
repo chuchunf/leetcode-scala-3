@@ -95,5 +95,21 @@ class ExamRoom(n: Int) {
       val diff = Math.abs(n1 - n2)
       (sum + diff, maxdiff.max(diff - diff1.min(diff2)))
     } match
-      case (sum, maxdiff) => ((sum - maxdiff.toLong) % (Math.pow(10, 9).toInt + 7)).toInt
+      case (sum, maxdiff) => ((sum - maxdiff) % (Math.pow(10, 9).toInt + 7)).toInt
+```
+
+### 732. My Calendar III
+Use Order Map to simulate the time line to save space, as the time spot will be sparse.
+```scala
+class MyCalendar3 {
+  private[this] val cache = mutable.TreeMap[Int, Int]()
+
+  def book(startTime: Int, endTime: Int): Int =
+    cache(startTime) = cache.getOrElse(startTime, 0) + 1
+    cache(endTime) = cache.getOrElse(endTime, 0) - 1
+    cache.values.foldLeft(0, 0) { case ((max, ongoing), booking) =>
+      val curr = ongoing + booking
+      (max.max(curr), curr)
+    }._1
+}
 ```
