@@ -12,28 +12,17 @@ The key idea of HashMap is to use a hash function to map keys to buckets.
 
 If the keys are continuous number values (e.g. char value could be converted integers), the array will be a better data structure.
 
-## Typical problems
-
-### Check **existence** of an element 
-- Two sum: the expected value is known;
-- First non-repeating character: the character is known;
-- Happy number: The list of unhappy numbers built along the way is known.
-
-### Convenient data structure to store discrete keys / non-number keys for further processing
-- Isomorphic Strings: char from source string and char from target string as key
-- Bulls and Cows: char from source string and char from target string as key
-- **Wall Brick**: the width of the bricks are discrete as key
-
-### Implementation and other usages
-- Design Hashmap
-- Insert Delete GetRandom O(1)
-- **Contains Duplicate III** => control the bucket size
-
 ## Related Algorithms
 - **Count sort**: Counts the occurrence of each number / elements in a Hashmap
 - **Bucket sort**: Divides the unsorted array elements into several groups called buckets
-elements fall into the same buckets stored in a linked list. The data structure is the same as Hashmap, 
-but the usage is different that **bucket (array) is sorted by index**.
+  elements fall into the same buckets stored in a linked list. The data structure is the same as Hashmap,
+  but the usage is different that **bucket (array) is sorted by index**.
+
+## Check **existence** of an element 
+When the purpose is to check the existence, instead of looping through the entire collection O(N), Hashmap provides O(1) access
+- Two sum: the expected value is known, the purpose is to find if the expected value exist.
+- First non-repeating character: the character is known, the purpose is to find if the character already exist.
+- Happy number: The list of unhappy numbers built up along the recursive call is known, the purpose is to find out if the unhappy number already exist
 
 ### 1. Two Sum
 ```scala
@@ -67,34 +56,11 @@ but the usage is different that **bucket (array) is sorted by index**.
     case num => isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache + num)
 ```
 
-### 380. Insert Delete GetRandom O(1)
-```scala
-class InsertDeleteGetRandomO1() {
-  private val map = mutable.Map[Int, Int]()
-  private val array = mutable.ArrayBuffer[Int]()
-  private val random = new scala.util.Random
-
-  def insert(value: Int): Boolean =
-    if map.contains(value) then
-      false
-    else {
-      map.put(value, array.length)
-      array.addOne(value)
-      true
-    }
-
-  def remove(value: Int): Boolean =
-    if !map.contains(value) then
-      false
-    else {
-      array(map.get(value).get) = array(array.length - 1)
-      array.dropRight(1)
-      true
-    }
-
-  def getRandom(): Int = array(random.nextInt(array.length))
-}
-```
+## Convenient data structure to store discrete keys / non-number keys for further processing
+Array is a dense data structure while Hashmap is discrete/spared, Hashmap can be used to organize the data for easy access and further processing.
+- Isomorphic Strings: char from source string and char from target string as key
+- Bulls and Cows: char from source string and char from target string as key
+- **Wall Brick**: the width of the bricks are discrete as key
 
 ### 205. Isomorphic Strings
 ```scala
@@ -128,7 +94,7 @@ class InsertDeleteGetRandomO1() {
 ### 554. Brick Wall
 First consider the simplest case, 1 row of bricks, the answer is 0 for each edge.
 Consider add another row, it depends on if the edges of 2nd row matching with 1st row.
-We could loop through each row and count the edges (previous wall length + current brick length), 
+We could loop through each row and count the edges (previous wall length + current brick length),
 and the edge with large count is where the draw could be Drawn.
 Hashmap could be used to keep track of each edge with corresponding count.
 ```scala
@@ -141,4 +107,39 @@ Hashmap could be used to keep track of each edge with corresponding count.
       })
     wall.length - (if cache.isEmpty then 0 else cache.values.max)
 ```
+
+### Implementation and other usages
+- Design Hashmap
+- Insert Delete GetRandom O(1)
+- **Contains Duplicate III** => control the bucket size
+
+### 380. Insert Delete GetRandom O(1)
+```scala
+class InsertDeleteGetRandomO1() {
+  private val map = mutable.Map[Int, Int]()
+  private val array = mutable.ArrayBuffer[Int]()
+  private val random = new scala.util.Random
+
+  def insert(value: Int): Boolean =
+    if map.contains(value) then
+      false
+    else {
+      map.put(value, array.length)
+      array.addOne(value)
+      true
+    }
+
+  def remove(value: Int): Boolean =
+    if !map.contains(value) then
+      false
+    else {
+      array(map.get(value).get) = array(array.length - 1)
+      array.dropRight(1)
+      true
+    }
+
+  def getRandom(): Int = array(random.nextInt(array.length))
+}
+```
+
 

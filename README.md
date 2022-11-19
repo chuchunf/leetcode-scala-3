@@ -17,24 +17,41 @@ Solutions of selected LeetCode problems in Scala 3.
     <tbody>
         <tr>
             <th>Topic</th>
+            <th>Category</th>
             <th>Problem List</th>
         </tr>
         <tr>
-            <td><a href="src/main/scala/hashmap/hashmap.md">Hashmap</a></td>
+            <td rowspan="3"><a href="src/main/scala/hashmap/hashmap.md">Hashmap</a></td>
+            <td>Check Existence with O(1)</td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/hashmap/hashmap.md#1-two-sum">1. Two Sum</a></li>
                     <li><a href="src/main/scala/hashmap/hashmap.md#387-first-unique-character-in-a-string">387. First unique character in a string</a></li>
                     <li><a href="src/main/scala/hashmap/hashmap.md#202-happy-number">202. Happy Number</a></li>
-                    <li><a href="src/main/scala/hashmap/hashmap.md#380-insert-delete-getrandom-o1">380. Insert Delete GetRandom O(1)</a></li>
-                    <li><a href="src/main/scala/hashmap/hashmap.md#205-isomorphic-strings">205. Isomorphic Strings</a></li>
-                    <li><a href="src/main/scala/hashmap/hashmap.md##299-bulls-and-cows">299. Bulls and Cows</a></li>
-                    <li><a href="src/main/scala/hashmap/hashmap.md#554-brick-wall">554. Brick Wall</a></li>
                 </ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                    
             </td>
         </tr>
         <tr>
+            <td>Discrete key/value container for further processing</td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/hashmap/hashmap.md#205-isomorphic-strings">205. Isomorphic Strings</a></li>
+                    <li><a href="src/main/scala/hashmap/hashmap.md##299-bulls-and-cows">299. Bulls and Cows</a></li>
+                    <li><a href="src/main/scala/hashmap/hashmap.md#554-brick-wall" style="font-weight:bold">554. Brick Wall</a></li>
+                </ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+            </td>
+        </tr>
+        <tr>
+            <td>Implementation and other usages</td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/hashmap/hashmap.md#380-insert-delete-getrandom-o1">380. Insert Delete GetRandom O(1)</a></li> 
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td><a href="src/main/scala/orderedset/orderedset.md">OrderedSet</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/orderedset/orderedset.md#729-my-calendar-i">729. My Calendar I</a></li>
@@ -47,6 +64,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/linkedlist/linkedlist.md">LinkedList</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/linkedlist/linkedlist.md#2-add-two-numbers">2. Add Two Numbers</a></li>
@@ -65,6 +83,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/twopointers/twopointers.md">Two Pointers</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/twopointers/twopointers.md#3longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters</a></li>
@@ -86,6 +105,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/fastslowpointers/pointers.md">Fast Slow Pointers</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/fastslowpointers/pointers.md#141-linked-list-cycle">141. Linked List Cycle</a></li>
@@ -96,10 +116,11 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/string/string.md">String</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/string/string.md#6-zigzag-conversion">6. ZigZag Conversion</a></li>
-                    <li><a href="src/main/scala/string/string.md#14-longest-common-prefix">>14. Longest Common Prefix</a></li>
+                    <li><a href="src/main/scala/string/string.md#14-longest-common-prefix">14. Longest Common Prefix</a></li>
                     <li><a href="src/main/scala/string/string.md#763-partition-labels">763. Partition Labels</a></li>
                     <li><a href="src/main/scala/string/string.md#161-one-edit-distance">161. One Edit Distance</a></li>
                     <li><a href="src/main/scala/string/string.md#165-compare-version-numbers">165. Compare Version Numbers</a></li>
@@ -113,6 +134,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/tries/tries.md">Tries</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/tries/tries.md#208-implement-tries">208. Implement Tries</a></li>
@@ -125,6 +147,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/number/number.md">Number</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/number/number.md#7-reverse-integer">7. Reverse Integer</a></li>
@@ -135,6 +158,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/counting/counting.md">Counting</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/counting/counting.md#169-majority-element">169. Majority ElementM</a></li>
@@ -146,6 +170,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/math/math.md">Math</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/math/math.md#12-integer-to-roman">12. Integer to Roman</a></li>
@@ -163,6 +188,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/bit/bit.md">Bit</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bit/bit.md#405-convert-a-number-to-hexadecimal">405. Convert a Number to Hexadecimal</a></li>
@@ -179,6 +205,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/array/array.md">Array</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/array/array.md#26-remove-duplicates-from-sorted-array">26. Remove Duplicates from Sorted Array</a></li>
@@ -196,6 +223,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/matrix/matrix.md">Matrix</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/matrix/matrix.md#54-spiral-matrix">54. Spiral Matrix</a></li>
@@ -210,6 +238,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/prefixsum/prefixsum.md">Prefix Sum</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/prefixsum/prefixsum.md#238-product-of-array-except-self">238. Product of Array Except Self</a></li>
@@ -222,6 +251,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/stack/stack.md">Stack</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/stack/stack.md#155-min-stack">155. Min Stack</a></li>
@@ -238,6 +268,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/queue/queue.md">Queue</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/queue/queue.md#225-implement-stack-using-queues">225. Implement Stack using Queues</a></li>
@@ -251,6 +282,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/sort/sort.md">Sort</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/sort/sort.md#148-sort-list">148. Sort List</a></li>
@@ -261,6 +293,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/bucketsort/bucketsort.md">Bucket Sort</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bucketsort/bucketsort.md#347-top-k-frequent-elements">347. Top K Frequent Elements</a></li>
@@ -273,6 +306,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/recursion/recursion.md">Recursion</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/recursion/recursion.md#21-merge-two-sorted-lists">21. Merge Two Sorted Lists</a></li>
@@ -287,6 +321,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/tree/tree.md">Tree</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/tree/tree.md#144-binary-tree-preorder-traversal">144. Binary Tree Preorder Traversal</a></li>
@@ -308,6 +343,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/bst/bst.md">Binary Search Tree</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bst/bst.md#98-validate-binary-search-tree">98. Validate Binary Search Tree</a></li>
@@ -324,6 +360,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/binarysearch/binarysearch.md">Binary Search</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/binarysearch/binarysearch.md#69-sqrtx">69. Sqrt(x)</a></li>
@@ -342,6 +379,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/dfs/dfs.md">DFS</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/dfs/dfs.md#112-path-sum">112. Path Sum</a></li>
@@ -354,6 +392,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/bfs/bfs.md">BFS</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bfs/bfs.md#127-word-ladder">127. Word Ladder</a></li>
@@ -365,6 +404,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/graph/graph.md">Graph</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/graph/graph.md#207-course-schedule">207. Course Schedule</a></li>
@@ -375,6 +415,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/unionfind/unionfind.md">Union Find</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/unionfind/unionfind.md#200-number-of-islands">200. Number of Islands</a></li>
@@ -385,6 +426,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/heap/heap.md">Heap</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/heap/heap.md#506-relative-ranks">506. Relative Ranks</a></li>
@@ -397,6 +439,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/backtracking/backtracking.md">Back Tracking</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/backtracking/backtracking.md#22-generate-parentheses">22. Generate Parentheses</a></li>
@@ -415,6 +458,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/dp/dp.md">Dynamic Programming</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/dp/dp.md#70-climbing-stairs">70. Climbing Stairs</a></li>
@@ -434,6 +478,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td><a href="src/main/scala/greedy/greedy.md">Greedy</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/greedy/greedy.md#122-best-time-to-buy-and-sell-stock-ii">122. Best Time to Buy and Sell Stock II</a></li>
