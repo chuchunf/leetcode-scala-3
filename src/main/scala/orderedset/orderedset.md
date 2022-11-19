@@ -88,6 +88,7 @@ class ExamRoom(n: Int) {
 
 ### 1818. Minimum Absolute Sum Difference
 ```scala
+  def minAbsoluteSumDiff(nums1: Array[Int], nums2: Array[Int]): Int =
     val cache = mutable.TreeSet[Int]().addAll(nums1)
     nums1.zip(nums2).foldLeft((0L, 0)) { case ((sum, maxdiff), (n1, n2)) =>
       val diff1 = Math.abs(cache.minAfter(n2).getOrElse(Int.MinValue) - n2)
