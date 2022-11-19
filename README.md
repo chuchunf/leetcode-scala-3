@@ -27,7 +27,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td rowspan="3"><a href="src/main/scala/hashmap/hashmap.md">Hashmap</a></td>
-            <td>Check Existence with O(1)</td>
+            <td><a href="src/main/scala/hashmap/hashmap.md#check-existence-of-an-element">Check existence with O(1)</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/hashmap/hashmap.md#1-two-sum">1. Two Sum</a></li>
@@ -37,17 +37,17 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td>Discrete key/value container for further processing</td>
+            <td><a href="src/main/scala/hashmap/hashmap.md#convenient-data-structure-to-store-discrete-keys--non-number-keys-for-further-processing">Discrete key/value container for further processing</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/hashmap/hashmap.md#205-isomorphic-strings">205. Isomorphic Strings</a></li>
                     <li><a href="src/main/scala/hashmap/hashmap.md##299-bulls-and-cows">299. Bulls and Cows</a></li>
-                    <li><a href="src/main/scala/hashmap/hashmap.md#554-brick-wall" style="font-weight:bold">554. Brick Wall</a></li>
+                    <li><a href="src/main/scala/hashmap/hashmap.md#554-brick-wall"><strong>554. Brick Wall</strong></a></li>
                 </ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                    
             </td>
         </tr>
         <tr>
-            <td>Implementation and other usages</td>
+            <td><a href="src/main/scala/hashmap/hashmap.md#implementation-and-other-usages">Implementation and other usages</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/hashmap/hashmap.md#380-insert-delete-getrandom-o1">380. Insert Delete GetRandom O(1)</a></li> 
