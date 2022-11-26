@@ -55,15 +55,22 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/orderedset/orderedset.md">OrderedSet</a></td>
-            <td></td>
+            <td rowspan="2"><a href="src/main/scala/orderedset/orderedset.md">OrderedSet</a></td>
+            <td><a href="src/main/scala/orderedset/orderedset.md#get-a-key-based-on-predefined-order">Get a key based on predefined order</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/orderedset/orderedset.md#729-my-calendar-i">729. My Calendar I</a></li>
                     <li><a href="src/main/scala/orderedset/orderedset.md#731-my-calendar-ii">731. My Calendar II</a></li>
-                    <li><a href="src/main/scala/orderedset/orderedset.md#855-exam-room">855. Exam Room</a></li>
                     <li><a href="src/main/scala/orderedset/orderedset.md#1818-minimum-absolute-sum-difference">1818. Minimum Absolute Sum Difference</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/orderedset/orderedset.md#a-compact-ordered-container">A compact ordered container</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/orderedset/orderedset.md#732-my-calendar-iii">732. My Calendar III</a></li>
+                    <li><a href="src/main/scala/orderedset/orderedset.md#855-exam-room">855. Exam Room</a></li>
                 </ul>
             </td>
         </tr>

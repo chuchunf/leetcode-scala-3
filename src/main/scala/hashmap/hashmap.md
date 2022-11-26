@@ -108,7 +108,7 @@ Hashmap could be used to keep track of each edge with corresponding count.
     wall.length - (if cache.isEmpty then 0 else cache.values.max)
 ```
 
-### Implementation and other usages
+## Implementation and other usages
 - Design Hashmap
 - Insert Delete GetRandom O(1)
 - **Contains Duplicate III** => control the bucket size

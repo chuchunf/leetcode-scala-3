@@ -15,9 +15,9 @@ An **ordered set** keeps the unique elements in sorted order. The time and space
 | Implementation | buckets             | red-black tree      | double linked buckets |
 | Applications   | general purpose     | where order matters | LRU cache, etc. where insertion/access order matters |
 
-Common application is to **get a particular key (value pair) with given condition (head/tail/floor/ceil) of predefined order**.
 
-Sortset enables **search for a key with Log(n) time**.
+## Get a key based on predefined order
+OrderSet maintains a particular order, and provide functions such as minBefore, maxAfter to get a key (value pair) of given order in log(N) time.
 
 ### 729. My Calendar I
 ```scala
@@ -53,6 +53,38 @@ Sortset enables **search for a key with Log(n) time**.
     }
 ```
 
+### 1818. Minimum Absolute Sum Difference
+```scala
+  def minAbsoluteSumDiff(nums1: Array[Int], nums2: Array[Int]): Int =
+    val cache = mutable.TreeSet[Int]().addAll(nums1)
+    nums1.zip(nums2).foldLeft((0L, 0)) { case ((sum, maxdiff), (n1, n2)) =>
+      val diff1 = Math.abs(cache.minAfter(n2).getOrElse(Int.MinValue) - n2)
+      val diff2 = Math.abs(cache.maxBefore(n2).getOrElse(Int.MaxValue) - n2)
+      val diff = Math.abs(n1 - n2)
+      (sum + diff, maxdiff.max(diff - diff1.min(diff2)))
+    } match
+      case (sum, maxdiff) => ((sum - maxdiff) % (Math.pow(10, 9).toInt + 7)).toInt
+```
+
+## A compact ordered container
+Instead of an array, OrderSet could be used to stored ordered data without spaces.
+
+### 732. My Calendar III
+Use Order Map to simulate the time line to save space, as the time spot will be sparse.
+```scala
+class MyCalendar3 {
+  private[this] val cache = mutable.TreeMap[Int, Int]()
+
+  def book(startTime: Int, endTime: Int): Int =
+    cache(startTime) = cache.getOrElse(startTime, 0) + 1
+    cache(endTime) = cache.getOrElse(endTime, 0) - 1
+    cache.values.foldLeft(0, 0) { case ((max, ongoing), booking) =>
+      val curr = ongoing + booking
+      (max.max(curr), curr)
+    }._1
+}
+```
+
 ### 855. Exam Room
 ```scala
 class ExamRoom(n: Int) {
@@ -83,34 +115,5 @@ class ExamRoom(n: Int) {
   object DistOrdering extends Ordering[(Int, Int)] {
     def compare(key1: (Int, Int), key2: (Int, Int)): Int = ((key2._2 - key2._1) / 2).compareTo((key1._2 - key1._1) / 2)
   }
-}
-```
-
-### 1818. Minimum Absolute Sum Difference
-```scala
-  def minAbsoluteSumDiff(nums1: Array[Int], nums2: Array[Int]): Int =
-    val cache = mutable.TreeSet[Int]().addAll(nums1)
-    nums1.zip(nums2).foldLeft((0L, 0)) { case ((sum, maxdiff), (n1, n2)) =>
-      val diff1 = Math.abs(cache.minAfter(n2).getOrElse(Int.MinValue) - n2)
-      val diff2 = Math.abs(cache.maxBefore(n2).getOrElse(Int.MaxValue) - n2)
-      val diff = Math.abs(n1 - n2)
-      (sum + diff, maxdiff.max(diff - diff1.min(diff2)))
-    } match
-      case (sum, maxdiff) => ((sum - maxdiff) % (Math.pow(10, 9).toInt + 7)).toInt
-```
-
-### 732. My Calendar III
-Use Order Map to simulate the time line to save space, as the time spot will be sparse.
-```scala
-class MyCalendar3 {
-  private[this] val cache = mutable.TreeMap[Int, Int]()
-
-  def book(startTime: Int, endTime: Int): Int =
-    cache(startTime) = cache.getOrElse(startTime, 0) + 1
-    cache(endTime) = cache.getOrElse(endTime, 0) - 1
-    cache.values.foldLeft(0, 0) { case ((max, ongoing), booking) =>
-      val curr = ongoing + booking
-      (max.max(curr), curr)
-    }._1
 }
 ```
