@@ -75,21 +75,42 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/linkedlist/linkedlist.md">LinkedList</a></td>
-            <td></td>
+            <td rowspan="4"><a href="src/main/scala/linkedlist/linkedlist.md">LinkedList</a></td>
+            <td><a href="src/main/scala/linkedlist/linkedlist.md#basic-operation">Basic operation</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#61-rotate-list">61. Rotate List</a></li>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#206-reverse-linked-list">206. Reverse Linked List</a></li>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#143-reorder-list">143. Reorder List</a></li>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#86-partition-list">86. Partition List</a></li>
+                </ul>            
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/linkedlist/linkedlist.md#additional-operation">Additional operation</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#19-remove-nth-node-from-end-of-list">19. Remove Nth Node From End of List</a></li>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#83-remove-duplicates-from-sorted-list">83. Remove Duplicates from Sorted List</a></li>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#82-remove-duplicates-from-sorted-list-ii">82. Remove Duplicates from Sorted List II</a></li>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#138-copy-list-with-random-pointer">138. Copy List with Random Pointer</a></li>
+                </ul>            
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/linkedlist/linkedlist.md#use-of-linked-list">Use of linked list</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/linkedlist/linkedlist.md#2-add-two-numbers">2. Add Two Numbers</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#61-rotate-list">61. Rotate List</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#19-remove-nth-node-from-end-of-list">19. Remove Nth Node From End of List</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#206-reverse-linked-list">206. Reverse Linked List</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#83-remove-duplicates-from-sorted-list">83. Remove Duplicates from Sorted List</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#138-copy-list-with-random-pointer">138. Copy List with Random Pointer</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#82-remove-duplicates-from-sorted-list-ii">82. Remove Duplicates from Sorted List II</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#86-partition-list">86. Partition List</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#143-reorder-list">143. Reorder List</a></li>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#160-intersection-of-two-linked-lists">160. Intersection of Two Linked Lists</a></li>
                     <li><a href="src/main/scala/linkedlist/linkedlist.md#445-add-two-numbers-2">445. Add Two Numbers 2</a></li>
+                </ul>            
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/linkedlist/linkedlist.md#others">Others</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#160-intersection-of-two-linked-lists">160. Intersection of Two Linked Lists</a></li>
                 </ul>            
             </td>
         </tr>

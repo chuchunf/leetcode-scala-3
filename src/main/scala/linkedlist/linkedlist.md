@@ -23,38 +23,7 @@ Linked lists can be used to implement other common abstract data types
 - Linked list is a **recursive data structure** and works well with recursion.
 - Two pointers / fast slow pointers / sliding windows
 
-## Typical Questions
-### Basic Linked list operation
-- Rotate a list
-- **Reverse a list**
-- Reorder a list
-- Partition a list
-
-### Additional list operations
-- Remove Nth from the end
-- Remove duplicates from the sorted list
-- Remove duplicates from sorted list 2
-- Copy List with Random Pointers
-
-### Application of linked list
-- Add two numbers
-- Add tow numbers 2
-
-### Circular, Intersection of Linked lists
-- Intersection of two Linked list
-- Linked List Cycle 
-
-### 2. Add Two Numbers
-```scala
-  def addTwoNumbers(l1: LinkedListNode[Int], l2: LinkedListNode[Int]): LinkedListNode[Int] =
-    _addTwoNumbers(Option(l1), Option(l2), 0).get
-
-  private def _addTwoNumbers(l1: Option[LinkedListNode[Int]], l2: Option[LinkedListNode[Int]], carry: Int): Option[LinkedListNode[Int]] = (l1, l2) match
-    case (None, None) => if carry == 0 then None else Option(new LinkedListNode(1, None))
-    case (Some(node1), Some(node2)) => val value = node1.value + node2.value + carry
-    Option(new LinkedListNode(value % 10, _addTwoNumbers(node1.next, node2.next, value / 10)))
-```
-
+## Basic operation
 ### 61. Rotate List
 ```scala
   def rotateRight(head: LinkedListNode[Int], k: Int): LinkedListNode[Int] =
@@ -72,23 +41,6 @@ Linked lists can be used to implement other common abstract data types
     newhead
 ```
 
-### 19. Remove Nth Node From End of List
-```scala
-  def removeNthFromEnd(head: LinkedListNode[Int], n: Int): LinkedListNode[Int] =
-    val len = head.getLen()
-    n match
-      case num if num > len => throw IllegalArgumentException("n is larger than the length of head")
-      case num if num == len => head.next.get
-      case _ =>
-        var (dummy, fast, slow) = (head, Option(head), Option(head))
-        (0 to n).foreach(_ => fast = fast.get.next)
-        while fast.isDefined do
-          fast = fast.get.next
-          slow = slow.get.next
-        slow.get.next = slow.get.next.get.next
-        dummy
-```
-
 ### 206. Reverse Linked List
 Iterative approach, carefully maneuver of pre, curr and next
 ```scala
@@ -102,69 +54,6 @@ Iterative approach, carefully maneuver of pre, curr and next
         curr = next
       curr.next = Option(pre) 
       curr
-```
-
-### 83. Remove Duplicates from Sorted List
-```scala
-  def deleteDuplicates(head: LinkedListNode[Int]): LinkedListNode[Int] =
-    var first = head
-    while first.next.isDefined do
-      if first.value == first.next.get.value then first.next = first.next.get.next
-      else first = first.next.get
-    head
-```
-
-### 138. Copy List with Random Pointer
-```scala
-  def copyRandomList(head: LinkedListWithPointer[Int]): LinkedListWithPointer[Int] =
-    val cache = mutable.HashMap[LinkedListWithPointer[Int], LinkedListWithPointer[Int]]()
-
-    var node = Option(head)
-    while node.isDefined do
-      cache.put(node.get, new LinkedListWithPointer[Int](node.get.value, None, None))
-      node = node.get.next
-
-    node = Option(head)
-    while node.isDefined do
-      cache(node.get).next = node.get.next.map { key => cache(key) }
-      cache(node.get).random = node.get.random.map { key => cache(key) }
-      node = node.get.next
-
-    cache(head)
-```
-
-### 82. Remove Duplicates from Sorted List II
-```scala
-  def deleteDuplicates(head: LinkedListNode[Int]): LinkedListNode[Int] =
-    val temphead = new LinkedListNode[Int](-1, Option(head))
-    var (pre, curr) = (temphead, Option(head))
-    while curr.isDefined do {
-      while curr.get.next.isDefined && curr.get.value == curr.get.next.get.value do curr = curr.get.next
-      if pre.next.get.value == curr.get.value then pre = pre.next.get
-      else pre.next = curr.get.next
-      curr = curr.get.next
-    }
-    temphead.next.get
-```
-
-### 86. Partition List
-```scala
-  def partition(head: LinkedListNode[Int], x: Int): LinkedListNode[Int] =
-    var (smallp, bigp, tmp) = (new LinkedListNode[Int](0, None), new LinkedListNode[Int](0, None), Option(head))
-    val (smallhead, bighead) = (smallp, bigp)
-    while tmp.isDefined do {
-      if tmp.get.value < x then {
-        smallp.next = tmp
-        smallp = smallp.next.get
-      } else {
-        bigp.next = tmp
-        bigp = bigp.next.get
-      }
-      tmp = tmp.get.next
-    }
-    bigp.next = None
-    smallp.next = Option(bighead.next.get)
-    smallhead.next.get
 ```
 
 ### 143. Reorder List
@@ -192,16 +81,97 @@ Iterative approach, carefully maneuver of pre, curr and next
       if premid.next.isDefined then p2 = premid.next.get
 ```
 
-### 160. Intersection of Two Linked Lists
+### 86. Partition List
 ```scala
-  def getIntersectionNode(headA: LinkedListNode[Int], headB: LinkedListNode[Int]): Option[LinkedListNode[Int]] =
-    val diff = headA.getLen() - headB.getLen()
-    var (pl, ps) = if diff > 0 then (Option(headA), Option(headB)) else (Option(headB), Option(headA))
-    for (n <- 0 until diff.abs) pl = pl.get.next
-    while pl != ps && pl != None do
-      pl = pl.get.next
-      ps = ps.get.next
-    pl
+  def partition(head: LinkedListNode[Int], x: Int): LinkedListNode[Int] =
+    var (smallp, bigp, tmp) = (new LinkedListNode[Int](0, None), new LinkedListNode[Int](0, None), Option(head))
+    val (smallhead, bighead) = (smallp, bigp)
+    while tmp.isDefined do {
+      if tmp.get.value < x then {
+        smallp.next = tmp
+        smallp = smallp.next.get
+      } else {
+        bigp.next = tmp
+        bigp = bigp.next.get
+      }
+      tmp = tmp.get.next
+    }
+    bigp.next = None
+    smallp.next = Option(bighead.next.get)
+    smallhead.next.get
+```
+
+## Additional operations
+### 19. Remove Nth Node From End of List
+```scala
+  def removeNthFromEnd(head: LinkedListNode[Int], n: Int): LinkedListNode[Int] =
+    val len = head.getLen()
+    n match
+      case num if num > len => throw IllegalArgumentException("n is larger than the length of head")
+      case num if num == len => head.next.get
+      case _ =>
+        var (dummy, fast, slow) = (head, Option(head), Option(head))
+        (0 to n).foreach(_ => fast = fast.get.next)
+        while fast.isDefined do
+          fast = fast.get.next
+          slow = slow.get.next
+        slow.get.next = slow.get.next.get.next
+        dummy
+```
+
+### 83. Remove Duplicates from Sorted List
+```scala
+  def deleteDuplicates(head: LinkedListNode[Int]): LinkedListNode[Int] =
+    var first = head
+    while first.next.isDefined do
+      if first.value == first.next.get.value then first.next = first.next.get.next
+      else first = first.next.get
+    head
+```
+
+### 82. Remove Duplicates from Sorted List II
+```scala
+  def deleteDuplicates(head: LinkedListNode[Int]): LinkedListNode[Int] =
+    val temphead = new LinkedListNode[Int](-1, Option(head))
+    var (pre, curr) = (temphead, Option(head))
+    while curr.isDefined do {
+      while curr.get.next.isDefined && curr.get.value == curr.get.next.get.value do curr = curr.get.next
+      if pre.next.get.value == curr.get.value then pre = pre.next.get
+      else pre.next = curr.get.next
+      curr = curr.get.next
+    }
+    temphead.next.get
+```
+
+### 138. Copy List with Random Pointer
+```scala
+  def copyRandomList(head: LinkedListWithPointer[Int]): LinkedListWithPointer[Int] =
+    val cache = mutable.HashMap[LinkedListWithPointer[Int], LinkedListWithPointer[Int]]()
+
+    var node = Option(head)
+    while node.isDefined do
+      cache.put(node.get, new LinkedListWithPointer[Int](node.get.value, None, None))
+      node = node.get.next
+
+    node = Option(head)
+    while node.isDefined do
+      cache(node.get).next = node.get.next.map { key => cache(key) }
+      cache(node.get).random = node.get.random.map { key => cache(key) }
+      node = node.get.next
+
+    cache(head)
+```
+
+## Use of linked list
+### 2. Add Two Numbers
+```scala
+  def addTwoNumbers(l1: LinkedListNode[Int], l2: LinkedListNode[Int]): LinkedListNode[Int] =
+    _addTwoNumbers(Option(l1), Option(l2), 0).get
+
+  private def _addTwoNumbers(l1: Option[LinkedListNode[Int]], l2: Option[LinkedListNode[Int]], carry: Int): Option[LinkedListNode[Int]] = (l1, l2) match
+    case (None, None) => if carry == 0 then None else Option(new LinkedListNode(1, None))
+    case (Some(node1), Some(node2)) => val value = node1.value + node2.value + carry
+    Option(new LinkedListNode(value % 10, _addTwoNumbers(node1.next, node2.next, value / 10)))
 ```
 
 ### 445. Add Two Numbers 2
@@ -217,4 +187,17 @@ Iterative approach, carefully maneuver of pre, curr and next
       val value = carry + (if diff == 0 then l1.get.value + l2.get.value else l1.get.value)
       (Option(new LinkedListNode(value % 10, next)), value / 10)
     }
+```
+
+## Others
+### 160. Intersection of Two Linked Lists
+```scala
+  def getIntersectionNode(headA: LinkedListNode[Int], headB: LinkedListNode[Int]): Option[LinkedListNode[Int]] =
+    val diff = headA.getLen() - headB.getLen()
+    var (pl, ps) = if diff > 0 then (Option(headA), Option(headB)) else (Option(headB), Option(headA))
+    for (n <- 0 until diff.abs) pl = pl.get.next
+    while pl != ps && pl != None do
+      pl = pl.get.next
+      ps = ps.get.next
+    pl
 ```
