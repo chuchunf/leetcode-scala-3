@@ -1,9 +1,9 @@
 package twopointers
 
 object SortColors {
-  def sortColors(nums: Array[Int]): Unit = sortColorsInternal(nums, sortColorsInternal(nums, 0, 0), 1)
+  def sortColors(nums: Array[Int]): Unit = _sortColors(nums, _sortColors(nums, 0, 0), 1)
 
-  private def sortColorsInternal(nums: Array[Int], start: Int, target: Int): Int =
+  private def _sortColors(nums: Array[Int], start: Int, target: Int): Int =
     var lp = start
     while nums(lp) == target do lp = lp + 1
     var rp = lp + 1

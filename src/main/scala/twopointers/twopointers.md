@@ -11,11 +11,11 @@ Identifying the condition of moving the pointer is the key to use this technique
 - Container with Most water => move the point which is not smaller than current
 - Trap water fall => the water will flow from the lower part, and we start again when encountering a higher bar.
 
-## Related Algorithms
+### Related Algorithms
 - **Slow fast pointers** is a variant of this technique, for which two pointers move at a different speed.
 - **Sliding windows** can be implemented with a single pointer and a variable for window size. Typically, all of the elements within the window will be used (e.g. sum of the window)
 
-### 3.Longest Substring Without Repeating Characters
+### 3. Longest Substring Without Repeating Characters
 ```scala
   def lengthOfLongestSubstring(s: String): Int =
     val cache = mutable.Map[Char, Int]()
@@ -122,11 +122,11 @@ Identifying the condition of moving the pointer is the key to use this technique
 ### 28. Implement strStr()
 ```scala
   def strStr(haystack: String, needle: String): Int =
-    haystack.toCharArray.zipWithIndex.find { case (char, index) => {
-      needle.toCharArray.zipWithIndex.find { case (char2, index2) => {
+    haystack.toCharArray.zipWithIndex.find { case (_, index) =>
+      needle.toCharArray.zipWithIndex.find { case (char2, index2) =>
         haystack(index + index2) != char2
-      }}.isEmpty
-    }}.map(_._2).getOrElse(-1)
+      }.isEmpty
+    }.map(_._2).getOrElse(-1)
 ```
 
 ### 75. Sort Colors
