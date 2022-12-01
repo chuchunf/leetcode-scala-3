@@ -353,21 +353,42 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/tree/tree.md">Tree</a></td>
-            <td></td>
+            <td rowspan="4"><a href="src/main/scala/tree/tree.md">Tree</a></td>
+            <td><a href="src/main/scala/tree/tree.md#tree-traversals">Tree Traversals</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/tree/tree.md#144-binary-tree-preorder-traversal">144. Binary Tree Preorder Traversal</a></li>
                     <li><a href="src/main/scala/tree/tree.md#94-binary-tree-inorder-traversal">94. Binary Tree Inorder Traversal</a></li>
                     <li><a href="src/main/scala/tree/tree.md#145-binary-tree-postorder-traversal">145. Binary Tree Postorder Traversal</a></li>
                     <li><a href="src/main/scala/tree/tree.md#102-binary-tree-level-order-traversal">102. Binary Tree Level Order Traversal</a></li>
+                    <li><a href="src/main/scala/tree/tree.md#103-binary-tree-zigzag-level-order-traversal">103. Binary Tree Zigzag Level Order Traversal</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/tree/tree.md#other-operations">Other operations</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/tree/tree.md#226-invert-binary-tree">226. Invert Binary Tree</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/tree/tree.md#checktree-properties">Check Tree properties</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/tree/tree.md#110-balanced-binary-tree">110. Balanced Binary Tree</a></li>
                     <li><a href="src/main/scala/tree/tree.md#101-symmetric-tree">101. Symmetric Tree</a></li>
                     <li><a href="src/main/scala/tree/tree.md#104-maximum-depth-of-binary-tree">104. Maximum Depth of Binary Tree</a></li>
-                    <li><a href="src/main/scala/tree/tree.md#226-invert-binary-tree">226. Invert Binary Tree</a></li>
-                    <li><a href="src/main/scala/tree/tree.md#236-lowest-common-ancestor-of-a-binary-tree">236. Lowest Common Ancestor of a Binary Tree</a></li>
-                    <li><a href="src/main/scala/tree/tree.md#103-binary-tree-zigzag-level-order-traversal">103. Binary Tree Zigzag Level Order Traversal</a></li>
                     <li><a href="src/main/scala/tree/tree.md#111-minimum-depth-of-binary-tree">111. Minimum Depth of Binary Tree</a></li>
+                    <li><a href="src/main/scala/tree/tree.md#236-lowest-common-ancestor-of-a-binary-tree">236. Lowest Common Ancestor of a Binary Tree</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/tree/tree.md#construction-and-destruction-of-tree">Construction and Destruction of Tree</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/tree/tree.md#114-flatten-binary-tree-to-linked-list">114. Flatten Binary Tree to Linked List</a></li>
                     <li><a href="src/main/scala/tree/tree.md#105-construct-binary-tree-from-preorder-and-inorder-traversal">105. Construct Binary Tree from Preorder and Inorder Traversal</a></li>
                     <li><a href="src/main/scala/tree/tree.md#106-construct-binary-tree-from-inorder-and-postorder-traversal">106. Construct Binary Tree from Inorder and Postorder Traversal</a></li>

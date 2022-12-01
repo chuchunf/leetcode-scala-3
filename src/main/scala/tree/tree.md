@@ -8,32 +8,12 @@ Tree and linked list
 - It is like a 2d linked list so share some similarities
 - Given its hierarchical structure, it works naturally with **recursion**
 
-## Tips
+### Tips
 - A **temp helper node** could be used to hold a particular node while transformation
 - A **helper function** to take two nodes and/or a container to store results
 - Instead of changing the value of the node, pointing to another node works naturally with recursion
 
-## Common travels operations
-- pre-order => root, left then right
-- in order => left, root then right
-- post order => left, right then root
-- line order => line by line horizontally (with a list cache of the next level of nodes)
-- zig zag order
-
-## Other operations
-- invert binary tree
-
-## Common properties
-- is a balanced tree
-- is a symmetric tree
-- max depth
-- min depth
-
-## Construction of tree
-- Construct binary tree from in order and post order
-- Construct binary tree from pre order and in order
-
-## Type of trees
+## Other specific Tree structures
 1. Binary trees, which constrain the number of children for each parent to exactly two.
 2. Balanced trees, a binary tree in which the height of the left and right subtree of any node differ by not more than 1.
 3. Binary search trees, a binary tree in which the left subtree contains key values less than the root, while the right subtree contains key values greater than the root
@@ -43,6 +23,12 @@ Tree and linked list
 1. Recursion
 2. Depth-first search
 3. Width-first search
+4. Graph
+
+## Tree Traversals 
+- pre-order => root, left then right
+- in order => left, root then right
+- post order => left, right then root
 
 ### 144. Binary Tree Preorder Traversal
 ```scala
@@ -84,6 +70,7 @@ Tree and linked list
 ```
 
 ### 102. Binary Tree Level Order Traversal
+line by line horizontally (with a list cache of the next level of nodes)
 ```scala
   def levelOrder(root: TreeNode[Int]): List[List[Int]] =
     val result = mutable.ListBuffer[List[Int]]()
@@ -121,6 +108,20 @@ Tree and linked list
     result.toList
 ```
 
+## Other operations
+### 226. Invert Binary Tree
+```scala
+  def invertTree(root: TreeNode[Int]): TreeNode[Int] =
+    (root.left, root.right) match {
+      case (Some(left), Some(right)) =>
+        root.left = Option(invertTree(right))
+        root.right = Option(invertTree(left))
+      case _ =>
+    }
+    root
+```
+
+## Check Tree properties
 ### 110. Balanced Binary Tree
 ```scala
   def isBalanced(root: TreeNode[Int]): Boolean = (root.left, root.right) match
@@ -156,18 +157,6 @@ Tree and linked list
     case _ => 1
 ```
 
-### 226. Invert Binary Tree
-```scala
-  def invertTree(root: TreeNode[Int]): TreeNode[Int] =
-    (root.left, root.right) match {
-      case (Some(left), Some(right)) =>
-        root.left = Option(invertTree(right))
-        root.right = Option(invertTree(left))
-      case _ =>
-    }
-    root
-```
-
 ### 236. Lowest Common Ancestor of a Binary Tree
 ```scala
   def lowestCommonAncestor(root: TreeNode[Int], p: TreeNode[Int], q: TreeNode[Int]): TreeNode[Int] =
@@ -186,6 +175,7 @@ Tree and linked list
           case _ => None
 ```
 
+## Construction and Destruction of Tree
 ### 114. Flatten Binary Tree to Linked List
 ```scala
   def flatten(root: TreeNode[Int]): Unit = (root.left, root.right) match
