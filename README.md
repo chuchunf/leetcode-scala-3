@@ -396,18 +396,39 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/bst/bst.md">Binary Search Tree</a></td>
-            <td></td>
+            <td rowspan="4"><a href="src/main/scala/bst/bst.md">Binary Search Tree</a></td>
+            <td><a href="src/main/scala/bst/bst.md#check-bst-properties">Check BST properties</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bst/bst.md#98-validate-binary-search-tree">98. Validate Binary Search Tree</a></li>
+                    <li><a href="src/main/scala/bst/bst.md#100-same-tree">100. Same Tree</a></li>
+                    <li><a href="src/main/scala/bst/bst.md#235-lowest-common-ancestor-of-a-binary-search-tree">235. Lowest Common Ancestor of a Binary Search Tree</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/bst/bst.md#modify-bst">Modify BST</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/bst/bst.md#450-delete-node-in-a-bst">450. Delete Node in a BST</a></li>
                     <li><a href="src/main/scala/bst/bst.md#701-insert-into-a-binary-search-tree">701. Insert into a Binary Search Tree</a></li>
-                    <li><a href="src/main/scala/bst/bst.md#100-same-tree">100. Same Tree</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/bst/bst.md#construct-bst">Construct BST</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/bst/bst.md#108-convert-sorted-array-to-binary-search-tree">108. Convert Sorted Array to Binary Search Tree</a></li>
-                    <li><a href="src/main/scala/bst/bst.md#99-recover-binary-search-tree">99. Recover Binary Search Tree</a></li>
                     <li><a href="src/main/scala/bst/bst.md#173-binary-search-tree-iterator">173. Binary Search Tree Iterator</a></li>
-                    <li><a href="src/main/scala/bst/bst.md#235-lowest-common-ancestor-of-a-binary-search-tree">235. Lowest Common Ancestor of a Binary Search Tree</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/bst/bst.md#traversal-of-bst">Traversal of BST</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/bst/bst.md#99-recover-binary-search-tree">99. Recover Binary Search Tree</a></li>
                     <li><a href="src/main/scala/bst/bst.md#257-binary-tree-paths">257. Binary Tree Paths</a></li>
                 </ul> 
             </td>

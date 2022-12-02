@@ -11,12 +11,7 @@ Binary search trees allow binary search for **fast lookup, addition, and removal
 ## Related data structures
 TreeMap and TreeSet data structures are internally implemented using self-balancing BSTs.
 
-## Common operation
-1. Validate Binary Search tree
-2. Delete a node in a tree
-3. Insert a node into a tree
-4. Is Same tree
-
+## Check BST properties
 ### 98. Validate Binary Search Tree
 ```scala
   def isValidBST(root: TreeNode[Int]): Boolean = (root.left, root.right) match
@@ -25,6 +20,25 @@ TreeMap and TreeSet data structures are internally implemented using self-balanc
     case (None, None) => true
 ```
 
+### 100. Same Tree
+```scala
+  def isSameTree(p: TreeNode[Int], q: TreeNode[Int]): Boolean = _isSameTree(Option(p), Option(q))
+
+  private def _isSameTree(p: Option[TreeNode[Int]], q: Option[TreeNode[Int]]): Boolean = (p, q) match
+    case (None, None) => true
+    case (None, Some(_)) | (Some(_), None) => false
+    case (Some(rp), Some(rq)) => rp.value == rq.value && _isSameTree(rp.right, rq.right) && _isSameTree(rp.left, rq.left)
+```
+
+### 235. Lowest Common Ancestor of a Binary Search Tree
+```scala
+  def lowestCommonAncestor(root: TreeNode[Int], p: TreeNode[Int], q: TreeNode[Int]): TreeNode[Int] =
+    if root.value > p.value && root.value > q.value then lowestCommonAncestor(root.left.get, p, q)
+    else if root.value < p.value && root.value < q.value then lowestCommonAncestor(root.right.get, q, q)
+    else root
+```
+
+## Modify BST
 ### 450. Delete Node in a BST
 ```scala
   def deleteNode(root: TreeNode[Int], key: Int): TreeNode[Int] = deleteNodeInternal(Option(root), key).get
@@ -62,16 +76,7 @@ TreeMap and TreeSet data structures are internally implemented using self-balanc
     root
 ```
 
-### 100. Same Tree
-```scala
-  def isSameTree(p: TreeNode[Int], q: TreeNode[Int]): Boolean = _isSameTree(Option(p), Option(q))
-
-  private def _isSameTree(p: Option[TreeNode[Int]], q: Option[TreeNode[Int]]): Boolean = (p, q) match
-    case (None, None) => true
-    case (None, Some(_)) | (Some(_), None) => false
-    case (Some(rp), Some(rq)) => rp.value == rq.value && _isSameTree(rp.right, rq.right) && _isSameTree(rp.left, rq.left)
-```
-
+## Construct BST
 ### 108. Convert Sorted Array to Binary Search Tree
 ```scala
   def sortedArrayToBST(nums: Array[Int]): TreeNode[Int] = nums.length match
@@ -79,25 +84,6 @@ TreeMap and TreeSet data structures are internally implemented using self-balanc
     case 2 => new TreeNode[Int](nums(0), None, Option(TreeNode[Int](nums(1))))
     case len => val mid = len / 2
       new TreeNode[Int](nums(mid), Option(sortedArrayToBST(nums.slice(0, mid))), Option(sortedArrayToBST(nums.slice(mid + 1, nums.length))))
-```
-### 99. Recover Binary Search Tree
-For a valid BST, the in order search will be sorted
-```scala
-  private var (first, second, prev): (Option[TreeNode[Int]], Option[TreeNode[Int]], Option[TreeNode[Int]]) = (None, None, None)
-
-  def recoverTree(root: TreeNode[Int]): Unit =
-    _traverse(root)
-    val (firstElm, secondElm) = (first.get, second.get)
-    val tmp = firstElm.value
-    firstElm.value = secondElm.value
-    secondElm.value = tmp
-
-  private def _traverse(root: TreeNode[Int]): Unit =
-    if root.left.isDefined then _traverse(root.left.get)
-    if first.isEmpty && (prev.isDefined && prev.get.value > root.value) then first = Option(prev.get)
-    if first.isDefined && (prev.isDefined && prev.get.value > root.value) then second = Option(root)
-    prev = Option(root)
-    if root.right.isDefined then _traverse(root.right.get)
 ```
 
 ### 173. Binary Search Tree Iterator
@@ -123,12 +109,25 @@ class BinarySearchTreeIterator(_root: TreeNode[Int]) {
 }
 ```
 
-### 235. Lowest Common Ancestor of a Binary Search Tree
+## Traversal of BST
+### 99. Recover Binary Search Tree
+For a valid BST, the in order search will be sorted
 ```scala
-  def lowestCommonAncestor(root: TreeNode[Int], p: TreeNode[Int], q: TreeNode[Int]): TreeNode[Int] =
-    if root.value > p.value && root.value > q.value then lowestCommonAncestor(root.left.get, p, q)
-    else if root.value < p.value && root.value < q.value then lowestCommonAncestor(root.right.get, q, q)
-    else root
+  private var (first, second, prev): (Option[TreeNode[Int]], Option[TreeNode[Int]], Option[TreeNode[Int]]) = (None, None, None)
+
+  def recoverTree(root: TreeNode[Int]): Unit =
+    _traverse(root)
+    val (firstElm, secondElm) = (first.get, second.get)
+    val tmp = firstElm.value
+    firstElm.value = secondElm.value
+    secondElm.value = tmp
+
+  private def _traverse(root: TreeNode[Int]): Unit =
+    if root.left.isDefined then _traverse(root.left.get)
+    if first.isEmpty && (prev.isDefined && prev.get.value > root.value) then first = Option(prev.get)
+    if first.isDefined && (prev.isDefined && prev.get.value > root.value) then second = Option(root)
+    prev = Option(root)
+    if root.right.isDefined then _traverse(root.right.get)
 ```
 
 ### 257. Binary Tree Paths
