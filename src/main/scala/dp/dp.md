@@ -29,9 +29,8 @@ int Fibonacci(int N) {
 ```
 In both cases, we will only compute each fib(n) once.
 
-### Top down recursion thinking process
-
-#### Brute force recursion without memorization first
+## Top down recursion
+### Brute force recursion without memorization first
 1. The expected result => use what the question asked for as a return result
 2. Think of how to derive f(n) from f(n-1), f(n-2), etc.
     1. Doesn’t have to be n depending on n-1 directly, etc. could be n, m depending on n-1, m+1 could sum of multiple, etc. DP works as long as we could derive n from others 
@@ -51,13 +50,13 @@ In both cases, we will only compute each fib(n) once.
     2. Get the result based on condition, modify constraint variable and make recursive calls.
     3. NOTE: the constraint variable and index will be changed in the recursive call
 
-#### Add memorization to recursion
+### Add memorization to recursion
 1. Create a memorization structure based on the parameters above (both index and constraint variable)
 2. Since these variables are changing, we could reuse them only if we encounter the same scenarios again
 3. Make it the first parameters of the recursive function
 4. Return directly if the result is available
 
-#### How do recognize a DP problem?
+### How do recognize a DP problem?
 - The problems that seek the maximum or minimum solution given certain constraints 
 - The problems that need to find out all the combinations 
 - The problem could be resolved recursively 
