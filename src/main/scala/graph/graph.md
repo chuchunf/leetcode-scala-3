@@ -7,16 +7,17 @@ These pairs are known as **edges** (also called links or lines)
 - Breadth First Search (BFS)
 - Depth First Search (DFS)
 
-## The main differences between a graph and a tree
+### The main differences between a graph and a tree
 1. There could be cycle in graph but not in tree
 2. Graph could be undirected, tree is always directed (from root to children)
 
-## Applications
+### Usages
 1. detect a cycle in a directed graph
 2. traversal of a graph 
 3. find dependency of a graph  
 
 ## Related algorithms
+- **DFS/BFS**
 - **Topological sort**  
   Simply involves running DFS on an entire graph and adding each node to the global ordering of nodes,
   but only after all of a node's children are visited (hence depth first).

@@ -31,7 +31,7 @@ As the find is a recursive call until it finds the root (self-owned) node, the w
 The two techniques complement each other. The time complexity of each operation becomes even smaller than O(Logn). 
 In fact, amortized time complexity effectively becomes small constant. 
 
-### Application of union find
+### Usage of union find
 * Check whether an undirected graph contains cycle or not (assume no self-loop)
 * Check the regions of an undirected graph
 

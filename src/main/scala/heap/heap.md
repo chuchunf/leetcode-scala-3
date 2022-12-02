@@ -10,7 +10,7 @@ or when insertions need to be interspersed with removals of the root node.
 Heap can be considered as an alternative data structure of queue/stack that instead of maintain in/out order,
 it maintains **an user controlled order** (for example, min and max)
 
-## Implementation
+### Implementation
 Heap can be implemented as an array with following properties
 - parent = Arr[(i-1) / 2]
 - left = Arr[(2*i) + 1]
@@ -29,7 +29,7 @@ Parent is the smallest/biggest value, when insert or remove, heapitify function 
 4. swap with value at largest 
 5. recursive heapifty at from largest
 
-## Applications
+### Usages
 1. Heap Sort uses Binary Heap to sort an array in O(nLogn) time.
 2. Priority queue to get min/max (user defined order) element in O(nLogn) time. 
 

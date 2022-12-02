@@ -35,7 +35,7 @@ Otherwise, **identify all possible next candidates and call the helper function 
       buffer.remove(buffer.length - 1)
 ```
 
-## Tips
+### Tips
 - Use any/some intermedia state variables as long as they keep the partial states 
 - Change a cell value to indicate visited state and revert it after recursive call
 

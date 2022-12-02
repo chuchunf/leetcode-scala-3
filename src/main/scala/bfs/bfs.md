@@ -7,8 +7,8 @@ Then move towards the next-level neighbour nodes.
 (Plain) Depth-first search, which explores the node branch as far as possible,
 may get lost in an infinite branch and never make it to the solution node.
 
-## Applications
-1. Find shortest path in tree or graph
+### Usages
+1. Find the shortest path in tree or graph
 2. Cycle detection in undirected graph
 3. Path finding
 

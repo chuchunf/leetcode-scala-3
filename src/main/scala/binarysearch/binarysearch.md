@@ -10,7 +10,7 @@ If the collection is unordered, sort it first before applying Binary Search.
 
 Binary search could be implemented iteratively or recursively.
 
-## Tips
+### Tips
 - calculate mid by low + (high-low)/2 to prevent overflow
 - starting with low=1, high=length-1, repeat while low <= high 
 - depending on comparison with target, low = mid + 1 or high = mid - 1

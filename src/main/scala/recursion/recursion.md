@@ -1,14 +1,21 @@
 # Recursion
 Recursion solves problems where the solution depends on solutions to smaller instances of the same problem by using functions that call themselves from within their own code.
 - Works with tree/linked list etc. recursive data structures 
-- Recursion normally could be converted to Iteration via a **Stack**
+- Recursion could be converted to Iteration with **Stack**
 
-## Implement the recursion function 
+### Implement the recursion function 
 1. Identify recursion case => a problem could be resolved by re-apply same function
 2. Identify exit condition with assumption the recursive function is already available
 3. Call the same function with different but smaller problem recursively.
 
 Add **helper function** and with additional variables to keep information
+
+## Related data structure
+- Linked List
+- Tree
+
+## Related algorithm
+- Dynamic programming: recursion with **memorized state** to reduce number of recursive calls
 
 ### 21. Merge Two Sorted Lists
 ```scala
