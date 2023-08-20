@@ -13,10 +13,10 @@ Solutions of selected LeetCode problems in Scala 3.
 - Try Scala 3 syntax and features but with less Scala specific libraries
 
 ### Solutions
-- Solutions are organized into topics, following the same list as LeetCode
-- Topics are further divided into category based on use cases
+- Solutions are organized into topics, following the same grouping as LeetCode
+- Topics are further divided into categories
 - Solutions in each Topic/Category are ordered by difficulty level
-- Solutions required explanation and attention are bold
+- Solutions with more explanation are bold
 
 <table>
     <tbody>

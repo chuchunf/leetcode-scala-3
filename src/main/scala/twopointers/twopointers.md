@@ -1,19 +1,19 @@
 # Two Pointers
-Two-pointers algorithm is an easy and effective technique in a **sorted sequence**, such as an array or linked list.
+Two-pointers algorithm is an easy and effective technique for a **sorted sequence**, such as an array or a linked list.
 Common scenarios are **find the min/max/equals/closest** in a **range defined by the two pointers**
 
 - It could be from the same direction or matching towards the centre
 - The technique deals with a **continuous** range
 - Move two pointers **independently**, each depends on the condition of the problem
 
-Identifying the condition of moving the pointer is the key to use this technique
+**Identifying the condition of moving the pointer** is the key to use this technique
 - Longest unique string => find/not-find repeating character
 - Container with Most water => move the point which is not smaller than current
 - Trap water fall => the water will flow from the lower part, and we start again when encountering a higher bar.
 
 ### Related Algorithms
 - **Slow fast pointers** is a variant of this technique, for which two pointers move at a different speed.
-- **Sliding windows** can be implemented with a single pointer and a variable for window size. Typically, all of the elements within the window will be used (e.g. sum of the window)
+- **Sliding windows** can be implemented with a single pointer and a variable for window size. Typically, all the elements within the window will be used (e.g. sum of the window)
 
 ### 3. Longest Substring Without Repeating Characters
 ```scala
