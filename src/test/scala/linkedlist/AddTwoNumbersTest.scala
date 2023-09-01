@@ -9,9 +9,9 @@ class AddTwoNumbersTest extends org.scalatest.funsuite.AnyFunSuite {
     l1.append(2).append(3)
     l2.append(3).append(4)
     val result = AddTwoNumbers.addTwoNumbers(l1, l2)
-    result.value shouldEqual (3)
-    result.next.get.value shouldEqual (5)
-    result.next.get.next.get.value shouldEqual (7)
+    result.value shouldEqual 3
+    result.next.get.value shouldEqual 5
+    result.next.get.next.get.value shouldEqual 7
   }
 
   test("can add two linked list with carry - iterative approach") {
@@ -19,9 +19,9 @@ class AddTwoNumbersTest extends org.scalatest.funsuite.AnyFunSuite {
     l1.append(2).append(3)
     l2.append(3).append(4)
     val result = AddTwoNumbers.addTwoNumbers(l1, l2)
-    result.value shouldEqual (1)
-    result.next.get.value shouldEqual (6)
-    result.next.get.next.get.value shouldEqual (7)
+    result.value shouldEqual 1
+    result.next.get.value shouldEqual 6
+    result.next.get.next.get.value shouldEqual 7
   }
 
   test("can add two linked list - recursive approach") {
@@ -29,9 +29,9 @@ class AddTwoNumbersTest extends org.scalatest.funsuite.AnyFunSuite {
     l1.append(2).append(3)
     l2.append(3).append(4)
     val result = AddTwoNumbers.addTwoNumbers2(l1, l2)
-    result.value shouldEqual (3)
-    result.next.get.value shouldEqual (5)
-    result.next.get.next.get.value shouldEqual (7)
+    result.value shouldEqual 3
+    result.next.get.value shouldEqual 5
+    result.next.get.next.get.value shouldEqual 7
   }
 
   test("can add two linked list with carry - recursive approach") {
@@ -39,9 +39,9 @@ class AddTwoNumbersTest extends org.scalatest.funsuite.AnyFunSuite {
     l1.append(2).append(3)
     l2.append(3).append(4)
     val result = AddTwoNumbers.addTwoNumbers2(l1, l2)
-    result.value shouldEqual (1)
-    result.next.get.value shouldEqual (6)
-    result.next.get.next.get.value shouldEqual (7)
+    result.value shouldEqual 1
+    result.next.get.value shouldEqual 6
+    result.next.get.next.get.value shouldEqual 7
   }
 
 }

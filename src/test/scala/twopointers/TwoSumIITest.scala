@@ -7,6 +7,6 @@ class TwoSumIITest extends AnyFunSuite {
   test("can get two sum") {
     val nums = Array(2, 7, 11, 15)
     val result = TwoSumII.twoSum(nums, 9)
-    result shouldEqual (Array(1, 2))
+    result shouldEqual Array(1, 2)
   }
 }

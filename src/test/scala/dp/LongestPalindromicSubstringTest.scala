@@ -7,6 +7,6 @@ class LongestPalindromicSubstringTest extends AnyFunSuite {
   test("can find the longest palindromic substring") {
     val s = "babad"
     val result = LongestPalindromicSubstring.longestPalindrome(s)
-    result shouldEqual ("aba")
+    result shouldEqual "aba"
   }
 }

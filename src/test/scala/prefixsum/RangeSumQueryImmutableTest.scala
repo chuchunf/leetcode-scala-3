@@ -9,13 +9,13 @@ class RangeSumQueryImmutableTest extends AnyFunSuite {
     val nums = Array(-2, 0, 3, -5, 2, -1)
     val query = new RangeSumQueryImmutable(nums)
     val result = query.sumRange(0, 2)
-    result shouldEqual (1)
+    result shouldEqual 1
   }
 
   test("can query range sum in between") {
     val nums = Array(-2, 0, 3, -5, 2, -1)
     val query = new RangeSumQueryImmutable(nums)
     val result = query.sumRange(2, 5)
-    result shouldEqual (-1)
+    result shouldEqual -1
   }
 }

@@ -16,30 +16,30 @@ class BinaryTreeTraversalTest extends AnyFunSuite {
   test("can do inorder traversal") {
     val root = getTestData
     val result = BinaryTreeTraversal.inorderTraversal(root)
-    result shouldEqual (List(4, 2, 5, 1, 3))
+    result shouldEqual List(4, 2, 5, 1, 3)
   }
 
   test("can do preorder traversal") {
     val root = getTestData
     val result = BinaryTreeTraversal.preorderTraversal(root)
-    result shouldEqual (List(1, 2, 4, 5, 3))
+    result shouldEqual List(1, 2, 4, 5, 3)
   }
 
   test("can do postorder traversal") {
     val root = getTestData
     val result = BinaryTreeTraversal.postorderTraversal(root)
-    result shouldEqual (List(4, 5, 2, 3, 1))
+    result shouldEqual List(4, 5, 2, 3, 1)
   }
 
   test("can do levelorder traversal") {
     val root = getTestData
     val result = BinaryTreeTraversal.levelOrder(root)
-    result shouldEqual (List(List(1), List(2, 3), List(4, 5)))
+    result shouldEqual List(List(1), List(2, 3), List(4, 5))
   }
 
   test("can do zigzag traversal") {
     val root = getTestData
     val result = BinaryTreeTraversal.zigzagLevelOrder(root)
-    result shouldEqual (List(List(1), List(2, 3), List(5, 4)))
+    result shouldEqual List(List(1), List(2, 3), List(5, 4))
   }
 }

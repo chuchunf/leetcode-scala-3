@@ -8,14 +8,14 @@ class TwoSumTest extends AnyFunSuite {
     val nums = Array(2, 7, 11, 15)
     val target = 9
     val result = TwoSum.twoSum(nums, target)
-    result shouldEqual (Array(0, 1))
+    result shouldEqual Array(0, 1)
   }
 
   test("can handle duplicate values") {
     val nums = Array(3, 3)
     val target = 6
     val result = TwoSum.twoSum(nums, target)
-    result shouldEqual (Array(0, 1))
+    result shouldEqual Array(0, 1)
   }
 
   test("can handle invalid cases") {

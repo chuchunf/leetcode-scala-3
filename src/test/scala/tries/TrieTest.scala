@@ -10,7 +10,7 @@ class TrieTest extends AnyFunSuite {
     trie.insert("am", 20)
     trie.insert("a", 30)
     trie.insert("trie", 40)
-    trie.toString shouldEqual (
+    trie.toString shouldEqual 
       """[ ]
         |+    [a](30)
         ||    +    [m](20)
@@ -19,13 +19,13 @@ class TrieTest extends AnyFunSuite {
         |    +    [r]
         |    |    +    [i]
         |    |    |    +    [e](40)
-        |""".stripMargin)
+        |""".stripMargin
 
     var result = trie.search("trie")
     result shouldEqual (Some(40))
 
     trie.delete("am")
-    trie.toString shouldEqual (
+    trie.toString shouldEqual 
       """[ ]
         |+    [a](30)
         ||    +    [m]
@@ -34,9 +34,9 @@ class TrieTest extends AnyFunSuite {
         |    +    [r]
         |    |    +    [i]
         |    |    |    +    [e](40)
-        |""".stripMargin)
+        |""".stripMargin
 
     result = trie.search("am")
-    result shouldEqual (None)
+    result shouldEqual None
   }
 }

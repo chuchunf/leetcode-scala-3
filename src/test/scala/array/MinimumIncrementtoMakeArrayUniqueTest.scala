@@ -7,6 +7,6 @@ class MinimumIncrementtoMakeArrayUniqueTest extends AnyFunSuite {
   test("can find the min increment") {
     val nums = Array(3, 2, 1, 2, 1, 7)
     val result = MinimumIncrementtoMakeArrayUnique.minIncrementForUnique(nums)
-    result shouldEqual (6)
+    result shouldEqual 6
   }
 }

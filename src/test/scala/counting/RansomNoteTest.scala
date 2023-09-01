@@ -8,13 +8,13 @@ class RansomNoteTest extends AnyFunSuite {
     val ransom = "aa"
     val magazine = "aab"
     val result = RansomNote.canConstruct(ransom, magazine)
-    result shouldEqual (true)
+    result shouldEqual true
   }
 
   test("can not construct the rasom note") {
     val ransom = "aabb"
     val magazine = "aab"
     val result = RansomNote.canConstruct(ransom, magazine)
-    result shouldEqual (false)
+    result shouldEqual false
   }
 }

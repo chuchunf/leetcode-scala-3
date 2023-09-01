@@ -8,20 +8,20 @@ class MinimumWindowSubstringTest extends AnyFunSuite {
     val s = "a"
     val t = "a"
     val result = MinimumWindowSubstring.minWindow(s, t)
-    result shouldEqual ("a")
+    result shouldEqual "a"
   }
 
   test("can not find when t is larger than s") {
     val s = "a"
     val t = "ab"
     val result = MinimumWindowSubstring.minWindow(s, t)
-    result shouldEqual ("")
+    result shouldEqual ""
   }
 
   test("can find the min window") {
     val s = "ADOBECODEBANC"
     val t = "ABC"
     val result = MinimumWindowSubstring.minWindow(s, t)
-    result shouldEqual ("BANC")
+    result shouldEqual "BANC"
   }
 }

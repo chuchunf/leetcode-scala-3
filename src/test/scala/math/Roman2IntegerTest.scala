@@ -7,12 +7,12 @@ class Roman2IntegerTest extends AnyFunSuite {
   test("can convert MCMXCIV") {
     val roman = "MCMXCIV"
     val result = Roman2Integer.romanToInt(roman)
-    result shouldEqual (1994)
+    result shouldEqual 1994
   }
 
   test("can convert III") {
     val roman = "III"
     val result = Roman2Integer.romanToInt(roman)
-    result shouldEqual (3)
+    result shouldEqual 3
   }
 }

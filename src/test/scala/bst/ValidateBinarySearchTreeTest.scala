@@ -10,7 +10,7 @@ class ValidateBinarySearchTreeTest extends AnyFunSuite {
     root.left = Option(TreeNode(1))
     root.right = Option(TreeNode(3))
     val result = ValidateBinarySearchTree.isValidBST(root)
-    result shouldEqual (true)
+    result shouldEqual true
   }
 
   test("can detect an invalid binary search tree") {
@@ -20,6 +20,6 @@ class ValidateBinarySearchTreeTest extends AnyFunSuite {
     root.right = Option(right)
     right.right = Option(TreeNode(4))
     val result = ValidateBinarySearchTree.isValidBST(root)
-    result shouldEqual (false)
+    result shouldEqual false
   }
 }

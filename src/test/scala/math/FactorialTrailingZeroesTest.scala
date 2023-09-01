@@ -7,11 +7,11 @@ import org.scalatest.matchers.should.Matchers.*
 class FactorialTrailingZeroesTest extends AnyFunSuite {
   test("get for less than 5") {
     val result = FactorialTrailingZeroes.trailingZeroes(4)
-    result shouldEqual (0)
+    result shouldEqual 0
   }
 
   test("get for greater than 5") {
     val result = FactorialTrailingZeroes.trailingZeroes(100)
-    result shouldEqual (24)
+    result shouldEqual 24
   }
 }

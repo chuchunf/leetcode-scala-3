@@ -7,11 +7,11 @@ import stack.MinStack
 class LongestValidParenthesesTest extends AnyFunSuite {
   test("can find longest valid parenteses") {
     val result = LongestValidParentheses.longestValidParentheses("(()")
-    result shouldEqual (2)
+    result shouldEqual 2
   }
 
   test("can find longest valid parenteses with 1st invalid char") {
     val result = LongestValidParentheses.longestValidParentheses(")()())")
-    result shouldEqual (4)
+    result shouldEqual 4
   }
 }

@@ -8,13 +8,13 @@ class SubstringwithConcatenationofAllWordsTest extends AnyFunSuite {
     val s = "barfoothefoobarman"
     val words = Array("foo","bar")
     val result = SubstringwithConcatenationofAllWords.findSubstring(s, words)
-    result shouldEqual (List(0, 9))
+    result shouldEqual List(0, 9)
   }
 
   test("can not substring with all words") {
     val s = "wordgoodgoodgoodbestword"
     val words = Array("word","good","best","word")
     val result = SubstringwithConcatenationofAllWords.findSubstring(s, words)
-    result shouldEqual (List.empty[Int])
+    result shouldEqual List.empty[Int]
   }
 }

@@ -7,6 +7,6 @@ class PartitionLabelsTest extends AnyFunSuite {
   test("can get partition") {
     val str = "ababcbacadefegdehijhklij"
     val result = PartitionLabels.partitionLabels(str)
-    result shouldEqual (List(9, 7, 8))
+    result shouldEqual List(9, 7, 8)
   }
 }

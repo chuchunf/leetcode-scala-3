@@ -7,6 +7,6 @@ class DungeonGameTest extends AnyFunSuite {
   test("can find min hp") {
     val dungeon = Array(Array(-2, -3, 3), Array(-5, -10, 1), Array(10, 30, -5))
     val result = DungeonGame.calculateMinimumHP(dungeon)
-    result shouldEqual (7)
+    result shouldEqual 7
   }
 }

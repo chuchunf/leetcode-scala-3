@@ -11,7 +11,7 @@ class LowestCommonAncestorofaBinaryTreeTest extends AnyFunSuite {
     root.left = Option(left)
     left.left = Option(TreeNode(4))
     val result = LowestCommonAncestorofaBinaryTree.lowestCommonAncestor(root, TreeNode(2), TreeNode(4))
-    result.value shouldEqual (2)
+    result.value shouldEqual 2
   }
 
   test("can find common ancestor of a child-child") {
@@ -21,6 +21,6 @@ class LowestCommonAncestorofaBinaryTreeTest extends AnyFunSuite {
     root.left = Option(left)
     left.left = Option(TreeNode(4))
     val result = LowestCommonAncestorofaBinaryTree.lowestCommonAncestor(root, TreeNode(2), TreeNode(3))
-    result.value shouldEqual(1)
+    result.value shouldEqual 1
   }
 }

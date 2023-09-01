@@ -7,12 +7,12 @@ class ValidPalindromeTest extends AnyFunSuite {
   test("can validate palindrome") {
     val s = "A man, a plan, a canal: Panama"
     val result = ValidPalindrome.isPalindrome(s)
-    result shouldEqual (true)
+    result shouldEqual true
   }
 
   test("can validate non palindrome") {
     val s = "race a car"
     val result = ValidPalindrome.isPalindrome(s)
-    result shouldEqual (false)
+    result shouldEqual false
   }
 }

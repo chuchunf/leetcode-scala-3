@@ -14,16 +14,16 @@ class CopyListwithRandomPointerTest extends AnyFunSuite {
     node4.random = Option(node3)
     node5.random = Option(node1)
     var result = CopyListwithRandomPointer.copyRandomList(node1)
-    result.value shouldEqual (1)
+    result.value shouldEqual 1
     result = result.next.get
-    result.value shouldEqual (2)
-    result.random.get.value shouldEqual (1)
+    result.value shouldEqual 2
+    result.random.get.value shouldEqual 1
     result = result.next.get
-    result.value shouldEqual (3)
+    result.value shouldEqual 3
     result = result.next.get
-    result.value shouldEqual (4)
-    result.random.get.value shouldEqual (3)
+    result.value shouldEqual 4
+    result.random.get.value shouldEqual 3
     result = result.next.get
-    result.value shouldEqual (5)
+    result.value shouldEqual 5
   }
 }

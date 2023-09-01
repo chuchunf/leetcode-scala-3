@@ -7,6 +7,6 @@ class DecodeWaysTest extends AnyFunSuite {
   test("can decode two ways") {
     val s = "223"
     val result = DecodeWays.numDecodings(s)
-    result shouldEqual (3)
+    result shouldEqual 3
   }
 }

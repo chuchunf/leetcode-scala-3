@@ -11,10 +11,10 @@ class TreeNodeTest extends AnyFunSuite {
     root.value shouldEqual (1)
     root.right.get.value shouldEqual (2)
     val output = root.toString
-    output shouldEqual (
+    output shouldEqual
       """1
         |+   2
         |\   3
-        |""".stripMargin)
+        |""".stripMargin
   }
 }

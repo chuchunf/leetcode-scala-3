@@ -9,13 +9,13 @@ class SameTreeTest extends AnyFunSuite {
     val p = new TreeNode(1, Option(TreeNode(2)), Option(TreeNode(3)))
     val q = new TreeNode(1, Option(TreeNode(2)), Option(TreeNode(3)))
     val result = SameTree.isSameTree(p, q)
-    result shouldEqual (true)
+    result shouldEqual true
   }
 
   test("can not match diff tree") {
     val p = new TreeNode(1, None, Option(TreeNode(3)))
     val q = new TreeNode(1, Option(TreeNode(3)), None)
     val result = SameTree.isSameTree(p, q)
-    result shouldEqual (false)
+    result shouldEqual false
   }
 }

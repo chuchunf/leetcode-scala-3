@@ -9,7 +9,7 @@ class IntersectionofTwoLinkedListsTest extends AnyFunSuite {
     heada.append(6).append(4)
     headb.append(5)
     val result = IntersectionofTwoLinkedLists.getIntersectionNode(heada, headb)
-    result shouldEqual (None)
+    result shouldEqual None
   }
 
   test("can find intersection with same length") {
@@ -19,7 +19,7 @@ class IntersectionofTwoLinkedListsTest extends AnyFunSuite {
     heada.next = Option(intersect)
     headb.next = Option(intersect)
     val result = IntersectionofTwoLinkedLists.getIntersectionNode(heada, headb)
-    result.get shouldEqual (intersect)
+    result.get shouldEqual intersect
   }
 
   test("can find intersection with diff length") {
@@ -31,6 +31,6 @@ class IntersectionofTwoLinkedListsTest extends AnyFunSuite {
     heada2.next = Option(intersect)
     headb.next = Option(intersect)
     val result = IntersectionofTwoLinkedLists.getIntersectionNode(heada, headb)
-    result.get shouldEqual (intersect)
+    result.get shouldEqual intersect
   }
 }

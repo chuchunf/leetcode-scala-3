@@ -14,7 +14,7 @@ class DeleteNodeinaBSTTest extends AnyFunSuite {
     left.right = Option(TreeNode(3))
 
     val result = DeleteNodeinaBST.deleteNode(root, 2)
-    result.left.get.value shouldEqual (3)
-    result.left.get.left.get.value shouldEqual(1)
+    result.left.get.value shouldEqual 3
+    result.left.get.left.get.value shouldEqual 1
   }
 }

@@ -7,6 +7,6 @@ class ThreeSumClosestTest extends AnyFunSuite {
   test("can find the closest") {
     val nums = Array(-1, 2, 1, -4)
     val result = ThreeSumClosest.threeSumClosest(nums, 1)
-    result shouldEqual (2)
+    result shouldEqual 2
   }
 }

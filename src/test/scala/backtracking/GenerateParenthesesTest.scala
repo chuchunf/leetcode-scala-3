@@ -7,6 +7,6 @@ class GenerateParenthesesTest extends AnyFunSuite {
   test("can generate well formed parentheses") {
     val n = 3
     val result = GenerateParentheses.generateParenthesis(3)
-    result shouldEqual (List("((()))", "(()())", "(())()", "()(())", "()()()"))
+    result shouldEqual List("((()))", "(()())", "(())()", "()(())", "()()()")
   }
 }

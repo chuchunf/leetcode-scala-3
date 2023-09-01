@@ -8,7 +8,7 @@ class BalancedBinaryTreeTest extends AnyFunSuite {
     val root = TreeNode(1)
     root.left = Option(TreeNode(2))
     val result = BalancedBinaryTree.isBalanced(root)
-    result shouldEqual (false)
+    result shouldEqual false
   }
 
   test("can detect a balanced tree") {
@@ -16,6 +16,6 @@ class BalancedBinaryTreeTest extends AnyFunSuite {
     root.left = Option(TreeNode(2))
     root.right = Option(TreeNode(3))
     val result = BalancedBinaryTree.isBalanced(root)
-    result shouldEqual (true)
+    result shouldEqual true
   }
 }

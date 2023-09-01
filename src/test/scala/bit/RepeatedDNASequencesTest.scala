@@ -7,6 +7,6 @@ class RepeatedDNASequencesTest extends AnyFunSuite {
   test("can find repeating sequence") {
     val s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
     val result = RepeatedDNASequences.findRepeatedDnaSequences(s)
-    result shouldEqual (List("AAAAACCCCC", "CCCCCAAAAA"))
+    result shouldEqual List("AAAAACCCCC", "CCCCCAAAAA")
   }
 }

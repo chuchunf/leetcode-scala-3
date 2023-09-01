@@ -8,24 +8,24 @@ class MergeIntervalsTest extends AnyFunSuite {
   test("can merge single interval") {
     val internals = Array(Array(1, 4))
     val result = MergeIntervals.merge(internals)
-    result shouldEqual (Array(Array(1, 4)))
+    result shouldEqual Array(Array(1, 4))
   }
 
   test("can merge connected overlap interval ") {
     val internals = Array(Array(1, 4), Array(4, 7))
     val result = MergeIntervals.merge(internals)
-    result shouldEqual (Array(Array(1, 7)))
+    result shouldEqual Array(Array(1, 7))
   }
 
   test("can merge overlap interval ") {
     val internals = Array(Array(1, 4), Array(2, 7))
     val result = MergeIntervals.merge(internals)
-    result shouldEqual (Array(Array(1, 7)))
+    result shouldEqual Array(Array(1, 7))
   }
 
   test("can merge completed overlap interval ") {
     val internals = Array(Array(1, 7), Array(2, 3))
     val result = MergeIntervals.merge(internals)
-    result shouldEqual (Array(Array(1, 7)))
+    result shouldEqual Array(Array(1, 7))
   }
 }

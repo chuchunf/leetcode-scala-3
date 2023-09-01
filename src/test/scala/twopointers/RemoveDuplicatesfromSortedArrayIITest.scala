@@ -7,12 +7,12 @@ class RemoveDuplicatesfromSortedArrayIITest extends AnyFunSuite {
   test("can remove duplicates from sorted array") {
     val nums = Array(1,1,1,2,2,3)
     val result = RemoveDuplicatesfromSortedArrayII.removeDuplicates(nums)
-    result shouldEqual (5)
+    result shouldEqual 5
   }
 
   test("can remove duplicates from sorted array 2") {
     val nums = Array(0,0,1,1,1,1,2,3,3)
     val result = RemoveDuplicatesfromSortedArrayII.removeDuplicates(nums)
-    result shouldEqual (7)
+    result shouldEqual 7
   }
 }

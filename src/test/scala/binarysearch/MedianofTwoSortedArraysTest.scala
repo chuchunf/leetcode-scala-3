@@ -8,6 +8,6 @@ class MedianofTwoSortedArraysTest extends AnyFunSuite {
     val nums1 = Array(1, 3, 5)
     val nums2 = Array(2, 4)
     val result = MedianofTwoSortedArrays.findMedianSortedArrays(nums1, nums2)
-    result shouldEqual (3)
+    result shouldEqual 3
   }
 }

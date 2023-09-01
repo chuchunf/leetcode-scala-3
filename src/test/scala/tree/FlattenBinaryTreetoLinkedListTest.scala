@@ -10,14 +10,14 @@ class FlattenBinaryTreetoLinkedListTest extends AnyFunSuite {
     println(s"root=$root")
     FlattenBinaryTreetoLinkedList.flatten(root)
     var node = root
-    node.left shouldEqual (None)
+    node.left shouldEqual None
     node = node.right.get
-    node.value shouldEqual (3)
-    node.left shouldEqual (None)
+    node.value shouldEqual 3
+    node.left shouldEqual None
     node = node.right.get
-    node.value shouldEqual (4)
-    node.left shouldEqual (None)
+    node.value shouldEqual 4
+    node.left shouldEqual None
     node = node.right.get
-    node.value shouldEqual (2)
+    node.value shouldEqual 2
   }
 }

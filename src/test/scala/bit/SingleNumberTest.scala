@@ -7,6 +7,6 @@ class SingleNumberTest extends AnyFunSuite {
   test("can get single number") {
     val nums = Array(4, 1, 2, 1, 2)
     val result = SingleNumber.singleNumber(nums)
-    result shouldEqual (4)
+    result shouldEqual 4
   }
 }

@@ -8,16 +8,16 @@ class PartitionListTest extends AnyFunSuite {
     val node = new LinkedListNode(1, None)
     node.append(4).append(3).append(2).append(5).append(2)
     var result = PartitionList.partition(node, 3)
-    result.value shouldEqual (1)
+    result.value shouldEqual 1
     result = result.next.get
-    result.value shouldEqual (2)
+    result.value shouldEqual 2
     result = result.next.get
-    result.value shouldEqual (2)
+    result.value shouldEqual 2
     result = result.next.get
-    result.value shouldEqual (4)
+    result.value shouldEqual 4
     result = result.next.get
-    result.value shouldEqual (3)
+    result.value shouldEqual 3
     result = result.next.get
-    result.value shouldEqual (5)
+    result.value shouldEqual 5
   }
 }

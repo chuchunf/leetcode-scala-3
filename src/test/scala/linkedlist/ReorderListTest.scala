@@ -8,14 +8,14 @@ class ReorderListTest extends AnyFunSuite {
     val head = new LinkedListNode[Int](1, None)
     head.append(2).append(3).append(4).append(5)
     ReorderList.reorderList(head)
-    head.value shouldEqual (1)
+    head.value shouldEqual 1
     var next = head.next.get
-    next.value shouldEqual (5)
+    next.value shouldEqual 5
     next = next.next.get
-    next.value shouldEqual (2)
+    next.value shouldEqual 2
     next = next.next.get
-    next.value shouldEqual (4)
+    next.value shouldEqual 4
     next = next.next.get
-    next.value shouldEqual (3)
+    next.value shouldEqual 3
   }
 }

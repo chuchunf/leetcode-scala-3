@@ -20,7 +20,7 @@ class ValidSudokuTest extends AnyFunSuite {
       Array('.', '.', '.', '.', '8', '.', '.', '7', '9')
     )
     val result = ValidSudoku.isValidSudoku(board)
-    result shouldEqual (true)
+    result shouldEqual true
   }
 
   test("can validate invalid sudoku") {
@@ -36,6 +36,6 @@ class ValidSudokuTest extends AnyFunSuite {
       Array('.', '.', '.', '.', '8', '.', '.', '7', '9')
     )
     val result = ValidSudoku.isValidSudoku(board)
-    result shouldEqual (false)
+    result shouldEqual false
   }
 }

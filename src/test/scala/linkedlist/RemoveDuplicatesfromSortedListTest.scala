@@ -9,16 +9,16 @@ class RemoveDuplicatesfromSortedListTest extends AnyFunSuite {
     val node = new LinkedListNode(1, None)
     node.append(1).append(2)
     val result = RemoveDuplicatesfromSortedList.deleteDuplicates(node)
-    result.value shouldEqual (1)
-    result.next.get.value shouldEqual (2)
+    result.value shouldEqual 1
+    result.next.get.value shouldEqual 2
   }
 
   test("can remove duplicates at end") {
     val node = new LinkedListNode(1, None)
     node.append(2).append(2)
     val result = RemoveDuplicatesfromSortedList.deleteDuplicates(node)
-    result.value shouldEqual (1)
-    result.next.get.value shouldEqual (2)
-    result.next.get.next shouldEqual (None)
+    result.value shouldEqual 1
+    result.next.get.value shouldEqual 2
+    result.next.get.next shouldEqual None
   }
 }

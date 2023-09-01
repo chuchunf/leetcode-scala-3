@@ -8,6 +8,6 @@ class IndexPairsofaStringTest extends AnyFunSuite {
     val s = "thestoryofleetcodeandme"
     val words = List("story","fleet","leetcode")
     val result = IndexPairsofaString.indexPairs(s, words)
-    result shouldEqual (List(List(3, 7), List(9, 13), List(10, 17)))
+    result shouldEqual List(List(3, 7), List(9, 13), List(10, 17))
   }
 }

@@ -8,12 +8,12 @@ class LargestRectangleinHistogramTest extends AnyFunSuite {
   test("can find largest rect") {
     val heights = Array(2, 4)
     val result = LargestRectangleinHistogram.largestRectangleArea(heights)
-    result shouldEqual (4)
+    result shouldEqual 4
   }
 
   test("can find largest rect 2") {
     val heights = Array(2, 1, 5, 6, 2, 3)
     val result = LargestRectangleinHistogram.largestRectangleArea(heights)
-    result shouldEqual (10)
+    result shouldEqual 10
   }
 }

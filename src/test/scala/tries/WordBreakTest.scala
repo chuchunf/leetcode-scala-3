@@ -8,13 +8,13 @@ class WordBreakTest extends AnyFunSuite {
     val s = "leetcode"
     val words = List("leet", "code")
     val result = WordBreak.wordBreak(s, words)
-    result shouldEqual (true)
+    result shouldEqual true
   }
 
   test("can not break word") {
     val s = "catsandog"
     val words = List("cats", "dog", "sand", "and", "cat")
     val result = WordBreak.wordBreak(s, words)
-    result shouldEqual (false)
+    result shouldEqual false
   }
 }
