@@ -12,11 +12,11 @@ object TheSkylineProblem {
       .foreach { case Array(x, h, lr, i) =>
         if lr == 1 then active.add(i) else active.remove(i)
         if lr == 1 then {
-          if !heap.isEmpty() && h > heap.peek()._1 then result.addOne(List(x, h))
+          if !heap.isEmpty && h > heap.peek()._1 then result.addOne(List(x, h))
           heap.offer((h, i), h)
         } else {
-          while !heap.isEmpty() && !active.contains(heap.peek()._2) do heap.poll()
-          if !heap.isEmpty() && heap.peek()._1 != result.last(1) then result.addOne(List(x, heap.peek()._1))
+          while !heap.isEmpty && !active.contains(heap.peek()._2) do heap.poll()
+          if !heap.isEmpty && heap.peek()._1 != result.last(1) then result.addOne(List(x, heap.peek()._1))
         }
       }
     result.toList

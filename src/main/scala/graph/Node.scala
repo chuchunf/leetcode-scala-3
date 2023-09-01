@@ -19,9 +19,7 @@ case class Node[T](var value: T, neighbors: mutable.ListBuffer[Node[T]]) {
     sb.append(node.value.toString).append("->[")
     sb.append(node.neighbors.map(_.value.toString).mkString(",")).append("]").append("\n")
     cache.addOne(node)
-    node.neighbors.foreach { case n =>
-      if !cache.contains(n) then _toString(n, sb, cache)
-    }
+    node.neighbors.foreach(n => if !cache.contains(n) then _toString(n, sb, cache))
 
   def deepEquals(n2: Node[T]): Boolean =
     val cache = mutable.HashSet[Node[T]]()
@@ -43,9 +41,7 @@ object Node {
   def apply[T](value: T): Node[T] = new Node[T](value, new ListBuffer[Node[T]]())
 
   def array2Node(values: Array[Array[Int]]): Node[Int] =
-    val nodes = (0 until values.length).map { case i => Node(i) }.toList
-    (0 to values.length - 1).foreach { case i =>
-      values(i).foreach { case n => nodes(i).neighbors.addOne(nodes(n-1)) }
-    }
+    val nodes = values.indices.map(i => Node(i)).toList
+    values.indices.foreach(i => values(i).foreach(n => nodes(i).neighbors.addOne(nodes(n-1))))
     nodes.head
 }

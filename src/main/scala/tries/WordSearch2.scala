@@ -7,7 +7,7 @@ object WordSearch2 {
     val result = mutable.ListBuffer[String]()
     val trie = Trie.empty[String]
     words.foreach(word => trie.insert(word, word))
-    for (i <- board.indices; j <- 0 until board(0).length) findWordsInternal(board, i, j, trie, result)
+    for (i <- board.indices; j <- board(0).indices) findWordsInternal(board, i, j, trie, result)
     result.toList
 
   private def findWordsInternal(board: Array[Array[Char]], i: Int, j: Int, words: Trie[String], result: mutable.ListBuffer[String]): Unit =

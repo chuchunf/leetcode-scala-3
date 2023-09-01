@@ -60,10 +60,10 @@ class PriorityQueueTest extends AnyFunSuite {
 
   test("can handel zero size") {
     val pq = new PriorityQueue[Int]()
-    pq.isEmpty() shouldEqual true
+    pq.isEmpty shouldEqual true
     pq.offer(1, 1)
-    pq.isEmpty() shouldEqual false
+    pq.isEmpty shouldEqual false
     pq.poll()
-    pq.isEmpty() shouldEqual true
+    pq.isEmpty shouldEqual true
   }
 }

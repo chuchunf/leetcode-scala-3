@@ -18,10 +18,10 @@ class InsertDeleteGetRandomO1() {
   def remove(value: Int): Boolean =
     if !map.contains(value) then false
     else {
-      array(map.get(value).get) = array(array.length - 1)
+      array(map(value)) = array(array.length - 1)
       array.dropRight(1)
       true
     }
 
-  def getRandom(): Int = array(random.nextInt(array.length))
+  def getRandom: Int = array(random.nextInt(array.length))
 }

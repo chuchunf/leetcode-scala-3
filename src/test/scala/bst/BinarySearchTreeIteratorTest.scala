@@ -13,6 +13,6 @@ class BinarySearchTreeIteratorTest extends AnyFunSuite {
     iterator.next() shouldEqual 9
     iterator.next() shouldEqual 15
     iterator.next() shouldEqual 20
-    iterator.hasNext() shouldEqual false
+    iterator.hasNext shouldEqual false
   }
 }

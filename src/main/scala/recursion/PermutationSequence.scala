@@ -1,5 +1,6 @@
 package recursion
 
+import scala.annotation.tailrec
 import scala.collection.mutable.ArrayBuffer
 
 object PermutationSequence {
@@ -9,6 +10,7 @@ object PermutationSequence {
     for (i <- 1 to n) numbers.addOne(i)
     _getPermutation(n, k, factorial, numbers, "")
 
+  @tailrec
   private def _getPermutation(n: Int, k: Int, factorial: ArrayBuffer[Int], nums: ArrayBuffer[Int], buffer: String): String = n match
     case 1 => buffer + nums(0)
     case _ => val i = (k - 1) / factorial(n - 2)

@@ -5,7 +5,7 @@ import tree.TreeNode
 import scala.collection.mutable
 
 class BinarySearchTreeIterator(_root: TreeNode[Int]) {
-  val _list = mutable.Stack[TreeNode[Int]]()
+  private val _list = mutable.Stack[TreeNode[Int]]()
   private var _current = Option(_root)
   while _current.isDefined do {
     _list.push(_current.get)
@@ -21,5 +21,5 @@ class BinarySearchTreeIterator(_root: TreeNode[Int]) {
     }
     node.value
 
-  def hasNext(): Boolean = _list.nonEmpty
+  def hasNext: Boolean = _list.nonEmpty
 }

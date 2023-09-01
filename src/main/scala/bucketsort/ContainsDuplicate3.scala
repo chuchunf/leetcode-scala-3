@@ -10,8 +10,8 @@ object ContainsDuplicate3 {
       val mapped = num.toLong - Int.MinValue
       val bucket = mapped / (t.toLong + 1)
       if cache.contains(bucket)
-        || (cache.contains(bucket - 1) && mapped - cache.get(bucket - 1).get <= t)
-        || (cache.contains(bucket + 1) && cache.get(bucket + 1).get - mapped <= t) then true
+        || (cache.contains(bucket - 1) && mapped - cache(bucket - 1) <= t)
+        || (cache.contains(bucket + 1) && cache(bucket + 1) - mapped <= t) then true
       else {
         cache.put(bucket, mapped)
         false

@@ -8,6 +8,6 @@ class SlidingWindowMaximumTest extends AnyFunSuite {
   test("can find the maxs") {
     val nums = Array(1, 3, -1, -3, 5, 3, 6, 7)
     val result = SlidingWindowMaximum.maxSlidingWindow(nums, 3)
-    result shouldEqual (Array(3, 3, 5, 5, 6, 7))
+    result shouldEqual Array(3, 3, 5, 5, 6, 7)
   }
 }

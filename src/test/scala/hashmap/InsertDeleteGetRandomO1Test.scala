@@ -11,6 +11,6 @@ class InsertDeleteGetRandomO1Test extends AnyFunSuite {
     set.insert(2) shouldEqual (true)
     set.remove(1) shouldEqual (true)
     set.insert(2) shouldEqual (false)
-    set.getRandom() shouldEqual (2)
+    set.getRandom shouldEqual (2)
   }
 }

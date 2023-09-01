@@ -21,7 +21,7 @@ object MergeKSortedLists {
   // merge multiple list with priority queue
   def mergeKLists2(lists: Array[LinkedListNode[Int]]): LinkedListNode[Int] =
     val pg = new PriorityQueue[LinkedListNode[Int]](128, (a: Int, b: Int) => a < b)
-    for (i <- 0 until lists.length) {
+    for (i <- lists.indices) {
       var node = Option(lists(i))
       while node.isDefined do
         pg.offer(node.get, node.get.value)
@@ -29,7 +29,7 @@ object MergeKSortedLists {
     }
     val tmp = new LinkedListNode[Int](0, None)
     var curr = tmp
-    while !pg.isEmpty() do {
+    while !pg.isEmpty do {
       curr.next = Option(pg.poll())
       curr = curr.next.get
     }
