@@ -21,15 +21,7 @@ A **matrix** can be represented as a two-dimensional
 * if 1 pass could not solve a problem, try multiple passes and collect more information during each pass
 
 ### 26. Remove Duplicates from Sorted Array
-```scala
-  def removeDuplicates(nums: Array[Int]): Int =
-    nums.foldLeft(1) { case (num, index) =>
-      if num <= nums(index - 1) then index else {
-        nums(index) = num
-        index + 1
-      }
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/92b3d76a55d80580bf31904e16207bce7fdc6c89/src/main/scala/array/RemoveDuplicatesfromSortedArray.scala#L4-L10
 
 ### 88. Merge Sorted Array
 ```scala
