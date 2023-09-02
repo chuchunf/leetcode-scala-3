@@ -36,49 +36,10 @@ In fact, amortized time complexity effectively becomes small constant.
 * Check the regions of an undirected graph
 
 ### 200. Number of Islands
-```scala
-  def numIslands(grid: Array[Array[Char]]): Int =
-    val parent = Array.fill[Int](grid.length * grid(0).length)(-1)
-    var count = 0
-    for (i <- grid.indices; j <- grid(0).indices) {
-      if grid(i)(j) == '1' then {
-        parent(i * grid(0).length + j) = i * grid(0).length + j
-        count = count + 1
-      }
-    }
-    for (i <- grid.indices; j <- grid(0).indices) {
-      if grid(i)(j) == '1' then {
-        if j + 1 < grid(0).length && grid(i)(j + 1) == '1' && UF.union(i * grid(0).length + j, i * grid(0).length + j + 1, parent) then count = count - 1
-        if i + 1 < grid.length && grid(i + 1)(j) == '1' && UF.union(i * grid(0).length + j, (i + 1) * grid(0).length + j, parent) then count = count - 1
-      }
-    }
-    count
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/unionfind/NumberofIslands.scala#L4-L19
 
 ### 305. Number of Islands II
-```scala
-  def numIslands(m: Int, n: Int, points: Array[Array[Int]]): Array[Int] =
-    val parent = Array.fill[Int](m * n)(-1)
-    var count = 0
-    points.map { case Array(x, y, _*) =>
-      val nid = x * m + y
-      parent(nid) = nid
-      count = count + 1
-      if x - 1 >= 0 && parent((x - 1) * m + y) != (-1) && UF.union(nid, (x - 1) * m + y, parent) then count = count - 1
-      if x + 1 < m && parent((x + 1) * m + y) != (-1) && UF.union(nid, (x + 1) * m + y, parent) then count = count - 1
-      if y - 1 >= 0 && parent(x * m + y - 1) != (-1) && UF.union(nid, x * m + y - 1, parent) then count = count - 1
-      if y + x < n && parent(x * m + y + 1) != (-1) && UF.union(nid, x * m + y + 1, parent) then count = count - 1
-      count
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/unionfind/NumberofIslands2.scala#L4-L16
 
 ### 547. Number of Provinces
-```scala
-  def findCircleNum(isConnected: Array[Array[Int]]): Int =
-    var result = isConnected.length
-    val parent = isConnected.indices.toArray
-    for (i <- isConnected.indices; j <- isConnected.indices) {
-      if i != j && isConnected(i)(j) == 1 && UF.union(i, j, parent) then result = result - 1
-    }
-    result
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/unionfind/NumberofProvinces.scala#L4-L10

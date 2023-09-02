@@ -63,171 +63,37 @@ In both cases, we will only compute each fib(n) once.
 - The n problem could be derived from children's subproblems, e.g. n-1, n-2, etc.
 
 ### 70. Climbing Stairs
-```scala
-  def climbStairs(n: Int): Int = n match
-    case n if n <= 2 => n
-    case _ => (2 until n).foldLeft((1, 2)) { case ((n_2, n_1), _) => (n_1, n_2 + n_1) }._2
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/ClimbingStairs.scala#L4-L6
 
 ### 64. Minimum Path Sum
-```scala
-  def minPathSum(grid: Array[Array[Int]]): Int =
-   for (i <- grid.indices; j <- grid(0).indices) {
-      (i, j) match
-        case (0, 0) => grid(i)(j) = grid(i)(j)
-        case (0, _) => grid(i)(j) = grid(i)(j) + grid(i)(j - 1)
-        case (_, 0) => grid(i)(j) = grid(i)(j) + grid(i - 1)(j)
-        case _ => grid(i)(j) = grid(i)(j) + grid(i - 1)(j).min(grid(i)(j - 1))
-    }
-    grid.last.last
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/MinimumPathSum.scala#L4-L12
 
 ### 53. Maximum Subarray
-```scala
-  def maxSubArray(nums: Array[Int]): Int =
-    for (i <- 1 until nums.length) nums(i) = nums(i).max(nums(i) + nums(i - 1))
-    nums.reduceLeft(Ordering[Int].max)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/MaximumSubarray.scala#L6-L8
 
 ### 5. Longest Palindromic Substring
-```scala
-  def longestPalindrome(s: String): String =
-    val cache = Array.ofDim[Boolean](s.length, s.length)
-    var result = ""
-    for (i <- s.length - 1 to 0 by -1; j <- i until s.length) {
-      cache(i)(j) = s.charAt(i) == s.charAt(j) && (j - i < 3 || cache(i + 1)(j - 1))
-      if cache(i)(j) && j - i + 1 > result.length then result = s.substring(i, j + 1)
-    }
-    result
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/LongestPalindromicSubstring.scala#L4-L11
 
 ### 91. Decode Ways
-```scala
-    val cache = Array.fill[Int](if s.length < 2 then 2 else s.length)(0)
-    cache(0) = 1
-    cache(1) = if s.charAt(0) == '0' then 1 else 2
-    for (i <- 2 until s.length) {
-      val (first, second) = (s.substring(i, i + 1).toInt, s.substring(i - 1, i + 1).toInt)
-      if first >= 1 && first <= 9 then cache(i) = cache(i) + cache(i - 1)
-      if second > 10 && second <= 26 then cache(i) = cache(i) + cache(i - 2)
-    }
-    cache(s.length - 1)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/DecodeWays.scala#L4-L13
 
 ### 174. Dungeon Game
-```scala
-  def calculateMinimumHP(dungeon: Array[Array[Int]]): Int =
-    val result: Array[Array[Int]] = Array.ofDim[Int](dungeon.length, dungeon(0).length)
-    for (row <- (dungeon.length - 1) to 0 by -1; col <- (dungeon(0).length - 1) to 0 by -1) {
-      val need = (row, col) match
-        case (r, c) if r == dungeon.length - 1 && c == dungeon(0).length - 1 => 1 - dungeon(row)(col)
-        case (r, _) if r == dungeon.length - 1 => result(row)(col + 1) - dungeon(row)(col)
-        case (_, c) if c == dungeon(0).length - 1 => result(row + 1)(col) - dungeon(row)(col)
-        case (_, _) => result(row + 1)(col).min(result(row)(col + 1)) - dungeon(row)(col)
-      result(row)(col) = if need <= 0 then 1 else need
-    }
-    result(0)(0)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/DungeonGame.scala#L4-L14
 
 ### 55. Jump Game
-```scala
-  def canJump(nums: Array[Int]): Boolean = _canJump(0, nums.length, nums, Array.ofDim[Option[Boolean]](nums.length))
-
-  def _canJump(current: Int, n: Int, nums: Array[Int], cache: Array[Option[Boolean]]): Boolean =
-    if cache(current) != null then cache(current).get
-    else if nums(current) + current > n then true
-    else (1 to nums(current)).foldLeft(false) { case (result, i) =>
-      val iresult = _canJump(current + i, n, nums, cache)
-      cache(current + i) = Some(iresult)
-      result || iresult
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/JumpGame.scala#L4-L12
 
 ### 63. Unique Paths 2
-```scala
-  def uniquePathsWithObstacles(obstacleGrid: Array[Array[Int]]): Int =
-    _uniquePaths(0, 0, obstacleGrid, Array.fill[Option[Int]](obstacleGrid.length, obstacleGrid(0).length)(None))
-
-  private def _uniquePaths(c: Int, r: Int, grid: Array[Array[Int]], cache: Array[Array[Option[Int]]]): Int =
-    if cache(c)(r).nonEmpty then cache(c)(r).get
-    else if grid(c)(r) == 1 then 0
-    else if c == grid.length - 1 && r == grid(0).length - 1 then 1
-    else {
-      val result = if c == grid.length - 1 then _uniquePaths(c, r + 1, grid, cache)
-      else if r == grid(0).length - 1 then _uniquePaths(c + 1, r, grid, cache)
-      else _uniquePaths(c, r + 1, grid, cache) + _uniquePaths(c + 1, r, grid, cache)
-      cache(c)(r) = Some(result)
-      result
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/UniquePaths2.scala#L4-L17
 
 ### 97. Interleaving String
-```scala
-  def isInterleave(s1: String, s2: String, s3: String): Boolean =
-    val cache = Array.ofDim[Option[Boolean]](s1.length + 1, s2.length + 1, s3.length + 1)
-    _isInterleave(s1, 0, s2, 0, s3, 0, cache, true)
-
-  private def _isInterleave(s1: String, l1: Int, s2: String, l2: Int, s3: String, l3: Int, cache: Array[Array[Array[Option[Boolean]]]], order: Boolean): Boolean =
-    if l1 == s1.length && l2 == s2.length && l3 == s3.length then true
-    else if (l1 == s1.length && l3 < s3.length) || (l1 < s1.length && l3 == s3.length) then false
-    else {
-      val cached = if order then cache(l1)(l2)(l3) else cache(l2)(l1)(l3)
-      if cached != null then cached.get else {
-        val result = (l1 + 1 to s1.length).exists { i =>
-          if s1.substring(l1, i).equals(s3.substring(l3, l3 + (i - l1))) then
-            _isInterleave(s2, l2, s1, i, s3, l3 + (i - l1), cache, !order)
-          else false
-        }
-        if order then cache(l1)(l2)(l3) = Some(result) else cache(l2)(l1)(l3) = Some(result)
-        result
-      }
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/InterleavingString.scala#L4-L22
 
 ### 115. Distinct Subsequences
-```scala
-  def numDistinct(s: String, t: String): Int = _numDistinct(s, 0, t, 0, Array.fill(s.length, t.length)(-1))
-
-  private def _numDistinct(s: String, i: Int, t: String, j: Int, cache: Array[Array[Int]]): Int =
-    if j >= t.length then 1
-    else if i >= s.length || (s.length - i) < (t.length - j) then 0 else {
-      if cache(i)(j) == -1 then
-        cache(i)(j) = s.drop(i).zipWithIndex.map { case (char, k) =>
-          if char == t(j) then _numDistinct(s, i + k + 1, t, j + 1, cache) else 0
-        }.sum
-      cache(i)(j)
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/DistinctSubsequences.scala#L4-L14
 
 ### 120. Triangle
-```scala
-  def minimumTotal(triangle: List[List[Int]]): Int =
-    _minimumTotal(0, 0, triangle, Array.fill(triangle.length, triangle.last.length)(-1))
-
-  private def _minimumTotal(level: Int, i: Int, triangle: List[List[Int]], cache: Array[Array[Int]]): Int =
-    if level == triangle.size then 0
-    else {
-      if cache(level)(i) == -1 then
-        cache(level)(i) = triangle(level)(i)
-          + _minimumTotal(level + 1, i, triangle, cache).min(_minimumTotal(level + 1, i + 1, triangle, cache))
-      cache(level)(i)
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/Triangle.scala#L4-L14
 
 ### 123. Best Time to Buy and Sell Stock III
-```scala
-  def maxProfit(prices: Array[Int]): Int = _maxProfit(prices, 0, 4, Array.fill(prices.length, 5)(-1))
-
-  private def _maxProfit(prices: Array[Int], day: Int, txn: Int, cache: Array[Array[Int]]): Int =
-    if day == prices.length then 0
-    else if txn == 0 then 0
-    else {
-      if cache(day)(txn) == -1 then {
-        val notxn = _maxProfit(prices, day + 1, txn, cache)
-        val yestxn = if txn % 2 == 0 then _maxProfit(prices, day + 1, txn - 1, cache) - prices(day)
-        else _maxProfit(prices, day + 1, txn - 1, cache) + prices(day)
-        cache(day)(txn) = notxn.max(yestxn)
-      }
-      cache(day)(txn)
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/BestTimetoBuyandSellStock3.scala#L4-L17

@@ -25,36 +25,13 @@ When the purpose is to check the existence, instead of looping through the entir
 - Happy number: The list of unhappy numbers built up along the recursive call is known, the purpose is to find out if the unhappy number already exist
 
 ### 1. Two Sum
-```scala
-  def twoSum(nums: Array[Int], target: Int): Array[Int] =
-    val cache = mutable.Map[Int, Int]()
-    nums.zipWithIndex.find { case (value, index) => cache.get(target - value) match
-      case Some(_) => true
-      case _ => cache.put(value, index).isDefined
-    } match
-      case Some((num, index)) => Array(cache.get(target - num).get, index)
-      case _ => throw new IllegalArgumentException("invalid parameter, no valid result!")
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/TwoSum.scala#L6-L13
 
 ### 387. First Unique Character in a String
-```scala
-  def firstUniqChar(s: String): Int =
-    val cache = mutable.Map[Char, Int]()
-    s.toArray.foreach(c => cache.update(c, cache.getOrElse(c, 0) + 1))
-    s.toArray.find(cache.get(_).get == 1) match
-      case Some(result) => s.indexOf(result)
-      case _ => -1
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/FirstUniqChar.scala#L6-L11
 
 ### 202. Happy Number
-```scala
-  def isHappy(n: Int): Boolean = isHappyInernal(n, Set.empty[Int])
-
-  private def isHappyInernal(n: Int, cache: Set[Int]): Boolean = n match
-    case num if num == 1 => true
-    case num if cache.contains(num) => false
-    case num => isHappyInernal(num.toString.map(c => (c - '0') * (c - '0')).sum, cache + num)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/HappyNumber.scala#L6-L12
 
 ## Convenient data structure to store discrete keys / non-number keys for further processing
 Array is a dense data structure while Hashmap is discrete/spared, Hashmap can be used to organize the data for easy access and further processing.
@@ -63,33 +40,10 @@ Array is a dense data structure while Hashmap is discrete/spared, Hashmap can be
 - **Wall Brick**: the width of the bricks are discrete as key
 
 ### 205. Isomorphic Strings
-```scala
-  def isIsomorphic(s: String, t: String): Boolean =
-    val (smap, tmap) = (mutable.Map[Char, Char](), mutable.Map[Char, Char]())
-    s.toCharArray.zip(t.toCharArray).find { case (schar, tchar) => {
-      (smap.get(schar), tmap.get(tchar)) match
-      case (Some(_), None) | (None, Some(_)) => true
-      case (Some(char1), Some(char2)) => char1 != tchar || char2 != schar
-      case (None, None) => smap.put(schar, tchar)
-        tmap.put(tchar, schar)
-        false
-    }}.isEmpty
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/IsomorphicStrings.scala#L6-L15
 
 ### 299. Bulls and Cows
-```scala
-  def getHint(secret: String, guess: String): String =
-    val (scache, gcache) = (mutable.HashMap[Char, Int](), mutable.HashMap[Char, Int]())
-    val bull = secret.toCharArray.zip(guess.toCharArray).count {
-      case (s, g) if s == g => true
-      case (s, g) =>
-        scache.update(s, scache.getOrElse(s, 1))
-        gcache.update(g, gcache.getOrElse(g, 1))
-        false
-    }
-    val cow = scache.map { case (k, v) => v.min(gcache.getOrElse(k, 0)) }.sum
-    s"${bull}A${cow}B"
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/BullsandCows.scala#L6-L16
 
 ### 554. Brick Wall
 First consider the simplest case, 1 row of bricks, the answer is 0 for each edge.
@@ -97,16 +51,7 @@ Consider add another row, it depends on if the edges of 2nd row matching with 1s
 We could loop through each row and count the edges (previous wall length + current brick length),
 and the edge with large count is where the draw could be Drawn.
 Hashmap could be used to keep track of each edge with corresponding count.
-```scala
-  def leastBricks(wall: List[List[Int]]): Int =
-    val cache = mutable.Map[Int, Int]()
-    wall.foreach(_.dropRight(1)
-      .foldLeft(0) { case (sum, w) =>
-        cache.update(sum + w, cache.getOrElse(sum + w, 0) + 1)
-        sum + w
-      })
-    wall.length - (if cache.isEmpty then 0 else cache.values.max)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/BrickWall.scala#L6-L13
 
 ## Implementation and other usages
 - Design Hashmap
@@ -114,32 +59,6 @@ Hashmap could be used to keep track of each edge with corresponding count.
 - **Contains Duplicate III** => control the bucket size
 
 ### 380. Insert Delete GetRandom O(1)
-```scala
-class InsertDeleteGetRandomO1() {
-  private val map = mutable.Map[Int, Int]()
-  private val array = mutable.ArrayBuffer[Int]()
-  private val random = new scala.util.Random
-
-  def insert(value: Int): Boolean =
-    if map.contains(value) then
-      false
-    else {
-      map.put(value, array.length)
-      array.addOne(value)
-      true
-    }
-
-  def remove(value: Int): Boolean =
-    if !map.contains(value) then
-      false
-    else {
-      array(map.get(value).get) = array(array.length - 1)
-      array.dropRight(1)
-      true
-    }
-
-  def getRandom(): Int = array(random.nextInt(array.length))
-}
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/InsertDeleteGetRandomO1.scala#L5-L27
 
 

@@ -25,179 +25,38 @@ Linked lists can be used to implement other common abstract data types
 
 ## Basic operation
 ### 61. Rotate List
-```scala
-  def rotateRight(head: LinkedListNode[Int], k: Int): LinkedListNode[Int] =
-    var offset = head.getLen()
-    var (kpoint, tail) = (head, Option(head))
-
-    while tail.get.next.isDefined do
-      offset = offset - 1
-      if (offset == 0) then kpoint = tail.get
-      tail = tail.get.next
-
-    val newhead = kpoint.next.get
-    kpoint.next = None
-    tail.get.next = Some(head)
-    newhead
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/RotateList.scala#L6-L18
 
 ### 206. Reverse Linked List
 Iterative approach, carefully maneuver of pre, curr and next
-```scala
-  def reverseList(head: LinkedListNode[Int]): LinkedListNode[Int] = head.next match
-    case None => head
-    case _ => var (pre, curr) = (head, head.next.get)
-      while curr.next.isDefined do
-        val next = curr.next.get
-        curr.next = Option(pre)
-        pre = curr
-        curr = next
-      curr.next = Option(pre) 
-      curr
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/ReverseList.scala#L4-L13
 
 ### 143. Reorder List
-```scala
-  def reorderList(head: LinkedListNode[Int]): Unit =
-    var (p1, p2) = (head, head)
-    while p1.next.isDefined && p2.next.isDefined do
-      p1 = p1.next.get
-      p2 = p2.next.get.next.get
-
-    val (premid, precurr) = (p1, p1.next.get)
-    while precurr.next.isDefined do
-      val curr = precurr.next.get
-      precurr.next = curr.next
-      curr.next = premid.next
-      premid.next = Option(curr)
-
-    p1 = head
-    p2 = premid.next.get
-    while p1 != premid do
-      premid.next = p2.next
-      p2.next = p1.next
-      p1.next = Option(p2)
-      p1 = p2.next.get
-      if premid.next.isDefined then p2 = premid.next.get
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/RotateList.scala#L6-L18
 
 ### 86. Partition List
-```scala
-  def partition(head: LinkedListNode[Int], x: Int): LinkedListNode[Int] =
-    var (smallp, bigp, tmp) = (new LinkedListNode[Int](0, None), new LinkedListNode[Int](0, None), Option(head))
-    val (smallhead, bighead) = (smallp, bigp)
-    while tmp.isDefined do {
-      if tmp.get.value < x then {
-        smallp.next = tmp
-        smallp = smallp.next.get
-      } else {
-        bigp.next = tmp
-        bigp = bigp.next.get
-      }
-      tmp = tmp.get.next
-    }
-    bigp.next = None
-    smallp.next = Option(bighead.next.get)
-    smallhead.next.get
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/PartitionList.scala#L4-L19
 
 ## Additional operations
 ### 19. Remove Nth Node From End of List
-```scala
-  def removeNthFromEnd(head: LinkedListNode[Int], n: Int): LinkedListNode[Int] =
-    val len = head.getLen()
-    n match
-      case num if num > len => throw IllegalArgumentException("n is larger than the length of head")
-      case num if num == len => head.next.get
-      case _ =>
-        var (dummy, fast, slow) = (head, Option(head), Option(head))
-        (0 to n).foreach(_ => fast = fast.get.next)
-        while fast.isDefined do
-          fast = fast.get.next
-          slow = slow.get.next
-        slow.get.next = slow.get.next.get.next
-        dummy
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/RemoveNthFromEnd.scala#L4-L16
 
 ### 83. Remove Duplicates from Sorted List
-```scala
-  def deleteDuplicates(head: LinkedListNode[Int]): LinkedListNode[Int] =
-    var first = head
-    while first.next.isDefined do
-      if first.value == first.next.get.value then first.next = first.next.get.next
-      else first = first.next.get
-    head
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/RemoveDuplicatesfromSortedList.scala#L4-L9
 
 ### 82. Remove Duplicates from Sorted List II
-```scala
-  def deleteDuplicates(head: LinkedListNode[Int]): LinkedListNode[Int] =
-    val temphead = new LinkedListNode[Int](-1, Option(head))
-    var (pre, curr) = (temphead, Option(head))
-    while curr.isDefined do {
-      while curr.get.next.isDefined && curr.get.value == curr.get.next.get.value do curr = curr.get.next
-      if pre.next.get.value == curr.get.value then pre = pre.next.get
-      else pre.next = curr.get.next
-      curr = curr.get.next
-    }
-    temphead.next.get
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/RemoveDuplicatesfromSortedListII.scala#L4-L13
 
 ### 138. Copy List with Random Pointer
-```scala
-  def copyRandomList(head: LinkedListWithPointer[Int]): LinkedListWithPointer[Int] =
-    val cache = mutable.HashMap[LinkedListWithPointer[Int], LinkedListWithPointer[Int]]()
-
-    var node = Option(head)
-    while node.isDefined do
-      cache.put(node.get, new LinkedListWithPointer[Int](node.get.value, None, None))
-      node = node.get.next
-
-    node = Option(head)
-    while node.isDefined do
-      cache(node.get).next = node.get.next.map { key => cache(key) }
-      cache(node.get).random = node.get.random.map { key => cache(key) }
-      node = node.get.next
-
-    cache(head)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/CopyListwithRandomPointer.scala#L6-L20
 
 ## Use of linked list
 ### 2. Add Two Numbers
-```scala
-  def addTwoNumbers(l1: LinkedListNode[Int], l2: LinkedListNode[Int]): LinkedListNode[Int] =
-    _addTwoNumbers(Option(l1), Option(l2), 0).get
-
-  private def _addTwoNumbers(l1: Option[LinkedListNode[Int]], l2: Option[LinkedListNode[Int]], carry: Int): Option[LinkedListNode[Int]] = (l1, l2) match
-    case (None, None) => if carry == 0 then None else Option(new LinkedListNode(1, None))
-    case (Some(node1), Some(node2)) => val value = node1.value + node2.value + carry
-    Option(new LinkedListNode(value % 10, _addTwoNumbers(node1.next, node2.next, value / 10)))
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/AddTwoNumbers.scala#L5-L11
 
 ### 445. Add Two Numbers 2
-```scala
-  def addTwoNumbers(l1: LinkedListNode[Int], l2: LinkedListNode[Int]): LinkedListNode[Int] =
-    val diff = l1.getLen() - l2.getLen()
-    val (node, carry) = if diff >= 0 then _addTwoNumbers(Option(l1), Option(l2), diff) else _addTwoNumbers(Option(l2), Option(l1), -diff)
-    if carry == 0 then node.get else new LinkedListNode[Int](1, node)
-
-  private def _addTwoNumbers(l1: Option[LinkedListNode[Int]], l2: Option[LinkedListNode[Int]], diff: Int): (Option[LinkedListNode[Int]], Int) =
-    if l1.isEmpty || l2.isEmpty then (None, 0) else {
-      val (next, carry) = _addTwoNumbers(l1.get.next, if diff == 0 then l2.get.next else l2, if diff == 0 then 0 else diff - 1)
-      val value = carry + (if diff == 0 then l1.get.value + l2.get.value else l1.get.value)
-      (Option(new LinkedListNode(value % 10, next)), value / 10)
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/AddTwoNumbers2.scala#L4-L14
 
 ## Others
 ### 160. Intersection of Two Linked Lists
-```scala
-  def getIntersectionNode(headA: LinkedListNode[Int], headB: LinkedListNode[Int]): Option[LinkedListNode[Int]] =
-    val diff = headA.getLen() - headB.getLen()
-    var (pl, ps) = if diff > 0 then (Option(headA), Option(headB)) else (Option(headB), Option(headA))
-    for (n <- 0 until diff.abs) pl = pl.get.next
-    while pl != ps && pl != None do
-      pl = pl.get.next
-      ps = ps.get.next
-    pl
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/linkedlist/IntersectionofTwoLinkedLists.scala#L4-L11

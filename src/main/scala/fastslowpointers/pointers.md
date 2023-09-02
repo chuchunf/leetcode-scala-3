@@ -15,50 +15,10 @@ This technique also has two pointers (same as two pointers technique), but
 Multiple pass could be used to collect more information
 
 ### 141. Linked List Cycle
-```scala
-  def hasCycle(head: LinkedListNode[Int]): Boolean =
-    var (fast, slow) = (head, head)
-    while fast.next.isDefined && slow.next.isDefined do {
-      fast = fast.next.get
-      if (fast.next.isDefined) fast = fast.next.get
-      slow = slow.next.get
-      if (fast == slow) return true
-    }
-    false
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/fastslowpointers/LinkedListCycle.scala#L6-L14
 
 ### 876. Middle of the Linked List
-```scala
-  def middleNode(head: LinkedListNode[Int]): LinkedListNode[Int] =
-    var (fast, slow) = (head, head)
-    while fast.next.isDefined do {
-      fast = fast.next.get
-      if (fast.next.isDefined) fast = fast.next.get
-      slow = slow.next.get
-    }
-    slow
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/fastslowpointers/MiddleoftheLinkedList.scala#L6-L13
 
 ### 142. Linked List Cycle II
-```scala
-  def detectCycle(head: LinkedListNode[Int]): Option[LinkedListNode[Int]] =
-    var (fast, slow) = (head, head)
-    var (isCyle, index) = (false, 0)
-    while fast.next.isDefined && slow.next.isDefined && isCyle == false do
-      fast = fast.next.get
-      if (fast.next.isDefined) {
-        fast = fast.next.get
-        slow = slow.next.get
-        if (fast == slow) isCyle = true
-      }
-
-    if !isCyle then None
-    else {
-      fast = head
-      while fast != slow do {
-        fast = fast.next.get
-        slow = slow.next.get
-      }
-      Option(fast)
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/fastslowpointers/LinkedListCycle2.scala#L6-L24

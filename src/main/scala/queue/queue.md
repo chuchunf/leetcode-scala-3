@@ -26,98 +26,19 @@ A bounded queue is a queue limited to a fixed number of items.
 * **Circular buffer**: a single, fixed-size buffer as if it were connected end-to-end
 
 ### 225. Implement Stack using Queues
-```scala
-class MyStack[T <: Comparable[T]] {
-  private val q1 = mutable.Queue[T]()
-  private val q2 = mutable.Queue[T]()
-
-  def push(x: T): Unit =
-  val (qe, qf) = if q1.isEmpty then (q1, q2) else (q2, q1)
-  qe.enqueue(x)
-  while qf.nonEmpty do qe.enqueue(qf.dequeue())
-
-  def pop(): T =
-  val q = if q1.isEmpty then q2 else q1
-  if q.isEmpty then throw new IllegalArgumentException("empty stack")
-  else q.dequeue()
-
-  def top(): T =
-  val q = if q1.isEmpty then q2 else q1
-  if q.isEmpty then throw new IllegalArgumentException("empty stack")
-  else q.head
-
-  def empty(): Boolean = q1.isEmpty && q2.isEmpty
-}
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/MyStack.scala#L5-L25
 
 ### 232. Implement Queue Using Stacks
-```scala
-class MyQueue[T] {
-  private val input = mutable.Stack[T]()
-  private val output = mutable.Stack[T]()
-
-  def push(x: T): Unit = input.push(x)
-
-  def pop(): T =
-    this.peek()
-    output.pop()
-
-  def peek(): T =
-    if output.isEmpty then while input.nonEmpty do output.push(input.pop())
-    output.head
-
-  def empty(): Boolean = input.isEmpty && output.isEmpty
-}
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/MyQueue.scala#L5-L20
 
 ### 239. Sliding Window Maximum
-```scala
-  def maxSlidingWindow(nums: Array[Int], k: Int): Array[Int] =
-    nums.indices.foldLeft((mutable.ArrayDeque[Int](), mutable.ArrayBuffer[Int]())) { case ((q, solution), i) =>
-      q.removeLastWhile { last => nums(last) < nums(i) && last >= (i - k + 1) }
-      q.append(i)
-      q.removeHeadWhile(_ < i - k + 1)
-      if i >= (k - 1) then (q, solution :+ nums(q.head)) else (q, solution)
-    }._2.toArray
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/SlidingWindowMaximum.scala#L6-L23
 
 ### 649. Dota2 Senate
-```scala
-  def predictPartyVictory(senate: String): String =
-    val (qr, qd) = (mutable.ArrayDeque[Int](), mutable.ArrayDeque[Int]())
-    senate.zipWithIndex.foreach {
-      case ('R', index) => qr.addOne(index)
-      case (_, index) => qd.addOne(index)
-    }
-    while !qr.isEmpty && !qd.isEmpty do
-      val (ri, di) = (qr.removeHead(), qd.removeHead())
-      if ri < di then qr.addOne(senate.length + ri) else qd.addOne(senate.length + di)
-    if qr.size > qd.size then "Radiant" else "Dire"
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/Dota2Senate.scala#L6-L15
 
 ### 281. Zigzag Iterator
-```scala
-class ZigzagIterator(val l1: List[Int], val l2: List[Int]) {
-  private[this] val iterators = mutable.Queue[Iterator[Int]]()
-  if l1.nonEmpty then iterators.enqueue(l1.iterator)
-  if l2.nonEmpty then iterators.enqueue(l2.iterator)
-
-  def next: Int =
-    val iterator = iterators.dequeue()
-    val result = iterator.next()
-    if iterator.hasNext then iterators.enqueue(iterator)
-    result
-
-  def hasNext: Boolean = iterators.nonEmpty
-}
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/ZigzagIterator.scala#L5-L17
 
 ### 950. Reveal Cards In Increasing Order
-```scala
-  def deckRevealedIncreasing(deck: Array[Int]): Array[Int] =
-    deck.sorted.reverse
-      .foldLeft(mutable.ArrayDeque[Int]()) { case (q, num) =>
-        if q.nonEmpty then q.prepend(q.removeLast())
-        q.prepend(num)
-      }.toArray
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/RevealCardsInIncreasingOrder.scala#L6-L11

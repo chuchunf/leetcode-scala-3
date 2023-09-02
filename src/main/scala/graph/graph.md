@@ -28,54 +28,10 @@ These pairs are known as **edges** (also called links or lines)
 - Floyd-Warshall Algorithm
 
 ### 207. Course Schedule
-```scala
-  def canFinish(numCourses: Int, prerequisites: Array[Array[Int]]): Boolean =
-    val nodes = new Array[Node[Int]](numCourses)
-    for (i <- 0 until numCourses) nodes(i) = Node(i)
-    prerequisites.foreach(p => nodes(p(0)).neighbors.addOne(nodes(p(1))))
-    !nodes.exists(_canFinish(_, mutable.HashSet[Int]()))
-
-    private def _canFinish(node: Node[Int], visited: mutable.HashSet[Int]): Boolean =
-      visited.contains(node.value) || {
-        visited.addOne(node.value)
-        node.neighbors.exists(_canFinish(_, visited))
-      }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/graph/CourseSchedule.scala#L6-L16
 
 ### 210. Course Schedule II
-```scala
-  def findOrder(numCourses: Int, prerequisites: Array[Array[Int]]): Array[Int] =
-    val nodes = new Array[Node[Int]](numCourses)
-    for (i <- 0 until numCourses) nodes(i) = Node(i)
-    prerequisites.foreach(p => nodes(p(0)).neighbors.addOne(nodes(p(1))))
-    val (visited, cache) = (mutable.HashSet[Int](), mutable.ListBuffer[Int]())
-    nodes.foreach(_findOrder(_, visited, cache))
-    cache.toArray
-
-  private def _findOrder(node: Node[Int], visited: mutable.HashSet[Int], cache: mutable.ListBuffer[Int]): Unit =
-    visited.addOne(node.value)
-    node.neighbors.foreach { n => if !visited.contains(n.value) then _findOrder(n, visited, cache) }
-    cache.addOne(node.value)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/graph/CourseSchedule2.scala#L6-L17
 
 ### 310. Minimum Height Trees
-```scala
-  def findMinHeightTrees(n: Int, edges: Array[Array[Int]]): List[Int] =
-    val nodes = new Array[Node[Int]](n)
-    for (i <- 0 until n) nodes(i) = Node(i)
-    edges.foreach { p =>
-      nodes(p(0)).neighbors.addOne(nodes(p(1)))
-      nodes(p(1)).neighbors.addOne(nodes(p(0)))
-    }
-    val temp = nodes.foldLeft(mutable.HashMap[Int, mutable.HashSet[Int]]()) { case (result, node) =>
-      result.getOrElseUpdate(_findMHT(node, mutable.HashSet[Int]()), mutable.HashSet[Int](node.value)).addOne(node.value)
-      result
-    }
-    temp(temp.keys.min).toList
-
-  private def _findMHT(node: Node[Int], visited: mutable.HashSet[Int]): Int =
-    if visited.contains(node.value) then 0 else {
-      visited.addOne(node.value)
-      1 + node.neighbors.map(_findMHT(_, visited)).max
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/graph/MinimumHeightTrees.scala#L6-L23

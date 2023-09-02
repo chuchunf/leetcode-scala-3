@@ -14,85 +14,13 @@ may get lost in an infinite branch and never make it to the solution node.
 
 ### 127. Word Ladder
 ```scala
-  def ladderLength(beginWord: String, endWord: String, wordList: List[String]): Int =
-    _ladderLength(beginWord, endWord, mutable.HashSet().addAll(wordList), 0)
-
-  private def _ladderLength(begin: String, end: String, words: mutable.HashSet[String], len: Int): Int =
-    if begin.equals(end) then return len + 1
-    words.filter(word => {1 == begin.toCharArray.zip(word.toCharArray).count { (c1, c2) => { c1 != c2 }}})
-      .map(word => {
-        words.remove(word)
-        val result = _ladderLength(word, end, words, 1 + len)
-        words.add(word)
-        result
-      })
-      .filter(_!=0)
-      .minOption
-      .getOrElse(0)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bfs/WordLadder.scala#L6-L20
 
 ### 130. Surrounded Regions
-```scala
-  def solve(board: Array[Array[Char]]): Unit =
-    val q = mutable.Queue[(Int, Int)]()
-    board.zipWithIndex.foreach { case (line, x) =>
-      line.zipWithIndex.foreach { case (char, y) =>
-        if char == 'O' && (x == 0 || y == 0 || x == board.length - 1 || y == board(0).length - 1) then q.addOne((x, y))
-      }
-    }
-    while q.nonEmpty do {
-      val (x, y) = q.remove(0)
-      board(x)(y) = '.'
-      if (x - 1) >= 0 && board(x - 1)(y) == 'O' then q.addOne((x - 1, y))
-      if (x + 1) < board.length && board(x + 1)(y) == 'O' then q.addOne(x + 1, y)
-      if (y - 1) >= 0 && board(x)(y - 1) == 'O' then q.addOne((x, y - 1))
-      if (y + 1) < board(0).length && board(x)(y + 1) == 'O' then q.addOne(x, y + 1)
-    }
-    board.zipWithIndex.foreach { case (line, x) =>
-      line.zipWithIndex.foreach { case (char, y) =>
-        if char == 'O' then board(x)(y) = 'X'
-        if char == '.' then board(x)(y) = 'O'
-      }
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bfs/SurroundedRegions.scala#L6-L26
 
 ### 199. Binary Tree Right Side View
-```scala
-  def rightSideView(root: TreeNode[Int]): List[Int] =
-    val result = mutable.ListBuffer[Int]()
-    var queue = mutable.ListBuffer[TreeNode[Int]]().addOne(root)
-    while queue.nonEmpty do {
-      result.addOne(queue.last.value)
-      val tmpqueue = mutable.ListBuffer[TreeNode[Int]]()
-      while queue.nonEmpty do {
-        val node = queue.remove(0)
-        if node.left.isDefined then tmpqueue.addOne(node.left.get)
-        if node.right.isDefined then tmpqueue.addOne(node.right.get)
-      }
-      queue = tmpqueue
-    }
-    result.toList
-```
+  https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bfs/BinaryTreeRightSideView.scala#L8-L21
 
 ### 133. Clone Graph
-```scala
-  def cloneGraph(graph: Node[Int]): Node[Int] =
-    val queue = mutable.Queue[Node[Int]]()
-    val cache = mutable.HashMap[Int, Node[Int]]()
-    val root = Node(graph.value)
-    queue.enqueue(graph)
-    cache(root.value) = root
-    while queue.nonEmpty do {
-      val node = queue.dequeue()
-      val newnode = cache.getOrElse(node.value, Node(node.value))
-      cache(node.value) = newnode
-      node.neighbors.foreach { n =>
-        if !cache.contains(n.value) then {
-          cache(n.value) = Node(n.value)
-          queue.enqueue(n)
-        }
-        newnode.neighbors.addOne(cache(n.value))
-      }
-    }
-    root
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bfs/CloneGraph.scala#L8-L26

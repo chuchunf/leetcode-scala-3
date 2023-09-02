@@ -17,63 +17,16 @@ An efficient solution is to use the Greedy approach. The basic idea of the greed
 Then take the item with the highest ratio and add them until we can’t add the next item as a whole and at the end add the next item as much as we can. Which will always be the optimal solution to this problem.
 
 ### 122. Best Time to Buy and Sell Stock II
-```scala
-  def maxProfit(prices: Array[Int]): Int =
-    prices.zipWithIndex.foldLeft(0) { case (r, (v, i)) =>
-      if (i + 1) < prices.length && v < prices(i + 1) then r + prices(i + 1) - v else r
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/BestTimetoBuyandSellStock2.scala#L4-L7
 
 ### 134. Gas Station
-```scala
-  def canCompleteCircuit(gas: Array[Int], cost: Array[Int]): Int =
-    gas.zip(cost).zipWithIndex.find { case ((g, c), i) =>
-      if g - c < 0 then false else {
-        var (left, next) = (g - c, if i + 1 >= gas.length then 0 else i + 1)
-        while left >= 0 && next != i do {
-          left = left + gas(next) - cost(next)
-          next = if next + 1 >= gas.length then 0 else next + 1
-        }
-        left >= 0
-      }
-    }.getOrElse(((0, 0), -1))._2
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/GasStation.scala#L4-L14
 
 ### 179. Largest Number
-```scala
-  def largestNumber(nums: Array[Int]): String =
-    nums.sortWith { case (n1, n2) => s"$n1$n2" > s"$n2$n1" }
-      .foldLeft("") { case (r, n) => s"$r$n" }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/LargestNumber.scala#L5-L7
 
 ### 44. Wildcard Matching
-```scala
-  def isMatch(s: String, p: String): Boolean =
-    if s.isEmpty && p.isEmpty then true
-    else if s.isEmpty || p.isEmpty then false
-    else p(0) match
-      case '?' => isMatch(s.substring(1), p.substring(1))
-      case '*' => var curr = 0
-        while curr < s.length && s(0) == s(curr) do curr = curr + 1
-        isMatch(s.substring(curr), p.substring(1))
-      case _ => if p(0) == s(0) then isMatch(s.substring(1), p.substring(1)) else false
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/WildcardMatching.scala#L8-L16
 
 ### 135. Candy
-```scala
-  def candy(ratings: Array[Int]): Int =
-    ratings.zipWithIndex.foldLeft((0, 0)) { case ((r, p), (v, i)) =>
-      if i == 0 then (1, 1) else {
-        if v > ratings(i - 1) then (r + p + 1, p + 1) else {
-          if p > 1 then (r + 1, 1) else {
-            var (acc, pi) = (0, i)
-            while pi > 0 && ratings(pi - 1) > ratings(pi) do {
-              pi = pi - 1
-              acc = acc + 1
-            }
-            (r + acc + 1, 1)
-          }
-        }
-      }
-    }._1
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/Candy.scala#L5-L19

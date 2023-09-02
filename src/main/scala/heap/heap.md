@@ -34,79 +34,16 @@ Parent is the smallest/biggest value, when insert or remove, heapitify function 
 2. Priority queue to get min/max (user defined order) element in O(nLogn) time. 
 
 ### 506. Relative Ranks
-```scala
-  def findRelativeRanks(score: Array[Int]): Array[String] =
-    val (pq, buffer) = (new PriorityQueue[Int](score.length), Array.ofDim[String](score.length))
-    score.zipWithIndex.foreach { case (num, index) => pq.offer(index, num) }
-    for (n <- buffer.indices) {
-      buffer(pq.poll()) = n match
-        case 0 => "Gold Medal"
-        case 1 => "Silver Medal"
-        case 2 => "Bronze Medal"
-        case n => (n + 1).toString
-    }
-    buffer
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/heap/RelativeRanks.scala#L4-L14
 
 ### 264. Ugly Number II
-```scala
-  def nthUglyNumber(n: Int): Int = n match
-    case s if s < 7 => s
-    case _ => val (pq, factors) = (new PriorityQueue[Int](n * 2, (a, b) => a < b), Array(2, 3, 5))
-      var (last, count) = (1, 1)
-      while count < n do {
-        count = count + 1
-        factors.foreach(n => pq.offer(n * last, n * last))
-        last = pq.poll()
-      }
-      last
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/heap/UglyNumber2.scala#L4-L13
 
 ### 215. Kth Largest Element in an Array
-```scala
-  def findKthLargest(nums: Array[Int], k: Int): Int =
-    val pq = new PriorityQueue[Int](unique = false)
-    nums.foreach(num => pq.offer(num, num))
-    (0 until k).map(_ => pq.poll()).last
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/heap/KthLargestElementinanArray.scala#L4-L7
 
 ### 23. Merge K sorted list
-```scala
-  def mergeKLists2(lists: Array[LinkedListNode[Int]]): LinkedListNode[Int] =
-    val pg = new PriorityQueue[LinkedListNode[Int]](128, (a: Int, b: Int) => a < b)
-    for (i <- 0 until lists.length) {
-      var node = Option(lists(i))
-      while node.isDefined do
-        pg.offer(node.get, node.get.value)
-        node = node.get.next
-    }
-    val tmp = new LinkedListNode[Int](0, None)
-    var curr = tmp
-    while !pg.isEmpty() do {
-      curr.next = Option(pg.poll())
-      curr = curr.next.get
-    }
-    curr.next = None
-    tmp.next.get
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/MergeKSortedLists.scala#L22-L37
 
 ### 218. The Skyline
-```scala
-  def getSkyline(buildings: Array[Array[Int]]): List[List[Int]] =
-    val (points, result, active) = (mutable.ArrayBuffer[Array[Int]](), mutable.ArrayBuffer[List[Int]](), mutable.HashSet[Int](-1))
-    val heap = new PriorityQueue[(Int, Int)]()
-    heap.offer((0, -1), 0)
-    buildings.zipWithIndex.foreach { case (a, i) => points.addAll(Array(Array(a(0), a(2), 1, i), Array(a(1), a(2), -1, i))) }
-    points.sortWith { case (b1, b2) => if b1(0) != b2(0) then b1(0) < b2(0) else b1(1) * b1(2) > b2(1) * b2(2) }
-      .foreach { case Array(x, h, lr, i) =>
-        if lr == 1 then active.add(i) else active.remove(i)
-        if lr == 1 then {
-          if !heap.isEmpty() && h > heap.peek()._1 then result.addOne(List(x, h))
-          heap.offer((h, i), h)
-        } else {
-          while !heap.isEmpty() && !active.contains(heap.peek()._2) do heap.poll()
-          if !heap.isEmpty() && heap.peek()._1 != result.last(1) then result.addOne(List(x, heap.peek()._1))
-        }
-      }
-    result.toList
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/heap/TheSkylineProblem.scala#L6-L22

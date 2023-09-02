@@ -24,53 +24,13 @@ The count is stored in an auxiliary array, and the **counting sort** is done by 
 [Boyer-Moore Majority Vote Algorithm](http://www.cs.utexas.edu/~moore/best-ideas/mjrty/)
 * The algorithm depends on there is a majority
 * Which can be easier validated with a 2nd pass of counting
-```scala
-  def majorityElement(nums: Array[Int]): Int =
-    nums.foldLeft((nums(0), 0)) {
-      case ((_, count), num) if count == 0 => (num, 1)
-      case ((major, count), num) if major == num => (major, count + 1)
-      case ((major, count), _) => (major, count - 1)
-    }._1
-```
+  https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/counting/MajorityElement.scala#L4-L9
 
 ### 229. Majority Element 2
-```scala
-  def majorityElement(nums: Array[Int]): List[Int] =
-    nums.foldLeft((nums(0), 0, nums(1), 0)) {
-      case ((m1, c1, m2, c2), num) if num == m1 => (m1, c1 + 1, m2, c2)
-      case ((m1, c1, m2, c2), num) if num == m2 => (m1, c1, m2, c2 + 1)
-      case ((_, c1, m2, c2), num) if c1 == 0 => (num, 1, m2, c2)
-      case ((m1, c1, _, c2), num) if c2 == 0 => (m1, c1, num, 1)
-      case ((m1, c1, m2, c2), _) => (m1, c1 - 1, m2, c2 - 1)
-    } match
-      case (m1, _, m2, _) => List(m1, m2).filter(m => nums.count(_ == m) > nums.length / 3)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/counting/MajorityElement2.scala#L4-L12
 
 ### 358. Rearrange String k Distance Apart
-```scala
-  def rearrangeString(str: String, k: Int): String =
-    str.foldLeft(mutable.HashMap[Char, Int]()) { case (frequencyMap, char) =>
-      frequencyMap.update(char, frequencyMap.getOrElse(char, 0) + 1)
-      frequencyMap
-    }.foldLeft(Array.fill(str.length + 1)(mutable.ListBuffer[Char]())) { case (bucket, (char, counts)) =>
-      bucket(counts).addOne(char)
-      bucket
-    }.zipWithIndex.foldRight((Array.fill[Char](str.length)(' '), 0)) { case ((chars, count), (buffer, index)) =>
-      (buffer, chars.foldLeft(0) { case (offset, char) =>
-        for (i <- 0 until count) {
-          if i * k + index + offset > str.length then return ""
-          else buffer(i * k + index + offset) = char
-        }
-        offset + 1
-      })
-    }._1.mkString
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/counting/RearrangeStringkDistanceApart.scala#L6-L21
 
 ### 383. Ransom Note
-```scala
-  def canConstruct(ransomNote: String, magazine: String): Boolean =
-    val (rmap, mmap) = (mutable.HashMap[Char, Int](), mutable.HashMap[Char, Int]())
-    ransomNote.foreach(char => rmap.update(char, rmap.getOrElse(char, 0) + 1))
-    magazine.foreach(char => mmap.update(char, mmap.getOrElse(char, 0) + 1))
-    !rmap.exists { case (char, count) => count > mmap.getOrElse(char, 0) }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/counting/RansomNote.scala#L6-L10

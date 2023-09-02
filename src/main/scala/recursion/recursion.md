@@ -18,115 +18,22 @@ Add **helper function** and with additional variables to keep information
 - Dynamic programming: recursion with **memorized state** to reduce number of recursive calls
 
 ### 21. Merge Two Sorted Lists
-```scala
-  def mergeTwoLists(l1: LinkedListNode[Int], l2: LinkedListNode[Int]): LinkedListNode[Int] = mergeTwolistsInternal(Option(l1), Option(l2)).get
-
-  private def mergeTwolistsInternal(l1: Option[LinkedListNode[Int]], l2: Option[LinkedListNode[Int]]): Option[LinkedListNode[Int]] =
-    (l1, l2) match
-      case (None, None) => None
-      case (Some(_), None) => l1
-      case (None, Some(_)) => l2
-      case (Some(n1), Some(n2)) => if n1.value < n2.value then {
-        n1.next = mergeTwolistsInternal(n1.next, l2)
-        l1
-      } else {
-        n2.next = mergeTwolistsInternal(l1, n2.next)
-        l2
-      }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/MergeTwoSortedLists.scala#L6-L19
 
 ### 24. Swap Nodes in Pairs
-```scala
-  def swapPairs(head: LinkedListNode[Int]): LinkedListNode[Int] =
-    if head.next.isEmpty then head
-    else {
-      val next = head.next.get
-      if next.next.isEmpty then {
-        head.next = None
-        next.next = Some(head)
-        next
-      } else {
-        val newhead = next.next.get
-        next.next = Some(head)
-        head.next = Some(swapPairs(newhead))
-        next
-      }
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/SwapNodesinPairs.scala#L6-L20
 
 ### 25. Reverse Nodes in K-Group
-```scala
-  def reverseKGroup(head: LinkedListNode[Int], k: Int): LinkedListNode[Int] =
-    var (tmphead, tail, count) = (head, Option(head), 0)
-    while tail.isDefined && count != k do {
-      tail = tail.get.next
-      count = count + 1
-    }
-    if count < k then head
-    else {
-      tail = Option(reverseKGroup(tail.get, k))
-      while count > 0 do {
-        count = count - 1
-        val tmp = tmphead.next
-        tmphead.next = tail
-        tail = Option(tmphead)
-        tmphead = tmp.get
-      }
-      tail.get
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/ReverseNodesinkGroup.scala#L6-L23
 
 ### 60. Permutation Sequence
-```scala
-  def getPermutation(n: Int, k: Int): String =
-    val (factorial, numbers) = (ArrayBuffer[Int]().addOne(1), ArrayBuffer[Int]())
-    for (i <- 2 to n) factorial.addOne(factorial.last * i)
-    for (i <- 1 to n) numbers.addOne(i)
-    _getPermutation(n, k, factorial, numbers, "")
-
-  private def _getPermutation(n: Int, k: Int, factorial: ArrayBuffer[Int], nums: ArrayBuffer[Int], buffer: String): String = n match
-    case 1 => buffer + nums(0)
-    case _ => val i = (k - 1) / factorial(n - 2)
-      val num = nums(i)
-      nums.remove(i)
-      _getPermutation(n - 1, k % factorial(n - 2), factorial, nums, buffer + num.toString)
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/PermutationSequence.scala#L7-L19
 
 ### 23. Merge K Sorted List
-```scala
-  def mergeKLists(lists: Array[LinkedListNode[Int]]): LinkedListNode[Int] = _mergeKLists(lists.map(Option(_))).get
-
-  private def _mergeKLists(lists: Array[Option[LinkedListNode[Int]]]): Option[LinkedListNode[Int]] =
-    if lists.isEmpty then None else {
-      val min = lists.zipWithIndex.foldLeft(0) { case (curr, (node, index)) =>
-        if node.get.value < lists(curr).get.value then index else curr
-      }
-      val curr = lists(min)
-      lists(min) = lists(min).get.next
-      curr.get.next = _mergeKLists(lists.filter(_.isDefined))
-      curr
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/MergeKSortedLists.scala#L7-L19
 
 ### 247. Strobogrammatic Number II
-```scala
-  def generate(n: Int): Array[String] = n match
-    case 0 => Array("")
-    case 1 => Array("0", "1", "8")
-    case 2 => Array("11", "69", "88", "96")
-    case _ => generate(n - 2).flatMap(num => Array("1" + num + "1", "6" + num + "9", "9" + num + "6", "8" + num + "8"))
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/StrobogrammaticNumber2.scala#L4-L8
 
 ### 87. Scramble String
-```scala
-  def isScramble(s1: String, s2: String): Boolean =
-    if s1.length != s2.length then false
-    else if s1.equals(s2) then true
-    else if s1.length <= 2 then s1.equals(s2.reverse)
-    else {
-      (1 until s1.length).exists { i =>
-        (isScramble(s1.substring(0, i), s2.substring(0, i)) && isScramble(s1.substring(i), s2.substring(i)))
-          || (isScramble(s1.substring(0, i), s2.substring(i)) && isScramble(s1.substring(i), s2.substring(0, i)))
-      }
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/ScrambleString.scala#L4-L13

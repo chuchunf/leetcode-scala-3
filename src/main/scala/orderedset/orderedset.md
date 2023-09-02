@@ -20,100 +20,20 @@ An **ordered set** keeps the unique elements in sorted order. The time and space
 OrderSet maintains a particular order, and provide functions such as minBefore, maxAfter to get a key (value pair) of given order in log(N) time.
 
 ### 729. My Calendar I
-```scala
-  private[this] val cache = mutable.TreeMap[Int, Int]()
-
-  def book(start: Int, end: Int): Boolean =
-    if cache.minAfter(start).getOrElse((Int.MaxValue, Int.MaxValue))._1 > end
-      && cache.maxBefore(start).getOrElse((Int.MinValue, Int.MinValue))._2 < start
-    then {
-      cache(start) = end
-      true
-    } else false
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/orderedset/MyCalendar.scala#L6-L14
 
 ### 731. My Calendar II
-```scala
-  private[this] val cache = mutable.TreeMap[Int, Int]()
-
-  def book(start: Int, end: Int): Boolean =
-    if cache.minAfter(start).getOrElse((Int.MaxValue, Int.MaxValue))._1 <= end then {
-      val second = cache.minAfter(cache.minAfter(start).get._1).getOrElse((Int.MaxValue, Int.MaxValue))._1
-      if second <= end then false else
-        cache(start) = end
-        true
-    } else if cache.maxBefore(start).getOrElse((Int.MinValue, Int.MinValue))._2 >= start then {
-      val second = cache.maxBefore(cache.maxBefore(start).get._1).getOrElse(Int.MaxValue, Int.MaxValue)._2
-      if second <= end then false else
-        cache(start) = end
-        true
-    } else {
-      cache(start) = end
-      true
-    }
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/orderedset/MyCalendar2.scala#L6-L22
 
 ### 1818. Minimum Absolute Sum Difference
-```scala
-  def minAbsoluteSumDiff(nums1: Array[Int], nums2: Array[Int]): Int =
-    val cache = mutable.TreeSet[Int]().addAll(nums1)
-    nums1.zip(nums2).foldLeft((0L, 0)) { case ((sum, maxdiff), (n1, n2)) =>
-      val diff1 = Math.abs(cache.minAfter(n2).getOrElse(Int.MinValue) - n2)
-      val diff2 = Math.abs(cache.maxBefore(n2).getOrElse(Int.MaxValue) - n2)
-      val diff = Math.abs(n1 - n2)
-      (sum + diff, maxdiff.max(diff - diff1.min(diff2)))
-    } match
-      case (sum, maxdiff) => ((sum - maxdiff) % (Math.pow(10, 9).toInt + 7)).toInt
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/orderedset/MinimumAbsoluteSumDifference.scala#L6-L14
 
 ## A compact ordered container
 Instead of an array, OrderSet could be used to stored ordered data without spaces.
 
 ### 732. My Calendar III
 Use Order Map to simulate the time line to save space, as the time spot will be sparse.
-```scala
-class MyCalendar3 {
-  private[this] val cache = mutable.TreeMap[Int, Int]()
-
-  def book(startTime: Int, endTime: Int): Int =
-    cache(startTime) = cache.getOrElse(startTime, 0) + 1
-    cache(endTime) = cache.getOrElse(endTime, 0) - 1
-    cache.values.foldLeft(0, 0) { case ((max, ongoing), booking) =>
-      val curr = ongoing + booking
-      (max.max(curr), curr)
-    }._1
-}
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/orderedset/MyCalendar3.scala#L6-L14
 
 ### 855. Exam Room
-```scala
-class ExamRoom(n: Int) {
-  private[this] val dists = mutable.TreeSet[(Int, Int)]()(DistOrdering)
-  private[this] val points = mutable.TreeMap[Int, mutable.Set[Int]]()
-
-  def seat(): Int = points.size match
-    case 0 => points(0) = mutable.Set[Int]().addOne(n - 1)
-      0
-    case 1 => points(n - 1) = mutable.Set[Int]().addOne(0)
-      dists.addOne((0, n - 1))
-      n - 1
-    case _ => val (begin, end) = dists.head
-      val mid: Int = begin + (end - begin) / 2
-      dists.addOne((begin, mid)).addOne((mid, end)).remove((begin, end))
-      points(mid) = mutable.Set[Int]().addOne(begin).addOne(end)
-      points(begin).addOne(mid).remove(end)
-      points(end).addOne(mid).remove(begin)
-      mid
-
-  def leave(p: Int): Unit =
-    val ps = points.remove(p).get.toList
-    val (begin, end) = if ps.head > ps.last then (ps.last, ps.head) else (ps.head, ps.last)
-    dists.remove((begin, p))
-    dists.remove(p, end)
-    dists.add(begin, end)
-  
-  object DistOrdering extends Ordering[(Int, Int)] {
-    def compare(key1: (Int, Int), key2: (Int, Int)): Int = ((key2._2 - key2._1) / 2).compareTo((key1._2 - key1._1) / 2)
-  }
-}
-```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/orderedset/ExamRoom.scala#L6-L32
