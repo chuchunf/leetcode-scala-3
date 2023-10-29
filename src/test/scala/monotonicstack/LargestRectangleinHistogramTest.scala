@@ -1,5 +1,6 @@
-package stack
+package monotonicstack
 
+import monotonicstack.LargestRectangleinHistogram
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers.*
 import stack.MinStack

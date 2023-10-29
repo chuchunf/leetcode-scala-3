@@ -46,8 +46,5 @@ https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf1
 ### 71. Simplify Path
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/SimplifyPath.scala#L4-L13
 
-### 84. Largest Rectangle in Histogram
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/LargestRectangleinHistogram.scala#L4-L15
-
 ### 394. Decode String
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/DecodeString.scala#L4-L24

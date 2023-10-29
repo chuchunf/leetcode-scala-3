@@ -1,4 +1,6 @@
-package stack
+package monotonicstack
+
+import stack.MinStack
 
 object LargestRectangleinHistogram {
   def largestRectangleArea(heights: Array[Int]): Int =

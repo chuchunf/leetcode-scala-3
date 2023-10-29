@@ -9,5 +9,6 @@ object LengthOfLongestSubString {
       if cache.contains(char) then (max, cache(char) + 1) else {
         cache.update(char, rp)
         (max.max(rp - lp + 1), lp)
-      }}._1
+      }
+    }._1
 }
