@@ -304,8 +304,6 @@ Solutions of selected LeetCode problems in Scala 3.
             <td>
                 <ul>
                     <li><a href="src/main/scala/monotonicstack/monotonicstack.md#496-next-greater-element-i">496. Next Greater Element I</a></li>
-                </ul>   
-                <ul>
                     <li><a href="src/main/scala/monotonicstack/monotonicstack.md#84-largest-rectangle-in-histogram">84. Largest Rectangle in Histogram</a></li>
                 </ul>   
             </td>

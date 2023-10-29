@@ -23,7 +23,7 @@ The monotonic stack mainly solves the previous/next smaller/larger problem.
 2. **Priority Queue**: Monotonic stack maintains the monotonicity by **dequeuing** elements when a new element e is enqueued, while a priority queue maintains the monotonicity by **heapifying** when a new element enqueued
 3. **Monotonic Queue**: Both maintains the monotonicity but one based on Queue (FIFO), another based on Stack (FILO)
 
-### 496	Next Greater Element I
+### 496. Next Greater Element I
 https://github.com/chuchunf/leetcode-scala-3/blob/6c7f452d855f00ae43efec08f9661798e3d0e901/src/main/scala/monotonicstack/NextGreaterElement.scala#L4-L13
 
 ### 316. Remove Duplicate Letters
