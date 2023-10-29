@@ -24,7 +24,7 @@ The monotonic stack mainly solves the previous/next smaller/larger problem.
 3. **Monotonic Queue**: Both maintains the monotonicity but one based on Queue (FIFO), another based on Stack (FILO)
 
 ### 496	Next Greater Element I
-URL to be added
+https://github.com/chuchunf/leetcode-scala-3/blob/6c7f452d855f00ae43efec08f9661798e3d0e901/src/main/scala/monotonicstack/NextGreaterElement.scala#L4-L13
 
 ### 316. Remove Duplicate Letters
 to be added
@@ -33,4 +33,4 @@ to be added
 to be added
 
 ### 84. Largest Rectangle in Histogram
-URL to be added
+https://github.com/chuchunf/leetcode-scala-3/blob/6c7f452d855f00ae43efec08f9661798e3d0e901/src/main/scala/monotonicstack/LargestRectangleinHistogram.scala#L6-L17

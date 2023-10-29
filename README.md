@@ -294,8 +294,19 @@ Solutions of selected LeetCode problems in Scala 3.
                     <li><a href="src/main/scala/stack/stack.md#150-evaluate-reverse-polish-notation">150. Evaluate Reverse Polish Notation</a></li>
                     <li><a href="src/main/scala/stack/stack.md#32-longest-valid-parentheses">32. Longest Valid Parentheses</a></li>
                     <li><a href="src/main/scala/stack/stack.md#71-simplify-path">71. Simplify Path</a></li>
-                    <li><a href="src/main/scala/stack/stack.md#84-largest-rectangle-in-histogram">84. Largest Rectangle in Histogram</a></li>
                     <li><a href="src/main/scala/stack/stack.md#394-decode-string">394. Decode String</a></li>
+                </ul>   
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/monotonicstack/monotonicstack.md">Monotonic Stack</a></td>
+            <td></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/monotonicstack/monotonicstack.md#496-next-greater-element-i">496. Next Greater Element I</a></li>
+                </ul>   
+                <ul>
+                    <li><a href="src/main/scala/monotonicstack/monotonicstack.md#84-largest-rectangle-in-histogram">84. Largest Rectangle in Histogram</a></li>
                 </ul>   
             </td>
         </tr>
