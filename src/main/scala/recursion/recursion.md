@@ -16,6 +16,7 @@ Add **helper function** and with additional variables to keep information
 
 ## Related algorithm
 - Dynamic programming: recursion with **memorized state** to reduce number of recursive calls
+- Back tracking: recursion with immediate result to back track when encounter a dead end
 
 ### 21. Merge Two Sorted Lists
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recursion/MergeTwoSortedLists.scala#L6-L19

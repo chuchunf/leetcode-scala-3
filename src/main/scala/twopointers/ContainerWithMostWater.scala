@@ -2,10 +2,10 @@ package twopointers
 
 object ContainerWithMostWater {
   def maxArea(height: Array[Int]): Int =
-    var (max, right, left) = (0, 0, height.length - 1)
-    while right < left do
-      max = max.max(height(right).min(height(left)) * (left - right))
-      if height(right) > height(left) then left = left - 1
-      else right = right + 1
+    var (max, left, right) = (0, 0, height.length - 1)
+    while left < right do
+      max = max.max(height(left).min(height(right)) * (right - left))
+      if height(left) > height(right) then right = right - 1
+      else left = left + 1
     max
 }

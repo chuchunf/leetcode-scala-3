@@ -1,7 +1,7 @@
 # Bucket Sort
 
 Bucket sort (bin sort) **distributes the elements into buckets**, 
-then **buckets is sorted individually**, either as a already sorted array or using same/different sorting algorithms. 
+then **buckets is sorted individually**, either as an already sorted array or using same/different sorting algorithms. 
 
 Bucket sort is useful when elements are **uniformly distributed over a range** => **Duplicates (based on frequency)** could be distributed into **Buckets** 
 

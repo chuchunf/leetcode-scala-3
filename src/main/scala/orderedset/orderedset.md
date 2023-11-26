@@ -17,7 +17,7 @@ An **ordered set** keeps the unique elements in sorted order. The time and space
 
 
 ## Get a key based on predefined order
-OrderSet maintains a particular order, and provide functions such as minBefore, maxAfter to get a key (value pair) of given order in log(N) time.
+OrderSet maintains a particular order, and provide functions such as **minBefore, maxAfter** to get a key (value pair) of given order in log(N) time.
 
 ### 729. My Calendar I
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/orderedset/MyCalendar.scala#L6-L14

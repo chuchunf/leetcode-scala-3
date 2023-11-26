@@ -13,7 +13,6 @@ may get lost in an infinite branch and never make it to the solution node.
 3. Path finding
 
 ### 127. Word Ladder
-```scala
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bfs/WordLadder.scala#L6-L20
 
 ### 130. Surrounded Regions
