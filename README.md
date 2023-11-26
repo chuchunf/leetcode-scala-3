@@ -115,24 +115,38 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/twopointers/twopointers.md">Two Pointers</a></td>
-            <td></td>
+            <td rowspan="3"><a href="src/main/scala/twopointers/twopointers.md">Two Pointers</a></td>
+            <td><a href="src/main/scala/twopointers/twopointers.md#sliding-windows-single-pointer-with-a-window-size">Sliding windows</a></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#3longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#11-container-with-most-water">11. Container With Most Water</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#16-3sum-closest">16. 3Sum Closest</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#209-minimum-size-sub-array-sum">209. Minimum Size Sub array Sum</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#42-trapping-rain-water">42. Trapping Rain Water</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#15-3sum">15. 3Sum</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#28-implement-strstr">28. Implement strStr()</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#75-sort-colors">75. Sort Colors</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#80-remove-duplicates-from-sorted-array-ii">80. Remove Duplicates from Sorted Array II</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#167-two-sum-ii">167. Two Sum II</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#159-longest-substring-with-at-most-two-distinct-characters">159. Longest Substring with At Most Two Distinct Characters</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#228-summary-ranges">228. Summary Ranges</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#443-string-compression">443. String Compression</a></li>
                     <li><a href="src/main/scala/twopointers/twopointers.md#219-contains-duplicate-ii">219. Contains Duplicate II</a></li>
+                </ul>  
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/twopointers/twopointers.md#two-pointers-moving-in-the-same-direction">Two Pointers: same direction</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#228-summary-ranges">228. Summary Ranges</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#3longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#28-implement-strstr">28. Implement strStr()</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#159-longest-substring-with-at-most-two-distinct-characters">159. Longest Substring with At Most Two Distinct Characters</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#80-remove-duplicates-from-sorted-array-ii">80. Remove Duplicates from Sorted Array II</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#209-minimum-size-sub-array-sum">209. Minimum Size Sub array Sum</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#443-string-compression">443. String Compression</a></li>
+                </ul>  
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/twopointers/twopointers.md#two-pointers-moving-towards-each-other">Two Pointers: different direction</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#167-two-sum-ii">167. Two Sum II</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#75-sort-colors">75. Sort Colors</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#16-3sum-closest">16. 3Sum Closest</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#15-3sum">15. 3Sum</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#11-container-with-most-water">11. Container With Most Water</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#42-trapping-rain-water">42. Trapping Rain Water</a></li>
                 </ul>  
             </td>
         </tr>
