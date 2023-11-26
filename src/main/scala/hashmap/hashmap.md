@@ -12,14 +12,14 @@ The key idea of HashMap is to use a hash function to map keys to buckets.
 
 If the keys are continuous number values (e.g. char value could be converted integers), the array will be a better data structure.
 
-
+<br></br>
 ## Related Algorithms
 - **Count sort**: Counts the occurrence of each number / elements in a Hashmap
 - **Bucket sort**: Divides the unsorted array elements into several groups called buckets
   elements fall into the same buckets stored in a linked list. The data structure is the same as Hashmap,
   but the usage is different that **bucket (array) is sorted by index**.
 
-
+<br></br>
 ## Check **existence** of an element 
 When the purpose is to check the existence, instead of looping through the entire collection O(N), Hashmap provides O(1) access
 - Two sum: the expected value is known, the purpose is to find if the expected value exist.
@@ -53,7 +53,7 @@ https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf1
 ### 202. Happy Number
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/HappyNumber.scala#L6-L12
 
-
+<br></br>
 ## Convenient data structure to store discrete keys / non-number keys for further processing
 Array is a dense data structure while Hashmap is discrete/spared, Hashmap can be used to organize the data for easy access and further processing.
 - Isomorphic Strings: char from source string and char from target string as key
@@ -74,6 +74,7 @@ and the edge with large count is where the draw could be Drawn.
 Hashmap could be used to keep track of each edge with corresponding count.
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/hashmap/BrickWall.scala#L6-L13
 
+<br></br>
 ## Implementation and other usages
 - Design Hashmap
 - Insert Delete GetRandom O(1)
