@@ -1,7 +1,8 @@
-package string
+package twopointers
 
 import org.scalatest.funsuite.AnyFunSuite
-import org.scalatest.matchers.should.Matchers._
+import org.scalatest.matchers.should.Matchers.*
+import twopointers.SubstringwithConcatenationofAllWords
 
 class SubstringwithConcatenationofAllWordsTest extends AnyFunSuite {
   test("can substring with all words") {

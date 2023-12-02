@@ -69,8 +69,8 @@ Solutions of selected LeetCode problems in Scala 3.
             <td><a href="src/main/scala/orderedset/orderedset.md#a-compact-ordered-container">A compact ordered container</a></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/orderedset/orderedset.md#732-my-calendar-iii">732. My Calendar III</a></li>
                     <li><a href="src/main/scala/orderedset/orderedset.md#855-exam-room">855. Exam Room</a></li>
+                    <li><a href="src/main/scala/orderedset/orderedset.md#732-my-calendar-iii">732. My Calendar III</a></li>
                 </ul>
             </td>
         </tr>
@@ -79,8 +79,8 @@ Solutions of selected LeetCode problems in Scala 3.
             <td><a href="src/main/scala/linkedlist/linkedlist.md#basic-operation">Basic operation</a></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/linkedlist/linkedlist.md#61-rotate-list">61. Rotate List</a></li>
                     <li><a href="src/main/scala/linkedlist/linkedlist.md#206-reverse-linked-list">206. Reverse Linked List</a></li>
+                    <li><a href="src/main/scala/linkedlist/linkedlist.md#61-rotate-list">61. Rotate List</a></li>
                     <li><a href="src/main/scala/linkedlist/linkedlist.md#143-reorder-list">143. Reorder List</a></li>
                     <li><a href="src/main/scala/linkedlist/linkedlist.md#86-partition-list">86. Partition List</a></li>
                 </ul>            
@@ -120,6 +120,7 @@ Solutions of selected LeetCode problems in Scala 3.
             <td>
                 <ul>
                     <li><a href="src/main/scala/twopointers/twopointers.md#219-contains-duplicate-ii">219. Contains Duplicate II</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#30-substring-with-concatentation-of-all-words">30. Substring with Concatenation of All Words</a></li>
                 </ul>  
             </td>
         </tr>
@@ -155,41 +156,34 @@ Solutions of selected LeetCode problems in Scala 3.
             <td></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/fastslowpointers/pointers.md#141-linked-list-cycle">141. Linked List Cycle</a></li>
                     <li><a href="src/main/scala/fastslowpointers/pointers.md#876-middle-of-the-linked-list">876. Middle of the Linked List</a></li>
+                    <li><a href="src/main/scala/fastslowpointers/pointers.md#141-linked-list-cycle">141. Linked List Cycle</a></li>
                     <li><a href="src/main/scala/fastslowpointers/pointers.md#142-linked-list-cycle-ii">142. Linked List Cycle II</a></li>
                 </ul> 
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/string/string.md">String</a></td>
-            <td></td>
+            <td rowspan="2"><a href="src/main/scala/string/string.md">String</a></td>
+            <td><a href="src/main/scala/string/string.md#general-string-operations">General Operations</a></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/string/string.md#6-zigzag-conversion">6. ZigZag Conversion</a></li>
                     <li><a href="src/main/scala/string/string.md#14-longest-common-prefix">14. Longest Common Prefix</a></li>
-                    <li><a href="src/main/scala/string/string.md#763-partition-labels">763. Partition Labels</a></li>
-                    <li><a href="src/main/scala/string/string.md#161-one-edit-distance">161. One Edit Distance</a></li>
-                    <li><a href="src/main/scala/string/string.md#165-compare-version-numbers">165. Compare Version Numbers</a></li>
-                    <li><a href="src/main/scala/string/string.md#30-substring-with-concatenation-of-all-words">30. Substring with Concatenation of All Words</a></li>
-                    <li><a href="src/main/scala/string/string.md#76-minimum-window-substring">76. Minimum Window Substring</a></li>
                     <li><a href="src/main/scala/string/string.md#415-add-strings">415. Add Strings</a></li>
                     <li><a href="src/main/scala/string/string.md#67-add-binary">67. Add Binary</a></li>
                     <li><a href="src/main/scala/string/string.md#38-count-and-say">38. Count and Say</a></li>
+                    <li><a href="src/main/scala/string/string.md#6-zigzag-conversion">6. ZigZag Conversion</a></li>
+                    <li><a href="src/main/scala/string/string.md#165-compare-version-numbers">165. Compare Version Numbers</a></li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/tries/tries.md">Tries</a></td>
-            <td></td>
+            <td><a href="src/main/scala/string/string.md#other-algorithms">Other Algorithms</a></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/tries/tries.md#208-implement-tries">208. Implement Tries</a></li>
-                    <li><a href="src/main/scala/tries/tries.md#139-word-break">139. Word Break</a></li>
-                    <li><a href="src/main/scala/tries/tries.md#140-word-break-2">140. Word Break 2</a></li>
-                    <li><a href="src/main/scala/tries/tries.md#212-word-search-2">212. Word Search 2</a></li>
-                    <li><a href="src/main/scala/tries/tries.md#1065-index-pairs-of-a-string">1065. Index Pairs of a String</a></li>
-                </ul> 
+                    <li><a href="src/main/scala/string/string.md#763-partition-labels">763. Partition Labels</a></li>
+                    <li><a href="src/main/scala/string/string.md#161-one-edit-distance">161. One Edit Distance</a></li>
+                    <li><a href="src/main/scala/string/string.md#76-minimum-window-substring">76. Minimum Window Substring</a></li>
+                </ul>
             </td>
         </tr>
         <tr>
@@ -197,8 +191,8 @@ Solutions of selected LeetCode problems in Scala 3.
             <td></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/number/number.md#7-reverse-integer">7. Reverse Integer</a></li>
                     <li><a href="src/main/scala/number/number.md#9-palindrome-number">9. Palindrome Number</a></li>
+                    <li><a href="src/main/scala/number/number.md#7-reverse-integer">7. Reverse Integer</a></li>
                     <li><a href="src/main/scala/number/number.md#43-multiply-strings">43. Multiply Strings</a></li>
                 </ul>  
             </td>
@@ -208,10 +202,10 @@ Solutions of selected LeetCode problems in Scala 3.
             <td></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/counting/counting.md#169-majority-element">169. Majority ElementM</a></li>
+                    <li><a href="src/main/scala/counting/counting.md#383-ransom-note">383. Ransom Note</a></li>
+                    <li><a href="src/main/scala/counting/counting.md#169-majority-element">169. Majority Element</a></li>
                     <li><a href="src/main/scala/counting/counting.md#229-majority-element-2">229. Majority Element 2</a></li>
                     <li><a href="src/main/scala/counting/counting.md#358-rearrange-string-k-distance-apart">358. Rearrange String k Distance Apart</a></li>
-                    <li><a href="src/main/scala/counting/counting.md#383-ransom-note">383. Ransom Note</a></li>
                 </ul>  
             </td>
         </tr>
@@ -281,6 +275,25 @@ Solutions of selected LeetCode problems in Scala 3.
                     <li><a href="src/main/scala/matrix/matrix.md#73-set-matrix-zero">73. Set Matrix Zero</a></li>
                     <li><a href="src/main/scala/matrix/matrix.md#74-search-a-2d-matrix">74. Search a 2D Matrix</a></li>
                 </ul>  
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/binarysearch/binarysearch.md">Binary Search</a></td>
+            <td></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#69-sqrtx">69. Sqrt(x)</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#34-find-first-and-last-position-of-element-in-sorted-array">34. Find First and Last Position of Element in Sorted Array</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#33-search-in-rotated-sorted-array">33. Search in Rotated Sorted Array</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#81-search-in-rotated-sorted-array-ii">81. Search in Rotated Sorted Array II</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#153-find-minimum-in-rotated-sorted-array">153. Find Minimum in Rotated Sorted Array</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#154-find-minimum-in-rotated-sorted-array-ii">154. Find Minimum in Rotated Sorted Array II</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#35-search-insert-position">35. Search Insert Position</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#278-first-bad-version">278. First Bad Version</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#4-median-of-two-sorted-arrays">4. Median of Two Sorted Arrays</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#162-find-peak-element">162. Find Peak Element</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#275-h-index-ii">275. H-Index II</a></li>
+                </ul>
             </td>
         </tr>
         <tr>
@@ -419,6 +432,19 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
+            <td><a href="src/main/scala/tries/tries.md">Tries</a></td>
+            <td></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/tries/tries.md#208-implement-tries">208. Implement Tries</a></li>
+                    <li><a href="src/main/scala/tries/tries.md#139-word-break">139. Word Break</a></li>
+                    <li><a href="src/main/scala/tries/tries.md#140-word-break-2">140. Word Break 2</a></li>
+                    <li><a href="src/main/scala/tries/tries.md#212-word-search-2">212. Word Search 2</a></li>
+                    <li><a href="src/main/scala/tries/tries.md#1065-index-pairs-of-a-string">1065. Index Pairs of a String</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
             <td rowspan="4"><a href="src/main/scala/bst/bst.md">Binary Search Tree</a></td>
             <td><a href="src/main/scala/bst/bst.md#check-bst-properties">Check BST properties</a></td>
             <td>
@@ -454,25 +480,6 @@ Solutions of selected LeetCode problems in Scala 3.
                     <li><a href="src/main/scala/bst/bst.md#99-recover-binary-search-tree">99. Recover Binary Search Tree</a></li>
                     <li><a href="src/main/scala/bst/bst.md#257-binary-tree-paths">257. Binary Tree Paths</a></li>
                 </ul> 
-            </td>
-        </tr>
-        <tr>
-            <td><a href="src/main/scala/binarysearch/binarysearch.md">Binary Search</a></td>
-            <td></td>
-            <td>
-                <ul>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#69-sqrtx">69. Sqrt(x)</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#34-find-first-and-last-position-of-element-in-sorted-array">34. Find First and Last Position of Element in Sorted Array</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#33-search-in-rotated-sorted-array">33. Search in Rotated Sorted Array</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#81-search-in-rotated-sorted-array-ii">81. Search in Rotated Sorted Array II</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#153-find-minimum-in-rotated-sorted-array">153. Find Minimum in Rotated Sorted Array</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#154-find-minimum-in-rotated-sorted-array-ii">154. Find Minimum in Rotated Sorted Array II</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#35-search-insert-position">35. Search Insert Position</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#278-first-bad-version">278. First Bad Version</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#4-median-of-two-sorted-arrays">4. Median of Two Sorted Arrays</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#162-find-peak-element">162. Find Peak Element</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#275-h-index-ii">275. H-Index II</a></li>
-                </ul>
             </td>
         </tr>
         <tr>

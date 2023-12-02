@@ -35,6 +35,31 @@ Output: false
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/twopointers/ContainsDuplicate2.scala#L6-L11
 
+### 30. Substring with Concatenation of All Words
+You are given a string s and an array of strings words. All the strings of words are of the same length.
+
+A concatenated substring in s is a substring that contains all the strings of any permutation of words concatenated.
+
+For example, if words = ["ab","cd","ef"], then "abcdef", "abefcd", "cdabef", "cdefab", "efabcd", and "efcdab" are all concatenated strings. "acdbef" is not a concatenated substring because it is not the concatenation of any permutation of words.
+Return the starting indices of all the concatenated substrings in s. You can return the answer in any order.
+```
+Example 1:
+Input: s = "barfoothefoobarman", words = ["foo","bar"]
+Output: [0,9]
+Explanation: Since words.length == 2 and words[i].length == 3, the concatenated substring has to be of length 6.
+The substring starting at 0 is "barfoo". It is the concatenation of ["bar","foo"] which is a permutation of words.
+The substring starting at 9 is "foobar". It is the concatenation of ["foo","bar"] which is a permutation of words.
+The output order does not matter. Returning [9,0] is fine too.
+
+Example 2:
+Input: s = "wordgoodgoodgoodbestword", words = ["word","good","best","word"]
+Output: []
+Explanation: Since words.length == 4 and words[i].length == 4, the concatenated substring has to be of length 16.
+There is no substring of length 16 in s that is equal to the concatenation of any permutation of words.
+We return an empty array.
+```
+TODO
+
 <br></br>
 ## Two pointers moving in the same direction
 ### 228. Summary Ranges
