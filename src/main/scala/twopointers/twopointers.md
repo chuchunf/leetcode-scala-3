@@ -58,7 +58,7 @@ Explanation: Since words.length == 4 and words[i].length == 4, the concatenated 
 There is no substring of length 16 in s that is equal to the concatenation of any permutation of words.
 We return an empty array.
 ```
-TODO
+https://github.com/chuchunf/leetcode-scala-3/blob/c15b8b2ea4b8692796e40dbc63aa1c3f63b19985/src/main/scala/twopointers/SubstringwithConcatenationofAllWords.scala#L6-L16
 
 <br></br>
 ## Two pointers moving in the same direction

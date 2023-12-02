@@ -210,20 +210,41 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/math/math.md">Math</a></td>
-            <td></td>
+            <td rowspan="4"><a href="src/main/scala/math/math.md">Math</a></td>
+            <td><a href="src/main/scala/string/math.md#conversion">Conversion</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/math/math.md#12-integer-to-roman">12. Integer to Roman</a></li>
                     <li><a href="src/main/scala/math/math.md#13-roman-to-integer">13. Roman to Integer</a></li>
-                    <li><a href="src/main/scala/math/math.md#66-plus-one">66. Plus One</a></li>
-                    <li><a href="src/main/scala/math/math.md#50-powx-n">50. Pow(x, n)</a></li>
-                    <li><a href="src/main/scala/math/math.md#96-unique-binary-search-trees">96. Unique Binary Search Trees</a></li>
-                    <li><a href="src/main/scala/math/math.md#149-max-points-on-a-line">149. Max Points on a Line</a></li>
-                    <li><a href="src/main/scala/math/math.md#166-fraction-to-recurring-decimal">166. Fraction to Recurring Decimal</a></li>
-                    <li><a href="src/main/scala/math/math.md#172-factorial-trailing-zeroes">172. Factorial Trailing Zeroes</a></li>
                     <li><a href="src/main/scala/math/math.md#168-excel-sheet-column-title">168. Excel Sheet Column Title</a></li>
                     <li><a href="src/main/scala/math/math.md#171-excel-sheet-column-number">171. Excel Sheet Column Number</a></li>
+                    <li><a href="src/main/scala/math/math.md#166-fraction-to-recurring-decimal">166. Fraction to Recurring Decimal</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/string/math.md#calculation">Calculation</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/math/math.md#66-plus-one">66. Plus One</a></li>
+                    <li><a href="src/main/scala/math/math.md#50-powx-n">50. Pow(x, n)</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/string/math.md#tricks">Tricks</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/math/math.md#96-unique-binary-search-trees">96. Unique Binary Search Trees</a></li>
+                    <li><a href="src/main/scala/math/math.md#172-factorial-trailing-zeroes">172. Factorial Trailing Zeroes</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/string/math.md#geometry">Geometry</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/math/math.md#149-max-points-on-a-line">149. Max Points on a Line</a></li>
                 </ul> 
             </td>
         </tr>
