@@ -13,10 +13,40 @@
 | Is even | (i & 1) == 0                   |
 | Is power of 2 | (i != 0) && (i & (i - 1)) == 0 |
 
-### 405. Convert a Number to Hexadecimal
+### 405. Convert a Number to Hexadecimal // conversion // easy
+Given an integer num, return a string representing its hexadecimal representation. For negative integers, two’s complement method is used.
+
+All the letters in the answer string should be lowercase characters, and there should not be any leading zeros in the answer except for the zero itself.
+
+Note: You are not allowed to use any built-in library method to directly solve this problem.
+```
+Example 1:
+Input: num = 26
+Output: "1a"
+
+Example 2:
+Input: num = -1
+Output: "ffffffff"
+```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bit/ConvertaNumbertoHexadecimal.scala#L4-L6
 
-### 29. Divide Two Integers
+### 29. Divide Two Integers //   // Medium 
+Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.
+
+The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.
+
+Return the quotient after dividing dividend by divisor.
+```
+Example 1:
+Input: dividend = 10, divisor = 3
+Output: 3
+Explanation: 10/3 = 3.33333.. which is truncated to 3.
+
+Example 2:
+Input: dividend = 7, divisor = -3
+Output: -2
+Explanation: 7/-3 = -2.33333.. which is truncated to -2.
+```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bit/DivideTwoIntegers.scala#L4-L12
 
 ### 78. Subsets
