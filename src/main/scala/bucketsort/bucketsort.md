@@ -33,16 +33,76 @@ Bucket sort can be seen as a generalization of counting sort; if each bucket has
    * Maximum Gap: distribute the numbers into **n-1 bucket**, find the max difference for each bucket
 
 ### 347. Top K Frequent Elements
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+```
+Example 1:
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+
+Example 2:
+Input: nums = [1], k = 1
+Output: [1]
+```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/TopKFrequentElements.scala#L6-L17
 
 ### 692. Top K Frequent Words
+Given an array of strings words and an integer k, return the k most frequent strings.
+
+Return the answer sorted by the frequency from highest to lowest. Sort the words with the same frequency by their lexicographical order.
+```
+Example 1:
+Input: words = ["i","love","leetcode","i","love","coding"], k = 2
+Output: ["i","love"]
+
+Example 2:
+Input: words = ["the","day","is","sunny","the","the","the","sunny","is","is"], k = 4
+Output: ["the","is","sunny","day"]
+```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/TopKFrequentWords.scala#L6-L17
 
 ### 451. Sort Characters By Frequency
+Given a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.
+
+Return the sorted string. If there are multiple answers, return any of them.
+```
+Example 1:
+Input: s = "tree"
+Output: "eert"
+
+Example 2:
+Input: s = "cccaaa"
+Output: "aaaccc"
+```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/SortCharactersByFrequency.scala#L6-L13
 
 ### 220. Contains Duplicate III
+You are given an integer array nums and two integers indexDiff and valueDiff.
+
+Find a pair of indices (i, j) such that:
+```
+i != j,
+abs(i - j) <= indexDiff.
+abs(nums[i] - nums[j]) <= valueDiff, and
+```
+Return true if such pair exists or false otherwise.
+```
+Example 1:
+Input: nums = [1,2,3,1], indexDiff = 3, valueDiff = 0
+Output: true
+
+Example 2:
+Input: nums = [1,5,9,1,5,9], indexDiff = 2, valueDiff = 3
+Output: false
+```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/ContainsDuplicate3.scala#L6-L19
 
 ### 164. Maximum Gap
+Given an integer array nums, return the maximum difference between two successive elements in its sorted form. If the array contains less than two elements, return 0.
+
+You must write an algorithm that runs in linear time and uses linear extra space.
+```
+Example 1:
+Input: nums = [3,6,9,1]
+Output: 3
+```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/MaximumGap.scala#L4-L18
