@@ -249,19 +249,33 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/bit/bit.md">Bit</a></td>
-            <td></td>
+            <td rowspan="3"><a href="src/main/scala/bit/bit.md">Bit</a></td>
+            <td><a href="src/main/scala/string/bit.md#operations-on-bits">Operations on Bits</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bit/bit.md#405-convert-a-number-to-hexadecimal">405. Convert a Number to Hexadecimal</a></li>
+                    <li><a href="src/main/scala/bit/bit.md#191-number-of-1-bits">191. Number of 1 Bits</a></li>
+                    <li><a href="src/main/scala/bit/bit.md#190-reverse-bits">190. Reverse Bits</a></li>
+                    <li><a href="src/main/scala/bit/bit.md#89-gray-code">89. Gray Code</a></li>
+                </ul>    
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/string/bit.md#divide-and-mod">Divide and Mod</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/bit/bit.md#29-divide-two-integers">29. Divide Two Integers</a></li>
                     <li><a href="src/main/scala/bit/bit.md#78-subsets">78. Subsets</a></li>
-                    <li><a href="src/main/scala/bit/bit.md#89-gray-code">89. Gray Code</a></li>
+                </ul>    
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/string/bit.md#uses-of-bit">Uses of Bit</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/bit/bit.md#187-repeated-dna">187. Repeated DNA</a></li>
                     <li><a href="src/main/scala/bit/bit.md#136-single-number">136. Single Number</a></li>
                     <li><a href="src/main/scala/bit/bit.md#137-single-number-2">137. Single Number 2</a></li>
-                    <li><a href="src/main/scala/bit/bit.md#187-repeated-dna">187. Repeated DNA</a></li>
-                    <li><a href="src/main/scala/bit/bit.md#190-reverse-bits">190. Reverse Bits</a></li>
-                    <li><a href="src/main/scala/bit/bit.md#191-number-of-1-bits">191. Number of 1 Bits</a></li>
                 </ul>    
             </td>
         </tr>
