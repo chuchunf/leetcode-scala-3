@@ -333,7 +333,7 @@ Solutions of selected LeetCode problems in Scala 3.
         </tr>
         <tr>
             <td rowspan="2"><a href="src/main/scala/prefixsum/prefixsum.md">Prefix Sum</a></td>
-            <td><a href="src/main/scala/prefixsum/prefixsum#basic-operations-1-way-or-2-way">Basic operation 1 way or 2 way</a></td>
+            <td><a href="src/main/scala/prefixsum/prefixsum.md#basic-operations-1-way-or-2-way">Basic operation 1 way or 2 way</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/prefixsum/prefixsum.md#303-range-sum-query---immutable">303. Range Sum Query - Immutable</a></li>
@@ -343,7 +343,7 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/prefixsum/prefixsum#alternatives-and-addons">Alternatives and Addons</a></td>
+            <td><a href="src/main/scala/prefixsum/prefixsum.md#alternatives-and-addons">Alternatives and Addons</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/prefixsum/prefixsum.md#536-continuous-subarray-sum">536. Continuous Subarray Sum</a></li>
