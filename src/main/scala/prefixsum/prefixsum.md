@@ -1,10 +1,9 @@
 # Prefix Sum
-Prefix sums are the consecutive totals of the first 0, 1, 2, . . . , n elements of an array, 
+Prefix sums are the consecutive totals of the first 0, 1, 2, . . . , n elements of an array, which can be calculated in O(n)
 ```scala
 Yi = Y(i−1) + Xi 
-```
-which can easily calculate the prefix sums in O(n) time complexity. 
-Notice that the total pk equals pk−1 + ak−1, so each consecutive value can be calculated in a constant time.
+``` 
+Notice that the Yi equals Y(i-1) + Xi, so each consecutive value can be calculated in a constant time.
 Prefix Sum allows for the **O(1) calculation of sums of elements in given range**.
 
 The same idea could apply to **prefix product**.
@@ -14,24 +13,9 @@ The same idea could apply to **prefix product**.
 - Used to find subarray with max sum. 
 - Used to find subarray with sum closest to given number. 
 - Used to find equal length and equal sum subarrays of 2 arrays.
+<br><br>
 
-### 238. Product of Array Except Self
-Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
-
-The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
-
-You must write an algorithm that runs in O(n) time and without using the division operation.
-```
-Example 1:
-Input: nums = [1,2,3,4]
-Output: [24,12,8,6]
-
-Example 2:
-Input: nums = [-1,1,0,-3,3]
-Output: [0,0,9,0,0]
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/prefixsum/ProductofArrayExceptSelf.scala#L4-L14
-
+## Basic operations 1 way or 2 way
 ### 303. Range Sum Query - Immutable
 Given an integer array nums, handle multiple queries of the following type:
 
@@ -56,6 +40,7 @@ numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/prefixsum/RangeSumQueryImmutable.scala#L3-L7
 
+
 ### 724. Find Pivot Index
 Given an array of integers nums, calculate the pivot index of this array.
 
@@ -79,7 +64,26 @@ Output: -1
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/prefixsum/FindPivotIndex.scala#L4-L9
 
-### 536. Continuous Subarray Sum
+### 238. Product of Array Except Self 
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+You must write an algorithm that runs in O(n) time and without using the division operation.
+```
+Example 1:
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+
+Example 2:
+Input: nums = [-1,1,0,-3,3]
+Output: [0,0,9,0,0]
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/prefixsum/ProductofArrayExceptSelf.scala#L4-L14
+
+<br><br>
+## Alternatives and Addons
+### 536. Continuous Subarray Sum  
 Given an integer array nums and an integer k, return true if nums has a good subarray or false otherwise.
 
 A good subarray is a subarray where: its length is at least two, and the sum of the elements of the subarray is a multiple of k.
