@@ -392,16 +392,30 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/queue/queue.md">Queue</a></td>
-            <td></td>
+            <td rowspan="3"><a href="src/main/scala/queue/queue.md">Queue</a></td>
+            <td><a href="src/main/scala/queue/queue.md#implementation">Implementation</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/queue/queue.md#225-implement-stack-using-queues">225. Implement Stack using Queues</a></li>
                     <li><a href="src/main/scala/queue/queue.md#232-implement-queue-using-stacks">232. Implement Queue Using Stacks</a></li>
-                    <li><a href="src/main/scala/queue/queue.md#239-sliding-window-maximum">239. Sliding Window Maximum</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/queue/queue.md#filo-order-collection">FILO order collection</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/queue/queue.md#649-dota2-senate">649. Dota2 Senate</a></li>
                     <li><a href="src/main/scala/queue/queue.md#281-zigzag-iterator">281. Zigzag Iterator</a></li>
                     <li><a href="src/main/scala/queue/queue.md#950-reveal-cards-in-increasing-order">950. Reveal Cards In Increasing Order</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/queue/queue.md#monotonic-queue">Monotonic Queue</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/queue/queue.md#239-sliding-window-maximum">239. Sliding Window Maximum</a></li>
                 </ul> 
             </td>
         </tr>

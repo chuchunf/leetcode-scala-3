@@ -12,9 +12,9 @@ A bounded queue is a queue limited to a fixed number of items.
     * a doubly linked list has O(1) insertion and deletion at both ends, so it is a natural choice for queues.
     * a singly linked list could provide the same with a pointer at tis end
 
-## Application and tips
+## Usages 
 * Breath first search
-* When the order of element enter/exit is significant 
+* Backtracking to find element in O(1) in FILO (monotonic Queue similar to monotonic Stack) 
 
 ## Tips
 * Store index not actual value
@@ -24,34 +24,18 @@ A bounded queue is a queue limited to a fixed number of items.
 ## Related data structure
 * **Priority queue**: a queue with each element additionally has a priority associated with it
 * **Circular buffer**: a single, fixed-size buffer as if it were connected end-to-end
+<br><br>
 
+## Implementation 
 ### 225. Implement Stack using Queues
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/MyStack.scala#L5-L25
 
 ### 232. Implement Queue Using Stacks
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/MyQueue.scala#L5-L20
+<br><br>
 
-### 239. Sliding Window Maximum
-You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
-
-Return the max sliding window.
-```
-Example 1:
-Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
-Output: [3,3,5,5,6,7]
-Explanation:
-Window position                Max
----------------               -----
-[1 3 -1]  -3  5  3  6  7       3
-1 [3  -1  -3] 5  3  6  7       3
-1  3 [-1  -3  5] 3  6  7       5
-1  3  -1 [-3  5  3] 6  7       5
-1  3  -1  -3 [5  3  6] 7       6
-1  3  -1  -3  5 [3  6  7]      7
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/SlidingWindowMaximum.scala#L6-L23
-
-### 649. Dota2 Senate
+## FILO order collection
+### 649. Dota2 Senate => Medium => FILO order
 In the world of Dota2, there are two parties: the Radiant and the Dire.
 
 The Dota2 senate consists of senators coming from two parties. Now the Senate wants to decide on a change in the Dota2 game. The voting for this change is a round-based procedure. In each round, each senator can exercise one of the two rights:
@@ -108,3 +92,25 @@ Input: deck = [1,1000]
 Output: [1,1000]
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/RevealCardsInIncreasingOrder.scala#L6-L11
+<br><br>
+
+## Monotonic Queue
+### 239. Sliding Window Maximum => hard
+You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+
+Return the max sliding window.
+```
+Example 1:
+Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
+Output: [3,3,5,5,6,7]
+Explanation:
+Window position                Max
+---------------               -----
+[1 3 -1]  -3  5  3  6  7       3
+1 [3  -1  -3] 5  3  6  7       3
+1  3 [-1  -3  5] 3  6  7       5
+1  3  -1 [-3  5  3] 6  7       5
+1  3  -1  -3 [5  3  6] 7       6
+1  3  -1  -3  5 [3  6  7]      7
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/queue/SlidingWindowMaximum.scala#L6-L23

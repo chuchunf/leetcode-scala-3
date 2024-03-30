@@ -17,7 +17,7 @@ Additionally, a peek operation may give access to the top without modifying the 
    - The shortest unsorted array => backtrack to the previous unsorted
 3. Stack has similar usage as hashmap to **reduce the O(n) to O(1)**.
    Hashmap works when we just need to know the existence instead of the actual operation of each item,
-   Stack works when the **natural order of processing is FILO** (Similar usage for Queue for FIFO order)
+   Stack works when the **natural order of processing is FIFO** (Similar usage for Queue for FILO order)
    - Evaluate Reverse Polish Notation => next element need to be processed is last in
    - Valid Parentheses => next element that needs to be matched is last in
 4. Processing Function Calls => convert recursion to iteration
