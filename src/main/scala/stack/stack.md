@@ -8,23 +8,25 @@ Additionally, a peek operation may give access to the top without modifying the 
 ## Implementation
 - Stack could be implemented using a **linked list** or an array
 
-## Applications
-1. Stack data structures are used in **backtracking problems**, elements could be pushed in for later processing.
+## Usages
+1. Reverse the order of collections
+2. Stack data structures are used in **backtracking problems**, elements could be pushed in for later processing.
    Unlike the backtracking technique, the stack normally holds conditions not the actual result
    - Matching parentheses => backtrack of unmatched pair
    - Stock span => backtrack to the previous height
    - The shortest unsorted array => backtrack to the previous unsorted
-2. Stack has similar usage as hashmap to **reduce the O(n) to O(1)**.
+3. Stack has similar usage as hashmap to **reduce the O(n) to O(1)**.
    Hashmap works when we just need to know the existence instead of the actual operation of each item,
-   Stack works when the **natural order of processing is FILO**
+   Stack works when the **natural order of processing is FILO** (Similar usage for Queue for FIFO order)
    - Evaluate Reverse Polish Notation => next element need to be processed is last in
    - Valid Parentheses => next element that needs to be matched is last in
-3. Reverse of element order
 4. Processing Function Calls => convert recursion to iteration
 
 ## Tips
-1. Store the index instead of the actual value
+* Store the index instead of the actual value as the value could be accessed by index
+<br><br>
 
+## Implementation
 ### 155. Min Stack
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
@@ -37,7 +39,9 @@ Implement the MinStack class:
 
 You must implement a solution with O(1) time complexity for each function.
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/MinStack.scala#L6-L27
+<br><br>
 
+## Backtrack previous element
 ### 20. Valid Parentheses
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
@@ -68,7 +72,22 @@ Output: [null, 1, 1, 1, 2, 1, 4, 6]
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/OnlineStockSpan.scala#L6-L19
 
-### 581. Shortest Unsorted Continuous Subarray
+### 32. Longest Valid Parentheses
+Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses substring.
+```
+Example 1:
+Input: s = "(()"
+Output: 2
+Explanation: The longest valid parentheses substring is "()".
+
+Example 2:
+Input: s = ")()())"
+Output: 4
+Explanation: The longest valid parentheses substring is "()()".
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/LongestValidParentheses.scala#L4-L17
+
+### 581. Shortest Unsorted Continuous Subarray 
 Given an integer array nums, you need to find one continuous subarray such that if you only sort this subarray in non-decreasing order, then the whole array will be sorted in non-decreasing order.
 
 Return the shortest such subarray and output its length.
@@ -84,6 +103,8 @@ Output: 0
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/ShortestUnsortedContinuousSubarray.scala#L4-L14
 
+
+## Applications
 ### 150. Evaluate Reverse Polish Notation
 You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.
 
@@ -104,21 +125,6 @@ Output: 9
 Explanation: ((2 + 1) * 3) = 9
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/EvaluateReversePolishNotation.scala#L4-L13
-
-### 32. Longest Valid Parentheses
-Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses substring. 
-```
-Example 1:
-Input: s = "(()"
-Output: 2
-Explanation: The longest valid parentheses substring is "()".
-
-Example 2:
-Input: s = ")()())"
-Output: 4
-Explanation: The longest valid parentheses substring is "()()".
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/LongestValidParentheses.scala#L4-L17
 
 ### 71. Simplify Path
 Given a string path, which is an absolute path (starting with a slash '/') to a file or directory in a Unix-style file system, convert it to the simplified canonical path.

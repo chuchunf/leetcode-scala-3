@@ -352,16 +352,30 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/stack/stack.md">Stack</a></td>
-            <td></td>
+            <td rowspan="3"><a href="src/main/scala/stack/stack.md">Stack</a></td>
+            <td><a href="src/main/scala/stack/stack.md#implementation">Implementation</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/stack/stack.md#155-min-stack">155. Min Stack</a></li>
+                </ul>   
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/stack/stack.md#backtrack-previous-element">Backtrack previous element</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/stack/stack.md#20-valid-parentheses">20. Valid Parentheses</a></li>
                     <li><a href="src/main/scala/stack/stack.md#901-online-stock-span">901. Online Stock Span</a></li>
-                    <li><a href="src/main/scala/stack/stack.md#581-shortest-unsorted-continuous-subarray">581. Shortest Unsorted Continuous Sub array</a></li>
-                    <li><a href="src/main/scala/stack/stack.md#150-evaluate-reverse-polish-notation">150. Evaluate Reverse Polish Notation</a></li>
                     <li><a href="src/main/scala/stack/stack.md#32-longest-valid-parentheses">32. Longest Valid Parentheses</a></li>
+                    <li><a href="src/main/scala/stack/stack.md#581-shortest-unsorted-continuous-subarray">581. Shortest Unsorted Continuous Sub array</a></li>
+                </ul>   
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/stack/stack.md#applications">Applications</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/stack/stack.md#150-evaluate-reverse-polish-notation">150. Evaluate Reverse Polish Notation</a></li>
                     <li><a href="src/main/scala/stack/stack.md#71-simplify-path">71. Simplify Path</a></li>
                     <li><a href="src/main/scala/stack/stack.md#394-decode-string">394. Decode String</a></li>
                 </ul>   
