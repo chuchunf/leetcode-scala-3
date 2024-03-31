@@ -15,27 +15,28 @@ Binary search could be implemented iteratively or recursively.
 - starting with low=1, high=length-1, repeat while low <= high 
 - depending on comparison with target, low = mid + 1 or high = mid - 1
 - consider all possible cases for partially sorted arrays
+<br><br>
 
 ## Related data structures
 1. Binary search tree (BST)
 2. Array
+<br><br>
 
-### 69. Sqrt(x)
-Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
+## Basic
+### 35. Search Insert Position
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
-You must not use any built-in exponent function or operator.
-
-For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
+You must write an algorithm with O(log n) runtime complexity.
 ```
 Example 1:
-Input: x = 4
+Input: nums = [1,3,5,6], target = 5
 Output: 2
 
 Example 2:
-Input: x = 8
-Output: 2
+Input: nums = [1,3,5,6], target = 2
+Output: 1
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/Sqrt.scala#L4-L11
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/SearchInsertPosition.scala#L4-L12
 
 ### 34. Find First and Last Position of Element in Sorted Array
 Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
@@ -54,6 +55,67 @@ Output: [-1,-1]
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/FindFirstAndLastPositionInSortedArray.scala#L4-L14
 
+### 278. First Bad Version
+You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
+
+Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.
+
+You are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
+```
+Example 1:
+Input: n = 5, bad = 4
+Output: 4
+Explanation:
+call isBadVersion(3) -> false
+call isBadVersion(5) -> true
+call isBadVersion(4) -> true
+Then 4 is the first bad version.
+
+Example 2:
+Input: n = 1, bad = 1
+Output: 1
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/FirstBadVersion.scala#L8-L15
+
+### 69. Sqrt(x)
+Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
+
+You must not use any built-in exponent function or operator.
+
+For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
+```
+Example 1:
+Input: x = 4
+Output: 2
+
+Example 2:
+Input: x = 8
+Output: 2
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/Sqrt.scala#L4-L11
+
+### 275. H-Index II
+Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper and citations is sorted in ascending order, return the researcher's h-index.
+
+According to the definition of h-index on Wikipedia: The h-index is defined as the maximum value of h such that the given researcher has published at least h papers that have each been cited at least h times.
+
+You must write an algorithm that runs in logarithmic time.
+```
+Example 1:
+Input: citations = [0,1,3,5,6]
+Output: 3
+Explanation: [0,1,3,5,6] means the researcher has 5 papers in total and each of them had received 
+0, 1, 3, 5, 6 citations respectively. Since the researcher has 3 papers with at least 3 citations 
+each and the remaining two with no more than 3 citations each, their h-index is 3.
+
+Example 2:
+Input: citations = [1,2,100]
+Output: 2
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/HIndex2.scala#L4-L10
+<br><br>
+
+## Rotated Sorted Array
 ### 33. Search in Rotated Sorted Array
 There is an integer array nums sorted in ascending order (with distinct values).
 
@@ -136,61 +198,9 @@ Input: nums = [2,2,2,0,1]
 Output: 0
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/FindMinimuminRotatedSortedArray2.scala#L4-L14
+<br><br>
 
-### 35. Search Insert Position
-Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
-
-You must write an algorithm with O(log n) runtime complexity.
-```
-Example 1:
-Input: nums = [1,3,5,6], target = 5
-Output: 2
-
-Example 2:
-Input: nums = [1,3,5,6], target = 2
-Output: 1
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/SearchInsertPosition.scala#L4-L12
-
-### 278. First Bad Version
-You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
-
-Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.
-
-You are given an API bool isBadVersion(version) which returns whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
-```
-Example 1:
-Input: n = 5, bad = 4
-Output: 4
-Explanation:
-call isBadVersion(3) -> false
-call isBadVersion(5) -> true
-call isBadVersion(4) -> true
-Then 4 is the first bad version.
-
-Example 2:
-Input: n = 1, bad = 1
-Output: 1
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/FirstBadVersion.scala#L8-L15
-
-### 4. Median of Two Sorted Arrays
-Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
-
-The overall run time complexity should be O(log (m+n)).
-```
-Example 1:
-Input: nums1 = [1,3], nums2 = [2]
-Output: 2.00000
-Explanation: merged array = [1,2,3] and median is 2.
-
-Example 2:
-Input: nums1 = [1,2], nums2 = [3,4]
-Output: 2.50000
-Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/MedianofTwoSortedArrays.scala#L7-L25
-
+## Two Sorted or Partially Sorted Arrays
 ### 162. Find Peak Element
 A peak element is an element that is strictly greater than its neighbors.
 
@@ -213,22 +223,19 @@ or index number 5 where the peak element is 6.
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/FindPeakElement.scala#L4-L13
 
-### 275. H-Index II
-Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper and citations is sorted in ascending order, return the researcher's h-index.
+### 4. Median of Two Sorted Arrays
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
 
-According to the definition of h-index on Wikipedia: The h-index is defined as the maximum value of h such that the given researcher has published at least h papers that have each been cited at least h times.
-
-You must write an algorithm that runs in logarithmic time.
+The overall run time complexity should be O(log (m+n)).
 ```
 Example 1:
-Input: citations = [0,1,3,5,6]
-Output: 3
-Explanation: [0,1,3,5,6] means the researcher has 5 papers in total and each of them had received 
-0, 1, 3, 5, 6 citations respectively. Since the researcher has 3 papers with at least 3 citations 
-each and the remaining two with no more than 3 citations each, their h-index is 3.
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
 
 Example 2:
-Input: citations = [1,2,100]
-Output: 2
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/HIndex2.scala#L4-L10
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/binarysearch/MedianofTwoSortedArrays.scala#L7-L25

@@ -313,21 +313,35 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/binarysearch/binarysearch.md">Binary Search</a></td>
-            <td></td>
+            <td rowspan="3"><a href="src/main/scala/binarysearch/binarysearch.md">Binary Search</a></td>
+            <td><a href="src/main/scala/binarysearch/binarysearch.md#basic">Basic</a></td>
             <td>
                 <ul>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#69-sqrtx">69. Sqrt(x)</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#35-search-insert-position">35. Search Insert Position</a></li>
                     <li><a href="src/main/scala/binarysearch/binarysearch.md#34-find-first-and-last-position-of-element-in-sorted-array">34. Find First and Last Position of Element in Sorted Array</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#278-first-bad-version">278. First Bad Version</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#69-sqrtx">69. Sqrt(x)</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#275-h-index-ii">275. H-Index II</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/binarysearch/binarysearch.md#rotated-sorted-array">Rotated Sorted Array</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/binarysearch/binarysearch.md#33-search-in-rotated-sorted-array">33. Search in Rotated Sorted Array</a></li>
                     <li><a href="src/main/scala/binarysearch/binarysearch.md#81-search-in-rotated-sorted-array-ii">81. Search in Rotated Sorted Array II</a></li>
                     <li><a href="src/main/scala/binarysearch/binarysearch.md#153-find-minimum-in-rotated-sorted-array">153. Find Minimum in Rotated Sorted Array</a></li>
                     <li><a href="src/main/scala/binarysearch/binarysearch.md#154-find-minimum-in-rotated-sorted-array-ii">154. Find Minimum in Rotated Sorted Array II</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#35-search-insert-position">35. Search Insert Position</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#278-first-bad-version">278. First Bad Version</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#4-median-of-two-sorted-arrays">4. Median of Two Sorted Arrays</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/binarysearch/binarysearch.md#two-sorted-or-partially-sorted-arrays">Two Sorted or Partially Sorted Arrays</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/binarysearch/binarysearch.md#162-find-peak-element">162. Find Peak Element</a></li>
-                    <li><a href="src/main/scala/binarysearch/binarysearch.md#275-h-index-ii">275. H-Index II</a></li>
+                    <li><a href="src/main/scala/binarysearch/binarysearch.md#4-median-of-two-sorted-arrays">4. Median of Two Sorted Arrays</a></li>
                 </ul>
             </td>
         </tr>
