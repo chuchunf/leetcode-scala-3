@@ -5,12 +5,13 @@ then **buckets is sorted individually**, either as an already sorted array or us
 
 Bucket sort is useful when elements are **uniformly distributed over a range** => **Duplicates (based on frequency)** could be distributed into **Buckets** 
 
-## Steps
+### Steps
 The process of bucket sort can be understood as a **scatter-gather** approach
 1. Set up an array of initially empty "buckets".
 2. Go over the original array, putting each object in its bucket => scatter
 3. Sort each non-empty bucket individually
 4. Visit the buckets in order and put all elements back into the original array => gather
+<br><br>
 
 ## Related Algorithms & Data structures 
 * **Array**: the buckets could be initiated as a sorted array 
@@ -21,8 +22,9 @@ while Bucket sort handles multiple elements have same hash value (e.g. floating 
 Bucket sort can be seen as a generalization of counting sort; if each bucket has size 1 then bucket sort degenerates to counting sort
 * **Quick sort**, Bucket sort with two buckets is a quicksort where the pivot value is the middle value of the value range
 * **Hashmap**, Bucket Sort is kind of using the same underneath data structure as Hashmap, but for sorting.
+<br><br>
 
-## Applications
+## Usages
 1. Bucket sort (based on frequency)
    * Top K frequent elements: the buckets are in sorted array hence no additional sorting required
    * Top K frequent words
@@ -31,7 +33,9 @@ Bucket sort can be seen as a generalization of counting sort; if each bucket has
    * Contains duplicate III: distribute the numbers into **value distance number of bucket**  
    => found duplicate if the bucket contains an index or nearby bucket contains index with value less than value distance 
    * Maximum Gap: distribute the numbers into **n-1 bucket**, find the max difference for each bucket
-
+<br><br>
+   
+## Frequency
 ### 347. Top K Frequent Elements
 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 ```
@@ -74,6 +78,19 @@ Input: s = "cccaaa"
 Output: "aaaccc"
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/SortCharactersByFrequency.scala#L6-L13
+<br><br>
+
+## Usage of Bucket
+### 164. Maximum Gap
+Given an integer array nums, return the maximum difference between two successive elements in its sorted form. If the array contains less than two elements, return 0.
+
+You must write an algorithm that runs in linear time and uses linear extra space.
+```
+Example 1:
+Input: nums = [3,6,9,1]
+Output: 3
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/MaximumGap.scala#L4-L18
 
 ### 220. Contains Duplicate III
 You are given an integer array nums and two integers indexDiff and valueDiff.
@@ -96,13 +113,3 @@ Output: false
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/ContainsDuplicate3.scala#L6-L19
 
-### 164. Maximum Gap
-Given an integer array nums, return the maximum difference between two successive elements in its sorted form. If the array contains less than two elements, return 0.
-
-You must write an algorithm that runs in linear time and uses linear extra space.
-```
-Example 1:
-Input: nums = [3,6,9,1]
-Output: 3
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bucketsort/MaximumGap.scala#L4-L18

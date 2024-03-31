@@ -431,15 +431,22 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/bucketsort/bucketsort.md">Bucket Sort</a></td>
-            <td></td>
+            <td rowspan="2"><a href="src/main/scala/bucketsort/bucketsort.md">Bucket Sort</a></td>
+            <td><a href="src/main/scala/bucketsort/bucketsort.md#frequency">Frequency</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bucketsort/bucketsort.md#347-top-k-frequent-elements">347. Top K Frequent Elements</a></li>
                     <li><a href="src/main/scala/bucketsort/bucketsort.md#692-top-k-frequent-words">692. Top K Frequent Words</a></li>
                     <li><a href="src/main/scala/bucketsort/bucketsort.md#451-sort-characters-by-frequency">451. Sort Characters By Frequency</a></li>
-                    <li><a href="src/main/scala/bucketsort/bucketsort.md#220-contains-duplicate-iii">220. Contains Duplicate III</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/bucketsort/bucketsort.md#usage-of-bucket">Usage of Bucket</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/bucketsort/bucketsort.md#164-maximum-gap">164. Maximum Gap</a></li>
+                    <li><a href="src/main/scala/bucketsort/bucketsort.md#220-contains-duplicate-iii">220. Contains Duplicate III</a></li>
                 </ul> 
             </td>
         </tr>
