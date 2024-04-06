@@ -1,20 +1,32 @@
 # Greedy
 
 A greedy algorithm is a simple, intuitive algorithm that is used in optimization problems. 
-The algorithm makes the **optimal choice at each step** as it attempts to find the overall optimal way to solve the entire problem. 
-However, in many problems, a greedy strategy does not produce an optimal solution, 
-because it makes decisions based only on the information it has at any one step, without regard to the overall problem.
+The algorithm makes the **optimal choice at each step** as if the local best option is the global best option. 
+As such, in many problems, a greedy strategy does not produce an optimal solution.
 
-Only if both of the properties below are true, a greedy algorithm can be used to solve the problem.
-- Greedy choice property: A global (overall) optimal solution can be reached by choosing the optimal choice at each step. 
-- Optimal substructure: A problem has an optimal substructure if an optimal solution to the entire problem contains the optimal solutions to the sub-problems. => local optimal is global optimal 
+A greedy algorithm can be used to solve the problem if:
+- **Greedy choice**: A global (overall) optimal solution can be reached by choosing the optimal choice at each step. 
+- **Optimal substructure**: A problem has an optimal substructure if an optimal solution to the entire problem contains the optimal solutions to the sub-problems. => local optimal is global optimal 
 
 In short, a greedy algorithm works **if and only if the optimal solution at each step is also the optimal solution as a whole**
 
 If a Greedy Algorithm can solve a problem, then it generally becomes the best method to solve that problem as the Greedy algorithms are in general more efficient than other techniques like Dynamic Programming. 
-But Greedy algorithms cannot always be applied. For example, the Fractional Knapsack problem can be solved using Greedy, but 0-1 Knapsack cannot be solved using Greedy.
-An efficient solution is to use the Greedy approach. The basic idea of the greedy approach is to calculate the ratio value/weight for each item and sort the item on basis of this ratio. 
-Then take the item with the highest ratio and add them until we can’t add the next item as a whole and at the end add the next item as much as we can. Which will always be the optimal solution to this problem.
+<br><br>
+
+### 179. Largest Number
+Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.
+
+Since the result may be very large, so you need to return a string instead of an integer.
+```
+Example 1:
+Input: nums = [10,2]
+Output: "210"
+
+Example 2:
+Input: nums = [3,30,34,5,9]
+Output: "9534330"
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/LargestNumber.scala#L5-L7
 
 ### 122. Best Time to Buy and Sell Stock II
 You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
@@ -58,21 +70,6 @@ Travel to station 3. The cost is 5. Your gas is just enough to travel back to st
 Therefore, return 3 as the starting index.
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/GasStation.scala#L4-L14
-
-### 179. Largest Number
-Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.
-
-Since the result may be very large, so you need to return a string instead of an integer.
-```
-Example 1:
-Input: nums = [10,2]
-Output: "210"
-
-Example 2:
-Input: nums = [3,30,34,5,9]
-Output: "9534330"
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/LargestNumber.scala#L5-L7
 
 ### 44. Wildcard Matching
 Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where:
