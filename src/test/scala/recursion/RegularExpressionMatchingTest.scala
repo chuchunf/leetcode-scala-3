@@ -1,7 +1,8 @@
-package backtracking
+package recursion
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers.*
+import recursion.RegularExpressionMatching
 
 class RegularExpressionMatchingTest extends AnyFunSuite {
   test("can not match aa / a") {

@@ -32,6 +32,7 @@ Parent is the smallest/biggest value, when insert or remove, heapitify function 
 ### Usages
 1. Heap Sort uses Binary Heap to sort an array in O(nLogn) time.
 2. Priority queue to get min/max (user defined order) element in O(nLogn) time. 
+<br><br>
 
 ### 506. Relative Ranks
 You are given an integer array score of size n, where score[i] is the score of the ith athlete in a competition. All the scores are guaranteed to be unique.

@@ -38,6 +38,7 @@ Otherwise, **identify all possible next candidates and call the helper function 
 ### Tips
 - Use any/some intermedia state variables as long as they keep the partial states 
 - Change a cell value to indicate visited state and revert it after recursive call
+<br><br>
 
 ### 22. Generate Parentheses
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
@@ -84,31 +85,6 @@ Output: [[0,1],[1,0]]
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/5fdab853b600bb2b90b43c81620596a9695a2aef/src/main/scala/backtracking/Permutations.scala#L6-L17
 
-### 10. Regular Expression Matching
-Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
-
-* '.' Matches any single character.​​​​
-* '*' Matches zero or more of the preceding element.
-
-The matching should cover the entire input string (not partial).
-```
-Example 1:
-Input: s = "aa", p = "a"
-Output: false
-Explanation: "a" does not match the entire string "aa".
-
-Example 2:
-Input: s = "aa", p = "a*"
-Output: true
-Explanation: '*' means zero or more of the preceding element, 'a'. Therefore, by repeating 'a' once, it becomes "aa".
-
-Example 3:
-Input: s = "ab", p = ".*"
-Output: true
-Explanation: ".*" means "zero or more (*) of any character (.)".
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/5fdab853b600bb2b90b43c81620596a9695a2aef/src/main/scala/backtracking/RegularExpressionMatching.scala#L4-L10
-
 ### 17. Letter Combinations of a Phone Number
 Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
 
@@ -131,32 +107,6 @@ Output:
 [2,1,1]]
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/5fdab853b600bb2b90b43c81620596a9695a2aef/src/main/scala/backtracking/Permutations2.scala#L6-L13
-
-### 51. N-Queens
-The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
-
-Given an integer n, return all distinct solutions to the n-queens puzzle. You may return the answer in any order.
-
-Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space, respectively.
-```
-Example 1:
-Input: n = 4
-Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
-Explanation: There exist two distinct solutions to the 4-queens puzzle as shown above
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/5fdab853b600bb2b90b43c81620596a9695a2aef/src/main/scala/backtracking/NQueens.scala#L6-L19
-
-### 52. N-Queens 2
-The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
-
-Given an integer n, return the number of distinct solutions to the n-queens puzzle.
-```
-Example 1:
-Input: n = 4
-Output: 2
-Explanation: There are two distinct solutions to the 4-queens puzzle as shown.
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/5fdab853b600bb2b90b43c81620596a9695a2aef/src/main/scala/backtracking/NQueens2.scala#L7-L23
 
 ### 77. Combinations
 Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
@@ -191,3 +141,29 @@ Input: s = "25525511135"
 Output: ["255.255.11.135","255.255.111.35"]
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/5fdab853b600bb2b90b43c81620596a9695a2aef/src/main/scala/backtracking/RestoreIPAddresses.scala#L6-L16
+
+### 51. N-Queens
+The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
+
+Given an integer n, return all distinct solutions to the n-queens puzzle. You may return the answer in any order.
+
+Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space, respectively.
+```
+Example 1:
+Input: n = 4
+Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+Explanation: There exist two distinct solutions to the 4-queens puzzle as shown above
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/5fdab853b600bb2b90b43c81620596a9695a2aef/src/main/scala/backtracking/NQueens.scala#L6-L19
+
+### 52. N-Queens 2
+The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
+
+Given an integer n, return the number of distinct solutions to the n-queens puzzle.
+```
+Example 1:
+Input: n = 4
+Output: 2
+Explanation: There are two distinct solutions to the 4-queens puzzle as shown.
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/5fdab853b600bb2b90b43c81620596a9695a2aef/src/main/scala/backtracking/NQueens2.scala#L7-L23

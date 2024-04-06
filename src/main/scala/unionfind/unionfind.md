@@ -34,6 +34,7 @@ In fact, amortized time complexity effectively becomes small constant.
 ### Usage of union find
 * Check whether an undirected graph contains cycle or not (assume no self-loop)
 * Check the regions of an undirected graph
+<br><br>
 
 ### 200. Number of Islands
 Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.

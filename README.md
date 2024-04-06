@@ -465,17 +465,25 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/recursion/recursion.md">Recursion</a></td>
-            <td></td>
+            <td rowspan="2"><a href="src/main/scala/recursion/recursion.md">Recursion</a></td>
+            <td><a href="src/main/scala/recursion/recursion.md#with-recursive-data-structure">With recursive data structure</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/recursion/recursion.md#21-merge-two-sorted-lists">21. Merge Two Sorted Lists</a></li>
+                    <li><a href="src/main/scala/recursion/recursion.md#23-merge-k-sorted-list">23. Merge K Sorted List</a></li>
                     <li><a href="src/main/scala/recursion/recursion.md#24-swap-nodes-in-pairs">24. Swap Nodes in Pairs</a></li>
                     <li><a href="src/main/scala/recursion/recursion.md#25-reverse-nodes-in-k-group">25. Reverse Nodes in K-Group</a></li>
-                    <li><a href="src/main/scala/recursion/recursion.md#60-permutation-sequence">60. Permutation Sequence</a></li>
-                    <li><a href="src/main/scala/recursion/recursion.md#23-merge-k-sorted-list">23. Merge K Sorted List</a></li>
-                    <li><a href="src/main/scala/recursion/recursion.md#247-strobogrammatic-number-ii">247. Strobogrammatic Number II</a></li>
                     <li><a href="src/main/scala/recursion/recursion.md#87-scramble-string">87. Scramble String</a></li>
+                    <li><a href="src/main/scala/recursion/recursion.md#10-regular-expression-matching">10. Regular Expression Matching</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/recursion/recursion.md#without-recursive-data-structure">Without recursive data structure</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/recursion/recursion.md#247-strobogrammatic-number-ii">247. Strobogrammatic Number II</a></li>
+                    <li><a href="src/main/scala/recursion/recursion.md#60-permutation-sequence">60. Permutation Sequence</a></li>
                 </ul> 
             </td>
         </tr>
@@ -574,8 +582,8 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/dfs/dfs.md">DFS</a></td>
-            <td></td>
+            <td rowspan="2"><a href="src/main/scala/dfs/dfs.md">DFS</a></td>
+            <td><a href="src/main/scala/dfs/dfs.md#recursion">Recursion</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/dfs/dfs.md#112-path-sum">112. Path Sum</a></li>
@@ -587,14 +595,29 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/bfs/bfs.md">BFS</a></td>
-            <td></td>
+            <td><a href="src/main/scala/dfs/dfs.md#back-tracking">Back tracking</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/dfs/dfs.md#113-path-sum-ii">113. Path Sum II</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2"><a href="src/main/scala/bfs/bfs.md">BFS</a></td>
+            <td><a href="src/main/scala/bfs/bfs.md#iteration">Iteration</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/bfs/bfs.md#199-binary-tree-right-side-view">199. Binary Tree Right Side View</a></li>
+                    <li><a href="src/main/scala/bfs/bfs.md#133-clone-graph">133. Clone Graph</a></li>
+                    <li><a href="src/main/scala/bfs/bfs.md#130-surrounded-regions">130. Surrounded Regions</a></li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/bfs/bfs.md#back-tracking">Back Tracking</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bfs/bfs.md#127-word-ladder">127. Word Ladder</a></li>
-                    <li><a href="src/main/scala/bfs/bfs.md#130-surrounded-regions">130. Surrounded Regions</a></li>
-                    <li><a href="src/main/scala/bfs/bfs.md#199-binary-tree-right-side-view">199. Binary Tree Right Side View</a></li>
-                    <li><a href="src/main/scala/bfs/bfs.md#133-clone-graph">133. Clone Graph</a></li>
                 </ul> 
             </td>
         </tr>
@@ -641,14 +664,13 @@ Solutions of selected LeetCode problems in Scala 3.
                     <li><a href="src/main/scala/backtracking/backtracking.md#22-generate-parentheses">22. Generate Parentheses</a></li>
                     <li><a href="src/main/scala/backtracking/backtracking.md#40-combination-sum-ii">40. Combination Sum II</a></li>
                     <li><a href="src/main/scala/backtracking/backtracking.md#46-permutations">46. Permutations</a></li>
-                    <li><a href="src/main/scala/backtracking/backtracking.md#10-regular-expression-matching">10. Regular Expression Matching</a></li>
                     <li><a href="src/main/scala/backtracking/backtracking.md#17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number</a></li>
                     <li><a href="src/main/scala/backtracking/backtracking.md#47-permutations-ii">47. Permutations II</a></li>
-                    <li><a href="src/main/scala/backtracking/backtracking.md#51-n-queens">51. N-Queens</a></li>
-                    <li><a href="src/main/scala/backtracking/backtracking.md#52-n-queens-2">52. N-Queens 2</a></li>
                     <li><a href="src/main/scala/backtracking/backtracking.md#77-combinations">77. Combinations</a></li>
                     <li><a href="src/main/scala/backtracking/backtracking.md#79-word-search">79. Word Search</a></li>
                     <li><a href="src/main/scala/backtracking/backtracking.md#93-restore-ip-addresses">93. Restore IP Addresses</a></li>
+                    <li><a href="src/main/scala/backtracking/backtracking.md#51-n-queens">51. N-Queens</a></li>
+                    <li><a href="src/main/scala/backtracking/backtracking.md#52-n-queens-2">52. N-Queens 2</a></li>
                 </ul> 
             </td>
         </tr>

@@ -1,4 +1,4 @@
-package backtracking
+package recursion
 
 object RegularExpressionMatching {
   def isMatch(s: String, p: String): Boolean = p.toSeq match
