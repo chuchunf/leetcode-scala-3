@@ -123,7 +123,7 @@ Input: s = "ab", p = ".*"
 Output: true
 Explanation: ".*" means "zero or more (*) of any character (.)".
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/recusion/RegularExpressionMatching.scala#L4-L10
+https://github.com/chuchunf/leetcode-scala-3/blob/4be5e022c498c9e65d022a46c7201e8dfd8cb650/src/main/scala/recursion/RegularExpressionMatching.scala#L4-L10
 <br><br>
 
 ## Without recursive data structure
