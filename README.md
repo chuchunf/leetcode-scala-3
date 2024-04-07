@@ -675,22 +675,36 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/dp/dp.md">Dynamic Programming</a></td>
-            <td></td>
+            <td rowspan="3"><a href="src/main/scala/dp/dp.md">Dynamic Programming</a></td>
+            <td><a href="src/main/scala/dp/dp.md#count-number-in-array-or-matrix">Count number in array or matrix</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/dp/dp.md#70-climbing-stairs">70. Climbing Stairs</a></li>
                     <li><a href="src/main/scala/dp/dp.md#64-minimum-path-sum">64. Minimum Path Sum</a></li>
-                    <li><a href="src/main/scala/dp/dp.md#53-maximum-subarray">53. Maximum Subarray</a></li>
-                    <li><a href="src/main/scala/dp/dp.md#5-longest-palindromic-substring">5. Longest Palindromic Substring</a></li>
                     <li><a href="src/main/scala/dp/dp.md#91-decode-ways">91. Decode Ways</a></li>
-                    <li><a href="src/main/scala/dp/dp.md#174-dungeon-game">174. Dungeon Game</a></li>
                     <li><a href="src/main/scala/dp/dp.md#55-jump-game">55. Jump Game</a></li>
                     <li><a href="src/main/scala/dp/dp.md#63-unique-paths-2">63. Unique Paths 2</a></li>
+                    <li><a href="src/main/scala/dp/dp.md#120-triangle">120. Triangle</a></li>
+                    <li><a href="src/main/scala/dp/dp.md#174-dungeon-game">174. Dungeon Game</a></li>
+                    <li><a href="src/main/scala/dp/dp.md#123-best-time-to-buy-and-sell-stock-iii">123. Best Time to Buy and Sell Stock III</a></li>
+                </ul>  
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/dp/dp.md#knapsack-and-coin-machine-etc">Knapsack and coin machine etc</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/dp/dp.md#53-maximum-subarray">53. Maximum Subarray</a></li>
+                </ul>  
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/dp/dp.md#substring-and-common-string-etc">Substring and common string etc</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/dp/dp.md#5-longest-palindromic-substring">5. Longest Palindromic Substring</a></li>
                     <li><a href="src/main/scala/dp/dp.md#97-interleaving-string">97. Interleaving String</a></li>
                     <li><a href="src/main/scala/dp/dp.md#115-distinct-subsequences">115. Distinct Subsequences</a></li>
-                    <li><a href="src/main/scala/dp/dp.md#120-triangle">120. Triangle</a></li>
-                    <li><a href="src/main/scala/dp/dp.md#123-best-time-to-buy-and-sell-stock-iii">123. Best Time to Buy and Sell Stock III</a></li>
                 </ul>  
             </td>
         </tr>

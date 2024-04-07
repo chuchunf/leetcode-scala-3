@@ -61,8 +61,10 @@ In both cases, we will only compute each fib(n) once.
 - The problems that need to find out all the combinations 
 - The problem could be resolved recursively 
 - The n problem could be derived from children's subproblems, e.g. n-1, n-2, etc.
+<br><br>
 
-### 70. Climbing Stairs
+## Count number in array or matrix
+### 70. Climbing Stairs 
 You are climbing a staircase. It takes n steps to reach the top.
 
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
@@ -100,35 +102,6 @@ Output: 12
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/MinimumPathSum.scala#L4-L12
 
-### 53. Maximum Subarray
-Given an integer array nums, find the subarray with the largest sum, and return its sum.
-```
-Example 1:
-Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
-Output: 6
-Explanation: The subarray [4,-1,2,1] has the largest sum 6.
-
-Example 2:
-Input: nums = [1]
-Output: 1
-Explanation: The subarray [1] has the largest sum 1.
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/MaximumSubarray.scala#L6-L8
-
-### 5. Longest Palindromic Substring
-Given a string s, return the longest palindromic substring in s.
-```
-Example 1:
-Input: s = "babad"
-Output: "bab"
-Explanation: "aba" is also a valid answer.
-
-Example 2:
-Input: s = "cbbd"
-Output: "bb"
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/LongestPalindromicSubstring.scala#L4-L11
-
 ### 91. Decode Ways
 A message containing letters from A-Z can be encoded into numbers using the following mapping:
 ```
@@ -159,27 +132,6 @@ Output: 3
 Explanation: "226" could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/DecodeWays.scala#L4-L13
-
-### 174. Dungeon Game
-The demons had captured the princess and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of m x n rooms laid out in a 2D grid. Our valiant knight was initially positioned in the top-left room and must fight his way through dungeon to rescue the princess.
-
-The knight has an initial health point represented by a positive integer. If at any point his health point drops to 0 or below, he dies immediately.
-
-Some of the rooms are guarded by demons (represented by negative integers), so the knight loses health upon entering these rooms; other rooms are either empty (represented as 0) or contain magic orbs that increase the knight's health (represented by positive integers).
-
-To reach the princess as quickly as possible, the knight decides to move only rightward or downward in each step.
-
-Return the knight's minimum initial health so that he can rescue the princess.
-
-Note that any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
-```
-Example 1:
-Input: dungeon = [[-2,-3,3],[-5,-10,1],[10,30,-5]]
-Output: 7
-Explanation: The initial health of the knight must be at least 7 if he follows the optimal path: 
-RIGHT-> RIGHT -> DOWN -> DOWN.
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/DungeonGame.scala#L4-L14
 
 ### 55. Jump Game
 You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.
@@ -215,6 +167,99 @@ There are two ways to reach the bottom-right corner:
 2. Down -> Down -> Right -> Right
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/UniquePaths2.scala#L4-L17
+
+### 120. Triangle
+Given a triangle array, return the minimum path sum from top to bottom.
+
+For each step, you may move to an adjacent number of the row below. More formally, if you are on index i on the current row, you may move to either index i or index i + 1 on the next row.
+```
+Example 1:
+Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
+Output: 11
+Explanation: The triangle looks like:
+   2
+  3 4
+ 6 5 7
+4 1 8 3
+The minimum path sum from top to bottom is 2 + 3 + 5 + 1 = 11 (underlined above).
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/Triangle.scala#L4-L14
+
+### 174. Dungeon Game
+The demons had captured the princess and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of m x n rooms laid out in a 2D grid. Our valiant knight was initially positioned in the top-left room and must fight his way through dungeon to rescue the princess.
+
+The knight has an initial health point represented by a positive integer. If at any point his health point drops to 0 or below, he dies immediately.
+
+Some of the rooms are guarded by demons (represented by negative integers), so the knight loses health upon entering these rooms; other rooms are either empty (represented as 0) or contain magic orbs that increase the knight's health (represented by positive integers).
+
+To reach the princess as quickly as possible, the knight decides to move only rightward or downward in each step.
+
+Return the knight's minimum initial health so that he can rescue the princess.
+
+Note that any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
+```
+Example 1:
+Input: dungeon = [[-2,-3,3],[-5,-10,1],[10,30,-5]]
+Output: 7
+Explanation: The initial health of the knight must be at least 7 if he follows the optimal path: 
+RIGHT-> RIGHT -> DOWN -> DOWN.
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/DungeonGame.scala#L4-L14
+
+### 123. Best Time to Buy and Sell Stock III
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+Find the maximum profit you can achieve. You may complete at most two transactions.
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+```
+Example 1:
+Input: prices = [3,3,5,0,0,3,1,4]
+Output: 6
+Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
+Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
+
+Example 2:
+Input: prices = [1,2,3,4,5]
+Output: 4
+Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+Note that you cannot buy on day 1, buy on day 2 and sell them later, 
+as you are engaging multiple transactions at the same time. You must sell before buying again.
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/BestTimetoBuyandSellStock3.scala#L4-L17
+<br><br>
+
+## Knapsack and coin machine etc
+### 53. Maximum Subarray
+Given an integer array nums, find the subarray with the largest sum, and return its sum.
+```
+Example 1:
+Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: The subarray [4,-1,2,1] has the largest sum 6.
+
+Example 2:
+Input: nums = [1]
+Output: 1
+Explanation: The subarray [1] has the largest sum 1.
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/MaximumSubarray.scala#L6-L8
+<br><br>
+
+## Substring and common string etc
+### 5. Longest Palindromic Substring
+Given a string s, return the longest palindromic substring in s.
+```
+Example 1:
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+
+Example 2:
+Input: s = "cbbd"
+Output: "bb"
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/LongestPalindromicSubstring.scala#L4-L11
 
 ### 97. Interleaving String
 Given strings s1, s2, and s3, find whether s3 is formed by an interleaving of s1 and s2.
@@ -263,42 +308,3 @@ babgbag
 babgbag
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/DistinctSubsequences.scala#L4-L14
-
-### 120. Triangle
-Given a triangle array, return the minimum path sum from top to bottom.
-
-For each step, you may move to an adjacent number of the row below. More formally, if you are on index i on the current row, you may move to either index i or index i + 1 on the next row.
-```
-Example 1:
-Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
-Output: 11
-Explanation: The triangle looks like:
-   2
-  3 4
- 6 5 7
-4 1 8 3
-The minimum path sum from top to bottom is 2 + 3 + 5 + 1 = 11 (underlined above).
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/Triangle.scala#L4-L14
-
-### 123. Best Time to Buy and Sell Stock III
-You are given an array prices where prices[i] is the price of a given stock on the ith day.
-
-Find the maximum profit you can achieve. You may complete at most two transactions.
-
-Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
-```
-Example 1:
-Input: prices = [3,3,5,0,0,3,1,4]
-Output: 6
-Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
-Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
-
-Example 2:
-Input: prices = [1,2,3,4,5]
-Output: 4
-Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
-Note that you cannot buy on day 1, buy on day 2 and sell them later, 
-as you are engaging multiple transactions at the same time. You must sell before buying again.
-```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/BestTimetoBuyandSellStock3.scala#L4-L17
