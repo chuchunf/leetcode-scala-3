@@ -312,17 +312,31 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/matrix/matrix.md">Matrix</a></td>
-            <td></td>
+            <td rowspan="3"><a href="src/main/scala/matrix/matrix.md">Matrix</a></td>
+            <td><a href="src/main/scala/matrix/matrix.md#basic-operations">Basic operations</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/matrix/matrix.md#54-spiral-matrix">54. Spiral Matrix</a></li>
-                    <li><a href="src/main/scala/matrix/matrix.md#36-valid-sudoku">36. Valid Sudoku</a></li>
-                    <li><a href="src/main/scala/matrix/matrix.md#37-sudoku-solver">37. Sudoku Solver</a></li>
-                    <li><a href="src/main/scala/matrix/matrix.md#48-rotate-image">48. Rotate Image</a></li>
                     <li><a href="src/main/scala/matrix/matrix.md#59-spiral-matrix-ii">59. Spiral Matrix II</a></li>
-                    <li><a href="src/main/scala/matrix/matrix.md#73-set-matrix-zero">73. Set Matrix Zero</a></li>
+                    <li><a href="src/main/scala/matrix/matrix.md#36-valid-sudoku">36. Valid Sudoku</a></li>
                     <li><a href="src/main/scala/matrix/matrix.md#74-search-a-2d-matrix">74. Search a 2D Matrix</a></li>
+                </ul>  
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/matrix/matrix.md#in-place-operations">In-place operations</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/matrix/matrix.md#73-set-matrix-zero">73. Set Matrix Zero</a></li>
+                    <li><a href="src/main/scala/matrix/matrix.md#48-rotate-image">48. Rotate Image</a></li>
+                </ul>  
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/matrix/matrix.md#backtracking">Backtracking</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/matrix/matrix.md#37-sudoku-solver">37. Sudoku Solver</a></li>
                 </ul>  
             </td>
         </tr>
