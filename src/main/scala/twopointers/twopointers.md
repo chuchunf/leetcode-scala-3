@@ -229,7 +229,7 @@ Example 2:
 Input: s = "race a car"
 Output: false
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/266e54bf7a1705a4aa17987f8182d9e375eaa2e3/src/main/scala/twopointers/ValidPalindrome.scala#L4-L14
+https://github.com/chuchunf/leetcode-scala-3/blob/fbb1058c922a34c505b17a2824ef73aaf94035d9/src/main/scala/twopointers/ValidPalindrome.scala#L4-L14
 
 ### 680. Valid Palindrome II
 Given a string s, return true if the s can be palindrome after deleting at most one character from it.
@@ -242,7 +242,7 @@ Example 2:
 Input: s = "abca"
 Output: true
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/266e54bf7a1705a4aa17987f8182d9e375eaa2e3/src/main/scala/twopointers/ValidPalindrome2.scala#L4-L15
+https://github.com/chuchunf/leetcode-scala-3/blob/fbb1058c922a34c505b17a2824ef73aaf94035d9/src/main/scala/twopointers/ValidPalindrome2.scala#L4-L15
 
 ### 167. Two Sum II
 Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 < numbers.length.
