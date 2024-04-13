@@ -1,7 +1,8 @@
-package array
+package twopointers
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers.*
+import twopointers.ValidPalindrome
 
 class ValidPalindromeTest extends AnyFunSuite {
   test("can validate palindrome") {

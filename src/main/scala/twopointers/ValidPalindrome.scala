@@ -1,4 +1,4 @@
-package array
+package twopointers
 
 object ValidPalindrome {
   def isPalindrome(s: String): Boolean =

@@ -139,9 +139,11 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/twopointers/twopointers.md#two-pointers-moving-towards-each-other">Two Pointers: different direction</a></td>
+            <td><a href="src/main/scala/twopointers/twopointers.md#two-pointers-moving-towards-each-other">Two Pointers: opposite direction</a></td>
             <td>
                 <ul>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#125-valid-palindrome">125. Valid Palindrome</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#680-valid-palindrome-ii">680. Valid Palindrome II</a></li>
                     <li><a href="src/main/scala/twopointers/twopointers.md#167-two-sum-ii">167. Two Sum II</a></li>
                     <li><a href="src/main/scala/twopointers/twopointers.md#75-sort-colors">75. Sort Colors</a></li>
                     <li><a href="src/main/scala/twopointers/twopointers.md#16-3sum-closest">16. 3Sum Closest</a></li>
@@ -280,20 +282,32 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
         <tr>
-            <td><a href="src/main/scala/array/array.md">Array</a></td>
-            <td></td>
+            <td rowspan="3"><a href="src/main/scala/array/array.md">Array</a></td>
+            <td><a href="src/main/scala/array/array.md#in-place-manipulation">In-place manipulation</a></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/array/array.md#26-remove-duplicates-from-sorted-array">26. Remove Duplicates from Sorted Array</a></li>
+                    <li><a href="src/main/scala/array/array.md#283-move-zeroes">283. Move Zeroes</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/array/array.md#swap-or-reverse">Swap or reverse</a></td>
+            <td>
+                <ul>
                     <li><a href="src/main/scala/array/array.md#88-merge-sorted-array">88. Merge Sorted Array</a></li>
-                    <li><a href="src/main/scala/array/array.md#78-subsets">78. Subsets</a></li>
-                    <li><a href="src/main/scala/array/array.md#945-minimum-increment-to-make-array-unique">945. Minimum Increment to Make Array Unique</a></li>
-                    <li><a href="src/main/scala/array/array.md#121-best-time-to-buy-and-sell-stock">121. Best Time to Buy and Sell Stock</a></li>
-                    <li><a href="src/main/scala/array/array.md#125-valid-palindrome">125. Valid Palindrome</a></li>
                     <li><a href="src/main/scala/array/array.md#151-reverse-words-in-a-string">151. Reverse Words in a String</a></li>
                     <li><a href="src/main/scala/array/array.md#189-rotate-array">189. Rotate Array</a></li>
-                    <li><a href="src/main/scala/array/array.md#680-valid-palindrome-ii">680. Valid Palindrome II</a></li>
-                    <li><a href="src/main/scala/array/array.md#283-move-zeroes">283. Move Zeroes</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="src/main/scala/array/array.md#others">Others</a></td>
+            <td>
+                <ul>
+                    <li><a href="src/main/scala/array/array.md#121-best-time-to-buy-and-sell-stock">121. Best Time to Buy and Sell Stock</a></li>
+                    <li><a href="src/main/scala/array/array.md#78-subsets">78. Subsets</a></li>
+                    <li><a href="src/main/scala/array/array.md#945-minimum-increment-to-make-array-unique">945. Minimum Increment to Make Array Unique</a></li>
                 </ul>
             </td>
         </tr>
