@@ -258,7 +258,7 @@ Input: coins = [1,2,5], amount = 11
 Output: 3
 Explanation: 11 = 5 + 5 + 1
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/CoinChange.scala#L4-L18
+https://github.com/chuchunf/leetcode-scala-3/blob/1e545845013c7068d51a9fd45e0b6822858a895a/src/main/scala/dp/CoinChange.scala#L4-L18
 <br><br>
 
 ## Substring and common string etc
