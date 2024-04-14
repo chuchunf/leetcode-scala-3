@@ -6,18 +6,18 @@ Note: If an issue can be solved by combining optimal solutions to **non-overlapp
 This is why merge sort and quick sort are not classified as dynamic programming problems
 
 - a problem is said to have **an optimal substructure** if an optimal solution can be constructed from optimal solutions of its sub problems. i.e. **final result can be derived from previous sub problems**
-- a problem is said to have **overlapping sub problems** if the problem can be broken down into subproblems which are reused several times or a recursive algorithm for the problem solves the same subproblem over and over rather than always generating new sub problems. i.e. **sub problems' result could be re-used for next subproblem**
-- Subproblems are smaller versions of the original problem
+- a problem is said to have **overlapping sub problems** if the problem can be broken down into sub-problems which are reused several times or a recursive algorithm for the problem solves the same sub-problem over and over rather than always generating new sub problems. i.e. **sub problems' result could be re-used for next sub-problem**
+- Sub-problems are smaller versions of the original problem
 
 Fibonacci sequence is a good example: Fib(n) = fib(n-1) + fib(n-2)
-- Bottom-up approach with tabulation, start computing results for the subproblem. 
-Using the subproblem result solves another subproblem and finally solves the whole problem.
+- Bottom-up approach with tabulation, start computing results for the sub-problem. 
+Using the sub-problem result solves another sub-problem and finally solves the whole problem.
 ```scala
 Fib[0] = 0; Fib[1] = 1; // initial result => bottom case
 for(i = 2; i <= N; i++) Fib[i] = Fib[i-1]+Fib[i-2]; // reuse previous results from bottom to top
 ```
 - The top-down approach with recursion and memorization, breaks the large problem into multiple sub-problems. 
-Whenever we solve a subproblem, cache its result; if the subproblem solved already just reuse the answer.
+Whenever we solve a sub-problem, cache its result; if the sub-problem solved already just reuse the answer.
 ```scala
 int Fibonacci(int N) {
   if(result[N] == -1) { // if not available in cache, compute it
@@ -34,7 +34,7 @@ In both cases, we will only compute each fib(n) once.
 1. The expected result => use what the question asked for as a return result
 2. Think of how to derive f(n) from f(n-1), f(n-2), etc.
     1. Doesn’t have to be n depending on n-1 directly, etc. could be n, m depending on n-1, m+1 could sum of multiple, etc. DP works as long as we could derive n from others 
-    2. The key is to find the overlapping subproblem
+    2. The key is to find the overlapping sub-problem
 3. Consider parameters from a base case => recursion exit condition
     1. Data set (if there are) => arrays/matrix,
     2. Index to current element (if there are dataset) OR control variable (i.e. n in Fibonacci)
@@ -55,12 +55,13 @@ In both cases, we will only compute each fib(n) once.
 2. Since these variables are changing, we could reuse them only if we encounter the same scenarios again
 3. Make it the first parameters of the recursive function
 4. Return directly if the result is available
+5. Note the dimension required for memorization, e.g. number of parameters required to determine the result 
 
 ### How do recognize a DP problem?
 - The problems that seek the maximum or minimum solution given certain constraints 
 - The problems that need to find out all the combinations 
 - The problem could be resolved recursively 
-- The n problem could be derived from children's subproblems, e.g. n-1, n-2, etc.
+- The n problem could be derived from children's sub-problems, e.g. n-1, n-2, etc.
 <br><br>
 
 ## Count number in array or matrix
@@ -244,6 +245,20 @@ Output: 1
 Explanation: The subarray [1] has the largest sum 1.
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/MaximumSubarray.scala#L6-L8
+
+### 322. Coin Change
+You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+
+Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+You may assume that you have an infinite number of each kind of coin.
+```
+Example 1:
+Input: coins = [1,2,5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/CoinChange.scala#L4-L18
 <br><br>
 
 ## Substring and common string etc
