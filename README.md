@@ -725,6 +725,7 @@ Solutions of selected LeetCode problems in Scala 3.
                     <li><a href="src/main/scala/dp/dp.md#53-maximum-subarray">53. Maximum Subarray</a></li>
                     <li><a href="src/main/scala/dp/dp.md#322-coin-change">322. Coin Change</a></li>
                     <li><a href="src/main/scala/dp/dp.md#518-coin-change-ii">518. Coin Change 2</a></li>
+                    <li><a href="src/main/scala/dp/dp.md#494-target-sum">494. Target Sum</a></li>
                 </ul>  
             </td>
         </tr>
