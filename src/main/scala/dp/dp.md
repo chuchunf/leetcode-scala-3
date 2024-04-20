@@ -296,7 +296,7 @@ Explanation: There are 5 ways to assign symbols to make the sum of nums be targe
 +1 + 1 + 1 - 1 + 1 = 3
 +1 + 1 + 1 + 1 - 1 = 3
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/47893918dec0648f79548510bc3f8297ab1d063a/src/main/scala/dp/TargetSum.scala#L4-L14
+https://github.com/chuchunf/leetcode-scala-3/blob/c94a3cde41e85ce574d44f63f7fc5c95fe6aeb1a/src/main/scala/dp/TargetSum.scala#L4-L16
 <br><br>
 
 ## Substring and common string etc
@@ -361,3 +361,18 @@ babgbag
 babgbag
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/DistinctSubsequences.scala#L4-L14
+
+### 516. Longest Palindromic Subsequence
+A subsequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.
+```
+Example 1:
+Input: s = "bbbab"
+Output: 4
+Explanation: One possible longest palindromic subsequence is "bbbb".
+
+Example 2:
+Input: s = "cbbd"
+Output: 2
+Explanation: One possible longest palindromic subsequence is "bb"
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/LongestPalindromicSubsequence.scala#L4-L14
