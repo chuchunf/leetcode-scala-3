@@ -375,4 +375,4 @@ Input: s = "cbbd"
 Output: 2
 Explanation: One possible longest palindromic subsequence is "bb"
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/dp/LongestPalindromicSubsequence.scala#L4-L14
+https://github.com/chuchunf/leetcode-scala-3/blob/5697ddae4873117b87cea42335eb52b5b037cb75/src/main/scala/dp/LongestPalindromicSubsequence.scala#L4-L15
