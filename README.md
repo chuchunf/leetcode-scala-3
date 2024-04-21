@@ -627,25 +627,18 @@ Solutions of selected LeetCode problems in Scala 3.
             <td>
                 <ul>
                     <li><a href="src/main/scala/dfs/dfs.md#113-path-sum-ii">113. Path Sum II</a></li>
+                    <li><a href="src/main/scala/bfs/bfs.md#127-word-ladder">127. Word Ladder</a></li>
                 </ul> 
             </td>
         </tr>
         <tr>
-            <td rowspan="2"><a href="src/main/scala/bfs/bfs.md">BFS</a></td>
-            <td><a href="src/main/scala/bfs/bfs.md#iteration">Iteration</a></td>
+            <td><a href="src/main/scala/bfs/bfs.md">BFS</a></td>
+            <td></td>
             <td>
                 <ul>
                     <li><a href="src/main/scala/bfs/bfs.md#199-binary-tree-right-side-view">199. Binary Tree Right Side View</a></li>
                     <li><a href="src/main/scala/bfs/bfs.md#133-clone-graph">133. Clone Graph</a></li>
                     <li><a href="src/main/scala/bfs/bfs.md#130-surrounded-regions">130. Surrounded Regions</a></li>
-                </ul> 
-            </td>
-        </tr>
-        <tr>
-            <td><a href="src/main/scala/bfs/bfs.md#back-tracking">Back Tracking</a></td>
-            <td>
-                <ul>
-                    <li><a href="src/main/scala/bfs/bfs.md#127-word-ladder">127. Word Ladder</a></li>
                 </ul> 
             </td>
         </tr>

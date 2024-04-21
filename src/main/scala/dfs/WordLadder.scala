@@ -1,4 +1,4 @@
-package bfs
+package dfs
 
 import scala.collection.mutable
 

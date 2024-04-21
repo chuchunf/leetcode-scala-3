@@ -6,13 +6,13 @@ Yi = Y(i−1) + Xi
 Notice that the Yi equals Y(i-1) + Xi, so each consecutive value can be calculated in a constant time.
 Prefix Sum allows for the **O(1) calculation of sums of elements in given range**.
 
-The same idea could apply to **prefix product**.
+The same idea could be applied to **prefix product** and 2 dimensional arrays. 
 
 ## Applications
 - Used to answer range-sum-query, range-xor-query etc. 
 - Used to find subarray with max sum. 
 - Used to find subarray with sum closest to given number. 
-- Used to find equal length and equal sum subarrays of 2 arrays.
+- Used to find equal length and equal sum sub-arrays of 2 arrays.
 <br><br>
 
 ## Basic operations 1 way or 2 way

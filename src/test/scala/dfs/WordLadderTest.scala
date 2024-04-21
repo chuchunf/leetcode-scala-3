@@ -1,5 +1,6 @@
-package bfs
+package dfs
 
+import dfs.WordLadder
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers.*
 

@@ -102,7 +102,7 @@ Input: nums = [1,2,3,4]
 Output: 0
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/stack/ShortestUnsortedContinuousSubarray.scala#L4-L14
-
+<br><br>
 
 ## Applications
 ### 150. Evaluate Reverse Polish Notation

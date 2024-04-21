@@ -11,15 +11,15 @@ Recursion solves problems where the solution depends on solutions to smaller ins
 Add **helper function** and with additional variables to keep information
 <br><br>
 
-## Related data structure
+## Related data structures
 - Linked List
 - Tree
 - Graph
 <br><br>
 
-## Related algorithm
+## Related algorithms
 - Dynamic programming: recursion with **memorized state** to reduce number of recursive calls
-- Back tracking: recursion with immediate result to back track when encounter a dead end
+- Back tracking: recursion with **intermedia result** to back track when encounter a dead end
 <br><br>
 
 ## With recursive data structure
