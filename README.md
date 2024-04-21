@@ -2,22 +2,23 @@
 
 Solutions of selected LeetCode problems in Scala 3.
 
-### Goal
+## Goal
 
 - Learn Scala 3 :)
 - Practise Algorithm :)
 
-### Code
+## Code
 
 - Try to be compact and readable at the same time
 - Try Scala 3 syntax and features but with less Scala specific libraries
 
-### Solutions
+## Solutions
+
+### List of Problems by topic and category
 - Solutions are organized into topics, following the same grouping as LeetCode
 - Topics are further divided into categories
 - Solutions in each Topic/Category are ordered by difficulty level
 - Solutions with more explanation are bold
-
 <table>
     <tbody>
         <tr>
@@ -747,4 +748,78 @@ Solutions of selected LeetCode problems in Scala 3.
             </td>
         </tr>
     </tbody>
+</table>
+
+### List of Problems by Series
+- Problems grouped into series, each series has a common setting but different constraints.
+- Different data structures and algorithms could be used to handle these constraints accordingly.
+<table>
+<tbody>
+    <tr>
+        <th>Series</th>
+        <th>Problem List</th>
+    </tr>
+    <tr>
+        <td>My Calendar</td>
+        <td>
+            <ul>
+                <li>729. My Calendar I</li>
+                <li>731. My Calendar II</li>
+                <li>732. My Calendar III</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Contains Duplicate</td>
+        <td>
+            <ul>
+                <li>217. Contains Duplicate</li>
+                <li>219. Contains Duplicate II</li>
+                <li>220. Contains Duplicate III</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Valid Palindrome</td>
+        <td>
+            <ul>
+                <li>125. Valid Palindrome</li>
+                <li>680. Valid Palindrome II</li>
+                <li>1216. Valid Palindrome III</li>
+                <li>2330. Valid Palindrome IV</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Next Greater Element</td>
+        <td>
+            <ul>
+                <li>496. Next Greater Element</li>
+                <li>503. Next Greater Element II</li>
+                <li>556. Next Greater Element III</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Course Schedule</td>
+        <td>
+            <ul>
+                <li>207. Course Schedule</li>
+                <li>210. Course Schedule II</li>
+                <li>603. Course Schedule III</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Best Time to Buy and Sell Stock</td>
+        <td>
+            <ul>
+                <li>121. Best Time to Buy and Sell Stock</li>
+                <li>122. Best Time to Buy and Sell Stock II</li>
+                <li>123. Best Time to Buy and Sell Stock III</li>
+                <li>188. Best Time to Buy and Sell Stock IV</li>
+            </ul>
+        </td>
+    </tr>
+</tbody>
 </table>
