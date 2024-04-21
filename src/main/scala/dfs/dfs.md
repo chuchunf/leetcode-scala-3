@@ -119,4 +119,4 @@ Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","
 Output: 0
 Explanation: The endWord "cog" is not in wordList, therefore there is no valid transformation sequence.
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/bfs/WordLadder.scala#L6-L20
+https://github.com/chuchunf/leetcode-scala-3/blob/84247983d7ad0f19224df6c72d1c8be6d277a0db/src/main/scala/dfs/WordLadder.scala#L6-L20

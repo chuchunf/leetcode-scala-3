@@ -627,7 +627,7 @@ Solutions of selected LeetCode problems in Scala 3.
             <td>
                 <ul>
                     <li><a href="src/main/scala/dfs/dfs.md#113-path-sum-ii">113. Path Sum II</a></li>
-                    <li><a href="src/main/scala/bfs/bfs.md#127-word-ladder">127. Word Ladder</a></li>
+                    <li><a href="src/main/scala/dfs/dfs.md#127-word-ladder">127. Word Ladder</a></li>
                 </ul> 
             </td>
         </tr>
