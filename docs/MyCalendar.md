@@ -1,9 +1,10 @@
 # My Calendar
-My calendar is a series of problem of implementing calendar to add new events with different constraints
+My calendar is a series of problem of handling **range overlapping** with different requirements:
 1. My Calendar I: no **double** booking
 2. My Calendar II: no **triple** booking
 3. My Calendar III: get the value of k as the **number of overlapping** 
 
+<br>
 <details>
 <summary><b>Thinking progress</b></summary>
 
@@ -24,11 +25,11 @@ however, we need to the same check twice as double booking is now allowed.
 * So again an ordered map is the ideal data structure, it provides the fast lookup and min space requirement,
 * Most importantly, the ordered map **keeps the order of begin and end** 
 
-Hence we could use the start and end as key and the number of overlaps as value, 
-1. a single pass of all entries, for start, we add 1 and for end we deduct 1
-2. keep a running max and compare with current overlap for each entry
+Hence, we could use the start and end as key and the number of overlaps as value, 
+1. A single pass of all entries, for start, we add 1 and for end we deduct 1
+2. Keep a running max and compare with current overlap for each entry
 </details>
-
+<br>
 
 ### 729. My Calendar I
 You are implementing a program to use as your calendar. We can add a new event if adding the event will not cause a double booking.

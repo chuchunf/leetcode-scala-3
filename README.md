@@ -763,9 +763,9 @@ Solutions of selected LeetCode problems in Scala 3.
         <td><a href="docs/MyCalendar.md">My Calendar</a></td>
         <td>
             <ul>
-                <li>729. My Calendar I</li>
-                <li>731. My Calendar II</li>
-                <li>732. My Calendar III</li>
+                <li><a href="docs/MyCalendar.md#729-my-calendar-i">729. My Calendar I</a></li>
+                <li><a href="docs/MyCalendar.md#731-my-calendar-ii">731. My Calendar II</a></li>
+                <li><a href="docs/MyCalendar.md#732-my-calendar-iii">732. My Calendar III</a></li>
             </ul>
         </td>
     </tr>
