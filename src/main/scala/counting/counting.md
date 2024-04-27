@@ -19,6 +19,20 @@ The count is stored in an auxiliary array, and the **counting sort** is done by 
 ## Related Data structures
 - Array => Counting sort
 - Hashmap => Counting
+<br><br>
+
+### 217. Contains Duplicate
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+```
+Example 1:
+Input: nums = [1,2,3,1]
+Output: true
+
+Example 2:
+Input: nums = [1,2,3,4]
+Output: false
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/counting/RansomNote.scala#L6-L10
 
 ### 383. Ransom Note
 Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
