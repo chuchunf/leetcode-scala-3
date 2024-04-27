@@ -32,7 +32,7 @@ Example 2:
 Input: nums = [1,2,3,4]
 Output: false
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/counting/RansomNote.scala#L6-L10
+https://github.com/chuchunf/leetcode-scala-3/blob/2bd3c67ebba6560cae2d1180a84826edae2a605c/src/main/scala/counting/ContainsDuplicate.scala#L4-L6
 
 ### 383. Ransom Note
 Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.

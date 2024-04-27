@@ -205,6 +205,7 @@ Solutions of selected LeetCode problems in Scala 3.
             <td></td>
             <td>
                 <ul>
+                    <li><a href="src/main/scala/counting/counting.md#217-contains-duplicate">217. Contains Duplicate</a></li>
                     <li><a href="src/main/scala/counting/counting.md#383-ransom-note">383. Ransom Note</a></li>
                     <li><a href="src/main/scala/counting/counting.md#169-majority-element">169. Majority Element</a></li>
                     <li><a href="src/main/scala/counting/counting.md#229-majority-element-2">229. Majority Element 2</a></li>
