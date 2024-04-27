@@ -10,9 +10,9 @@ My calendar is a series of problem of handling **range overlapping** with differ
 
 For two entries to overlap, at least one end of one entry must be within the other entry. 
 So the problem is to find out if a number (begin or end of one entry) is smaller than the end and bigger than the begin of another entry.
-* An array or list could be used to store the begin and end, but the complexity will be O(n)
-* A hashmap provide O(1) look up but, map is not ordered, we have to loop all entries to find out if there is an overlap
-* A **sorted set/map** is ideal in this situation, it provides functions such as  minBefore, maxAfter in O(log(n))
+1. An array or list could be used to store the begin and end, but the complexity will be O(n)
+2. A hashmap provide O(1) look up but, map is not ordered, we have to loop all entries to find out if there is an overlap
+3. A **sorted set/map** is ideal in this situation, it provides functions such as  minBefore, maxAfter in O(log(n))
 
 Tip: **use the start as key and end as value**, so we can get both ends in a single call.
 
@@ -20,10 +20,10 @@ For **My calendar II**, we can use the same idea to store the start as key and e
 however, we need to the same check twice as double booking is now allowed.
 
 **My calendar III** is a more general case, which is to find the number of overlapping
-* We could continue use the same idea, however, we will have to iterate each entry against all entries to find out the max
-* We could use an array with the size of max end, uses the index as day and value as number of overlaps, a single pass will get all max. However it will result lots of empty space.
-* So again an ordered map is the ideal data structure, it provides the fast lookup and min space requirement,
-* Most importantly, the ordered map **keeps the order of begin and end** 
+1. We could continue use the same idea, however, we will have to iterate each entry against all entries to find out the max
+2. We could use an array with the size of max end, uses the index as day and value as number of overlaps, a single pass will get all max. However it will result lots of empty space.
+3. So again an ordered map is the ideal data structure, it provides the fast lookup and min space requirement,
+4. Most importantly, the ordered map **keeps the order of begin and end** 
 
 Hence, we could use the start and end as key and the number of overlaps as value, 
 1. A single pass of all entries, for start, we add 1 and for end we deduct 1
