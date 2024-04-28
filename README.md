@@ -771,12 +771,12 @@ Solutions of selected LeetCode problems in Scala 3.
         </td>
     </tr>
     <tr>
-        <td>Contains Duplicate</td>
+        <td><a href="docs/ContainsDuplicate.md">Contains Duplicate</a></td>
         <td>
             <ul>
-                <li>217. Contains Duplicate</li>
-                <li>219. Contains Duplicate II</li>
-                <li>220. Contains Duplicate III</li>
+                <li><a href="docs/ContainsDuplicate.md#217-contains-duplicate">217. Contains Duplicate</a></li>
+                <li><a href="docs/ContainsDuplicate.md">219-contains-duplicate-ii</a></li>
+                <li><a href="docs/ContainsDuplicate.md">220-contains-duplicate-iii</a></li>
             </ul>
         </td>
     </tr>
