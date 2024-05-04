@@ -144,8 +144,8 @@ Solutions of selected LeetCode problems in Scala 3.
             <td>
                 <ul>
                     <li><a href="src/main/scala/twopointers/twopointers.md#125-valid-palindrome">125. Valid Palindrome</a></li>
-                    <li><a href="src/main/scala/twopointers/twopointers.md#680-valid-palindrome-ii">680. Valid Palindrome II</a></li>
                     <li><a href="src/main/scala/twopointers/twopointers.md#2330-valid-palindrome-iv">2330. Valid Palindrome IV</a></li>
+                    <li><a href="src/main/scala/twopointers/twopointers.md#680-valid-palindrome-ii">680. Valid Palindrome II</a></li>
                     <li><a href="src/main/scala/twopointers/twopointers.md#167-two-sum-ii">167. Two Sum II</a></li>
                     <li><a href="src/main/scala/twopointers/twopointers.md#75-sort-colors">75. Sort Colors</a></li>
                     <li><a href="src/main/scala/twopointers/twopointers.md#16-3sum-closest">16. 3Sum Closest</a></li>
