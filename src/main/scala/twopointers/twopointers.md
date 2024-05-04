@@ -244,7 +244,7 @@ Example 3:
 Input: s = "abcdef"
 Output: false
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/fbb1058c922a34c505b17a2824ef73aaf94035d9/src/main/scala/twopointers/ValidPalindrome4.scala#L4-L15
+https://github.com/chuchunf/leetcode-scala-3/blob/ef3789180b850469c3d549aa1aec3c586a113bda/src/main/scala/twopointers/ValidPalindrome4.scala#L4-L11
 
 ### 680. Valid Palindrome II
 Given a string s, return true if the s can be palindrome after deleting at most one character from it.

@@ -787,9 +787,9 @@ Solutions of selected LeetCode problems in Scala 3.
         <td>
             <ul>
                 <li>125. Valid Palindrome</li>
+                <li>2330. Valid Palindrome IV</li>
                 <li>680. Valid Palindrome II</li>
                 <li>1216. Valid Palindrome III</li>
-                <li>2330. Valid Palindrome IV</li>
             </ul>
         </td>
     </tr>

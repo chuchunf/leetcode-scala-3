@@ -391,5 +391,4 @@ Example 2:
 Input: s = "abbababa", k = 1
 Output: true
 ```
-https://github.com/chuchunf/leetcode-scala-3/blob/5697ddae4873117b87cea42335eb52b5b037cb75/src/main/scala/dp/ValidPalindrome3.scala#L6-L18
-
+https://github.com/chuchunf/leetcode-scala-3/blob/ef3789180b850469c3d549aa1aec3c586a113bda/src/main/scala/dp/ValidPalindrome3.scala#L6-L18
