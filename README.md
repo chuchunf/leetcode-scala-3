@@ -783,13 +783,13 @@ Solutions of selected LeetCode problems in Scala 3.
         </td>
     </tr>
     <tr>
-        <td>Valid Palindrome</td>
+        <td><a href="docs/ValidPalindrome.md">Valid Palindrome</a></td>
         <td>
             <ul>
-                <li>125. Valid Palindrome</li>
-                <li>2330. Valid Palindrome IV</li>
-                <li>680. Valid Palindrome II</li>
-                <li>1216. Valid Palindrome III</li>
+                <li><a href="docs/ContainsDuplicate.md#125-valid-palindrome">125. Valid Palindrome</a></li>
+                <li><a href="docs/ContainsDuplicate.md#2330-valid-palindrome-iv">2330. Valid Palindrome IV</a></li>
+                <li><a href="docs/ContainsDuplicate.md#680-valid-palindrome-ii">680. Valid Palindrome II</a></li>
+                <li><a href="docs/ContainsDuplicate.md#1216-valid-palindrome-iii">1216. Valid Palindrome III</a></li>
             </ul>
         </td>
     </tr>
