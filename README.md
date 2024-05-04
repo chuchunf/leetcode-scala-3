@@ -732,6 +732,7 @@ Solutions of selected LeetCode problems in Scala 3.
                     <li><a href="src/main/scala/dp/dp.md#97-interleaving-string">97. Interleaving String</a></li>
                     <li><a href="src/main/scala/dp/dp.md#115-distinct-subsequences">115. Distinct Subsequences</a></li>
                     <li><a href="src/main/scala/dp/dp.md#516-longest-palindromic-subsequence">516. Longest Palindromic Subsequence</a></li>
+                    <li><a href="src/main/scala/dp/dp.md#1216-valid-palindrome-iii">1216. Valid Palindrome III</a></li>
                 </ul>  
             </td>
         </tr>

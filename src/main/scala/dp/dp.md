@@ -376,3 +376,20 @@ Output: 2
 Explanation: One possible longest palindromic subsequence is "bb"
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/5697ddae4873117b87cea42335eb52b5b037cb75/src/main/scala/dp/LongestPalindromicSubsequence.scala#L4-L15
+
+### 1216. Valid Palindrome III
+Given a string s and an integer k, return true if s is a k-palindrome.
+
+A string is k-palindrome if it can be transformed into a palindrome by removing at most k characters from it.
+```
+Example 1:
+Input: s = "abcdeca", k = 2
+Output: true
+Explanation: Remove 'b' and 'e' characters.
+
+Example 2:
+Input: s = "abbababa", k = 1
+Output: true
+```
+https://github.com/chuchunf/leetcode-scala-3/blob/5697ddae4873117b87cea42335eb52b5b037cb75/src/main/scala/dp/ValidPalindrome3.scala#L6-L18
+
