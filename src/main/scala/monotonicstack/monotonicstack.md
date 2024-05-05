@@ -56,7 +56,7 @@ Example 2:
 Input: nums = [1,2,3,4,3]
 Output: [2,3,4,-1,4]
 ```
-TODO
+https://github.com/chuchunf/leetcode-scala-3/blob/23bd0fa0f6e97e8839a53385efb0b53d9a37c086/src/main/scala/monotonicstack/NextGreaterElement2.scala#L4-L12
 
 ### 556. Next Greater Element III
 Given a positive integer n, find the smallest integer which has exactly the same digits existing in the integer n and is greater in value than n. If no such positive integer exists, return -1.
