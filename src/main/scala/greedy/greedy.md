@@ -131,4 +131,4 @@ Example 2:
 Input: courses = [[1,2]]
 Output: 1
 ```
-TODO
+https://github.com/chuchunf/leetcode-scala-3/blob/3dfd199a7a293bcdb099064a5284854ef8a38c4d/src/main/scala/greedy/CourseSchedule3.scala#L6-L15
