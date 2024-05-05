@@ -1,6 +1,6 @@
 # Monotonic Stack
 A monotonic stack is a stack whose elements are monotonically increasing or decreasing, 
-normally used to track the **maximum or minimum** element in a data set.
+It is commonly used to track the **maximum or minimum** element in a data set.
 
 ## implementation 
 * The index is stored in the stack and forms a mono-sequence, either increasing or decreasing
@@ -14,7 +14,7 @@ normally used to track the **maximum or minimum** element in a data set.
 * Apply logic accordingly given the property of Monotonic stack
 
 ## Applications
-The monotonic stack mainly solves the previous/next smaller/larger problem.
+The monotonic stack commonly solves the previous/next smaller/larger problem.
 * Next greater: monotonic decreasing stack, pop the stack if the value (of top of the stack) is smaller than current => the next greater of top of the stack is the current index
 * Previous greater: same as above in reversed order
 
@@ -22,6 +22,7 @@ The monotonic stack mainly solves the previous/next smaller/larger problem.
 1. **Stack**: Monotonic stack is a stack with a property that the elements are monotonically increasing or decreasing. 
 2. **Priority Queue**: Monotonic stack maintains the monotonicity by **dequeuing** elements when a new element e is enqueued, while a priority queue maintains the monotonicity by **heapifying** when a new element enqueued
 3. **Monotonic Queue**: Both maintains the monotonicity but one based on Queue (FIFO), another based on Stack (FILO)
+<br><br>
 
 ### 496. Next Greater Element I
 The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
@@ -42,36 +43,35 @@ Explanation: The next greater element for each value of nums1 is as follows:
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/6c7f452d855f00ae43efec08f9661798e3d0e901/src/main/scala/monotonicstack/NextGreaterElement.scala#L4-L13
 
-### 316. Remove Duplicate Letters
-Given a string s, remove duplicate letters so that every letter appears once and only once. 
-You must make sure your result is the smallest in lexicographical order among all possible results.
+### 503. Next Greater Element II
+Given a circular integer array nums (i.e., the next element of nums[nums.length - 1] is nums[0]), return the next greater number for every element in nums.
+
+The next greater number of a number x is the first greater number to its traversing-order next in the array, which means you could search circularly to find its next greater number. If it doesn't exist, return -1 for this number.
 ```
 Example 1:
-Input: s = "bcabc"
-Output: "abc"
+Input: nums = [1,2,1]
+Output: [2,-1,2]
 
 Example 2:
-Input: s = "cbacdcbc"
-Output: "acdb"
+Input: nums = [1,2,3,4,3]
+Output: [2,3,4,-1,4]
 ```
-to be added
+TODO
 
-### 456. 132 Pattern
-Given an array of n integers nums, a 132 pattern is a subsequence of three integers nums[i], nums[j] and nums[k] such that i < j < k and nums[i] < nums[k] < nums[j].
+### 556. Next Greater Element III
+Given a positive integer n, find the smallest integer which has exactly the same digits existing in the integer n and is greater in value than n. If no such positive integer exists, return -1.
 
-Return true if there is a 132 pattern in nums, otherwise, return false.
+Note that the returned integer should fit in 32-bit integer, if there is a valid answer but it does not fit in 32-bit integer, return -1.
 ```
 Example 1:
-Input: nums = [1,2,3,4]
-Output: false
-Explanation: There is no 132 pattern in the sequence.
+Input: n = 12
+Output: 21
 
 Example 2:
-Input: nums = [3,1,4,2]
-Output: true
-Explanation: There is a 132 pattern in the sequence: [1, 4, 2].
+Input: n = 21
+Output: -1
 ```
-to be added
+TODO
 
 ### 84. Largest Rectangle in Histogram
 Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
