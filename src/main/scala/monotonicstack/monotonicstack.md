@@ -71,7 +71,7 @@ Example 2:
 Input: n = 21
 Output: -1
 ```
-TODO
+https://github.com/chuchunf/leetcode-scala-3/blob/27ec8d426c9af1122099ba8900b0da7872e30e7b/src/main/scala/monotonicstack/NextGreaterElement3.scala#L4-L15
 
 ### 84. Largest Rectangle in Histogram
 Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
