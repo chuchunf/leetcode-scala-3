@@ -749,6 +749,7 @@ Solutions of selected LeetCode problems in Scala 3.
                     <li><a href="src/main/scala/greedy/greedy.md#179-largest-number">179. Largest Number</a></li>
                     <li><a href="src/main/scala/greedy/greedy.md#44-wildcard-matching">44. Wildcard Matching</a></li>
                     <li><a href="src/main/scala/greedy/greedy.md#135-candy">135. Candy</a></li>
+                    <li><a href="src/main/scala/greedy/greedy.md#630-course-schedule-iii">630. Course Schedule III</a></li>
                 </ul> 
             </td>
         </tr>

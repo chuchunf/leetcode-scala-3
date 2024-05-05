@@ -29,7 +29,8 @@ These pairs are known as **edges** (also called links or lines)
 <br><br>
 
 ### 207. Course Schedule
-There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
+There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array 
+prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
 
 For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.
 Return true if you can finish all courses. Otherwise, return false.
@@ -50,10 +51,12 @@ and to take course 0 you should also have finished course 1. So it is impossible
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/graph/CourseSchedule.scala#L6-L16
 
 ### 210. Course Schedule II
-There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
+There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites 
+where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
 
 For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.
-Return the ordering of courses you should take to finish all courses. If there are many valid answers, return any of them. If it is impossible to finish all courses, return an empty array.
+Return the ordering of courses you should take to finish all courses. If there are many valid answers, return any of them. 
+If it is impossible to finish all courses, return an empty array.
 ```
 Example 1:
 Input: numCourses = 2, prerequisites = [[1,0]]

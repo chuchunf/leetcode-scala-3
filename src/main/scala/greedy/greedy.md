@@ -113,3 +113,22 @@ Explanation: You can allocate to the first, second and third child with 1, 2, 1 
 The third child gets 1 candy because it satisfies the above two conditions.
 ```
 https://github.com/chuchunf/leetcode-scala-3/blob/96edcbc70953e25ba3eedbcbaa7bf18b8034eff0/src/main/scala/greedy/Candy.scala#L5-L19
+
+### 630. Course Schedule III
+There are n different online courses numbered from 1 to n. You are given an array courses
+where courses[i] = [durationi, lastDayi] indicate that the ith course should be taken continuously for durationi days
+and must be finished before or on lastDayi.
+
+You will start on the 1st day and you cannot take two or more courses simultaneously.
+
+Return the maximum number of courses that you can take.
+```
+Example 1:
+Input: courses = [[100,200],[200,1300],[1000,1250],[2000,3200]]
+Output: 3
+
+Example 2:
+Input: courses = [[1,2]]
+Output: 1
+```
+TODO
