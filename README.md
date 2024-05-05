@@ -796,12 +796,12 @@ Solutions of selected LeetCode problems in Scala 3.
         </td>
     </tr>
     <tr>
-        <td>Next Greater Element</td>
+        <td><a href="docs/NextGreaterElement.md">Next Greater Element</a></td>
         <td>
             <ul>
-                <li>496. Next Greater Element</li>
-                <li>503. Next Greater Element II</li>
-                <li>556. Next Greater Element III</li>
+                <li><a href="docs/NextGreaterElement.md#496-next-greater-element">496. Next Greater Element</a></li>
+                <li><a href="docs/NextGreaterElement.md#503-next-greater-element-ii">503. Next Greater Element II</a></li>
+                <li><a href="docs/NextGreaterElement.md#556-next-greater-element-iii">556. Next Greater Element III</a></li>
             </ul>
         </td>
     </tr>
