@@ -807,12 +807,12 @@ Solutions of selected LeetCode problems in Scala 3.
         </td>
     </tr>
     <tr>
-        <td>Course Schedule</td>
+        <td><a href="docs/CourseSchedule.md">Course Schedule</a></td>
         <td>
             <ul>
-                <li>207. Course Schedule</li>
-                <li>210. Course Schedule II</li>
-                <li>603. Course Schedule III</li>
+                <li><a href="docs/CourseSchedule.md#207-course-schedule">207. Course Schedule</a></li>
+                <li><a href="docs/CourseSchedule.md#210-course-schedule-ii">210. Course Schedule II</a></li>
+                <li><a href="docs/CourseSchedule.md#603-course-schedule-iii">603. Course Schedule III</a></li>
             </ul>
         </td>
     </tr>
