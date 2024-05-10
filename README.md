@@ -817,13 +817,13 @@ Solutions of selected LeetCode problems in Scala 3.
         </td>
     </tr>
     <tr>
-        <td>Best Time to Buy and Sell Stock</td>
+        <td><a href="docs/BestTimetoBuyandSellStock.md">Best Time to Buy and Sell Stock</a></td>
         <td>
             <ul>
-                <li>121. Best Time to Buy and Sell Stock</li>
-                <li>122. Best Time to Buy and Sell Stock II</li>
-                <li>123. Best Time to Buy and Sell Stock III</li>
-                <li>188. Best Time to Buy and Sell Stock IV</li>
+                <li><a href="docs/BestTimetoBuyandSellStock.md#121-best-time-to-buy-and-sell-stock">121. Best Time to Buy and Sell Stock</a></li>
+                <li><a href="docs/BestTimetoBuyandSellStock.md#122-best-time-to-buy-and-sell-stock-ii">122. Best Time to Buy and Sell Stock II</a></li>
+                <li><a href="docs/BestTimetoBuyandSellStock.md#123-best-time-to-buy-and-sell-stock-iii">123. Best Time to Buy and Sell Stock III</a></li>
+                <li><a href="docs/BestTimetoBuyandSellStock.md#188-best-time-to-buy-and-sell-stock-iv">188. Best Time to Buy and Sell Stock IV</a></li>
             </ul>
         </td>
     </tr>
